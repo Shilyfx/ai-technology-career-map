@@ -21,6 +21,10 @@ related_concepts: []
 | Role | Priority | Target Depth | Job Evidence | Note |
 | --- | --- | --- | --- | --- |
 
+## Job Evidence
+
+列出至少一个 Job Sample 的 `Skill Extraction` 链接，并说明 explicit/inferred。
+
 ## 在岗位中怎么使用
 
 ## Role-specific Target Depth
@@ -35,11 +39,11 @@ related_concepts: []
 
 ## Pass Evidence
 
-## 常见失败 / 误区
+## 常见失败
 
 ## 不需要深挖到什么程度
 
-## Related Concepts
+## Related Knowledge
 
 ## Actual Evidence
 

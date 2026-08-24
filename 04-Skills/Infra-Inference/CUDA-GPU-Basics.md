@@ -25,6 +25,10 @@ GPU 内存、kernel、通信和利用率决定训练/推理的性能与成本上
 ## Role Demand
 Infra 为 Core；研究/ML 按性能方向 Specialized。证据见 [[OpenAI-Software-Engineer-Inference-Performance-San-Francisco-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-Inference-Performance-San-Francisco-2026-08]]、[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 读 profiler、定位 kernel/内存/通信瓶颈，并在正确性测试后优化。
 
@@ -46,13 +50,13 @@ device/memory、kernel、streams、同步、NCCL、profiling 和低精度。
 ## Pass Evidence
 能用 trace 和显存/吞吐数据验证优化是否真实。
 
-## 常见失败 / 误区
+## 常见失败
 只看 GPU 利用率；忽略数据/通信；优化后不测数值一致性。
 
 ## 不需要深挖到什么程度
 普通应用无需先写 CUDA kernel；岗位需要时从 profiling 开始。
 
-## Related Concepts
+## Related Knowledge
 [[Inference-Optimization]]、[[Distributed-Training]]。
 
 ## Actual Evidence

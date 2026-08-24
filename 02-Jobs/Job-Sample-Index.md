@@ -15,6 +15,7 @@ related:
 # Job Sample Index
 
 > 这里列出 2026-08 批的官方职位样本。每条记录只证明公司、地点、职级、时间和页面明确的要求，不代表市场普查。
+> 每张卡片的 `Evidence Trace` 说明来源段落、explicit/inferred 判断、抽取决策和置信度。
 
 ## OpenAI
 

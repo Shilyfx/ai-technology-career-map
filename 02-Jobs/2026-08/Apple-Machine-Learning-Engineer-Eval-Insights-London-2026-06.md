@@ -57,3 +57,10 @@ Primary: [[AI-Safety-Evals-and-Governance]]. Adjacent: [[ML-and-AI-Engineer]].
 
 ## Limitations
 Eval/insights 方向样本；工具名是上下文信号，不是长期必需技能。
+
+## Evidence Trace
+
+- Source Section: `Responsibilities`, `Explicit Requirements`, and `Preferred/Nice-to-have` in the official posting.
+- Evidence Type: Explicit requirements are countable Job Skill Evidence; responsibility-based mappings remain inferred context.
+- Extraction Decision: Normalize one skill once per sample; alternatives are not double-counted, and inferred signals do not increase required frequency.
+- Confidence: high; source_access is recorded in frontmatter and limitations remain local to this sample.

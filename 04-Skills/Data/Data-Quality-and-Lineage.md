@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 Data/ML 是 Core；应用岗位是 Common prerequisite。[[Apple-Machine-Learning-Engineer-Data-Curation-Cupertino-2026-06]] 和 [[Anthropic-Software-Engineer-RL-Data-San-Francisco-2026-08]] 提供样本。
 
+## Job Evidence
+
+[[Apple-Machine-Learning-Engineer-Data-Curation-Cupertino-2026-06]]、[[Anthropic-Software-Engineer-RL-Data-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 定义 schema、质量检查、血缘、过滤规则和可回溯版本。
 
@@ -46,13 +50,13 @@ schema、缺失/重复/漂移、采样、标注、lineage、数据契约。
 ## Pass Evidence
 能定位一条异常记录的来源、影响和修复版本。
 
-## 常见失败 / 误区
+## 常见失败
 只看数量不看覆盖；清洗后丢失来源；把数据漂移误认为模型退化。
 
 ## 不需要深挖到什么程度
 非数据岗位不必先掌握整套数据平台；先能读质量报告并做正确决策。
 
-## Related Concepts
+## Related Knowledge
 [[Data-Engineering-and-Governance]]、[[ML-Experimentation]]。
 
 ## Actual Evidence

@@ -33,6 +33,10 @@ AI 系统的变化来自代码、数据、模型和配置；测试是把回归�
 | Application Engineer | Core | implement | [[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] | 生产 primitives |
 | Safety / Evals | Core | implement | [[Anthropic-Research-Engineer-Model-Evaluations-San-Francisco-2026-08]] | regression gate |
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 单元、集成、数据契约、回归、golden set、故障注入和发布门禁。
@@ -61,7 +65,7 @@ AI 系统的变化来自代码、数据、模型和配置；测试是把回归�
 
 测试可独立运行；至少一次故意引入的回归被捕获且记录原因。
 
-## 常见失败 / 误区
+## 常见失败
 
 只测总分、只测 happy path、把 flaky test 当真实退化。
 
@@ -69,7 +73,7 @@ AI 系统的变化来自代码、数据、模型和配置；测试是把回归�
 
 不要求每个岗位实现完整测试框架；要求能把关键风险转为检查。
 
-## Related Concepts
+## Related Knowledge
 
 [[Evals-and-Observability]]、[[Training-Evaluation-and-Generalization]]。
 
@@ -79,4 +83,4 @@ AI 系统的变化来自代码、数据、模型和配置；测试是把回归�
 
 ## Sources
 
-[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]。
+[[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]]、[[Apple-Machine-Learning-Engineer-Data-Curation-Cupertino-2026-06]]。

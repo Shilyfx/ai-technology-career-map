@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 Application/PM/FDE 为 Core；研究岗位是接口意识。证据见 [[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]]、[[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 定义 API/SDK、错误、限流、计费、兼容性、文档、评测和发布流程。
 
@@ -46,13 +50,13 @@ Application/PM/FDE 为 Core；研究岗位是接口意识。证据见 [[OpenAI-S
 ## Pass Evidence
 新用户能按文档完成调用，失败时能定位并安全重试。
 
-## 常见失败 / 误区
+## 常见失败
 只设计 happy path；把模型 prompt 暴露成稳定契约；无弃用策略。
 
 ## 不需要深挖到什么程度
 PM 不必亲自实现 SDK，但要能审查契约与风险。
 
-## Related Concepts
+## Related Knowledge
 [[AI-Product-Engineering]]、[[Tool-Calling-Agent-Workflow]]。
 
 ## Actual Evidence

@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 Research/Infra 为 Core；ML 为 Common，其他角色只需理解成本。证据见 [[Apple-Machine-Learning-Engineer-SIML-Cupertino-2026-07]]。
 
+## Job Evidence
+
+[[Apple-Machine-Learning-Engineer-SIML-Cupertino-2026-07]]、[[Huawei-Algorithm-Expert-Multimodal-Beijing-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 选择并行策略、同步/异步边界、checkpoint、通信和故障恢复。
 
@@ -46,13 +50,13 @@ data/model parallel、collective、梯度同步、网络、容错和资源调度
 ## Pass Evidence
 能用数据解释增加设备后为何变快或变慢。
 
-## 常见失败 / 误区
+## 常见失败
 只加 GPU 不看通信；把单卡结果直接外推；没有恢复测试。
 
 ## 不需要深挖到什么程度
 非 Infra 岗位先会读并发配置和故障日志，不必先写通信库。
 
-## Related Concepts
+## Related Knowledge
 [[AI-Infrastructure-and-MLOps]]、[[CUDA-GPU-Basics]]。
 
 ## Actual Evidence

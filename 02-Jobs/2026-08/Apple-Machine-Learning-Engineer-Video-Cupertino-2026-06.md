@@ -57,3 +57,10 @@ Primary: [[ML-and-AI-Engineer]]. Adjacent: [[Research Engineer]].
 
 ## Limitations
 视频方向；部署技术栈可能随产品线变化。
+
+## Evidence Trace
+
+- Source Section: `Responsibilities`, `Explicit Requirements`, and `Preferred/Nice-to-have` in the official posting.
+- Evidence Type: Explicit requirements are countable Job Skill Evidence; responsibility-based mappings remain inferred context.
+- Extraction Decision: Normalize one skill once per sample; alternatives are not double-counted, and inferred signals do not increase required frequency.
+- Confidence: high; source_access is recorded in frontmatter and limitations remain local to this sample.

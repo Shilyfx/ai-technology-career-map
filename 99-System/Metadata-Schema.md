@@ -20,9 +20,9 @@ Allowed `type`: `home`, `moc`, `path`, `concept`, `assessment`, `radar`, `role`,
 
 ## Job Sample contract
 
-Required: `type: job-sample`, `company`, `role_title`, `role_family`, `location`, `region`, `source_url`, `source_kind`, `source_status`, `snapshot_date`, `retrieved`, `created`, `updated`, `review_after`. Recommended: `seniority`, `posted`, `source_access`.
+Required: `type: job-sample`, `company`, `role_title`, `role_family`, `seniority`, `location`, `region`, `source_url`, `source_kind`, `source_status`, `snapshot_date`, `retrieved`, `created`, `updated`, `review_after`. `source_kind` must be one of `official-job-posting`, `official-career-page`, `official-role-description`, `secondary-source`. Recommended: `posted`, `source_access`.
 
-Body headings: `Source Scope`, `Role Summary`, `Responsibilities`, `Explicit Requirements`, `Preferred/Nice-to-have`, `Skill Extraction`, `Non-skill Gates`, `Role Mapping`, `Limitations`.
+Body headings: `Source Scope`, `Role Summary`, `Responsibilities`, `Explicit Requirements`, `Preferred/Nice-to-have`, `Skill Extraction`, `Non-skill Gates`, `Role Mapping`, `Limitations`, `Evidence Trace`.
 
 Explicit requirements and inferred skills must be separated. Do not copy a full JD; preserve only concise, evidence-bounded extraction.
 
@@ -34,7 +34,7 @@ Role priority values are `Core | Common | Specialized | Company-specific | Prere
 
 ## Skill contract
 
-Required: `type: skill`, `skill_category`, `roles`, `prerequisites`, `related_concepts`. Body headings: `为什么岗位需要它`, `Role Demand`, `在岗位中怎么使用`, `Role-specific Target Depth`, `前置 Skills`, `学习范围`, `核心知识`, `Practice`, `Pass Evidence`, `常见失败 / 误区`, `不需要深挖到什么程度`, `Related Concepts`, `Actual Evidence`, `Sources`.
+Required: `type: skill`, `skill_category`, `roles`, `prerequisites`, `related_concepts`. Body headings: `为什么岗位需要它`, `Role Demand`, `Job Evidence`, `在岗位中怎么使用`, `Role-specific Target Depth`, `前置 Skills`, `学习范围`, `核心知识`, `Practice`, `Pass Evidence`, `常见失败 / 误区`, `不需要深挖到什么程度`, `Related Knowledge`, `Actual Evidence`, `Sources`.
 
 Skills do not carry a global `depth`; depth is role-specific. A Skill must be a reusable learnable unit, not merely a framework name.
 

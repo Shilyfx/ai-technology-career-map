@@ -44,6 +44,7 @@ review_after: 2026-09-24
 | Skill | Evidence type | Why counted |
 | --- | --- | --- |
 | [[Linux]] | explicit | systems environment |
+| [[Git]] | inferred | reviewed source changes and release coordination |
 | [[CUDA-GPU-Basics]] | explicit | accelerator stack |
 | [[Distributed-Systems]] | inferred | communication/runtime |
 | [[Testing]] | inferred | compiler/runtime correctness |
@@ -57,3 +58,10 @@ Primary: [[AI-Infrastructure-and-Inference-Engineer]]. Adjacent: [[ML-and-AI-Eng
 
 ## Limitations
 底层软件专项，不应作为通用 AI 应用技能清单。
+
+## Evidence Trace
+
+- Source Section: `Responsibilities`, `Explicit Requirements`, and `Preferred/Nice-to-have` in the official posting.
+- Evidence Type: Explicit requirements are countable Job Skill Evidence; responsibility-based mappings remain inferred context.
+- Extraction Decision: Normalize one skill once per sample; alternatives are not double-counted, and inferred signals do not increase required frequency.
+- Confidence: high; source_access is recorded in frontmatter and limitations remain local to this sample.

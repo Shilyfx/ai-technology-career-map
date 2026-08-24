@@ -30,6 +30,10 @@ related_concepts:
 | ML / AI Engineer | Core | implement | [[Apple-Machine-Learning-Engineer-Search-Cupertino-2026-06]] | 生产 ML |
 | Application Engineer | Core | implement | [[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] | 后端服务 |
 
+## Job Evidence
+
+[[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]]、[[Apple-Machine-Learning-Engineer-Search-Cupertino-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 写可测试的 pipeline、API、训练/评测脚本和数据处理，而不是只维护 notebook。
@@ -58,7 +62,7 @@ PM 以 explain 为边界；工程岗位通常需要 implement，研究/系统岗
 
 别人可按 README 运行，并看到至少一个自动化测试捕获错误输入。
 
-## 常见失败 / 误区
+## 常见失败
 
 只会调用 SDK、没有测试、把环境差异误判为模型差异。
 
@@ -66,7 +70,7 @@ PM 以 explain 为边界；工程岗位通常需要 implement，研究/系统岗
 
 不因某个岗位出现 Python 就要求解释 CPython 内部；以目标交付为准。
 
-## Related Concepts
+## Related Knowledge
 
 [[Math-Data-and-Software-Foundations]]、[[AI-Product-Engineering]]。
 

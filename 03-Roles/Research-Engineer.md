@@ -15,7 +15,7 @@ review_after: 2026-11-24
 
 把研究想法变成正确、高性能、可扩展的实验系统，并用工程反馈推动研究。它不是“论文少一点的软件工程师”，而是理论与实现之间的桥。
 
-OpenAI 当前通用岗位强调强编程、无 bug 的 ML 代码和大型分布式系统；DeepMind 同样把工程、数学、研究、前沿模型优化与分布式计算基础设施并列。
+本批 OpenAI、Anthropic 和 Huawei Research/Training Job Samples 共同支持强编程、实验系统、评测和分布式执行等责任簇；具体学历、硬件和研究方向仍以单个 Sample 为准。
 
 ## 日常工作
 
@@ -49,6 +49,10 @@ OpenAI 当前通用岗位强调强编程、无 bug 的 ML 代码和大型分布�
 
 ## Sample Basis
 8 samples across OpenAI, Anthropic and Huawei research/training/post-training/multimodal roles.
+
+## Evidence Basis
+
+Based on 8 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 Correct, scalable experiments that connect research hypotheses to measured model behavior.

@@ -26,6 +26,10 @@ related_concepts:
 ## Role Demand
 Infra 为 Core；应用/FDE 为 Common。证据见 [[Huawei-AI-Architect-Training-Inference-Beijing-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]]、[[Huawei-AI-Architect-Training-Inference-Beijing-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 打包模型、管理批处理/流式请求、版本、容量、回滚和安全边界。
 
@@ -47,13 +51,13 @@ Infra implement/optimize；应用 use/implement；PM explain 延迟和成本。
 ## Pass Evidence
 能用压测数据解释 p95 延迟、吞吐和资源成本。
 
-## 常见失败 / 误区
+## 常见失败
 只测平均延迟；无超时/限流；模型版本和数据版本不可追踪。
 
 ## 不需要深挖到什么程度
 应用岗位先掌握服务契约和故障边界，不必马上优化 kernel。
 
-## Related Concepts
+## Related Knowledge
 [[Inference-Optimization]]、[[Observability]]。
 
 ## Actual Evidence

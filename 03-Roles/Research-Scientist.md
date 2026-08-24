@@ -13,7 +13,7 @@ review_after: 2026-11-24
 
 ## 主要使命
 
-提出可检验的新问题或方法，设计严谨实验，形成可复核的新知识。前沿实验室的岗位通常期待深理论能力和论文贡献；DeepMind 的角色说明写明该岗位通常拥有 PhD，并负责识别核心研究问题、设计和评估新模型。
+提出可检验的新问题或方法，设计严谨实验，形成可复核的新知识。本批研究/算法样本支持理论、实验和研究沟通责任簇；学历和论文门槛不从有限样本外推。
 
 ## 日常工作
 
@@ -53,6 +53,10 @@ review_after: 2026-11-24
 
 ## Sample Basis
 3 research/algorithm samples are used as directional evidence; researcher titles are often not exposed separately.
+
+## Evidence Basis
+
+Based on 3 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 Novel, testable hypotheses, rigorous experiments, explanations and research artifacts.

@@ -24,6 +24,10 @@ LLM、检索、agent 和多模态岗位都需要知道能力、成本和失败�
 ## Role Demand
 ML/Research 为 Core；应用为 Common；PM/FDE 为 explain。证据见 [[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]。
 
+## Job Evidence
+
+[[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]、[[Huawei-Algorithm-Expert-Multimodal-Beijing-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 理解 token、attention、上下文、训练/后训练、推理和限制，再选择应用方案。
 
@@ -45,13 +49,13 @@ tokenization、attention、参数/激活、loss、推理和能力评测。
 ## Pass Evidence
 能为具体失败选择数据、模型、提示、检索或评测层的修复方向。
 
-## 常见失败 / 误区
+## 常见失败
 把上下文窗口当记忆；把模型名字当能力保证；用 prompt 解决所有数据问题。
 
 ## 不需要深挖到什么程度
 应用岗位不需先实现完整训练框架；先掌握可解释的系统边界。
 
-## Related Concepts
+## Related Knowledge
 [[Transformer-and-Foundation-Models]]、[[RAG]]。
 
 ## Actual Evidence

@@ -18,6 +18,12 @@ CONFIG = {
 STATUS = {"seed", "developing", "validated", "reference", "deprecated"}
 STABILITY = {"stable", "current", "emerging"}
 DEPTH = {"recognize", "explain", "use", "implement", "optimize", "research"}
+SOURCE_KINDS = {
+    "official-job-posting",
+    "official-career-page",
+    "official-role-description",
+    "secondary-source",
+}
 TYPES = {
     "home",
     "moc",
@@ -166,6 +172,13 @@ def main() -> int:
         if len(paths) > 1:
             errors.append("duplicate note name: " + ", ".join(str(p.relative_to(ROOT)) for p in paths))
 
+    job_sample_skill_evidence: defaultdict[str, set[Path]] = defaultdict(set)
+    for path, (meta, body, _) in records.items():
+        if meta.get("type") != "job-sample":
+            continue
+        for raw_skill in re.findall(r"\[\[([^\]|#]+)\]\]", body):
+            job_sample_skill_evidence[raw_skill.casefold()].add(path)
+
     source_urls: defaultdict[str, list[Path]] = defaultdict(list)
     for path, (meta, _, _) in records.items():
         if meta.get("type") == "job-sample" and meta.get("source_url"):
@@ -290,27 +303,36 @@ def main() -> int:
                 errors.append(f"role-skill-assessment must have type assessment: {rel}")
 
         if kind == "job-sample" and not is_template:
-            for key in ("company", "role_title", "role_family", "source_url", "source_kind", "source_status", "snapshot_date", "retrieved", "review_after"):
+            for key in ("company", "role_title", "role_family", "seniority", "location", "source_url", "source_kind", "source_status", "snapshot_date", "retrieved", "created", "updated", "review_after"):
                 if not meta.get(key):
                     errors.append(f"job-sample missing {key}: {rel}")
-            for heading in ("Responsibilities", "Explicit Requirements", "Skill Extraction", "Limitations"):
+            if meta.get("source_kind") and meta["source_kind"] not in SOURCE_KINDS:
+                errors.append(f"invalid source_kind in {rel}: {meta['source_kind']}")
+            for heading in ("Responsibilities", "Explicit Requirements", "Skill Extraction", "Limitations", "Evidence Trace"):
                 if not heading_present(body, heading):
                     errors.append(f"job-sample missing {heading}: {rel}")
+            for trace_field in ("Source Section:", "Evidence Type:", "Extraction Decision:", "Confidence:"):
+                if trace_field not in body:
+                    errors.append(f"job-sample Evidence Trace missing {trace_field} in {rel}")
 
         if kind == "skill" and not is_template:
             for key in ("skill_category", "roles", "prerequisites"):
                 if not meta.get(key) and key != "prerequisites":
                     errors.append(f"skill missing {key}: {rel}")
-            for heading in ("为什么岗位需要它", "Role Demand", "前置 Skills", "Practice", "Pass Evidence"):
+            for heading in ("为什么岗位需要它", "Role Demand", "Job Evidence", "前置 Skills", "Practice", "Pass Evidence", "常见失败", "Related Knowledge"):
                 if not heading_present(body, heading):
                     errors.append(f"skill missing {heading}: {rel}")
             if not meta.get("roles"):
-                warnings.append(f"skill has no role demand mapping: {rel}")
+                warnings.append(f"skill has no role: {rel}")
+            if not job_sample_skill_evidence.get(path.stem.casefold()):
+                warnings.append(f"skill has no Job Sample evidence: {rel}")
 
         if kind == "role" and not is_template:
-            for heading in ("Sample Basis", "Skill Profile", "Portfolio Evidence", "Source Limitations"):
+            for heading in ("Skill Profile", "Portfolio Evidence", "Source Limitations"):
                 if not heading_present(body, heading):
                     errors.append(f"role missing {heading}: {rel}")
+            if not heading_present(body, "Sample Basis") and not heading_present(body, "Evidence Basis"):
+                warnings.append(f"role missing sample basis: {rel}")
             if not meta.get("sample_count"):
                 warnings.append(f"role missing sample_count: {rel}")
             elif meta.get("sample_count") == "0":

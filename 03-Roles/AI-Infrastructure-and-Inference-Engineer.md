@@ -43,15 +43,19 @@ Linux / network / storage / distributed systems
 - 故障注入、恢复和回滚；
 - 解释优化为何成立、在哪些负载下失效。
 
-## 当前岗位证据
+## Sample Observations
 
-OpenAI Model Inference 样本列出 PyTorch、GPU、CUDA、NCCL、InfiniBand/MPI/NVLink 与生产分布式系统。华为样本进一步列出 vLLM/SGLang、量化、KV Cache、投机推理、算子融合、MLIR/LLVM/TVM/Triton 与国产硬件适配。
+本批 OpenAI、Anthropic 和 Huawei Job Samples 共同出现 PyTorch/GPU、分布式系统、推理性能和硬件适配；vLLM/SGLang、量化、KV Cache、编译器等是部分样本的专项信号，不是统一入门要求。
 
 来源：[OpenAI Model Inference](https://openai.com/careers/software-engineer-model-inference-san-francisco/)、[华为 AI 大模型架构师](https://career.huawei.com/reccampportal/portal5/social-recruitment-detail.html?dataSource=1&jobId=28183)、[华为 AI 底层软件岗位](https://career.huawei.com/reccampportal/portal5/social-recruitment-detail.html?dataSource=1&jobId=32189)
 
 ## Sample Basis
 
 8 samples across OpenAI, Anthropic and Huawei inference/runtime/performance postings.
+
+## Evidence Basis
+
+Based on 8 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 

@@ -55,6 +55,10 @@ review_after: 2026-11-24
 ## Sample Basis
 7 Apple, Huawei and adjacent ML/algorithm samples spanning search, video, NLU, LLM, multimodal and data.
 
+## Evidence Basis
+
+Based on 7 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
+
 ## Main Deliverables
 Validated model capability from data through training, evaluation, deployment and monitoring.
 

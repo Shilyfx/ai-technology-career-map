@@ -57,3 +57,10 @@ Primary: [[Data-and-AI-Engineer]]. Adjacent: [[Research Engineer]].
 
 ## Limitations
 官方页面正文部分可见；RL 数据细节待后续复核。
+
+## Evidence Trace
+
+- Source Section: `Responsibilities`, `Explicit Requirements`, and `Preferred/Nice-to-have` in the official posting.
+- Evidence Type: Explicit requirements are countable Job Skill Evidence; responsibility-based mappings remain inferred context.
+- Extraction Decision: Normalize one skill once per sample; alternatives are not double-counted, and inferred signals do not increase required frequency.
+- Confidence: medium; source_access is recorded in frontmatter and limitations remain local to this sample.

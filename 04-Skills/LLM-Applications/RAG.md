@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 应用/FDE 为 Core；PM 需 explain；研究按 eval 或 retrieval 方向加深。证据见 [[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]。
 
+## Job Evidence
+
+[[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]、[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 切分、索引、召回、重排、上下文拼接、引用和回归评测。
 
@@ -46,13 +50,13 @@ embedding、向量检索、混合检索、reranking、grounding 和 freshness。
 ## Pass Evidence
 能区分检索失败、上下文失败、生成失败和评测失败。
 
-## 常见失败 / 误区
+## 常见失败
 把向量库当知识库；不做权限过滤；只用最终答案分数。
 
 ## 不需要深挖到什么程度
 普通应用先掌握可解释的检索闭环，不必先实现 embedding 模型。
 
-## Related Concepts
+## Related Knowledge
 [[RAG-and-Knowledge-Systems]]、[[LLM-Evals]]。
 
 ## Actual Evidence

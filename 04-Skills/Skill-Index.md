@@ -10,11 +10,14 @@ related:
   - "[[Role-Map]]"
   - "[[Role-Skill-Matrix]]"
   - "[[Role-Skill-Assessment]]"
+  - "[[Skill-Evidence-Matrix]]"
 ---
 
 # Skill Index
 
 > Skill 是岗位学习对象，不是技术热词清单。每项 Skill 都应能回到 Role Profile 和 Job Sample，并有 Practice 与 Pass Evidence。
+
+学习闭环：`Role Requirement → Skill Note → Practice → Pass Evidence`。证据汇总见 [[Skill-Evidence-Matrix]]；具体来源必须回到 Job Sample 的 `Evidence Trace`。
 
 | Category | Skill | Main Roles | Status | Stability |
 | --- | --- | --- | --- | --- |

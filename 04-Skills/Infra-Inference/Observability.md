@@ -26,6 +26,10 @@ related_concepts:
 ## Role Demand
 Infra 为 Core；应用/Evals 为 Common。证据见 [[Anthropic-Performance-Engineer-Inference-Systems-San-Francisco-2026-08]]。
 
+## Job Evidence
+
+[[Anthropic-Performance-Engineer-Inference-Systems-San-Francisco-2026-08]]、[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 记录延迟、吞吐、成本、错误、工具轨迹、数据版本和质量回归。
 
@@ -47,13 +51,13 @@ structured logs、metrics、traces、alerts、SLO、容量和隐私。
 ## Pass Evidence
 能从一次请求还原工具、模型、数据和延迟链路。
 
-## 常见失败 / 误区
+## 常见失败
 只记字符串日志；指标无行动；泄漏 prompt、用户数据或密钥。
 
 ## 不需要深挖到什么程度
 先能定位真实故障，再按服务规模学习 tracing 平台细节。
 
-## Related Concepts
+## Related Knowledge
 [[Evals-and-Observability]]、[[Model-Serving]]。
 
 ## Actual Evidence

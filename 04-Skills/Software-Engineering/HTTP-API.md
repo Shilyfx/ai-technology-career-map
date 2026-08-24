@@ -31,6 +31,10 @@ AI 能力只有通过稳定接口、认证、错误处理、版本和可观测�
 | AI PM | Common | explain | [[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]] | API primitives |
 | Solutions / FDE | Core | implement | [[Huawei-AI-Solutions-Architect-Shanghai-2026-08]] | solution delivery |
 
+## Job Evidence
+
+[[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 设计资源、认证、重试、幂等、限流、超时、错误模型和版本策略。
@@ -59,7 +63,7 @@ HTTP、JSON、REST、认证、网关、异步任务和 API observability。
 
 能展示正常、失败、超时和未授权请求的可复查行为。
 
-## 常见失败 / 误区
+## 常见失败
 
 把 API key 放前端、无限重试、把模型错误吞掉、没有版本策略。
 
@@ -67,7 +71,7 @@ HTTP、JSON、REST、认证、网关、异步任务和 API observability。
 
 不要求每个岗位设计完整云平台；要能交付可控接口。
 
-## Related Concepts
+## Related Knowledge
 
 [[AI-Product-Engineering]]、[[AI-Agents-and-Tool-Use]]。
 
@@ -77,4 +81,4 @@ HTTP、JSON、REST、认证、网关、异步任务和 API observability。
 
 ## Sources
 
-[[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]]。
+[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]、[[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]]。

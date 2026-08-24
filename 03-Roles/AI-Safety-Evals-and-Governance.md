@@ -32,9 +32,9 @@ review_after: 2026-11-24
 
 工程型岗位还会要求评测平台、分布式任务、数据管线与生产监控；治理型岗位需要标准、政策、合规与组织实施，但不能完全脱离技术。
 
-## 当前岗位样本
+## Sample Observations
 
-Anthropic 当前职位族包含 model evaluations、safeguards、frontier red team、interpretability、AI observability 等角色。DeepMind Responsibility 团队横跨 CBRN、assurance evaluations、AI governance、policy、research 与 engineering。OpenAI Safety Measurement PM 同时要求测量平台、安全研究、数据/统计和跨学科协作。
+本批 Anthropic、Apple 和 OpenAI Job Samples 覆盖 model evaluations、safeguards、测量平台与安全/对齐；岗位标题和公开程度不同，以下 Profile 只保留可追溯的责任簇。
 
 ## 作品证据
 
@@ -49,6 +49,10 @@ Anthropic 当前职位族包含 model evaluations、safeguards、frontier red te
 ## Sample Basis
 
 5 samples across OpenAI, Anthropic and Apple eval/safeguard/measurement roles.
+
+## Evidence Basis
+
+Based on 5 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 

@@ -24,6 +24,10 @@ related_concepts:
 ## Role Demand
 Research、ML、Safety/Evals 为 Core；应用和 PM 需要解释评测结果。证据见 [[Apple-Machine-Learning-Engineer-Eval-Insights-London-2026-06]]。
 
+## Job Evidence
+
+[[Anthropic-Research-Engineer-Model-Evaluations-San-Francisco-2026-08]]、[[Apple-Machine-Learning-Engineer-Eval-Insights-London-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 设计任务集、指标、对照、切片、人工审查和回归门禁。
 
@@ -45,13 +49,13 @@ Evals/研究需要 implement；应用需要 use；PM 需要 explain 限制。
 ## Pass Evidence
 能说明每个指标测量什么、遗漏什么，以及一次失败的定位路径。
 
-## 常见失败 / 误区
+## 常见失败
 只看单一平均分；把 benchmark 当真实用户；忽略标注和 judge 偏差。
 
 ## 不需要深挖到什么程度
 先能做任务对齐和回归门禁，再决定是否深入统计测量理论。
 
-## Related Concepts
+## Related Knowledge
 [[LLM-Evals]]、[[AI-Safety-Measurement]]。
 
 ## Actual Evidence

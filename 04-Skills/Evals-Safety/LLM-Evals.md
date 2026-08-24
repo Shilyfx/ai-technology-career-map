@@ -25,6 +25,10 @@ LLM 输出开放且不稳定，必须用任务集、judge、人工审查和安�
 ## Role Demand
 Evals/Safety 为 Core；应用为 Common；PM 需理解决策边界。证据见 [[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]]、[[Apple-Machine-Learning-Engineer-Eval-Insights-London-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 构造 eval set、rubric、LLM-as-judge、回归门禁和失败样本分析。
 
@@ -46,13 +50,13 @@ Evals implement/optimize；应用 implement/use；PM explain。
 ## Pass Evidence
 能证明一次模型升级改善了目标切片且未损害 guardrail。
 
-## 常见失败 / 误区
+## 常见失败
 把 judge 当真值；样本泄漏；只报告平均分，不报告灾难失败。
 
 ## 不需要深挖到什么程度
 普通应用先会写可复现回归集；安全岗位再深入测量和红队方法。
 
-## Related Concepts
+## Related Knowledge
 [[Evals-and-Observability]]、[[AI-Safety-Measurement]]。
 
 ## Actual Evidence

@@ -30,6 +30,10 @@ related_concepts:
 | ML / AI Engineer | Common | use | [[Apple-Machine-Learning-Engineer-Search-Cupertino-2026-06]] | 大数据处理偏好 |
 | Infra / Evals | Common | use | [[Anthropic-Performance-Engineer-Inference-Systems-San-Francisco-2026-08]] | telemetry 分析 |
 
+## Job Evidence
+
+[[Apple-Machine-Learning-Engineer-Data-Curation-Cupertino-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 建模、连接、聚合、质量检查、实验切片和指标追踪。
@@ -58,7 +62,7 @@ NULL、重复、时间窗口、分层抽样、数据血缘与权限边界。
 
 提交查询、样例数据、质量结果和一个能解释指标变化的切片。
 
-## 常见失败 / 误区
+## 常见失败
 
 重复 JOIN、时间泄漏、把 NULL 当 0、无权限地复制敏感数据。
 
@@ -66,7 +70,7 @@ NULL、重复、时间窗口、分层抽样、数据血缘与权限边界。
 
 非 Data 岗位不必把数据库内核当主线；必须能读写与验证任务相关的数据。
 
-## Related Concepts
+## Related Knowledge
 
 [[Data-Engineering-and-Governance]]、[[Training-Evaluation-and-Generalization]]。
 

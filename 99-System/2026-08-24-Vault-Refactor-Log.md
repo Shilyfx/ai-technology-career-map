@@ -43,6 +43,16 @@ related:
 - 两个 Canvas 分别保留知识参考图和新的 Job Samples→Roles→Skills→Practice/Evidence 图；
 - 分支 `refactor/job-first-skill-map` 只做架构重构，完成后仅推送该分支，不合并 `main`。
 
+## Third-round Job Evidence and Skill quality refinement
+
+- 在 28 条既有 Job Sample 中补充 `Evidence Trace`，明确 Source Section、Evidence Type、Extraction Decision 与 Confidence；
+- 统一并校验 `source_kind` 枚举，强化 `seniority`、来源和日期字段的 Job 合约；
+- 为 9 个 Role 增加 Evidence Basis，注明样本数、雇主/区域/职级范围和置信度；
+- 为正式 Skill 补齐 Job Evidence、Related Knowledge，并用实际 Job Sample 的 Skill Extraction 作为证据入口；
+- 新增 `04-Skills/Skill-Evidence-Matrix.md`，并在 Role–Skill Matrix 中增加 Evidence Count / Confidence；
+- QA 增加 source_kind、Evidence Trace、Skill→Job Evidence、Role sample basis 和显式/推断规则检查；
+- 本轮只做质量增强，不新增顶层目录、不批量新增 Job Sample/Skill、不伪造用户能力 Evidence。
+
 ## Verification record
 
 - `scripts/check_vault.py` 是本次提交前的唯一自动质检入口；
