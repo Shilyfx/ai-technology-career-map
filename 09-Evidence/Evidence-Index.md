@@ -1,5 +1,6 @@
 ---
-type: evidence
+type: moc
+domain: evidence
 page_kind: evidence-index
 status: reference
 created: 2026-08-24
@@ -20,7 +21,7 @@ related:
 | --- | --- | --- |
 | `lab` | 可复现实验、基线、消融、评测 | 命令、数据/模型版本、结果、失败切片 |
 | `project` | 面向用户或业务的完整交付 | 任务集、架构、成本/延迟、回滚或兜底 |
-| `evidence` / `explanation` | 解释一个概念并证明边界 | 图、最小例子、验证问题和限制 |
+| `evidence` | 解释一个概念并证明边界 | 图、最小例子、验证问题和限制 |
 | `review` | 复盘一次决策 | 问题、行动、失败、判断和下一缺口 |
 
 ## 通过标准

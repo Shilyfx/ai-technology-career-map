@@ -42,6 +42,8 @@ Obsidian 中建议把本文件夹作为 Vault 打开，并从 [Start Here](00-Ho
 
 技术基础、当前工具和岗位市场信号分开维护。`snapshot_date`、`review_after` 和来源范围用于防止旧信息被误当成当前事实；[Technology Radar](00-Home/Technology-Radar-2026-08.md) 的“Changes since last radar”记录每次更新的变化。
 
+学习路线是“Stage 0–2 共享基础 → Stage 3 共同素养 → 按岗位分支”；Stage 4/5 只在目标岗位需要时专修。`Evidence Index` 是导航入口，实际证据必须复制模板创建独立页面，并保留问题、行动、结果、失败和判断。
+
 这不是一份“AI 必学清单”。它是一个可删、可复查、以问题和证据驱动的个人研究系统。新增内容前先读 [Metadata Schema](99-System/Metadata-Schema.md) 和 [Review Rules](99-System/Review-Rules.md)，提交前运行：
 
 ```bash

@@ -1,5 +1,6 @@
 ---
 type: radar
+page_kind: technology-radar
 status: reference
 snapshot_date: 2026-08-24
 created: 2026-08-24
@@ -38,9 +39,11 @@ related:
 
 ## Core：应形成稳定心智模型
 
-- 数据质量、切分、泄漏与评测设计；
-- Python、SQL、软件工程、API 与 Linux；
-- 训练/验证/测试、泛化、失败切片和可复现性；
+- AI / ML / DL / Foundation Model 的边界，以及数据、训练、模型、应用、系统和安全的层次；
+- 数据质量、切分、泄漏、训练/验证/测试、泛化与失败切片；
+- token / tokenizer、embedding、attention 与 Transformer 的基本机制；
+- 训练与推理的区别，SFT / PEFT 的基本目的和边界；
+- 评测设计、可复现性、软件工程、Python、SQL、API 与 Linux；
 - 权限、隐私、威胁模型、可观测性与回滚。
 
 ## Build：适合做项目
@@ -52,10 +55,14 @@ related:
 
 ## Deepen：按岗位投入
 
-- Transformer、预训练、后训练、微调与对齐；
-- 多模态、生成模型、具身系统；
-- 分布式训练、量化、编译器、kernel 与硬件适配；
-- 安全评测、红队、治理和政策落地。
+- Transformer 实现、预训练系统、进阶后训练、RL / reasoning 与 MoE；
+- 分布式训练、CUDA / NCCL、kernel / compiler、量化内部机制与硬件适配；
+- serving 优化、KV cache、批处理与容量建模；
+- 机制可解释性、进阶多模态 / 机器人，以及安全评测、红队和治理落地。
+
+## Topic × depth
+
+同一主题可以同时出现在多个深度：Core 只要求稳定的解释与边界判断，Build 要求能在受控任务中使用，Deepen 才要求实现、优化或研究。Radar 因此按“主题 × 所需深度”维护，而不是把一个主题整体贴成必学或暂不相关。
 
 ## Watch：保留观察，不提前承诺
 

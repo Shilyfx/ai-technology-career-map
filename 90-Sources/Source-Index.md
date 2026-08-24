@@ -12,7 +12,7 @@ review_after: 2026-11-24
 
 ## Source record fields
 
-When adding a source, record publisher, URL, purpose, region, `published`, `retrieved`, scope, and limitations. A current source is not automatically a stable definition; link the source to the page and claim it supports.
+This is a navigation index by category, purpose and limitations. Detailed provenance is required where a source supports a time-sensitive claim, snapshot or radar decision; a current source is not automatically a stable definition.
 
 ## A. 劳动力市场与技能趋势
 

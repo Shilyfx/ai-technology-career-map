@@ -26,12 +26,12 @@ related:
 
 - 目标：理解七层技术模型，知道陌生名词应放到哪里；
 - 当前概念：[[AI-ML-DL-and-Foundation-Models]]；
-- 最小行动：从最近遇到的术语中挑 3 个，放入 [[Terms-Inbox]] 并标注 `Initial Layer` 与 `Required Depth`；
-- 通过信号：能解释至少一个“AI / ML / DL / Foundation Model”边界，不依赖名词堆叠。
+- 最小行动：执行 [[Learning-Path]] 的 Stage 0 Practice，并满足其中定义的 Pass Evidence；固定练习集不写入 [[Terms-Inbox]]。
+- 通过信号：完成 10 项分类、解释 3 个边界，并修正 2 个不确定或误分类，不依赖名词堆叠。
 
 ## Next
 
-完成 [[Fast-Track-Assessment]]，并用 [[Evidence-Card]] 记录一条脱敏、可复查的结果。
+完成 [[Fast-Track-Assessment]]，并使用 [[Evidence-Card]] 模板创建一条实际 Evidence 页，记录脱敏、可复查的结果。
 
 ## Later
 

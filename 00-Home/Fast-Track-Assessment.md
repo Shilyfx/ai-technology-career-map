@@ -33,7 +33,7 @@ related:
 
 ## Assessment → Evidence → Depth
 
-把每个“有证据”的回答链接到一张 [[Evidence-Card]]，并标注它证明的是 `recognize`、`explain`、`use`、`implement`、`optimize` 还是 `research`。没有链接、失败分析和判断的自评只能作为线索，不能用于跳过 Stage。
+把每个“有证据”的回答链接到一张实际 Evidence 页：复制 [[Evidence-Card]] 模板创建页面，再把页面链接回这里，并标注它证明的是 `recognize`、`explain`、`use`、`implement`、`optimize` 还是 `research`。没有实际页面、失败分析和判断的自评只能作为线索，不能用于跳过 Stage。
 
 ## 常见的“假通过”
 

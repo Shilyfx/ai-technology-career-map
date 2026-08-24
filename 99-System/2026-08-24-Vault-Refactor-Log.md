@@ -26,6 +26,14 @@ related:
 - README 改为 GitHub 可读的标准链接，并说明目录职责与时效边界；
 - 保留公开仓库边界：不新增个人私密技能差距、密钥或虚构项目证据。
 
+## Second-pass consistency fixes
+
+- 将 Stage 0 固定练习集与真实 Terms Inbox 分离，并把 Pass Evidence 定义为唯一来源；
+- 将职业路线改为 Stage 0–2 共同基础、Stage 3 共同素养后分支，明确 Stage 4/5 的专修性质；
+- 按主题 × 深度重新整理 Technology Radar，避免 Core 与 Stage 3 的冲突；
+- 修正 `page_kind`、Evidence Index、来源索引和模板的语义契约，区分模板与实际 Evidence；
+- 强化无依赖 QA：复查到期、别名冲突、前置元数据链接、页面契约、证据正文和多格式密钥扫描。
+
 ## Verification record
 
 - `scripts/check_vault.py` 是本次提交前的唯一自动质检入口；

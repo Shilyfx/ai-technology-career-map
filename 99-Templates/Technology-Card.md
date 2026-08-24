@@ -37,8 +37,10 @@ related: []
 
 ## 我的证据
 
-- 链接到 [[Evidence-Card]] 或公开实验：
-- 结果、失败和判断：
+- 使用 [[Evidence-Card]] 模板创建实际 Evidence：
+- 实际 Evidence / 结果链接：
+- 失败与限制：
+- 判断（`keep` / `drop` / `next`）：
 
 ## 来源与时效
 

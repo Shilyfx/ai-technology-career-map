@@ -31,8 +31,22 @@ related:
 - **Goal**：把陌生名词放进技术层和岗位价值链。
 - **Prerequisites**：无需预备知识。
 - **Concepts**：[[AI-ML-DL-and-Foundation-Models]]、[[AI-Technology-MOC]]、[[Role-Map]]。
-- **Practice**：从 [[Terms-Inbox]] 选 10 个名词，填写层级、依赖和所需深度。
-- **Pass Evidence**：一张分类表，能解释至少 3 个容易混淆的边界。
+- **Practice**：使用下面固定的 10 项练习集，填写层级、它解决的问题、关键前置概念和所需深度。它是学习练习，不写入 [[Terms-Inbox]]。
+
+| Term | Layer | What problem | Key prerequisite | Required depth |
+| --- | --- | --- | --- | --- |
+| Transformer |  |  |  |  |
+| LoRA |  |  |  |  |
+| RAG |  |  |  |  |
+| Agent |  |  |  |  |
+| MCP |  |  |  |  |
+| CUDA |  |  |  |  |
+| KV Cache |  |  |  |  |
+| Evals |  |  |  |  |
+| RLHF |  |  |  |  |
+| VLM |  |  |  |  |
+
+- **Pass Evidence**：完成 10 项固定分类；解释 3 个容易混淆的边界（例如 AI/ML/DL、RAG/微调、Agent/工作流、CUDA/模型架构、Evals/benchmark）；指出并修正至少 2 个不确定或误分类。
 - **Next**：进入 Stage 1；有经验者可凭 Evidence 跳到对应深度。
 
 ## Stage 1 — 共同底座
@@ -60,7 +74,7 @@ related:
 - **Concepts**：[[Transformer-and-Foundation-Models]]、[[Pretraining-Posttraining-and-Fine-tuning]]、[[Multimodal-Generative-and-Embodied-AI]]。
 - **Practice**：画出 token/embedding、attention、训练目标和输出评测的链路。
 - **Pass Evidence**：一份带最小实验或可复现调用的解释，明确能力来源和失败边界。
-- **Next**：进入 Stage 4，或按 [[Role-Map]] 转向研究/训练岗位。
+- **Next**：进入 Stage 4，或按 [[Role-Map]] 转向研究、训练、系统、评测或产品岗位；Stage 4/5 是按岗位选择的专修层，不是统一前置课。
 
 ## Stage 4 — 构建可靠 AI 应用
 
@@ -69,7 +83,7 @@ related:
 - **Concepts**：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[Evals-and-Observability]]、[[AI-Product-Engineering]]。
 - **Practice**：实现 `用户任务 → context/retrieval → model → tools → validation → feedback` 闭环。
 - **Pass Evidence**：固定任务集、可追踪来源、失败分类、成本/延迟记录和一份复盘 Evidence。
-- **Next**：进入 Stage 5，或按岗位目标专修应用工程/产品/解决方案。
+- **Next**：按岗位目标选择 Stage 5 的相关子主题，或直接进入 Stage 6 的岗位专修；不要求所有人完成整段 Stage 5。
 
 ## Stage 5 — 生产系统与风险
 
@@ -78,12 +92,12 @@ related:
 - **Concepts**：[[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]、[[Data-Engineering-and-Governance]]、[[AI-Safety-Security-and-Governance]]。
 - **Practice**：为原型补齐部署、观测、权限、故障演练和模型更新策略。
 - **Pass Evidence**：一份生产设计或演练记录，包含风险、控制、回滚和容量假设。
-- **Next**：进入 Stage 6；若不做生产交付，可转安全/评测路径。
+- **Next**：按目标岗位选择相关的 Stage 5 子主题；若不做生产交付，可转安全/评测路径，不必完成整段 Stage 5。
 
 ## Stage 6 — 岗位专修与作品集
 
 - **Goal**：围绕一个岗位交付端到端作品，并让判断过程可审查。
-- **Prerequisites**：前面至少一个与目标岗位匹配的 Evidence。
+- **Prerequisites**：Stage 3 后至少一个与目标岗位匹配的 Evidence；Stage 4/5 只在目标岗位需要时纳入。
 - **Concepts**：[[Career-MOC]]、[[Job-Skill-Matrix]]、[[Role-Based-Learning-Paths]]。
 - **Practice**：选一个岗位，拆出主要交付物、技能深度、接口角色和失败模式。
 - **Pass Evidence**：作品集含结果、失败处理、权衡、来源和复现方式，而不只是 demo。

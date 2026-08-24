@@ -24,6 +24,8 @@ related:
 
 Dates are guidance, not evidence of truth. `review_after` is the next action date; `updated` is only the edit date.
 
+QA 会在 `today >= review_after` 时发出 review due 警告（模板除外）。完成复查后同时更新 `updated` 与 `review_after`，并在变更记录或页面历史中写明保留、升级、降级或移除的理由。
+
 ## Stale handling
 
 1. At or after `review_after`, run `python scripts/check_vault.py` and inspect the page’s sources.
