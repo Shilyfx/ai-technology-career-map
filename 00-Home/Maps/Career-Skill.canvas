@@ -1,17 +1,14 @@
 {
-	"nodes":[
-		{"id":"shared","type":"text","text":"共同底座\n\nPython / SQL / ML 基础\n软件工程 / 数据质量\n评测 / 沟通 / 责任意识","x":520,"y":300,"width":320,"height":190,"color":"4"},
-		{"id":"research","type":"text","text":"研究\n\n[[07-Careers/Research-Scientist|Research Scientist]]\n[[07-Careers/Research-Engineer|Research Engineer]]","x":0,"y":0,"width":300,"height":160,"color":"2"},
-		{"id":"product","type":"text","text":"产品与应用\n\n[[07-Careers/AI-Application-Engineer|Application Engineer]]\n[[07-Careers/AI-Product-Manager|AI PM]]","x":520,"y":0,"width":320,"height":160,"color":"3"},
-		{"id":"systems","type":"text","text":"平台与系统\n\n[[07-Careers/AI-Infrastructure-and-Inference-Engineer|AI Infra / Inference]]\n[[07-Careers/Data-and-AI-Engineer|Data / AI Engineer]]","x":1040,"y":0,"width":340,"height":160,"color":"5"},
-		{"id":"field","type":"text","text":"场景落地\n\n[[07-Careers/AI-Solutions-Architect-and-FDE|Solutions Architect / FDE]]","x":0,"y":600,"width":320,"height":150,"color":"1"},
-		{"id":"safety","type":"text","text":"安全、评测与治理\n\n[[07-Careers/AI-Safety-Evals-and-Governance|Safety / Evals / Governance]]","x":1040,"y":600,"width":340,"height":150,"color":"6"}
-	],
-	"edges":[
-		{"id":"c1","fromNode":"shared","toNode":"research","fromSide":"top","toSide":"bottom"},
-		{"id":"c2","fromNode":"shared","toNode":"product","fromSide":"top","toSide":"bottom"},
-		{"id":"c3","fromNode":"shared","toNode":"systems","fromSide":"top","toSide":"bottom"},
-		{"id":"c4","fromNode":"shared","toNode":"field","fromSide":"left","toSide":"top"},
-		{"id":"c5","fromNode":"shared","toNode":"safety","fromSide":"right","toSide":"top"}
-	]
+  "nodes": [
+    {"id":"jobs","type":"text","text":"Job Samples\n\n[[02-Jobs/Job-Sample-Index|Job Sample Index]]\n官方职位 → 明确/推断分离","x":0,"y":260,"width":340,"height":190,"color":"1"},
+    {"id":"roles","type":"text","text":"Role Profiles\n\n[[03-Roles/Role-Map|Role Map]]\n交付物、责任簇、Sample Basis","x":480,"y":260,"width":340,"height":190,"color":"2"},
+    {"id":"skills","type":"text","text":"Skill Requirements\n\n[[04-Skills/Skill-Index|Skill Index]]\nRole-specific depth / prerequisites","x":960,"y":260,"width":360,"height":190,"color":"3"},
+    {"id":"practice","type":"text","text":"Practice + Evidence\n\n[[06-Evidence/Evidence-Index|Evidence Index]]\n可复跑产出、失败与判断","x":1480,"y":260,"width":360,"height":190,"color":"4"}
+  ],
+  "edges": [
+    {"id":"c1","fromNode":"jobs","toNode":"roles","label":"抽取交付物与需求"},
+    {"id":"c2","fromNode":"roles","toNode":"skills","label":"Role Skill Profile"},
+    {"id":"c3","fromNode":"skills","toNode":"practice","label":"Practice / Pass Evidence"},
+    {"id":"c4","fromNode":"practice","toNode":"roles","label":"覆盖与缺口反馈"}
+  ]
 }

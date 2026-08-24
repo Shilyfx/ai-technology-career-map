@@ -7,49 +7,44 @@ updated: 2026-08-24
 related:
   - "[[Review-Rules]]"
   - "[[Vault-Design]]"
+  - "[[Job-Skill-Extraction-Rules]]"
 ---
 
 # Metadata Schema
 
-> 这是 Vault 的最小、正交元数据约定。字段用于检索和质检，不替代正文判断。
+## Common fields
 
-## 通用字段
+`type`, `status`, `created`, `updated` are required on formal notes. Use `snapshot_date` for a represented snapshot, `retrieved` for capture time, and `review_after` for time-sensitive pages. `stability` is `stable | current | emerging`.
 
-| Field | Required | Allowed / meaning |
-| --- | --- | --- |
-| `type` | yes | `home`, `moc`, `path`, `concept`, `assessment`, `radar`, `role`, `matrix`, `source-index`, `snapshot`, `inbox`, `evidence`, `lab`, `project`, `review`, `system`; `term` is a lightweight alias for Inbox cards |
-| `status` | yes for formal pages | Note maturity only: `seed`, `developing`, `validated`, `reference`, `deprecated` |
-| `stability` | when relevant | `stable`, `current`, `emerging` |
-| `created` / `updated` | yes for formal notes | ISO date `YYYY-MM-DD` |
-| `review_after` | current/emerging or time-sensitive | Next review date; absence means the page must be stable or explicitly exempt |
-| `snapshot_date` | radar/snapshot/market/role views | Date represented by the page, not the edit date |
-| `related` | recommended | Wikilinks to adjacent notes; keep small and meaningful |
-| `depth` | concept, term, learning or evidence when useful | `recognize`, `explain`, `use`, `implement`, `optimize`, `research` |
+Allowed `type`: `home`, `moc`, `path`, `concept`, `assessment`, `radar`, `role`, `matrix`, `source-index`, `snapshot`, `inbox`, `job-sample`, `skill`, `evidence`, `lab`, `project`, `review`, `system`, `term`.
 
-## Type-specific expectations
+## Job Sample contract
 
-| Type | Minimum body contract |
-| --- | --- |
-| `home` | Entry or state page; `page_kind: current-state` must have exactly one `current` and one `next` |
-| `moc` | Navigation map with links to its children |
-| `path` | Learning Units with Goal, Prerequisites, Concepts, Practice, Pass Evidence, Next |
-| `concept` | What it is, problem, dependencies, non-use case, verification and links |
-| `assessment` | Questions, interpretation, and a route from assessment to Evidence and learning depth |
-| `radar` | `page_kind: technology-radar` requires Core/Build/Deepen/Watch/Avoid, changes since last radar, `snapshot_date` and `review_after`; `page_kind: term-radar` requires term/why watch/depth/review/source-next-action plus `snapshot_date` and `review_after` |
-| `role` | Deliverables, core problems, skill depth, interfaces, failure modes, portfolio evidence, market signals and source dates |
-| `matrix` | Comparable role/skill dimensions and snapshot context |
-| `source-index` | Source navigation by category, purpose and limitations. Detailed provenance is required where a source supports a time-sensitive claim, snapshot or radar decision |
-| `snapshot` | Scope, region, sample, `snapshot_date`, retrieved date, limitations and review date |
-| `inbox` | Real pending terms only; workflow status belongs in the table, not frontmatter maturity |
-| `evidence` / `lab` / `project` / `review` | Problem → action → result → failure → judgment → skill → gap; link back to a role or path |
-| `system` | Rules, schemas or maintenance design; no personal secrets |
+Required: `type: job-sample`, `company`, `role_title`, `role_family`, `location`, `region`, `source_url`, `source_kind`, `source_status`, `snapshot_date`, `retrieved`, `created`, `updated`, `review_after`. Recommended: `seniority`, `posted`, `source_access`.
 
-## Workflow status is not note status
+Body headings: `Source Scope`, `Role Summary`, `Responsibilities`, `Explicit Requirements`, `Preferred/Nice-to-have`, `Skill Extraction`, `Non-skill Gates`, `Role Mapping`, `Limitations`.
 
-`page_kind: current-state` is the unique dynamic state page and requires `type: home`, `current` and `next`. `page_kind: technology-radar` is the five-band technology radar; `page_kind: term-radar` is the smaller watchlist with term-level review fields. `page_kind: evidence-index` is a navigation MOC with `type: moc` and `domain: evidence`; it is not an Evidence record.
+Explicit requirements and inferred skills must be separated. Do not copy a full JD; preserve only concise, evidence-bounded extraction.
 
-Terms Inbox uses `inbox → classified → promoted|discarded`. Evidence may use a body-level outcome such as `keep|drop|next`. Neither becomes a new frontmatter enum.
+## Role contract
 
-## Naming and privacy
+Required: `type: role`, `role_family`, `sample_count`, `snapshot_date`, `review_after`. Body headings: `Sample Basis`, `Main Deliverables`, `Responsibility Clusters`, `Skill Profile`, `Non-skill Gates`, `Seniority/Subtrack Differences`, `Portfolio Evidence`, `Adjacent Roles`, `Source Limitations`, `Refresh`.
 
-Use stable, descriptive filenames. Do not create a page solely for a trending product name. Public pages must not contain API keys, private skill-gap data, proprietary datasets or identifiable internal project details.
+Role priority values are `Core | Common | Specialized | Company-specific | Prerequisite`; target depth belongs in the Role–Skill table, not a global role claim.
+
+## Skill contract
+
+Required: `type: skill`, `skill_category`, `roles`, `prerequisites`, `related_concepts`. Body headings: `为什么岗位需要它`, `Role Demand`, `在岗位中怎么使用`, `Role-specific Target Depth`, `前置 Skills`, `学习范围`, `核心知识`, `Practice`, `Pass Evidence`, `常见失败 / 误区`, `不需要深挖到什么程度`, `Related Concepts`, `Actual Evidence`, `Sources`.
+
+Skills do not carry a global `depth`; depth is role-specific. A Skill must be a reusable learnable unit, not merely a framework name.
+
+## Other contracts
+
+- `page_kind: current-state` is the single `type: home` page with one `current` and one `next`.
+- `page_kind: evidence-index` is `type: moc`, `domain: evidence`; it is not an Evidence record.
+- Technology and Term radars retain `snapshot_date`, `review_after` and their own body bands.
+- Evidence records link `skills`, `role_targets`, and optionally `job_samples`; they must include Problem, Action, Result, Failure and Judgment.
+
+## Link and privacy rules
+
+Use stable descriptive filenames and explicit paths where ambiguity matters. Do not create concept pages just for product names. Public notes must not contain API keys, private skill gaps, proprietary data or identifiable internal project details.

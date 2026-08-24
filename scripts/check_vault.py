@@ -30,6 +30,8 @@ TYPES = {
     "source-index",
     "snapshot",
     "inbox",
+    "job-sample",
+    "skill",
     "evidence",
     "lab",
     "project",
@@ -115,7 +117,15 @@ def resolve_target(raw_target: str, stem_map: dict[str, list[Path]]) -> list[Pat
     md_direct = ROOT / (str(target_path) + ".md")
     if md_direct.exists():
         return [md_direct]
-    return stem_map.get(target_path.name.casefold(), [])
+    # A path-qualified target must resolve exactly; basename fallback would
+    # hide stale paths after a directory migration.
+    if "/" in target:
+        return []
+    candidates = stem_map.get(target_path.name.casefold(), [])
+    if candidates:
+        return candidates
+    normalized = re.sub(r"\s+", "-", target_path.name).casefold()
+    return stem_map.get(normalized, [])
 
 
 def check_wikilinks(
@@ -155,6 +165,17 @@ def main() -> int:
     for paths in stem_map.values():
         if len(paths) > 1:
             errors.append("duplicate note name: " + ", ".join(str(p.relative_to(ROOT)) for p in paths))
+
+    source_urls: defaultdict[str, list[Path]] = defaultdict(list)
+    for path, (meta, _, _) in records.items():
+        if meta.get("type") == "job-sample" and meta.get("source_url"):
+            source_urls[meta["source_url"].strip()].append(path)
+    for source_url, paths in source_urls.items():
+        if len(paths) > 1:
+            errors.append(
+                "duplicate job-sample source_url " + source_url + ": "
+                + ", ".join(str(path.relative_to(ROOT)) for path in paths)
+            )
 
     alias_map: defaultdict[str, set[Path]] = defaultdict(set)
     for path, (meta, _, has_frontmatter) in records.items():
@@ -255,9 +276,48 @@ def main() -> int:
         elif page_kind == "evidence-index":
             if kind != "moc" or meta.get("domain") != "evidence":
                 errors.append(f"evidence-index must be type moc with domain evidence: {rel}")
+        elif page_kind == "job-sample-index":
+            if kind != "moc" or meta.get("domain") != "jobs":
+                errors.append(f"job-sample-index must be type moc with domain jobs: {rel}")
+        elif page_kind == "job-inbox":
+            if kind != "inbox":
+                errors.append(f"job-inbox must have type inbox: {rel}")
+        elif page_kind == "skill-index":
+            if kind != "moc" or meta.get("domain") != "skills":
+                errors.append(f"skill-index must be type moc with domain skills: {rel}")
+        elif page_kind == "role-skill-assessment":
+            if kind != "assessment":
+                errors.append(f"role-skill-assessment must have type assessment: {rel}")
+
+        if kind == "job-sample" and not is_template:
+            for key in ("company", "role_title", "role_family", "source_url", "source_kind", "source_status", "snapshot_date", "retrieved", "review_after"):
+                if not meta.get(key):
+                    errors.append(f"job-sample missing {key}: {rel}")
+            for heading in ("Responsibilities", "Explicit Requirements", "Skill Extraction", "Limitations"):
+                if not heading_present(body, heading):
+                    errors.append(f"job-sample missing {heading}: {rel}")
+
+        if kind == "skill" and not is_template:
+            for key in ("skill_category", "roles", "prerequisites"):
+                if not meta.get(key) and key != "prerequisites":
+                    errors.append(f"skill missing {key}: {rel}")
+            for heading in ("为什么岗位需要它", "Role Demand", "前置 Skills", "Practice", "Pass Evidence"):
+                if not heading_present(body, heading):
+                    errors.append(f"skill missing {heading}: {rel}")
+            if not meta.get("roles"):
+                warnings.append(f"skill has no role demand mapping: {rel}")
+
+        if kind == "role" and not is_template:
+            for heading in ("Sample Basis", "Skill Profile", "Portfolio Evidence", "Source Limitations"):
+                if not heading_present(body, heading):
+                    errors.append(f"role missing {heading}: {rel}")
+            if not meta.get("sample_count"):
+                warnings.append(f"role missing sample_count: {rel}")
+            elif meta.get("sample_count") == "0":
+                warnings.append(f"role sample_count is zero: {rel}")
 
         if rel == "00-Home/Learning-Path.md" and kind == "path":
-            for section in ("Goal", "Prerequisites", "Concepts", "Practice", "Pass Evidence", "Next"):
+            for section in ("Job Samples", "Role Skill Profile", "Prerequisites", "Practice", "Evidence", "Next Skill"):
                 if section.lower() not in body.lower():
                     errors.append(f"learning path missing {section}: {rel}")
         if kind in {"evidence", "lab", "project", "review"} and not is_template:
@@ -282,6 +342,16 @@ def main() -> int:
                 else:
                     incoming[target_path] += 1
 
+    # Canvas nodes are content-bearing notes too; validate their wikilinks.
+    for canvas in sorted(ROOT.rglob("*.canvas")):
+        if ".git" in canvas.parts:
+            continue
+        try:
+            canvas_text = canvas.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        check_wikilinks(canvas, canvas_text, stem_map, incoming, errors, "canvas")
+
     for path in notes:
         rel = path.relative_to(ROOT).as_posix()
         exempt = rel in FORMAL_EXEMPT or rel.startswith("99-Templates/") or rel.startswith("99-System/")
@@ -303,9 +373,40 @@ def main() -> int:
         if meta.get("page_kind") != "current-state" and ("current" in meta or "next" in meta):
             errors.append(f"dynamic current/next field outside Current-State: {path.relative_to(ROOT)}")
 
-    evidence_index = ROOT / "09-Evidence" / "Evidence-Index.md"
+    evidence_index = ROOT / "06-Evidence" / "Evidence-Index.md"
     if not evidence_index.exists():
-        errors.append("missing 09-Evidence/Evidence-Index.md")
+        errors.append("missing 06-Evidence/Evidence-Index.md")
+
+    # Detect cycles in Skill prerequisites so the learning graph remains schedulable.
+    skill_nodes = {
+        path: meta
+        for path, (meta, _, _) in records.items()
+        if meta.get("type") == "skill" and not path.relative_to(ROOT).as_posix().startswith("99-Templates/")
+    }
+    skill_edges: dict[Path, set[Path]] = defaultdict(set)
+    for path, meta in skill_nodes.items():
+        for raw_target in WIKILINK.findall(meta.get("prerequisites", "")):
+            candidates = resolve_target(raw_target, stem_map)
+            if len(candidates) == 1 and candidates[0] in skill_nodes:
+                skill_edges[path].add(candidates[0])
+    visiting: set[Path] = set()
+    visited: set[Path] = set()
+
+    def visit_skill(node: Path, stack: tuple[Path, ...] = ()) -> None:
+        if node in visiting:
+            cycle = " -> ".join(p.stem for p in stack + (node,))
+            errors.append(f"skill prerequisite cycle: {cycle}")
+            return
+        if node in visited:
+            return
+        visiting.add(node)
+        for prerequisite in skill_edges.get(node, set()):
+            visit_skill(prerequisite, stack + (node,))
+        visiting.remove(node)
+        visited.add(node)
+
+    for skill in skill_nodes:
+        visit_skill(skill)
 
     for path in scan_files():
         text = path.read_text(encoding="utf-8", errors="ignore")

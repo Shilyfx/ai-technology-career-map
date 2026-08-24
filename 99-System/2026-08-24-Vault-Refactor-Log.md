@@ -34,6 +34,15 @@ related:
 - 修正 `page_kind`、Evidence Index、来源索引和模板的语义契约，区分模板与实际 Evidence；
 - 强化无依赖 QA：复查到期、别名冲突、前置元数据链接、页面契约、证据正文和多格式密钥扫描。
 
+## Job-first architecture refactor
+
+- 建立 `02-Jobs/2026-08` 官方 Job Sample 批次，覆盖 OpenAI、Anthropic、Apple、Huawei 四家雇主与研究、ML、应用、Infra、Data、PM、Safety、Solutions 家族；
+- 将原技术目录收敛到 `05-Knowledge`，职业内容迁移到 `03-Roles`，学习对象落到 `04-Skills`，证据迁移到 `06-Evidence`；
+- 新增 Job Sample、Role Profile、Skill Card、Extraction Rules，并把 Start Here、Current State、Career MOC、Learning Path 改为 Job → Role → Skill → Practice → Evidence；
+- 角色页增加 Sample Basis、Skill Profile、非技能门槛、来源限制和刷新周期；Skill 页采用 Role-specific Target Depth，不设置全局深度；
+- 两个 Canvas 分别保留知识参考图和新的 Job Samples→Roles→Skills→Practice/Evidence 图；
+- 分支 `refactor/job-first-skill-map` 只做架构重构，完成后仅推送该分支，不合并 `main`。
+
 ## Verification record
 
 - `scripts/check_vault.py` 是本次提交前的唯一自动质检入口；

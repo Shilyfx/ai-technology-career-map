@@ -1,112 +1,59 @@
 ---
 type: path
-status: developing
+page_kind: job-first-learning-path
+status: reference
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-09-24
 related:
-  - "[[Start-Here]]"
-  - "[[Current-State]]"
-  - "[[AI-Technology-MOC]]"
-  - "[[Career-MOC]]"
-  - "[[Evidence-Index]]"
+  - "[[Job-Sample-Index]]"
+  - "[[Role-Map]]"
+  - "[[Role-Skill-Assessment]]"
+  - "[[General-AI-Learning-Reference]]"
 ---
 
-# Learning Path
+# Job-first Learning Path
 
-> 这条路线按依赖组织，不按热点组织。完成 Stage 的条件是 Evidence，而不是读完链接。
+> 这是默认调度器：先确认交付物和岗位，再决定学习深度。
 
-## Learning Unit 格式
+## 1. 选择目标交付物
 
-每个 Stage 都用同一结构：
+从 [[Job-Sample-Index]] 选一个官方 Job Sample，记录公司、地点、职级、职责和 source limitations。
 
-- **Goal**：完成后能做什么判断或交付；
-- **Prerequisites**：需要先会什么；
-- **Concepts**：只读与目标直接相关的概念；
-- **Practice**：一个小而可复现的练习；
-- **Pass Evidence**：别人可以检查的输出；
-- **Next**：通过后进入下一阶段或转入岗位专修。
+## 2. 归入 Role Family
 
-## Stage 0 — 定位：先分层
+进入 [[Role-Map]]，比较 Research、ML、Application、Infra、Data、PM、Safety、Solutions 等 Role。
 
-- **Goal**：把陌生名词放进技术层和岗位价值链。
-- **Prerequisites**：无需预备知识。
-- **Concepts**：[[AI-ML-DL-and-Foundation-Models]]、[[AI-Technology-MOC]]、[[Role-Map]]。
-- **Practice**：使用下面固定的 10 项练习集，填写层级、它解决的问题、关键前置概念和所需深度。它是学习练习，不写入 [[Terms-Inbox]]。
+## 3. 读取 Role Skill Profile
 
-| Term | Layer | What problem | Key prerequisite | Required depth |
-| --- | --- | --- | --- | --- |
-| Transformer |  |  |  |  |
-| LoRA |  |  |  |  |
-| RAG |  |  |  |  |
-| Agent |  |  |  |  |
-| MCP |  |  |  |  |
-| CUDA |  |  |  |  |
-| KV Cache |  |  |  |  |
-| Evals |  |  |  |  |
-| RLHF |  |  |  |  |
-| VLM |  |  |  |  |
+区分 Core、Common、Specialized、Company-specific 和 Prerequisite，不把所有名词都列为必学。
 
-- **Pass Evidence**：完成 10 项固定分类；解释 3 个容易混淆的边界（例如 AI/ML/DL、RAG/微调、Agent/工作流、CUDA/模型架构、Evals/benchmark）；指出并修正至少 2 个不确定或误分类。
-- **Next**：进入 Stage 1；有经验者可凭 Evidence 跳到对应深度。
+## 4. 做 Role-Skill Assessment
 
-## Stage 1 — 共同底座
+在 [[Role-Skill-Assessment]] 中填写当前证据、目标深度、缺口和下一个 Skill。
 
-- **Goal**：把数据、数学直觉和软件工程连接成可复现输入。
-- **Prerequisites**：基本 Python 或其他脚本语言。
-- **Concepts**：[[Math-Data-and-Software-Foundations]]。
-- **Practice**：对一个小数据集完成 schema、清洗、固定 split、日志和测试。
-- **Pass Evidence**：参数化脚本、split manifest、README、一条运行命令和至少一个失败测试。
-- **Next**：进入 Stage 2；若已有等价工程证据，记录跳过理由。
+## 5. 补 Prerequisite Skills
 
-## Stage 2 — 机器学习闭环
+沿 Skill 的前置关系学习 Python、Git、数据、系统或评测底座，直到能完成目标任务。
 
-- **Goal**：能判断一个实验结果是否可信，而不只看总分。
-- **Prerequisites**：Stage 1 的可复现数据与脚本。
-- **Concepts**：[[Training-Evaluation-and-Generalization]]。
-- **Practice**：写出假设、baseline、唯一变化、split 来源、指标、失败切片和停止规则。
-- **Pass Evidence**：基线报告，包含数据泄漏检查、过拟合判断、两个 failure slice 和 keep/drop/next 决策。
-- **Next**：进入 Stage 3；若结果无效，先修复执行证据。
+Prerequisites are role-specific and come from the selected Role Skill Profile; there is no universal prerequisite list.
 
-## Stage 3 — 基础模型时代的核心概念
+## 6. 完成 Skill Practice
 
-- **Goal**：解释一次端到端模型调用的输入、训练目标、推理输出和限制。
-- **Prerequisites**：Stage 2 的训练/评测闭环。
-- **Concepts**：[[Transformer-and-Foundation-Models]]、[[Pretraining-Posttraining-and-Fine-tuning]]、[[Multimodal-Generative-and-Embodied-AI]]。
-- **Practice**：画出 token/embedding、attention、训练目标和输出评测的链路。
-- **Pass Evidence**：一份带最小实验或可复现调用的解释，明确能力来源和失败边界。
-- **Next**：进入 Stage 4，或按 [[Role-Map]] 转向研究、训练、系统、评测或产品岗位；Stage 4/5 是按岗位选择的专修层，不是统一前置课。
+使用 Skill Note 的 Practice，交付最小可运行结果、测试和失败记录。
 
-## Stage 4 — 构建可靠 AI 应用
+## 7. 通过 Pass Evidence
 
-- **Goal**：交付有任务集、来源、失败分类和成本/延迟记录的应用。
-- **Prerequisites**：Stage 2 的评测思维和 Stage 3 的模型边界。
-- **Concepts**：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[Evals-and-Observability]]、[[AI-Product-Engineering]]。
-- **Practice**：实现 `用户任务 → context/retrieval → model → tools → validation → feedback` 闭环。
-- **Pass Evidence**：固定任务集、可追踪来源、失败分类、成本/延迟记录和一份复盘 Evidence。
-- **Next**：按岗位目标选择 Stage 5 的相关子主题，或直接进入 Stage 6 的岗位专修；不要求所有人完成整段 Stage 5。
+用可复跑命令、指标、错误分析、截图/日志或代码证明“会做”，而不是只读过概念。
 
-## Stage 5 — 生产系统与风险
+## 8. 记录 Evidence 并回到 Role
 
-- **Goal**：能说明系统的 SLO、回滚、权限、数据边界、攻击面和成本上限。
-- **Prerequisites**：Stage 4 的可靠应用原型。
-- **Concepts**：[[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]、[[Data-Engineering-and-Governance]]、[[AI-Safety-Security-and-Governance]]。
-- **Practice**：为原型补齐部署、观测、权限、故障演练和模型更新策略。
-- **Pass Evidence**：一份生产设计或演练记录，包含风险、控制、回滚和容量假设。
-- **Next**：按目标岗位选择相关的 Stage 5 子主题；若不做生产交付，可转安全/评测路径，不必完成整段 Stage 5。
+把结果放入 [[Evidence-Index]]，检查是否覆盖 Role 的责任簇与非技能门槛。
 
-## Stage 6 — 岗位专修与作品集
+## 9. 复核岗位样本
 
-- **Goal**：围绕一个岗位交付端到端作品，并让判断过程可审查。
-- **Prerequisites**：Stage 3 后至少一个与目标岗位匹配的 Evidence；Stage 4/5 只在目标岗位需要时纳入。
-- **Concepts**：[[Career-MOC]]、[[Job-Skill-Matrix]]、[[Role-Based-Learning-Paths]]。
-- **Practice**：选一个岗位，拆出主要交付物、技能深度、接口角色和失败模式。
-- **Pass Evidence**：作品集含结果、失败处理、权衡、来源和复现方式，而不只是 demo。
-- **Next**：回到 [[Current-State]]，只保留一个下一步；其余候选路线放入 Later/Parking Lot。
+每 30–60 天刷新 Job Samples；若需求变化，调整 Role Profile、Skill Priority 和 Next Skill。
 
-## 不建议的顺序
+## 通用知识参考
 
-- 先背几十个框架名，再补基础；
-- 把 prompt 模板数量当作能力深度；
-- 只做聊天界面，不建立评测任务集；
-- 只追最高 benchmark，不检查数据与执行有效性；
-- 同时学研究、应用、Infra、产品所有路径到同一深度。
+旧的 Stage 0–6 顺序已移到 [[General-AI-Learning-Reference]]，只用于补全概念，不作为默认 scheduler。

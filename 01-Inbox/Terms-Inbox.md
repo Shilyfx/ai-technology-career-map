@@ -10,7 +10,7 @@ related:
 
 # Terms Inbox
 
-> 这里只放真实遇到、尚未完成分类的术语。Stage 0 的固定练习集在 [[Learning-Path]]，不复制到这里。`Status` 是工作流状态，不是 frontmatter 的笔记成熟度 `status`。
+> 这里只放真实遇到、尚未完成分类的术语。通用概念参考在 [[General-AI-Learning-Reference]]，不复制固定清单。`Status` 是工作流状态，不是 frontmatter 的笔记成熟度 `status`。
 
 ## 待处理术语
 

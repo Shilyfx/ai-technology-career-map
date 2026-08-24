@@ -7,17 +7,18 @@ related:
 skills:
 concepts:
 role_targets:
+job_samples:
 depth: use
 ---
 
 # Evidence Card — {{title}}
 
-> 不提交密钥、个人隐私、内部数据或不可公开的项目材料；必要时只保留脱敏摘要。
+> 不提交密钥、个人隐私、内部数据或不可公开材料；必要时只保留脱敏摘要。
 
 ## Problem
 
 - 要解决的问题、约束和成功标准：
-- 对应 [[Learning-Path]] Stage 或岗位：
+- 对应 [[Role-Map]] Role 与 Skill：
 
 ## Action
 
@@ -42,5 +43,5 @@ depth: use
 ## Skill and gap
 
 - 对应技能：
-- 证明的掌握深度：`recognize | explain | use | implement | optimize | research`
+- 证明的 Role-specific Target Depth：
 - 下一缺口：

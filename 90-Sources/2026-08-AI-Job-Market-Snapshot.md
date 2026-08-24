@@ -9,7 +9,7 @@ retrieved: 2026-08-24
 review_after: 2026-11-24
 related:
   - "[[Role-Map]]"
-  - "[[Job-Skill-Matrix]]"
+  - "[[Role-Skill-Matrix]]"
   - "[[Technology-Radar-2026-08]]"
 ---
 
@@ -21,7 +21,7 @@ related:
 
 1. **AI 招聘技能正在从“知道模型/聊天工具”扩展到“能把系统运行起来”。** 2025 年美国 AI 岗位的高频技能既包括 Python、计算机科学和数据科学，也包括 scalability、automation、workflow management、SQL 和 AWS。[Stanford AI Index 2026](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf)
 2. **Agent 是当前增长信号，不是单独的万能岗位。** 统计中 Agentic AI、AI agents、LangGraph 等词增长很快；对应的可迁移能力是工具调用、工作流、状态、评测、权限和系统可靠性，而非记住单一框架。[Lightcast 对 AI Index 2026 的解读](https://lightcast.io/resources/research/stanford-ai-index-2026)
-3. **前沿研究、应用工程、Infra、产品、方案与安全的技能重叠，但交付物不同。** 因此学习应该先共享底座，再选主深度；见 [[Role-Map]]。
+3. **前沿研究、应用工程、Infra、产品、方案与安全的技能重叠，但交付物不同。** 因此先看 [[Job-Sample-Index]]，再进入 [[Role-Map]] 和对应 Skill Profile。
 4. **人类能力没有被排除在外。** WEF 报告把分析思维、创造力、韧性/适应性、领导与社会影响与 AI/大数据、网络安全、技术素养一起列为上升技能；LinkedIn 的 2026 报告也显示 AI literacy 已扩散到技术和非技术职能。[WEF 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/digest/), [LinkedIn 2026](https://economicgraph.linkedin.com/research/labor-market-report-2026)
 
 ## 研究问题与范围
@@ -122,7 +122,7 @@ related:
 2. 记录地理范围、抓取日期、来源与岗位样本；
 3. 抽取职责、技能、交付物、资历，不只抽标题；
 4. 至少用一个聚合统计来源和 6 个官方职位样本交叉检查；
-5. 更新 [[Technology-Radar-2026-08]] 与 [[Job-Skill-Matrix]] 时，把“事实”和“解释”分开；
+5. 更新 [[Technology-Radar-2026-08]] 与 [[Role-Skill-Matrix]] 时，把“事实”和“解释”分开；
 6. 标出失效链接，不静默删除原有证据。
 
 ## AI 辅助说明

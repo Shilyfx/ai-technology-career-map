@@ -6,55 +6,41 @@ created: 2026-08-24
 updated: 2026-08-24
 related:
   - "[[Current-State]]"
-  - "[[AI-Technology-MOC]]"
   - "[[Career-MOC]]"
-  - "[[Learning-Path]]"
-  - "[[Technology-Radar-2026-08]]"
-  - "[[Terms-Inbox]]"
+  - "[[Job-Sample-Index]]"
+  - "[[Role-Map]]"
+  - "[[Skill-Index]]"
+  - "[[AI-Technology-MOC]]"
 ---
 
 # Start Here
 
-> 这是首次进入本 Vault 的导航页。每日要做什么只写在 [[Current-State]]，不要在这里复制动态状态。
+> 默认顺序是 Job Sample → Role → Skill → Practice → Evidence。Technology Map 是知识参考，不是优先级控制器。
 
-## 这个仓库如何帮你
+## 四条入口
 
-AI 的名词看起来零散，是因为它们来自不同层：学习原理、模型结构、应用模式、工具、系统约束和岗位分工。先分层，再决定需要的深度。
+### 1. 我想找岗位方向
 
-```mermaid
-flowchart LR
-  A[问题与数据] --> B[模型与训练]
-  B --> C[能力与评测]
-  C --> D[应用与 Agent]
-  D --> E[系统与部署]
-  E --> F[安全、治理与业务结果]
-```
+从 [[Job-Sample-Index]] 选一个真实样本，进入对应 [[Role-Map]]，再打开 Role 的 Skill Profile。
 
-## 三种使用方式
+### 2. 我已经知道目标岗位
 
-### 1. 我想系统理解 AI
+直接打开 [[Role-Map]] → 目标 Role → [[Role-Skill-Assessment]]，把现有作品映射到 Core Skills。
 
-打开 [[AI-Technology-MOC]]，按 [[Learning-Path]] 完成 Stage 0–6。每个阶段都有可验证产出，不要求死记全部名词。
+### 3. 我只想补一个技能
 
-### 2. 我想知道岗位需要什么
+打开 [[Skill-Index]]，查看 Role Demand、前置 Skills、Practice 和 Pass Evidence。
 
-打开 [[Career-MOC]]，再看 [[Job-Skill-Matrix]]。先选“想交付什么”，再决定技能深度：研究、训练、应用、基础设施、产品和解决方案的路径不同。
+### 4. 我想理解全局技术
 
-### 3. 我刚遇到一个陌生名词
+最后再看 [[AI-Technology-MOC]] 和 [[Learning-Path]]；通用概念参考见 [[General-AI-Learning-Reference]]。
 
-把它写进 [[Terms-Inbox]]，先回答：它属于哪一层、解决什么、依赖什么、现在需要到什么深度。分类后再放入 [[Term-Radar]] 或已有概念页。
+## 今日动作
 
-## 先看这五页
+1. 在 [[Current-State]] 写下目标 Role、当前 Skill 和下一 Skill；
+2. 选择一个 Job Sample，记录明确要求与限制；
+3. 为下一 Skill 完成一个 Practice，并把结果写成 [[Evidence-Card]]。
 
-1. [[AI-ML-DL-and-Foundation-Models]]：分清最常混用的上位概念；
-2. [[AI-Technology-MOC]]：看系统全景；
-3. [[Role-Map]]：看岗位沿价值链如何分工；
-4. [[Job-Skill-Matrix]]：看共同底座与差异化能力；
-5. [[Technology-Radar-2026-08]]：区分稳定基础、当前重点和前沿观察项。
+## 输入与维护
 
-## 使用边界
-
-- 会调用模型 API 不等于会构建可靠 AI 系统；
-- 能训练模型不等于知道真实场景为何失败；
-- 当前岗位快照是样本，不是市场普查，见 [[2026-08-AI-Job-Market-Snapshot]]；
-- 需要从经验跳过阅读时，先做 [[Fast-Track-Assessment]]，然后把结论写成 Evidence。
+新职位放入 [[Job-Inbox]]；新名词放入 [[Terms-Inbox]]；技术变化只作为 [[Technology-Radar-2026-08]] 的辅助信号。

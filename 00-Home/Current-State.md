@@ -1,50 +1,35 @@
 ---
 type: home
 page_kind: current-state
-status: developing
+status: reference
 created: 2026-08-24
 updated: 2026-08-24
-review_after: 2026-09-24
-current: "完成 AI 技术与职业地图的第一轮定位"
-next: "完成 Fast-Track Assessment 并记录第一条公开 Evidence"
-current_concept: "[[AI-ML-DL-and-Foundation-Models]]"
-next_link: "[[Fast-Track-Assessment]]"
-depth: recognize
+current: "从 [[Career-MOC]] / [[Job-Sample-Index]] 选择一个目标 Role"
+next: "打开目标 Role 的 Skill Profile，选择第一个 Core Skill"
+target_role: ""
+current_skill: ""
+next_skill: ""
 related:
-  - "[[Start-Here]]"
-  - "[[Learning-Path]]"
-  - "[[Evidence-Index]]"
+  - "[[Career-MOC]]"
+  - "[[Role-Skill-Assessment]]"
 ---
 
 # Current State
 
-> 这是唯一的动态状态页。这里的状态描述 Vault onboarding，不代表对个人能力的断言；完成评估后再按证据更新。
+> 这是唯一动态状态页。每次只保留一个当前动作，不把技术热词或阶段编号当作默认任务。
 
-## Current focus
+## Target Role
 
-**完成 AI 技术与职业地图的第一轮定位**
+从一个真实 Job Sample 反推目标 Role；填写具体岗位族或公司方向。
 
-- 目标：理解七层技术模型，知道陌生名词应放到哪里；
-- 当前概念：[[AI-ML-DL-and-Foundation-Models]]；
-- 最小行动：执行 [[Learning-Path]] 的 Stage 0 Practice，并满足其中定义的 Pass Evidence；固定练习集不写入 [[Terms-Inbox]]。
-- 通过信号：完成 10 项分类、解释 3 个边界，并修正 2 个不确定或误分类，不依赖名词堆叠。
+## Current Skill
 
-## Next
+当前已经能用证据证明的 Skill；没有证据时写“未验证”，不要凭感觉打分。
 
-完成 [[Fast-Track-Assessment]]，并使用 [[Evidence-Card]] 模板创建一条实际 Evidence 页，记录脱敏、可复查的结果。
+## Next Skill
 
-## Later
+目标 Role Skill Profile 中下一个 Core/Prerequisite Skill；必须能链接到 Practice。
 
-- 选择一个候选岗位并补齐岗位化作品证据；
-- 评估 Stage 1–5 哪些可以凭既有产出跳过；
-- 建立第一个项目或实验 Evidence。
+## Update Loop
 
-## Parking Lot
-
-- 追踪所有新模型和 Agent 框架；
-- 制作个人私密技能差距表（不要提交到公共仓库）；
-- 扩充尚无来源或实践价值的术语列表。
-
-## 更新规则
-
-每次只改一条 `current` 和一条 `next`，同时更新 `updated`。完成后把旧任务写入 Evidence 或历史复盘，不在其他页面复制动态状态。
+Job Sample → Role Profile → Skill Assessment → Practice → [[Evidence-Index]] → 更新 Next Skill。

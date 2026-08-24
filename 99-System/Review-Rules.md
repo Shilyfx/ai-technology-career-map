@@ -16,27 +16,22 @@ related:
 
 | Content | Review interval | What to check |
 | --- | --- | --- |
-| stable concepts | 180–365 days or on a source change | definitions, dependencies, links and examples |
-| current techniques | 60–90 days | API/model behavior, best practices, cost and known failure modes |
-| emerging techniques and Term Radar | 30–90 days | whether the term still matters, moved to Build/Deepen, or should be removed |
-| job roles and skill matrix | 90 days | deliverables, skill depth, interfaces and sampled postings |
-| market snapshots | 90 days | source availability, geography, sample and date limits |
+| Job Sample | 30–60 days | URL/status, title, location, explicit vs inferred extraction |
+| Role Profile | 60–90 days | sample coverage, priority, seniority and deliverables |
+| current tools / Skill notes | 60–90 days | API/model behavior, practice and sources |
+| stable concepts / prerequisites | 180–365 days | definitions, dependencies and links |
+| market snapshots | 90 days | source availability, region, sample and limits |
 
-Dates are guidance, not evidence of truth. `review_after` is the next action date; `updated` is only the edit date.
+`review_after` 是下一次动作日期，`updated` 只是编辑日期。QA 在 today >= review_after 时提示，模板除外。
 
-QA 会在 `today >= review_after` 时发出 review due 警告（模板除外）。完成复查后同时更新 `updated` 与 `review_after`，并在变更记录或页面历史中写明保留、升级、降级或移除的理由。
+## Job evidence rules
+
+保留 `snapshot_date`、`retrieved`、发布方、区域、样本和 limitations。职位页是某公司某时间的需求证据，不是普遍门槛；URL 失效时保留提炼结果并标记 `source_status: expired`。
 
 ## Stale handling
 
-1. At or after `review_after`, run `python scripts/check_vault.py` and inspect the page’s sources.
-2. If still valid, update `updated`, set a new `review_after`, and record the reason in the change log or page history.
-3. If uncertain, set `status: developing` and add a visible “待复核” note; do not silently present it as stable.
-4. If contradicted or no longer useful, keep the evidence trail, set `status: deprecated`, and link a replacement when one exists.
-
-## Snapshots and job signals
-
-Keep `snapshot_date`, `retrieved`, publisher, region, sample and limitations. A job posting is evidence of one employer’s request at one time; it is not a universal definition of a role. Preserve the extracted signal even when the URL expires.
+仍有效：更新 `updated`/`review_after` 并记录理由；不确定：标为 `developing` 并显式待复核；失效：保留证据轨迹并标 `deprecated`，链接替代页。
 
 ## Radar updates
 
-Every radar revision must include “Changes since last radar” with Added, Promoted, Demoted, Removed and Why. The first edition explicitly says there is no previous radar; never invent a delta.
+每次 Radar 修订必须有 Changes since last radar 的 Added、Promoted、Demoted、Removed、Why。第一版不得编造历史变化。
