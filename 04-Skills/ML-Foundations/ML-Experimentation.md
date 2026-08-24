@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 Research/ML/Evals 为 Core；产品和应用以理解指标为边界。证据见 [[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]]、[[Apple-Machine-Learning-Engineer-Eval-Insights-London-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 固定数据切分、seed、配置、baseline、指标、日志和失败解释。
 
@@ -46,13 +50,13 @@ Research/ML/Evals 为 Core；产品和应用以理解指标为边界。证据见
 ## Pass Evidence
 第三方可复跑命令并得到相同结论，且知道结论边界。
 
-## 常见失败 / 误区
+## 常见失败
 只报最好一次；混用 split；把相关性当因果；忽略成本和失败率。
 
 ## 不需要深挖到什么程度
 非研究岗位先做到可审计和可比较，不必立即研究高级统计理论。
 
-## Related Concepts
+## Related Knowledge
 [[Training-Evaluation-and-Generalization]]、[[Model-Evaluation]]。
 
 ## Actual Evidence

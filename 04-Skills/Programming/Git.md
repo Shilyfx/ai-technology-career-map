@@ -30,6 +30,10 @@ related_concepts:
 | ML / AI Engineer | Common | use | [[Apple-Machine-Learning-Engineer-Video-Cupertino-2026-06]] | 生命周期协作 |
 | Infra | Common | implement | [[Huawei-AI-Bottom-Software-Shanghai-2026-08]] | 工程与发布 |
 
+## Job Evidence
+
+[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 分支、review、最小提交、回滚、标签和实验配置追踪。
@@ -58,7 +62,7 @@ related_concepts:
 
 可从 clean checkout 按命令复现结果，并能回滚到上一版本。
 
-## 常见失败 / 误区
+## 常见失败
 
 大提交、把凭证提交到仓库、用 force push 掩盖未审查的冲突。
 
@@ -66,7 +70,7 @@ related_concepts:
 
 不需要实现 Git 内部对象模型；需要可靠地协作与恢复。
 
-## Related Concepts
+## Related Knowledge
 
 [[Math-Data-and-Software-Foundations]]。
 
@@ -76,4 +80,4 @@ related_concepts:
 
 ## Sources
 
-[[Huawei-AI-Bottom-Software-Shanghai-2026-08]]。
+[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 以 inferred 记录版本协作信号；它不构成该岗位的明确必需项。

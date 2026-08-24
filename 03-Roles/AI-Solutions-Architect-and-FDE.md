@@ -39,9 +39,9 @@ discovery
 - 行业知识、需求澄清、方案表达、培训与 stakeholder 管理；
 - 能把客户反馈转成产品/模型需求。
 
-## 当前岗位样本
+## Sample Observations
 
-OpenAI 把 FDE 描述为前沿研究与真实部署的连接点。华为 AI 解决方案架构师样本同时要求大模型应用、搜索推荐、GPU/NPU、框架、系统架构、大规模系统、编码、业务洞察、技术培训和中高层沟通。这说明该岗位不是“只做 PPT”，但不同公司技术深度差异很大。
+本批 Huawei Solutions Architect/OTT Job Samples 同时出现 AI 应用、GPU/NPU、系统架构、编码、培训与客户沟通；仅能支持该批中国方案岗位的方向性判断，不能替代更多区域 FDE 样本。
 
 ## 作品证据
 
@@ -51,6 +51,10 @@ OpenAI 把 FDE 描述为前沿研究与真实部署的连接点。华为 AI 解�
 
 ## Sample Basis
 2 Huawei solution-architecture samples covering AI architecture, hardware and delivery.
+
+## Evidence Basis
+
+Based on 2 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 Customer-ready architecture, prototype, integration, deployment and adoption outcome.

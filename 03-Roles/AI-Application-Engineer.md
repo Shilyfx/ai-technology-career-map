@@ -50,13 +50,17 @@ aliases:
 - 忽略普通软件工程、权限和数据；
 - demo 成功一次就声称生产可用。
 
-## 当前信号
+## Sample Observations
 
-OpenAI 的 API Agents PM 样本强调 SDK/API、开发者体验、可靠性和安全；AI Index 2026 也显示岗位技能从聊天工具词汇转向 agentic systems、workflow 与规模化执行。详见 [[2026-08-AI-Job-Market-Snapshot]]。
+本批 OpenAI/Anthropic/Apple Job Samples 反复出现 SDK/API、开发者体验、可靠性、安全、agentic systems 和 workflow；这只是样本观察，不是通用门槛。详见 [[Job-Sample-Index]]。
 
 ## Sample Basis
 
 5 samples: OpenAI API Agents/SDK, Anthropic Computer Use, and Apple NLU/LLM; 4 employers are not implied by this role count.
+
+## Evidence Basis
+
+Based on 5 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 

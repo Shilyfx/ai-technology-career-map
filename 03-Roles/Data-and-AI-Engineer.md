@@ -45,6 +45,10 @@ SQL、Python、数据建模、数据库、分布式计算、workflow orchestrati
 ## Sample Basis
 3 samples: Apple data curation, Anthropic RL data, and data-intensive safeguards infrastructure.
 
+## Evidence Basis
+
+Based on 3 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
+
 ## Main Deliverables
 Traceable ingestion, curated datasets, quality gates, access controls and recoverable pipelines.
 

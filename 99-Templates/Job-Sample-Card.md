@@ -33,7 +33,7 @@ related: []
 
 ## Explicit Requirements
 
-## Preferred / Nice-to-have
+## Preferred/Nice-to-have
 
 ## Skill Extraction
 
@@ -52,3 +52,10 @@ related: []
 ## Limitations
 
 - 不复制完整 JD；只保留结构化摘要、短引用、来源链接和抽取判断。
+
+## Evidence Trace
+
+- Source Section:
+- Evidence Type: `explicit | inferred`
+- Extraction Decision:
+- Confidence: `high | medium | low`

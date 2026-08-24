@@ -9,6 +9,7 @@
 - [Job Sample Index：官方岗位样本](02-Jobs/Job-Sample-Index.md)
 - [Role Map：交付物与责任簇](03-Roles/Role-Map.md)
 - [Skill Index：技能、前置和练习](04-Skills/Skill-Index.md)
+- [Skill Evidence Matrix：技能与岗位样本证据](04-Skills/Skill-Evidence-Matrix.md)
 - [Learning Path：九步 Job-first 路径](00-Home/Learning-Path.md)
 - [Evidence Index：实践证据入口](06-Evidence/Evidence-Index.md)
 - [AI Technology MOC：知识参考地图](00-Home/AI-Technology-MOC.md)

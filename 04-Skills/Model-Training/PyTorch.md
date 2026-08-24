@@ -25,6 +25,10 @@ related_concepts:
 ## Role Demand
 Research/ML 为 Core；Infra 按 runtime 方向 Specialized。证据见 [[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]]。
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]]、[[Apple-Machine-Learning-Engineer-Video-Cupertino-2026-06]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 写模型、数据 loader、训练循环、checkpoint、profiling 和评测代码。
 
@@ -46,13 +50,13 @@ tensors、autograd、modules、data、mixed precision、checkpoint 和 profiler�
 ## Pass Evidence
 能解释一次 shape/device/gradient 错误并提供测试防回归。
 
-## 常见失败 / 误区
+## 常见失败
 只会复制 notebook；忽略 device、seed、数据泄漏和显存。
 
 ## 不需要深挖到什么程度
 应用岗位不因 SDK 依赖就学习 kernel；按目标岗位加深。
 
-## Related Concepts
+## Related Knowledge
 [[Pretraining-Posttraining-and-Fine-tuning]]、[[Distributed-Training]]。
 
 ## Actual Evidence

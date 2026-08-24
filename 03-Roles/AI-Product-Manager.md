@@ -28,9 +28,9 @@ aliases:
 
 不一定要以写生产代码为主，但需要足够技术深度与研究/工程团队讨论模型、数据、eval、API 和系统约束。
 
-## 当前岗位样本
+## Sample Observations
 
-OpenAI API Agents PM 要求理解 Agent builder 问题、定义基础设施路线图、与研究/工程在技术层协作，并设计可从实验扩展到生产的 API primitives。Safety Measurement PM 则要求安全/信任领域经验、数据/统计背景、成功标准和跨学科协作。DeepMind 把“把复杂 AI 能力转成产品规格，并平衡商业成功和社会责任”列为 PM 核心。
+本批两个 OpenAI PM Job Samples 分别显示 API/agent 产品路线图与安全测量/统计协作；它们支持产品责任簇的方向性判断，不代表所有 AI PM 的统一要求。
 
 ## 作品证据
 
@@ -45,6 +45,10 @@ OpenAI API Agents PM 要求理解 Agent builder 问题、定义基础设施路�
 ## Sample Basis
 
 2 OpenAI PM samples: API Agents and Safety Measurement.
+
+## Evidence Basis
+
+Based on 2 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 

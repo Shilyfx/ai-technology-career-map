@@ -15,6 +15,10 @@ review_after:
 
 列出 Job Sample 数量、公司、区域、职级和偏差。
 
+## Evidence Basis
+
+Based on N Job Samples; record employers, regions, seniority distribution and confidence.
+
 ## Main Deliverables
 
 ## Responsibility Clusters

@@ -24,6 +24,10 @@ AI 工作跨研究、工程、产品、客户和治理；不能把不确定性�
 ## Role Demand
 PM/FDE 为 Core；研究/应用为 Common。证据见 [[Huawei-AI-Solutions-Architect-Shanghai-2026-08]]。
 
+## Job Evidence
+
+[[Huawei-AI-Solutions-Architect-Shanghai-2026-08]]、[[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 写设计、指标、风险、取舍、复盘和面向不同受众的决策记录。
 
@@ -45,13 +49,13 @@ PM/FDE implement；技术岗位 use；所有角色都要 explain 结果边界。
 ## Pass Evidence
 读者能复述结论、证据强度、限制和下一步，不依赖口头补充。
 
-## 常见失败 / 误区
+## 常见失败
 堆术语；隐藏不确定性；把相关指标写成因果结论。
 
 ## 不需要深挖到什么程度
 先做到准确、可追溯和面向决策，不追求所有文档形式主义。
 
-## Related Concepts
+## Related Knowledge
 [[AI-Product-Engineering]]、[[Model-Evaluation]]。
 
 ## Actual Evidence

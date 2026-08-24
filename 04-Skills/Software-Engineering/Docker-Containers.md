@@ -30,6 +30,10 @@ related_concepts:
 | ML / AI Engineer | Common | use | [[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]] | train/inference stack |
 | Application Engineer | Common | use | [[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]] | orchestration |
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-GPT-Infrastructure-San-Francisco-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 构建镜像、隔离依赖、挂载数据、限制资源、健康检查和发布回滚。
@@ -58,7 +62,7 @@ Infra implement；其他工程岗至少能复现和诊断容器化服务。
 
 在 clean host 上按命令启动，并记录镜像、依赖、配置和一次失败恢复。
 
-## 常见失败 / 误区
+## 常见失败
 
 镜像不可复现、把密钥烘进镜像、忽略 GPU 驱动兼容性。
 
@@ -66,7 +70,7 @@ Infra implement；其他工程岗至少能复现和诊断容器化服务。
 
 非 Infra 岗位不要求实现容器运行时；要能安全交付。
 
-## Related Concepts
+## Related Knowledge
 
 [[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]。
 
@@ -76,4 +80,4 @@ Infra implement；其他工程岗至少能复现和诊断容器化服务。
 
 ## Sources
 
-[[OpenAI-Software-Engineer-GPT-Infrastructure-San-Francisco-2026-08]]。
+[[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]、[[Apple-Machine-Learning-Engineer-Data-Curation-Cupertino-2026-06]]。

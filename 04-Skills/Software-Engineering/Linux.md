@@ -31,6 +31,10 @@ related_concepts:
 | Data / AI Engineer | Common | use | [[Huawei-AI-Bottom-Software-Shanghai-2026-08]] | 系统软件 |
 | Research Engineer | Common | use | [[Anthropic-ML-Infrastructure-Engineer-Safeguards-San-Francisco-2026-08]] | 研究基础设施 |
 
+## Job Evidence
+
+[[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]]、[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 是本 Skill 的 Job Evidence；只把明确要求作为 required 证据，职责推断保留为 inferred。
+
 ## 在岗位中怎么使用
 
 进程、文件、网络、权限、日志、资源、shell、服务与故障排查。
@@ -59,7 +63,7 @@ CPU/内存/IO、信号、端口、日志和可观测性。
 
 能用命令解释一次 CPU、内存或网络异常，并给出可复查修复。
 
-## 常见失败 / 误区
+## 常见失败
 
 只会重启服务、不看资源状态；权限问题被误判成模型问题。
 
@@ -67,7 +71,7 @@ CPU/内存/IO、信号、端口、日志和可观测性。
 
 非 Infra 岗位不必写内核模块，但不能把 Linux 当不可见黑盒。
 
-## Related Concepts
+## Related Knowledge
 
 [[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]。
 
