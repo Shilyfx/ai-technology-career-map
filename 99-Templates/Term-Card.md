@@ -2,9 +2,11 @@
 type: term
 status: seed
 layer:
+depth: recognize
 stability: stable
 created:
 updated:
+review_after:
 aliases: []
 related: []
 ---
@@ -26,3 +28,6 @@ related: []
 ## 相关
 
 ## 来源
+
+- Source：
+- Action：`classified | promoted | discarded`

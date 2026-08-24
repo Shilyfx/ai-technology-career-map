@@ -1,12 +1,18 @@
 ---
 type: source-index
-status: active
+status: reference
+created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 ---
 
 # Source Index
 
 > 来源按用途分层；“官方”不自动等于“无偏差”。岗位页只证明该公司的该职位，统计报告只证明其定义内的样本。
+
+## Source record fields
+
+When adding a source, record publisher, URL, purpose, region, `published`, `retrieved`, scope, and limitations. A current source is not automatically a stable definition; link the source to the page and claim it supports.
 
 ## A. 劳动力市场与技能趋势
 

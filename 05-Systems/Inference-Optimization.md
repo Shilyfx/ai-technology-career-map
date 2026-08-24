@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: systems
-status: seed
+status: developing
 stability: emerging
+depth: optimize
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[AI-Infrastructure-and-MLOps]]"
   - "[[Transformer-and-Foundation-Models]]"

@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: models
-status: seed
+status: developing
 stability: emerging
+depth: explain
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 aliases:
   - 多模态 生成式与具身 AI
 related:

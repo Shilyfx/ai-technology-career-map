@@ -1,9 +1,11 @@
 ---
-type: career-map
-status: active
+type: moc
+page_kind: role-map
+status: reference
 snapshot_date: 2026-08-24
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[Career-MOC]]"
   - "[[Job-Skill-Matrix]]"
@@ -38,19 +40,13 @@ related:
 
 ## 复合岗位正在增加
 
-当前官方样本中可以看到若干交叉：
+当前官方样本中可以看到若干交叉：Research Engineer 同时承担模型、系统和实验；Product Engineer/FDE 同时承担产品、全栈与模型应用；Safety/Evals 同时需要研究、工程、统计与政策；AI Solutions Architect 同时需要硬件、框架、系统架构、行业洞察和沟通；AI Infra 同时连接模型结构、编译、kernel、分布式与可靠性。
 
-- Research Engineer 同时承担模型、系统和实验；
-- Product Engineer/FDE 同时承担产品、全栈与模型应用；
-- Safety/Evals 同时需要研究、工程、统计与政策；
-- AI Solutions Architect 同时需要硬件、框架、系统架构、行业洞察和沟通；
-- AI Infra 同时连接模型结构、编译、kernel、分布式与可靠性。
-
-这不意味着一个人必须掌握全部，而是团队边界在重组。应建立 T 型能力：共同底座 + 一个主深度 + 一个相邻协作面。
+这不意味着一个人必须掌握全部，而是团队边界在重组。应建立 T 型能力：共同底座 + 一个主深度 + 一个相邻协作面。具体个人取舍只写在私有笔记，不提交到公共仓库。
 
 ## 下一步
 
 1. 在本表选两个候选岗位；
 2. 打开 [[Job-Skill-Matrix]] 比较差异；
 3. 各读一页岗位说明；
-4. 选择能在 4–8 周内做出证据的一条路径。
+4. 选择能在 4–8 周内做出 Evidence 的一条路径。

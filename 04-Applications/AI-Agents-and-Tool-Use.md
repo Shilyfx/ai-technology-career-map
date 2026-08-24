@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: applications
-status: seed
+status: developing
 stability: emerging
+depth: use
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 aliases:
   - AI Agent
   - Agentic AI

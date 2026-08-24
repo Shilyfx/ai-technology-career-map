@@ -1,8 +1,9 @@
 ---
 type: concept
 domain: foundations
-status: seed
+status: validated
 stability: stable
+depth: explain
 created: 2026-08-24
 updated: 2026-08-24
 aliases:
@@ -26,12 +27,12 @@ Artificial Intelligence
 
 ## 分清四个层级
 
-| 概念 | 核心问题 | 例子 |
-| --- | --- | --- |
-| AI | 如何让系统完成通常需要智能的任务 | 规划、识别、生成、决策 |
-| ML | 如何从数据或反馈中学习规律 | 分类、回归、排序 |
-| DL | 如何用多层神经网络学习表征 | CNN、Transformer、Diffusion |
-| Foundation Model | 如何训练可适配许多下游任务的大规模通用模型 | LLM、VLM |
+| 概念               | 核心问题                  | 例子                        |
+| ---------------- | --------------------- | ------------------------- |
+| AI               | 如何让系统完成通常需要智能的任务      | 规划、识别、生成、决策               |
+| ML               | 如何从数据或反馈中学习规律         | 分类、回归、排序                  |
+| DL               | 如何用多层神经网络学习表征         | CNN、Transformer、Diffusion |
+| Foundation Model | 如何训练可适配许多下游任务的大规模通用模型 | LLM、VLM                   |
 
 LLM 是“以语言序列为核心输入/输出的基础模型家族”，不是 AI 的同义词。生成式 AI 也不只包含文本，还包括图像、音频、视频、3D 和多模态生成。
 

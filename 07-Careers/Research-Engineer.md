@@ -1,10 +1,11 @@
 ---
 type: role
 role_family: research-engineering
-status: seed
+status: developing
 snapshot_date: 2026-08-24
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 ---
 
 # Research Engineer

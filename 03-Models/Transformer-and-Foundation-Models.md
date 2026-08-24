@@ -1,8 +1,9 @@
 ---
 type: concept
 domain: models
-status: seed
+status: validated
 stability: stable
+depth: explain
 created: 2026-08-24
 updated: 2026-08-24
 aliases:

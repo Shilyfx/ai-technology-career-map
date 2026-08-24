@@ -1,9 +1,10 @@
 ---
 type: matrix
-status: active
+status: reference
 snapshot_date: 2026-08-24
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[Role-Map]]"
   - "[[2026-08-AI-Job-Market-Snapshot]]"
@@ -41,17 +42,17 @@ related:
 
 ## 作品集证据矩阵
 
-| 岗位 | 一个有说服力的项目 | 必须展示 |
-| --- | --- | --- |
-| Research Scientist | 新方法或严谨复现/反证 | RQ、baseline、消融、统计、限制 |
-| Research Engineer | 可扩展训练/评测系统 | correctness、吞吐、复现、研究反馈 |
-| ML / AI Engineer | 端到端模型生命周期 | data、training、eval、deploy、monitor |
-| Application Engineer | 真实任务的 RAG/Agent 产品 | task set、trace、failure、cost、UX |
-| Infra / Inference | 服务或训练性能优化 | profile、瓶颈、前后对比、回退 |
-| Data / AI Engineer | 可信数据/embedding pipeline | contract、lineage、quality、permission |
-| AI PM | 从问题到上线决策 | 用户证据、指标树、取舍、风险 |
-| Solutions / FDE | 行业工作流落地 | discovery、architecture、delivery、adoption |
-| Safety / Evals | 评测与控制系统 | threat model、dataset、coverage、residual risk |
+| 岗位                   | 一个有说服力的项目               | 必须展示                                        |
+| -------------------- | ----------------------- | ------------------------------------------- |
+| Research Scientist   | 新方法或严谨复现/反证             | RQ、baseline、消融、统计、限制                        |
+| Research Engineer    | 可扩展训练/评测系统              | correctness、吞吐、复现、研究反馈                      |
+| ML / AI Engineer     | 端到端模型生命周期               | data、training、eval、deploy、monitor           |
+| Application Engineer | 真实任务的 RAG/Agent 产品      | task set、trace、failure、cost、UX              |
+| Infra / Inference    | 服务或训练性能优化               | profile、瓶颈、前后对比、回退                          |
+| Data / AI Engineer   | 可信数据/embedding pipeline | contract、lineage、quality、permission         |
+| AI PM                | 从问题到上线决策                | 用户证据、指标树、取舍、风险                              |
+| Solutions / FDE      | 行业工作流落地                 | discovery、architecture、delivery、adoption    |
+| Safety / Evals       | 评测与控制系统                 | threat model、dataset、coverage、residual risk |
 
 ## T 型选择建议
 

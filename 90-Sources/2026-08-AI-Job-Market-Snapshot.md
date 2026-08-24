@@ -1,10 +1,12 @@
 ---
-type: market-snapshot
-status: active
+type: snapshot
+status: reference
 snapshot_date: 2026-08-24
 geography: global-aggregates-us-postings-plus-china-official-samples
 created: 2026-08-24
 updated: 2026-08-24
+retrieved: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[Role-Map]]"
   - "[[Job-Skill-Matrix]]"

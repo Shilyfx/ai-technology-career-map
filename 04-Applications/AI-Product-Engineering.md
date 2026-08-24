@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: product
-status: seed
+status: developing
 stability: current
+depth: use
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[AI-Product-Manager]]"
   - "[[AI-Application-Engineer]]"

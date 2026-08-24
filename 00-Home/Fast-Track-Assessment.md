@@ -1,6 +1,6 @@
 ---
 type: assessment
-status: active
+status: reference
 created: 2026-08-24
 updated: 2026-08-24
 related:
@@ -30,6 +30,10 @@ related:
 - **2–3 项有证据**：跳到最薄弱的一个层，避免平均用力；
 - **4–5 项有证据**：从 [[Technology-Radar-2026-08]] 的 Build/Deepen 选择一个新方向；
 - **6 项有证据**：重点做 [[Role-Based-Learning-Paths]] 的岗位作品与市场校准。
+
+## Assessment → Evidence → Depth
+
+把每个“有证据”的回答链接到一张 [[Evidence-Card]]，并标注它证明的是 `recognize`、`explain`、`use`、`implement`、`optimize` 还是 `research`。没有链接、失败分析和判断的自评只能作为线索，不能用于跳过 Stage。
 
 ## 常见的“假通过”
 

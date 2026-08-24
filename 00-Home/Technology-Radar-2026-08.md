@@ -1,60 +1,75 @@
 ---
 type: radar
-status: active
+status: reference
 snapshot_date: 2026-08-24
+created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 stability: current
 related:
   - "[[AI-Technology-MOC]]"
+  - "[[Term-Radar]]"
   - "[[2026-08-AI-Job-Market-Snapshot]]"
 ---
 
 # Technology Radar — 2026-08
 
-> Radar 表示学习优先级，不表示技术优劣。季度更新；底层概念不会因工具热度自动改变。
+> Radar 表示学习与复查优先级，不表示技术优劣。稳定概念、当前技术和岗位信号分开维护。
+
+## Changes since last radar
+
+这是第一版基线，**没有 previous radar**。
+
+### Added
+
+- 建立 Core / Build / Deepen / Watch / Avoid 五档；
+- 把评测、数据质量、软件工程和系统边界放在 Core；
+- 增加 `review_after`，后续更新必须写出变化原因。
+
+### Promoted / Demoted / Removed
+
+- Promoted：无（首次基线）。
+- Demoted：无（首次基线）。
+- Removed：无；暂不把单一框架名列入主雷达。
+
+### Why
+
+第一版先固定判断标准：能否解释问题、能否构建、能否评测、能否承担失败。后续变化必须能回到来源、证据或岗位交付物。
 
 ## Core：应形成稳定心智模型
 
-- 数据质量、切分、泄漏与评测设计
-- Python、SQL、软件工程、API 与 Linux
-- 深度学习、Transformer、embedding、token、attention
-- 训练/推理的区别，SFT/PEFT 与基本后训练概念
-- 分布式系统、可观测性、隐私与安全基础
-- 产品问题定义、成功指标、失败切片与人工兜底
+- 数据质量、切分、泄漏与评测设计；
+- Python、SQL、软件工程、API 与 Linux；
+- 训练/验证/测试、泛化、失败切片和可复现性；
+- 权限、隐私、威胁模型、可观测性与回滚。
 
-## Build：当前值得动手
+## Build：适合做项目
 
-- 可靠 RAG：混合检索、reranking、引用、权限与新鲜度
-- Agentic workflow：tool use、状态、重试、审批、终止条件
-- Evals：任务集、回归测试、在线反馈与 trace
-- 模型服务：batching、cache、量化、延迟/吞吐/成本平衡
-- 多模态应用：文本、图像、音频与视频输入的任务设计
-- AI 安全：prompt injection、数据泄漏、权限边界、red teaming
+- RAG、检索质量、引用与知识库更新；
+- 工具调用、Agent 工作流、状态管理与人工兜底；
+- Evals、trace、成本/延迟监控与回归集；
+- 推理服务、缓存、批处理和基础 MLOps。
 
-Stanford AI Index 2026 的美国岗位数据把 Python、scalability、automation、workflow management、SQL 和 AWS 列为高频专业技能；其 Agentic AI 技能簇在 2025 年快速增长。这个信号支持“从聊天 demo 转向可运行系统”，但不证明每个团队都需要某个 Agent 框架。来源见 [[2026-08-AI-Job-Market-Snapshot]]。
+## Deepen：按岗位投入
 
-## Deepen：按岗位选择
+- Transformer、预训练、后训练、微调与对齐；
+- 多模态、生成模型、具身系统；
+- 分布式训练、量化、编译器、kernel 与硬件适配；
+- 安全评测、红队、治理和政策落地。
 
-- 研究/训练：MoE、RL、reasoning、synthetic data、interpretability
-- Infra：CUDA/NCCL、kernel、并行策略、vLLM/SGLang、编译器
-- 数据：data contracts、lineage、feature/embedding pipelines
-- 产品/FDE：domain workflow、API design、adoption、ROI、change management
-- 安全治理：eval science、assurance、privacy、policy 与审计
-- 多模态/机器人：VLM、VLA、world model、sim2real
+## Watch：保留观察，不提前承诺
 
-## Watch：理解问题，不急着押注工具
+- 快速变化的 Agent 框架与模型编排层；
+- 新型推理时扩展、世界模型和 VLA 产品化；
+- 职位名称与“Prompt Engineer”等岗位标签的变化。
 
-- 多 Agent 协作与 agent-to-agent 协议
-- 长期记忆与个性化 Agent
-- 自主研究与递归改进系统
-- 世界模型、通用机器人与具身智能
-- 机制可解释性的大规模工程化
-- AI for Science 的领域模型与自动实验闭环
+## Avoid：不作为独立能力目标
 
-## Avoid：暂不作为主线
+- 只会复制 prompt 模板；
+- 只追榜单或厂商热度；
+- 没有任务集和失败分析的 demo；
+- 把单个公司的高级岗位要求当成通用入门门槛。
 
-- 只有框架名、没有任务与评测的教程；
-- 只展示一次成功运行的 Agent demo；
-- 把“会使用 ChatGPT”包装成完整 AI 工程能力；
-- 未说明数据来源、权限与更新策略的企业知识助手；
-- 没有成本、延迟和失败率的“生产级”声明。
+## 更新规则
+
+复查时更新 `updated` 与 `review_after`，保留本节变化记录；相关术语先进入 [[Term-Radar]]，个人掌握程度写入 [[Evidence-Index]]，不要把雷达当成个人进度表。

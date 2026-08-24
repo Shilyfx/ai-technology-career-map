@@ -1,7 +1,7 @@
 ---
 type: moc
 domain: ai
-status: active
+status: reference
 created: 2026-08-24
 updated: 2026-08-24
 aliases:

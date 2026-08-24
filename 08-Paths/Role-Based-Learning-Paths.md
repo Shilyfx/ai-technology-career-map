@@ -1,8 +1,10 @@
 ---
-type: pathway
-status: active
+type: path
+page_kind: role-learning-paths
+status: reference
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[Learning-Path]]"
   - "[[Job-Skill-Matrix]]"

@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: training
-status: seed
+status: developing
 stability: current
+depth: explain
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 related:
   - "[[Transformer-and-Foundation-Models]]"
   - "[[Training-Evaluation-and-Generalization]]"

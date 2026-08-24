@@ -1,8 +1,9 @@
 ---
 type: concept
 domain: data-systems
-status: seed
+status: validated
 stability: stable
+depth: use
 created: 2026-08-24
 updated: 2026-08-24
 related:

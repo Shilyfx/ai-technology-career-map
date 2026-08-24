@@ -1,10 +1,12 @@
 ---
 type: concept
 domain: evaluation
-status: seed
+status: developing
 stability: current
+depth: implement
 created: 2026-08-24
 updated: 2026-08-24
+review_after: 2026-11-24
 aliases:
   - Evals
   - LLM Observability
