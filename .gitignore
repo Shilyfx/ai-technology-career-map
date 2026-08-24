@@ -1,0 +1,9 @@
+# Obsidian session state (keep vault configuration and notes tracked)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"ai-data","type":"text","text":"1 数据、数学、软件\n\n[[02-Foundations/Math-Data-and-Software-Foundations|共同底座]]","x":0,"y":0,"width":280,"height":160,"color":"1"},
+		{"id":"ai-train","type":"text","text":"2 学习与训练\n\n[[02-Foundations/Training-Evaluation-and-Generalization|训练与泛化]]\n[[03-Models/Pretraining-Posttraining-and-Fine-tuning|预训练与后训练]]","x":360,"y":0,"width":300,"height":190,"color":"2"},
+		{"id":"ai-model","type":"text","text":"3 模型与能力\n\n[[03-Models/Transformer-and-Foundation-Models|Transformer]]\n[[03-Models/Multimodal-Generative-and-Embodied-AI|多模态与具身]]","x":740,"y":0,"width":300,"height":190,"color":"3"},
+		{"id":"ai-app","type":"text","text":"4 应用系统\n\n[[04-Applications/RAG-and-Knowledge-Systems|RAG]]\n[[04-Applications/AI-Agents-and-Tool-Use|Agent]]","x":1120,"y":0,"width":300,"height":190,"color":"4"},
+		{"id":"ai-infra","type":"text","text":"5 系统与部署\n\n[[05-Systems/AI-Infrastructure-and-MLOps|AI Infra]]\n[[05-Systems/Inference-Optimization|推理优化]]","x":1500,"y":0,"width":300,"height":190,"color":"5"},
+		{"id":"ai-safe","type":"text","text":"6 评测、安全、治理\n\n[[04-Applications/Evals-and-Observability|Evals]]\n[[06-Safety/AI-Safety-Security-and-Governance|安全与治理]]","x":1880,"y":0,"width":320,"height":190,"color":"6"},
+		{"id":"ai-product","type":"text","text":"7 产品与业务结果\n\n[[04-Applications/AI-Product-Engineering|AI 产品工程]]\n[[07-Careers/Role-Map|岗位地图]]","x":2280,"y":0,"width":300,"height":190}
+	],
+	"edges":[
+		{"id":"a1","fromNode":"ai-data","fromSide":"right","toNode":"ai-train","toSide":"left"},
+		{"id":"a2","fromNode":"ai-train","fromSide":"right","toNode":"ai-model","toSide":"left"},
+		{"id":"a3","fromNode":"ai-model","fromSide":"right","toNode":"ai-app","toSide":"left"},
+		{"id":"a4","fromNode":"ai-app","fromSide":"right","toNode":"ai-infra","toSide":"left"},
+		{"id":"a5","fromNode":"ai-infra","fromSide":"right","toNode":"ai-safe","toSide":"left"},
+		{"id":"a6","fromNode":"ai-safe","fromSide":"right","toNode":"ai-product","toSide":"left"},
+		{"id":"a7","fromNode":"ai-product","fromSide":"bottom","toNode":"ai-data","toSide":"bottom","label":"约束反向定义数据与评测"}
+	]
+}

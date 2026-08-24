@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"shared","type":"text","text":"共同底座\n\nPython / SQL / ML 基础\n软件工程 / 数据质量\n评测 / 沟通 / 责任意识","x":520,"y":300,"width":320,"height":190,"color":"4"},
+		{"id":"research","type":"text","text":"研究\n\n[[07-Careers/Research-Scientist|Research Scientist]]\n[[07-Careers/Research-Engineer|Research Engineer]]","x":0,"y":0,"width":300,"height":160,"color":"2"},
+		{"id":"product","type":"text","text":"产品与应用\n\n[[07-Careers/AI-Application-Engineer|Application Engineer]]\n[[07-Careers/AI-Product-Manager|AI PM]]","x":520,"y":0,"width":320,"height":160,"color":"3"},
+		{"id":"systems","type":"text","text":"平台与系统\n\n[[07-Careers/AI-Infrastructure-and-Inference-Engineer|AI Infra / Inference]]\n[[07-Careers/Data-and-AI-Engineer|Data / AI Engineer]]","x":1040,"y":0,"width":340,"height":160,"color":"5"},
+		{"id":"field","type":"text","text":"场景落地\n\n[[07-Careers/AI-Solutions-Architect-and-FDE|Solutions Architect / FDE]]","x":0,"y":600,"width":320,"height":150,"color":"1"},
+		{"id":"safety","type":"text","text":"安全、评测与治理\n\n[[07-Careers/AI-Safety-Evals-and-Governance|Safety / Evals / Governance]]","x":1040,"y":600,"width":340,"height":150,"color":"6"}
+	],
+	"edges":[
+		{"id":"c1","fromNode":"shared","toNode":"research","fromSide":"top","toSide":"bottom"},
+		{"id":"c2","fromNode":"shared","toNode":"product","fromSide":"top","toSide":"bottom"},
+		{"id":"c3","fromNode":"shared","toNode":"systems","fromSide":"top","toSide":"bottom"},
+		{"id":"c4","fromNode":"shared","toNode":"field","fromSide":"left","toSide":"top"},
+		{"id":"c5","fromNode":"shared","toNode":"safety","fromSide":"right","toSide":"top"}
+	]
+}
