@@ -10,7 +10,8 @@ roles:
   - "[[Data-and-AI-Engineer]]"
   - "[[ML-and-AI-Engineer]]"
   - "[[AI-Application-Engineer]]"
-prerequisites: []
+prerequisites:
+  - "[[Data-Structures-and-Algorithms]]"
 related_concepts:
   - "[[Math-Data-and-Software-Foundations]]"
   - "[[Data-Engineering-and-Governance]]"

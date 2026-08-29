@@ -11,6 +11,7 @@ related:
   - "[[Role-Skill-Matrix]]"
   - "[[Role-Skill-Assessment]]"
   - "[[Skill-Evidence-Matrix]]"
+  - "[[Prerequisite-Foundation-Map]]"
 ---
 
 # Skill Index
@@ -31,6 +32,19 @@ related:
 | Evals / Safety | [[LLM-Evals]] / [[AI-Safety-Measurement]] | Evals, Safety, PM | developing | current |
 | Product / Delivery | [[API-Product-Delivery]] / [[Technical-Communication]] | Application, PM, FDE | developing | stable |
 
+## Learning prerequisite layer
+
+这些页面是为了回答“正式岗位 Skill 之前先学什么”。它们是可独立练习的通用能力，但其中标记 `evidence_mode: prerequisite-synthesis` 的页面并不增加 Job Sample 的 explicit 频次；岗位要求仍回到 [[Role-Skill-Matrix]] 和具体 Job Sample。
+
+| Foundation | Feeds into | Main roles | Suggested depth |
+| --- | --- | --- | --- |
+| [[Data-Structures-and-Algorithms]] | [[Python]]、[[SQL]]、[[Testing]]、[[Distributed-Systems]] | Research / ML / Application / Data / Infra | implement |
+| [[Statistics-and-Experiment-Design]] | [[ML-Experimentation]]、[[Model-Evaluation]]、[[LLM-Evals]] | Research / ML / Evals / PM | use → implement |
+| [[Databases-and-Data-Modeling]] | [[SQL]]、[[Data-Quality-and-Lineage]]、[[RAG]] | Data / ML / Application / FDE | use → implement |
+| [[Software-Design-and-Architecture]] | [[HTTP-API]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]] | Application / Data / ML / Infra / FDE | use → implement |
+| [[Security-Privacy-and-Access-Control]] | [[Tool-Calling-Agent-Workflow]]、[[RAG]]、[[AI-Safety-Measurement]] | All technical roles + PM | explain → implement |
+| [[Prompt-and-Context-Engineering]] | [[RAG]]、[[Tool-Calling-Agent-Workflow]]、[[LLM-Evals]] | Application / PM / FDE / Safety | use → implement |
+
 ## Promotion rule
 
 只有满足至少两项才优先独立成页：真实 Job Sample 明确要求、被两个以上 Role 使用、可独立学习、有清晰 Practice/Pass Evidence、是关键 prerequisite，或已在多个现有页面反复出现。Framework 不自动成为 Skill。
@@ -38,9 +52,11 @@ related:
 ## Dependency examples
 
 ```text
-Python → HTTP-API → RAG → Tool-Calling-Agent-Workflow → LLM-Evals
-Python → SQL → Data-Quality-and-Lineage → ML-Experimentation
+Data-Structures-and-Algorithms → Python → HTTP-API → Software-Design-and-Architecture
+Python + Transformer-LLM-Fundamentals + Prompt-and-Context-Engineering → RAG → Tool-Calling-Agent-Workflow → LLM-Evals
+Python → SQL → Databases-and-Data-Modeling → Data-Quality-and-Lineage → ML-Experimentation
 Linux → Docker-Containers → Distributed-Systems → Model-Serving
+HTTP-API → Security-Privacy-and-Access-Control
 ```
 
 同一 Skill 可对不同 Role 设定不同 Target Depth；不要在 Skill frontmatter 设置全局 `depth`。

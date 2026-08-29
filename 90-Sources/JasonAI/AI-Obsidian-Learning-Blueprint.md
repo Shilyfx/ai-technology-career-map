@@ -13,6 +13,10 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Agent-Memory-and-Knowledge-Operations]]"
+  - "[[RAG-and-Knowledge-Systems]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[AI-Application-Engineer]]"
 ---
 
 利用人工智能（AI）作为执行工具，在Obsidian中构建结构化、可扩展的个人知识库，并以此为基础进行高效、深入的学习。

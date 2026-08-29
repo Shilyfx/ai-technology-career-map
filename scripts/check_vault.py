@@ -331,7 +331,7 @@ def main() -> int:
                     errors.append(f"skill missing {heading}: {rel}")
             if not meta.get("roles"):
                 warnings.append(f"skill has no role: {rel}")
-            if not job_sample_skill_evidence.get(path.stem.casefold()):
+            if not job_sample_skill_evidence.get(path.stem.casefold()) and meta.get("evidence_mode") != "prerequisite-synthesis":
                 warnings.append(f"skill has no Job Sample evidence: {rel}")
 
         if kind == "role" and not is_template:

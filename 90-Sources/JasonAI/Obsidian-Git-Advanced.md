@@ -13,6 +13,11 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Data-Structures-and-Algorithms]]"
+  - "[[Python]]"
+  - "[[Git]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Data-and-AI-Engineer]]"
 ---
 
 # Git 进阶操作：版本管理，分支管理

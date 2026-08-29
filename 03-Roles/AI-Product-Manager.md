@@ -90,3 +90,7 @@ Two senior US postings are directional and do not represent all AI PM hiring.
 ## Refresh
 
 Refresh every 30–60 days while API and safety product scope changes quickly.
+
+## Learning prerequisites
+
+PM 不必先成为生产工程师，但应先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]] 和 [[Prompt-and-Context-Engineering]] 的 explain/use 练习，再根据产品方向进入 [[LLM-Evals]]、[[API-Product-Delivery]] 或 [[AI-Safety-Measurement]]；涉及真实用户数据时补 [[Security-Privacy-and-Access-Control]]。

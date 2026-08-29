@@ -13,6 +13,10 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Agent-Memory-and-Knowledge-Operations]]"
+  - "[[RAG-and-Knowledge-Systems]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[AI-Application-Engineer]]"
 ---
 
 Andrej Karpathy大神（OpenAI早期核心成员，前特斯拉AI Director）分享了自己如何使用LLM搭建知识库的方法。

@@ -31,8 +31,9 @@ flowchart LR
 - [[Job-Sample-Index]]：按公司、区域、职位和时间看样本；
 - [[Role-Map]]：按主要交付物和责任簇看岗位；
 - [[Role-Skill-Matrix]]：编辑性比较，原始证据回到 Job Samples；
-- [[Role-Skill-Paths]]：按 Role 串起 Core Skills、Prerequisites 和 Specialized Skills；
-- [[Skill-Index]]：按技能、前置关系和 Practice 学习；
+  - [[Role-Skill-Paths]]：按 Role 串起 Core Skills、Prerequisites 和 Specialized Skills；
+  - [[Prerequisite-Foundation-Map]]：把岗位前置知识拆成可学习、可验收的基础 Skill；
+  - [[Skill-Index]]：按技能、前置关系和 Practice 学习；
 - [[Role-Skill-Assessment]]：把目标 Role 与当前证据对齐。
 
 ## 角色选择

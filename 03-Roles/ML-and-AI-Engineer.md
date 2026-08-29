@@ -91,3 +91,7 @@ Public Apple/Huawei samples are company and domain biased; job titles hide team-
 
 ## Refresh
 Refresh current tools every 30–60 days; revisit stable ML foundations every 180–365 days。
+
+## Learning prerequisites
+
+先完成 [[Data-Structures-and-Algorithms]]、[[Python]]、[[Statistics-and-Experiment-Design]]、[[SQL]] 和 [[Databases-and-Data-Modeling]]，再用 [[Data-Quality-and-Lineage]]、[[Software-Design-and-Architecture]] 连接到 [[PyTorch]]、[[Model-Evaluation]] 和 [[Model-Serving]]。

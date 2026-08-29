@@ -32,6 +32,8 @@ related:
 
 先用目标 Role 的 Skill Profile 决定深度；不要把矩阵中的 H 当成统一课程表，也不要因为一个框架名称出现就创建独立 Skill。
 
+学习前置层见 [[Prerequisite-Foundation-Map]]。其中的基础 Skill 用来补齐“岗位能做什么”之前的知识与工程底座，不改变下方 Job Sample 的 `explicit / inferred` 计数。
+
 ## Evidence-count view
 
 `Evidence Count` 写成 `explicit / inferred`，统计的是不同 Job Sample 的 Skill Extraction 行，不是关键词出现次数；inferred 不计入 required frequency。Confidence 是基于来源可见度、样本重复度和抽取限制的编辑判断。

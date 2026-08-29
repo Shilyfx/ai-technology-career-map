@@ -16,6 +16,8 @@ related:
   - "[[RAG-and-Knowledge-Systems]]"
   - "[[Data-Engineering-and-Governance]]"
   - "[[JasonAI-Source-Index]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Databases-and-Data-Modeling]]"
 ---
 
 # Agent Memory and Knowledge Operations
@@ -93,4 +95,3 @@ flowchart LR
 - [[RAG-and-Knowledge-Systems]]
 - [[Data-Engineering-and-Governance]]
 - [[AI-Technology-MOC]]
-

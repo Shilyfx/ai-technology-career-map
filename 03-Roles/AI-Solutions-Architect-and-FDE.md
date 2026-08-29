@@ -88,3 +88,7 @@ Only China-based Huawei samples in this batch; add regional FDE samples before b
 
 ## Refresh
 Refresh tools and customer patterns every 30–60 days; architecture fundamentals every 180–365 days。
+
+## Learning prerequisites
+
+解决方案/FDE 建议先学 [[Technical-Communication]]、[[HTTP-API]]、[[Software-Design-and-Architecture]] 和 [[Security-Privacy-and-Access-Control]]，再按项目进入 [[RAG]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]] 与 [[API-Product-Delivery]]。

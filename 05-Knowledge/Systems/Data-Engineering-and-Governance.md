@@ -10,6 +10,8 @@ related:
   - "[[RAG-and-Knowledge-Systems]]"
   - "[[Data-and-AI-Engineer]]"
   - "[[AI-Safety-Security-and-Governance]]"
+  - "[[Databases-and-Data-Modeling]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 ---
 
 # Data Engineering and Governance

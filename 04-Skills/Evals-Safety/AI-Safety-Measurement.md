@@ -13,6 +13,7 @@ roles:
 prerequisites:
   - "[[LLM-Evals]]"
   - "[[Model-Evaluation]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 related_concepts:
   - "[[AI-Safety-Security-and-Governance]]"
 ---
@@ -36,7 +37,7 @@ Safety/Evals 为 Core；PM 为 Common；FDE 需要按行业边界应用。证据
 Safety implement/optimize；PM explain/decide；FDE use。
 
 ## 前置 Skills
-[[LLM-Evals]]、[[Model-Evaluation]]。
+[[LLM-Evals]]、[[Model-Evaluation]]、[[Security-Privacy-and-Access-Control]]。
 
 ## 学习范围
 harm taxonomy、red team、guardrail、误报漏报、审计和治理。

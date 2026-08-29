@@ -38,6 +38,8 @@ Required: `type: skill`, `skill_category`, `roles`, `prerequisites`, `related_co
 
 Skills do not carry a global `depth`; depth is role-specific. A Skill must be a reusable learnable unit, not merely a framework name.
 
+`evidence_mode: prerequisite-synthesis` may be used for a foundational Skill that is required by a Role Profile but is not separately labeled in the current Job Sample extraction. Such a page must say so explicitly in `Job Evidence` and must not be added to the evidence-frequency matrix as if it were an explicit requirement.
+
 ## Other contracts
 
 - `page_kind: current-state` is the single `type: home` page with one `current` and one `next`.

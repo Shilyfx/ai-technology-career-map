@@ -95,3 +95,7 @@ Public job pages expose different detail levels; inferred skills are marked in e
 ## Refresh
 
 Refresh job evidence every 30–60 days and safety methods every 60–90 days.
+
+## Learning prerequisites
+
+安全/Evals 方向先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]]、[[Model-Evaluation]] 和 [[LLM-Evals]]，再根据子方向进入 [[AI-Safety-Measurement]]；做 Agent、数据或上线评审时必须补 [[Security-Privacy-and-Access-Control]] 与 [[Prompt-and-Context-Engineering]]。

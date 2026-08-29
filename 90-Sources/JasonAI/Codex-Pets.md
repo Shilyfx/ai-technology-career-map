@@ -13,6 +13,9 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Technical-Communication]]"
+  - "[[AI-Product-Engineering]]"
+  - "[[AI-Product-Manager]]"
 ---
 
 Codex 的自定义宠物功能，本质上是一套很轻量的本地资源：**一个 `pet.json` 文件 + 一个 `spritesheet.webp` 文件**。

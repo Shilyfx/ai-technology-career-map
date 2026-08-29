@@ -13,6 +13,8 @@ roles:
 prerequisites:
   - "[[Python]]"
   - "[[Transformer-LLM-Fundamentals]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Databases-and-Data-Modeling]]"
 related_concepts:
   - "[[RAG-and-Knowledge-Systems]]"
 ---
@@ -36,7 +38,7 @@ related_concepts:
 应用 implement；FDE use/implement；PM explain 成本和失败模式。
 
 ## 前置 Skills
-[[Python]]、[[Transformer-LLM-Fundamentals]]。
+[[Python]]、[[Transformer-LLM-Fundamentals]]、[[Prompt-and-Context-Engineering]]、[[Databases-and-Data-Modeling]]。
 
 ## 学习范围
 embedding、向量检索、混合检索、reranking、grounding 和 freshness。
@@ -63,4 +65,4 @@ embedding、向量检索、混合检索、reranking、grounding 和 freshness。
 尚无用户能力结论；用 [[Evidence-Card]] 记录。
 
 ## Sources
-[[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]、[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]。
+[[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]]、[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]、[[Google-Open-Knowledge-Format]]、[[Agent-Memory-Basic-Memory-Guide]]、[[Obsidian-Copilot-RAG]]。

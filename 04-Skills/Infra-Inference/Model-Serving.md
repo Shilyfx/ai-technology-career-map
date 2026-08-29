@@ -14,6 +14,7 @@ prerequisites:
   - "[[HTTP-API]]"
   - "[[Docker-Containers]]"
   - "[[PyTorch]]"
+  - "[[Software-Design-and-Architecture]]"
 related_concepts:
   - "[[Inference-Optimization]]"
 ---
@@ -37,7 +38,7 @@ Infra 为 Core；应用/FDE 为 Common。证据见 [[Huawei-AI-Architect-Trainin
 Infra implement/optimize；应用 use/implement；PM explain 延迟和成本。
 
 ## 前置 Skills
-[[HTTP-API]]、[[Docker-Containers]]、[[PyTorch]]。
+[[HTTP-API]]、[[Docker-Containers]]、[[PyTorch]]、[[Software-Design-and-Architecture]]。
 
 ## 学习范围
 模型加载、batching、并发、GPU memory、路由、版本和健康检查。

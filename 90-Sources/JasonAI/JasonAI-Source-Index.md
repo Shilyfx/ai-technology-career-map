@@ -110,6 +110,8 @@ related:
 
 **判断规则**：先用来源文章提出一个小练习，再把练习结果写成 `06-Evidence` 的 Problem/Action/Result/Failure/Judgment；只有被岗位样本支持、可复用且有通过证据的能力，才进入正式 Skill 追踪。
 
+每篇来源的 YAML `related` 已补上主题概念、学习 Skill 和适用 Role；这些是“从哪里开始学习”的导航关系，不是说文章本身证明了岗位要求。反向链接可从对应的概念页、Skill 页和 Role Profile 的 `Learning prerequisites` 进入。
+
 ## 资料边界与使用规则
 
 - 来源正文按下载时的原样保存，适合查阅配置细节；产品版本、价格、插件命令和“最佳”结论必须回到官方文档复核。

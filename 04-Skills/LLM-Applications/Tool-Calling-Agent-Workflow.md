@@ -13,6 +13,9 @@ roles:
 prerequisites:
   - "[[HTTP-API]]"
   - "[[RAG]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 related_concepts:
   - "[[AI-Agents-and-Tool-Use]]"
 ---
@@ -36,7 +39,7 @@ Agent 的价值来自可控地调用工具、处理状态和完成任务，而�
 应用 implement；PM explain 产品边界；FDE use/implement 场景集成。
 
 ## 前置 Skills
-[[HTTP-API]]、[[RAG]]。
+[[HTTP-API]]、[[RAG]]、[[Software-Design-and-Architecture]]、[[Prompt-and-Context-Engineering]]、[[Security-Privacy-and-Access-Control]]。
 
 ## 学习范围
 tool schema、planner/executor、状态机、错误处理、安全和回归评测。
@@ -63,4 +66,4 @@ tool schema、planner/executor、状态机、错误处理、安全和回归评�
 尚无用户能力结论；关联 [[Evidence-Card]]。
 
 ## Sources
-[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]、[[Anthropic-Research-Engineer-Computer-Use-San-Francisco-2026-08]]。
+[[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]]、[[Anthropic-Research-Engineer-Computer-Use-San-Francisco-2026-08]]、[[Agent-Hooks-Guide]]、[[Obsidian-MCP-Automation]]、[[n8n-Obsidian-RSS-Automation]]。

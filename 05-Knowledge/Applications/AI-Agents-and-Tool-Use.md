@@ -14,6 +14,9 @@ related:
   - "[[RAG-and-Knowledge-Systems]]"
   - "[[Evals-and-Observability]]"
   - "[[AI-Safety-Security-and-Governance]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 ---
 
 # AI Agents and Tool Use
