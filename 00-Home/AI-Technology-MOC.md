@@ -25,13 +25,13 @@ flowchart TB
 
 - Foundations：[[AI-ML-DL-and-Foundation-Models]]、[[Math-Data-and-Software-Foundations]]；
 - Models：[[Transformer-and-Foundation-Models]]、[[Pretraining-Posttraining-and-Fine-tuning]]；
-- Applications：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[AI-Product-Engineering]]；
+- Applications：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[Agent-Memory-and-Knowledge-Operations]]、[[AI-Product-Engineering]]；
 - Systems：[[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]、[[Data-Engineering-and-Governance]]；
 - Safety：[[Evals-and-Observability]]、[[AI-Safety-Security-and-Governance]]。
 
 ## 如何使用
 
-先在 [[Career-MOC]] 选择目标 Role，再用 [[Skill-Index]] 确认要学的对象；遇到不熟名词放入 [[Terms-Inbox]]，技术变化查看 [[Technology-Radar-2026-08]]。
+先在 [[Career-MOC]] 选择目标 Role，再用 [[Skill-Index]] 确认要学的对象；遇到不熟名词放入 [[Terms-Inbox]]，技术变化查看 [[Technology-Radar-2026-08]]。外部教程和下载资料从 [[JasonAI-Source-Index]] 进入，先读来源边界，再把经过实践和验证的内容提升到 Knowledge。
 
 ## 图形入口
 

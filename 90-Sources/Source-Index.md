@@ -54,6 +54,11 @@ This is a navigation index by category, purpose and limitations. Detailed proven
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/)
 
+## E. 外部实操资料
+
+- [[JasonAI-Source-Index]]：JasonAI 资料库的 45 篇 Markdown 来源存档、5 篇未提供下载的入口，以及与本仓库 Knowledge 的接入规则。
+- [[Agent-Memory-and-Knowledge-Operations]]：从 JasonAI 的 Agent Memory、OKF、LLM Wiki 和 NotebookLM 材料中提炼出的可验证知识运作循环。
+
 ## 引用约定
 
 在稳定概念页尽量链接原始论文/官方文档；在当前技术和市场页写明日期；在观点/推断旁用“解释”“推断”标识，不把链接当作逻辑证明。

@@ -1,0 +1,508 @@
+{
+  "retrieved": "2026-08-29",
+  "article_count": 50,
+  "downloadable_count": 45,
+  "not_downloadable_count": 5,
+  "articles": [
+    {
+      "path": "/blog/agent-hooks-guide/",
+      "title": "Agent Hook 深度教程：事件、匹配、处理器、阻止机制一次讲透 | 杰森的效率工坊",
+      "published": "2026-08-26",
+      "article_url": "https://jasonai.me/blog/agent-hooks-guide/",
+      "md_url": "https://jasonai.me/download/Agent-Hook深度教程-事件-匹配-处理器-阻止机制一次讲透.md",
+      "file": "Agent-Hooks-Guide.md",
+      "bytes": 32925,
+      "sha256": "1e5015f75b0b1c0b471cc9b5ef7fd402320360be8a7929135d0665b370980d40"
+    },
+    {
+      "path": "/blog/agent-memory-basic-memory-guide/",
+      "title": "Agent Memory 完整指南：用 Basic Memory 从 0 搭建长期记忆系统 | 杰森的效率工坊",
+      "published": "2026-08-22",
+      "article_url": "https://jasonai.me/blog/agent-memory-basic-memory-guide/",
+      "md_url": "https://jasonai.me/download/Agent-Memory-Basic-Memory-智能体长期记忆系统完整指南.md",
+      "file": "Agent-Memory-Basic-Memory-Guide.md",
+      "bytes": 46635,
+      "sha256": "2c26ffcca48ba358356a6e2a945fc5d0b2d49ac30947a587d53a2ad1b6026022"
+    },
+    {
+      "path": "/blog/ai-environment-setup-nodejs-git-python/",
+      "title": "2026 AI环境配置完整指南：Node.js、Git、Python、API Key一次讲清，解决你90%的环境报错。 | 杰森的效率工坊",
+      "published": "2026-03-13",
+      "article_url": "https://jasonai.me/blog/ai-environment-setup-nodejs-git-python/",
+      "md_url": "https://jasonai.me/download/2026-AI环境配置完整指南-Node.js-Git-Python-API-Key一次讲清-解决你90-的环境报错.md",
+      "file": "AI-Environment-Setup-NodeJS-Git-Python.md",
+      "bytes": 13760,
+      "sha256": "a8e741321fcd82edf0d75c0b85cb0027a3adad45701e3bb9613e331021145336"
+    },
+    {
+      "path": "/blog/ai-obsidian-learning-blueprint/",
+      "title": "用AI + Obsidian精通任何一个知识领域：AI深度研究未知领域，一键搭建Obsidian知识库架构和学习路径 | 杰森的效率工坊",
+      "published": "2025-08-13",
+      "article_url": "https://jasonai.me/blog/ai-obsidian-learning-blueprint/",
+      "md_url": "https://jasonai.me/download/用AI-Obsidian精通任何一个知识领域-AI深度研究未知领域-一键搭建Obsidian知识库架构和学习路径.md",
+      "file": "AI-Obsidian-Learning-Blueprint.md",
+      "bytes": 29670,
+      "sha256": "037888735eb4ec1127887a23743937a04c262d9b391dbba6f65f78c1f373158f"
+    },
+    {
+      "path": "/blog/automate-n8n-workflow-claude-code/",
+      "title": "用Claude Code自动编排n8n工作流，告别手搓。 | 杰森的效率工坊",
+      "published": "2026-03-31",
+      "article_url": "https://jasonai.me/blog/automate-n8n-workflow-claude-code/",
+      "md_url": "https://jasonai.me/download/用Claude-Code自动编排n8n工作流-告别手搓.md",
+      "file": "Claude-Code-n8n-Workflow.md",
+      "bytes": 9761,
+      "sha256": "49cd783aa29664004a72eeb6ecd45531eaed6b095c728ebba54b347cfe5b761b"
+    },
+    {
+      "path": "/blog/claude-code-obsidian--karpathyllm-wiki/",
+      "title": "用 Claude Code 和 Obsidian 搭建Karpathy的LLM Wiki | 杰森的效率工坊",
+      "published": "2026-04-14",
+      "article_url": "https://jasonai.me/blog/claude-code-obsidian--karpathyllm-wiki/",
+      "md_url": "https://jasonai.me/download/用 Claude Code 和 Obsidian 搭建Karpathy的LLM Wiki.md",
+      "file": "Claude-Code-Obsidian-Karpathy-LLM-Wiki.md",
+      "bytes": 39936,
+      "sha256": "4efb159a62fd36ab4391fa7c2c3636b67bfca21247caec7a93e55c72284c700c"
+    },
+    {
+      "path": "/blog/claude-code-obsidian-notebooklm/",
+      "title": "用 Claude Code 把 NotebookLM 深度集成到 Obsidian | 杰森的效率工坊",
+      "published": "2026-05-22",
+      "article_url": "https://jasonai.me/blog/claude-code-obsidian-notebooklm/",
+      "md_url": "https://jasonai.me/download/用 Claude Code 把 NotebookLM 深度集成到 Obsidian.md",
+      "file": "Claude-Code-Obsidian-NotebookLM.md",
+      "bytes": 11480,
+      "sha256": "61940d0bd121612a4675306d0f25413ebe71592780b9ae5eec53c2c5741cf8b5"
+    },
+    {
+      "path": "/blog/claude-skill-quick-start/",
+      "title": "Claude Skill快速上手教程：三个步骤就能用上。 | 杰森的效率工坊",
+      "published": "2026-01-14",
+      "article_url": "https://jasonai.me/blog/claude-skill-quick-start/",
+      "md_url": "https://jasonai.me/download/Claude-Skill快速上手教程-三个步骤就能用上.md",
+      "file": "Claude-Skill-Quick-Start.md",
+      "bytes": 15286,
+      "sha256": "b50177a9e9084e4840a5d2e7cd1b10bac74f68625bdb4f8cc6e8472e59306ebc"
+    },
+    {
+      "path": "/blog/clone-top-creator-ai-advisor/",
+      "title": "用AI克隆顶级博主的大脑，打造你的专属AI顾问，【吞噬】一个顶级博主的全部思想。 | 杰森的效率工坊",
+      "published": "2025-09-04",
+      "article_url": "https://jasonai.me/blog/clone-top-creator-ai-advisor/",
+      "md_url": "https://jasonai.me/download/用AI克隆顶级博主的大脑-打造你的专属AI顾问-吞噬一个顶级博主的全部思想.md",
+      "file": "AI-Clone-Advisor.md",
+      "bytes": 31975,
+      "sha256": "1d3c93694c582cc40a37c3ff1079d8466c1a3344a3f26ff6a9810fef2749c755"
+    },
+    {
+      "path": "/blog/codex-obsidian-agent-dashboard-plugin/",
+      "title": "用Codex为Obsidian搭建AgentDashboard智能体操作中心 | 杰森的效率工坊",
+      "published": "2026-06-22",
+      "article_url": "https://jasonai.me/blog/codex-obsidian-agent-dashboard-plugin/",
+      "md_url": "https://jasonai.me/download/用Codex为Obsidian搭建AgentDashboard智能体操作中心.md",
+      "file": "Codex-Obsidian-Agent-Dashboard.md",
+      "bytes": 20754,
+      "sha256": "dbd36b4407a5524178a8d1cdf12b97213d9db28f190343184e2685db6d5bf334"
+    },
+    {
+      "path": "/blog/codex-pets/",
+      "title": "Codex 宠物功能教程 - 制作自定义小宠物 | 杰森的效率工坊",
+      "published": "2026-07-01",
+      "article_url": "https://jasonai.me/blog/codex-pets/",
+      "md_url": "https://jasonai.me/download/Codex自定义小宠物.md",
+      "file": "Codex-Pets.md",
+      "bytes": 15105,
+      "sha256": "ff8948687da1a15dc170162c3825cae22eceb5414fb60820bd3149e1a9e0a080"
+    },
+    {
+      "path": "/blog/export-gemini-chatgpt-python-notebooklm-analysis/",
+      "title": "AI眼中的你竟然是这样的？如何制作你的2025年度AI使用报告 | 杰森的效率工坊",
+      "published": "2026-01-06",
+      "article_url": "https://jasonai.me/blog/export-gemini-chatgpt-python-notebooklm-analysis/",
+      "md_url": "https://jasonai.me/download/AI眼中的你竟然是这样的-如何制作你的2025年度AI使用报告.md",
+      "file": "AI-Usage-Report-2025.md",
+      "bytes": 31677,
+      "sha256": "22e7b67436a553aadf6d3839d5da57584d0ea15376f64b8619e6e31faa3fba5c"
+    },
+    {
+      "path": "/blog/gemini-3-0-parameters-guide/",
+      "title": "Gemini 3.0 参数调教指南 | Google AI Studio全面解析（附提示词模版） | 杰森的效率工坊",
+      "published": "2025-11-25",
+      "article_url": "https://jasonai.me/blog/gemini-3-0-parameters-guide/",
+      "md_url": "https://jasonai.me/download/Gemini-3.0-参数调教指南-Google-AI-Studio全面解析附提示词模版.md",
+      "file": "Gemini-Parameters-Guide.md",
+      "bytes": 11867,
+      "sha256": "debba9ccec60cb678898486a30463108e639c0a67f7dca4053a78aec9d79b012"
+    },
+    {
+      "path": "/blog/gemini-3-system-instructions-hallucination-avoidance/",
+      "title": "三个Gemini 3 高级技巧：系统指令 | 交互禁忌 | 幻觉规避 | 杰森的效率工坊",
+      "published": "2025-12-24",
+      "article_url": "https://jasonai.me/blog/gemini-3-system-instructions-hallucination-avoidance/",
+      "md_url": "https://jasonai.me/download/三个Gemini-3-高级技巧-系统指令-交互禁忌-幻觉规避.md",
+      "file": "Gemini-System-Instructions-Hallucination.md",
+      "bytes": 12964,
+      "sha256": "950c428a3fcc773ca575c21f83496dafe6c41d916bc1fd68f13184297a547c91"
+    },
+    {
+      "path": "/blog/github-beginner-guide-free-resources/",
+      "title": "GitHub 新手指南：这个星球最强资源库，开源免费! | 杰森的效率工坊",
+      "published": "2025-08-02",
+      "article_url": "https://jasonai.me/blog/github-beginner-guide-free-resources/",
+      "md_url": "https://jasonai.me/download/GitHub-新手指南-这个星球最强资源库-开源免费.md",
+      "file": "GitHub-Beginner-Guide.md",
+      "bytes": 4549,
+      "sha256": "eb4c5f337b78be2eb78bcf986d723186f14dfed09fbd1b0e06780728005046f8"
+    },
+    {
+      "path": "/blog/google-open-knowledge-format/",
+      "title": "Google Open Knowledge Format 完整指南：面向 AI Agent 的开放知识格式 | 杰森的效率工坊",
+      "published": "2026-08-12",
+      "article_url": "https://jasonai.me/blog/google-open-knowledge-format/",
+      "md_url": "https://jasonai.me/download/Google-Open-Knowledge-Format-开放知识格式完整指南.md",
+      "file": "Google-Open-Knowledge-Format.md",
+      "bytes": 18163,
+      "sha256": "9bfe9244b25debefa81c27d9cf63e6b87caf4ef802a8ae6c9547103d25395390"
+    },
+    {
+      "path": "/blog/hermes-agent-install-and-tips/",
+      "title": "Hermes Agent完整安装教程（Win + Mac）和9个核心技巧 | 杰森的效率工坊",
+      "published": "2026-04-20",
+      "article_url": "https://jasonai.me/blog/hermes-agent-install-and-tips/",
+      "md_url": "https://jasonai.me/download/Hermes Agent完整安装教程（Win + Mac）和9个核心技巧.md",
+      "file": "Hermes-Agent-Install-and-Tips.md",
+      "bytes": 18338,
+      "sha256": "bf234ad8ab34c9c12722e824fe6894beb95225d32828451c68d5bb5df3ea41b3"
+    },
+    {
+      "path": "/blog/install-openclaw-feishu-remote-ai/",
+      "title": "从 0 开始用 OpenClaw：Windows / Mac 安装 + 飞书联动，手机远程操控 AI | 杰森的效率工坊",
+      "published": "2026-02-14",
+      "article_url": "https://jasonai.me/blog/install-openclaw-feishu-remote-ai/",
+      "md_url": "https://jasonai.me/download/从-0-开始用-OpenClaw-Windows-Mac-安装-飞书联动-手机远程操控-AI.md",
+      "file": "OpenClaw-Feishu-Remote.md",
+      "bytes": 7996,
+      "sha256": "23d7c2016efcd991c8851a67ef5926be68a429f3c83b371e588dfed86ae51ccf"
+    },
+    {
+      "path": "/blog/mapify-ai-mind-map-tool/",
+      "title": "「万物皆可思维导图」：AI时代的思维导图 - Mapify深度体验 | 杰森的效率工坊",
+      "published": "2025-11-21",
+      "article_url": "https://jasonai.me/blog/mapify-ai-mind-map-tool/",
+      "md_url": "https://jasonai.me/download/万物皆可思维导图-AI时代的思维导图-Mapify深度体验.md",
+      "file": "Mapify-Mind-Map.md",
+      "bytes": 6332,
+      "sha256": "4bd17bc207b617e87a65ab0f6ea3b90547a5a1863660b2cae5d197b2be7732f4"
+    },
+    {
+      "path": "/blog/markdown-cheat-sheet-ai/",
+      "title": "Markdown保姆级教程 | 通吃Notion、Obsidian、Typora、AI提示词，AI时代的必备技能。 | 杰森的效率工坊",
+      "published": "2025-07-21",
+      "article_url": "https://jasonai.me/blog/markdown-cheat-sheet-ai/",
+      "md_url": "https://jasonai.me/download/Markdown保姆级教程-通吃Notion-Obsidian-Typora-AI提示词-AI时代的必备技能.md",
+      "file": "Markdown-Cheat-Sheet.md",
+      "bytes": 16877,
+      "sha256": "f7493e868fbb36094e6b3e57d49be58811c0a4adcfb99f5c69c6d5ec5a366da6"
+    },
+    {
+      "path": "/blog/mermaid-beginner-tutorial-flowchart-gantt-mindmap/",
+      "title": "AI时代的图表语言！Mermaid 新手入门教程：让你用文本秒生流程图、甘特图，思维导图…… | 杰森的效率工坊",
+      "published": "2025-07-28",
+      "article_url": "https://jasonai.me/blog/mermaid-beginner-tutorial-flowchart-gantt-mindmap/",
+      "md_url": "https://jasonai.me/download/AI时代的图表语言-Mermaid-新手入门教程-让你用文本秒生流程图-甘特图-思维导图.md",
+      "file": "Mermaid-Beginner.md",
+      "bytes": 3032,
+      "sha256": "9784a6444c12b7ecf4a0befa9ad555419688aae45ba1caa95165fe7cdcec48d8"
+    },
+    {
+      "path": "/blog/minimax-agent-one-click-openclaw/",
+      "title": "MiniMax Agent: 真正全能的智能体工具，一键云部署 OpenClaw + 预置专家模式，告别命令行！ | 杰森的效率工坊",
+      "published": "2026-02-28",
+      "article_url": "https://jasonai.me/blog/minimax-agent-one-click-openclaw/",
+      "md_url": "https://jasonai.me/download/MiniMax-Agent-真正全能的智能体工具-一键云部署-OpenClaw-预置专家模式-告别命令行.md",
+      "file": "MiniMax-Agent-OpenClaw.md",
+      "bytes": 19447,
+      "sha256": "dad2b0d85109403bbbfa6157ea17d3f2d36d5365351e862e430cfd7f32c6b83c"
+    },
+    {
+      "path": "/blog/n8n-notion-ai-production-tutorial/",
+      "title": "用N8N把Notion升级成AI生产线 | n8n自动化工作流全流程教学 | 杰森的效率工坊",
+      "published": "2025-09-18",
+      "article_url": "https://jasonai.me/blog/n8n-notion-ai-production-tutorial/",
+      "md_url": "https://jasonai.me/download/用N8N把Notion升级成AI生产线-n8n自动化工作流全流程教学.md",
+      "file": "n8n-Notion-AI-Production.md",
+      "bytes": 9513,
+      "sha256": "55626268304e75220f954e529684795ea4b90a273741b3fa20272cb9d51ff8a2"
+    },
+    {
+      "path": "/blog/n8n-obsidian-ai-rss-automation/",
+      "title": "用N8N给你的Obsidian植入AI大脑，将你的知识库打造成真正的 AI 神器 | 杰森的效率工坊",
+      "published": "2025-10-02",
+      "article_url": "https://jasonai.me/blog/n8n-obsidian-ai-rss-automation/",
+      "md_url": "https://jasonai.me/download/用N8N给你的Obsidian植入AI大脑-将你的知识库打造成真正的-AI-神器.md",
+      "file": "n8n-Obsidian-RSS-Automation.md",
+      "bytes": 13535,
+      "sha256": "8f9fac8ace6edc4d1f0f65d36562ecd12fbbafbef5c00530ffbcb53b9a31ab07"
+    },
+    {
+      "path": "/blog/notebooklm-9-advanced-hidden-tips/",
+      "title": "谷歌没告诉你的NotebookLM隐藏用法：9个高级技巧，开启上帝视角 | 杰森的效率工坊",
+      "published": "2026-01-02",
+      "article_url": "https://jasonai.me/blog/notebooklm-9-advanced-hidden-tips/",
+      "md_url": "https://jasonai.me/download/谷歌没告诉你的NotebookLM隐藏用法-9个高级技巧-开启上帝视角.md",
+      "file": "NotebookLM-Advanced-Tips.md",
+      "bytes": 27035,
+      "sha256": "c0b694813b7415b31ebf82a2b2d10b509c0ab0b49c5d95190875a91de1d8baec"
+    },
+    {
+      "path": "/blog/notion-chinese-nutrition-database/",
+      "title": "Notion膳食营养指南：一键查询食物热量和营养成分 | 杰森的效率工坊",
+      "published": "2025-07-09",
+      "article_url": "https://jasonai.me/blog/notion-chinese-nutrition-database/",
+      "md_url": "",
+      "file": "",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "/blog/notion-fitness-weight-tracker/",
+      "title": "Notion健身和减肥｜比私教还懂你的身体仪表盘 | 10秒记录体重，全自动计算BMI，基础代谢和饮食建议。 | 杰森的效率工坊",
+      "published": "2025-07-12",
+      "article_url": "https://jasonai.me/blog/notion-fitness-weight-tracker/",
+      "md_url": "",
+      "file": "",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "/blog/notion-hand-drawn-timeline-automation/",
+      "title": "Notion 手绘风格时间线：用函数和自动化按钮，打造惊艳的每日日程时间线 | 告别杂乱，效率起飞！ | 杰森的效率工坊",
+      "published": "2025-08-08",
+      "article_url": "https://jasonai.me/blog/notion-hand-drawn-timeline-automation/",
+      "md_url": "",
+      "file": "",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "/blog/notion-mcp-beginner-guide/",
+      "title": "Notion MCP新手入门: 让你的Notion不再只是一个记事本 | 从0开始搭建第一个Notion MCP工作流 | 杰森的效率工坊",
+      "published": "2025-08-30",
+      "article_url": "https://jasonai.me/blog/notion-mcp-beginner-guide/",
+      "md_url": "https://jasonai.me/download/Notion-MCP新手入门-让你的Notion不再只是一个记事本-从0开始搭建第一个Notion-MCP工作流.md",
+      "file": "Notion-MCP-Beginner.md",
+      "bytes": 15707,
+      "sha256": "9186e2f267da7cc31773963332da9b50fabae12697c120dac1bf2c24e4f9b08e"
+    },
+    {
+      "path": "/blog/notion-two-heatmap-solutions/",
+      "title": "Notion两种热力图的实现方式 | 杰森的效率工坊",
+      "published": "2025-07-15",
+      "article_url": "https://jasonai.me/blog/notion-two-heatmap-solutions/",
+      "md_url": "",
+      "file": "",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "/blog/notion-widgets-beautify-20-plus/",
+      "title": "Notion美学：小组件。精装修Notion！ | 杰森的效率工坊",
+      "published": "2025-07-10",
+      "article_url": "https://jasonai.me/blog/notion-widgets-beautify-20-plus/",
+      "md_url": "",
+      "file": "",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "/blog/obsidian-ai-agent-skills-configuration-guide/",
+      "title": "如何为 Obsidian 配置 AI Agent？9 个必备 Skill 详解与安装指南 | 杰森的效率工坊",
+      "published": "2026-04-03",
+      "article_url": "https://jasonai.me/blog/obsidian-ai-agent-skills-configuration-guide/",
+      "md_url": "https://jasonai.me/download/如何为-Obsidian-配置-AI-Agent-9-个必备-Skill-详解与安装指南.md",
+      "file": "Obsidian-AI-Agent-Skills-Configuration.md",
+      "bytes": 16950,
+      "sha256": "2866d561e99551f90026585991e7dc957ab273f557038c358b3aa72613f89b7a"
+    },
+    {
+      "path": "/blog/obsidian-ai-five-methods/",
+      "title": "Obsidian+AI: 5种高效集成方式 | 杰森的效率工坊",
+      "published": "2025-09-11",
+      "article_url": "https://jasonai.me/blog/obsidian-ai-five-methods/",
+      "md_url": "https://jasonai.me/download/Obsidian-AI-5种高效集成方式.md",
+      "file": "Obsidian-AI-Integration-Methods.md",
+      "bytes": 15122,
+      "sha256": "89eb0fd0d7dd7cc349a06bb8cb90d2361a3f3e0f4043bb936d65da5be70072d5"
+    },
+    {
+      "path": "/blog/obsidian-ceo-claude-skill-tutorial/",
+      "title": "Obsidian 接入 Claude Skill 教程：CEO亲自下场写的Skill如何使用？ | 杰森的效率工坊",
+      "published": "2026-01-16",
+      "article_url": "https://jasonai.me/blog/obsidian-ceo-claude-skill-tutorial/",
+      "md_url": "https://jasonai.me/download/Obsidian-接入-Claude-Skill-教程-CEO亲自下场写的Skill如何使用.md",
+      "file": "Obsidian-Claude-Skill-Tutorial.md",
+      "bytes": 3591,
+      "sha256": "83e9e594089f5c2c47eec612ca5149f6b2b2241e25d12cc5e1a910a14796ac90"
+    },
+    {
+      "path": "/blog/obsidian-cli-ai-agent-automation/",
+      "title": "Obsidian CLI 详细教程：官方命令行工具，激进拥抱智能体，高效 + 自动化 + 降低Token消耗。 | 杰森的效率工坊",
+      "published": "2026-03-09",
+      "article_url": "https://jasonai.me/blog/obsidian-cli-ai-agent-automation/",
+      "md_url": "https://jasonai.me/download/Obsidian-CLI-详细教程-官方命令行工具-激进拥抱智能体-高效-自动化-降低Token消耗.md",
+      "file": "Obsidian-CLI-AI-Agent-Automation.md",
+      "bytes": 29495,
+      "sha256": "562d44aadf475454ad27fe0472d5575ee0335a1b00072ae3d1222968ba2671e4"
+    },
+    {
+      "path": "/blog/obsidian-colored-tags-like-notion/",
+      "title": "Obsidian美化！让你拥有像Notion一样的彩色标签列表 | 杰森的效率工坊",
+      "published": "2025-07-23",
+      "article_url": "https://jasonai.me/blog/obsidian-colored-tags-like-notion/",
+      "md_url": "https://jasonai.me/download/Obsidian美化-让你拥有像Notion一样的彩色标签列表.md",
+      "file": "Obsidian-Colored-Tags.md",
+      "bytes": 3759,
+      "sha256": "635ed0c29ff370c9aaed8cfd38986d4fe562632594225efdf3317cf0f608ea88"
+    },
+    {
+      "path": "/blog/obsidian-copilot-ai-rag-setup/",
+      "title": "[Obsidian AI教程] Copilot插件完全指南：AI 对话、RAG、参数设置一次讲透 | 杰森的效率工坊",
+      "published": "2025-12-14",
+      "article_url": "https://jasonai.me/blog/obsidian-copilot-ai-rag-setup/",
+      "md_url": "https://jasonai.me/download/Obsidian-AI教程-Copilot插件完全指南-AI-对话-RAG-参数设置一次讲透.md",
+      "file": "Obsidian-Copilot-RAG.md",
+      "bytes": 29595,
+      "sha256": "bc60d32a7b29a808f88c7b1319ff6c81a106a26d82b03c8ba88e9261762572ea"
+    },
+    {
+      "path": "/blog/obsidian-data-visualization-guide/",
+      "title": "Obsidian数据可视化 | 如何制作饼图，柱状图，曲线图。从0打造你的个人数据仪表盘 | 杰森的效率工坊",
+      "published": "2025-07-31",
+      "article_url": "https://jasonai.me/blog/obsidian-data-visualization-guide/",
+      "md_url": "https://jasonai.me/download/Obsidian数据可视化-如何制作饼图-柱状图-曲线图从0打造你的个人数据仪表盘.md",
+      "file": "Obsidian-Data-Visualization.md",
+      "bytes": 13138,
+      "sha256": "99f36387bae744aca337f057c7a2a1496e3993d71148b8f3580c1e4fcf7e244a"
+    },
+    {
+      "path": "/blog/obsidian-git-sync-advance/",
+      "title": "Obsidian-Git同步进阶技巧 | 杰森的效率工坊",
+      "published": "2025-08-07",
+      "article_url": "https://jasonai.me/blog/obsidian-git-sync-advance/",
+      "md_url": "https://jasonai.me/download/Obsidian-Git同步进阶技巧.md",
+      "file": "Obsidian-Git-Advanced.md",
+      "bytes": 9348,
+      "sha256": "8234bf3d1413deddf2313f2650eeeee960e8b4d3dc2ff914c960d5a816a415be"
+    },
+    {
+      "path": "/blog/obsidian-git-sync/",
+      "title": "Obsidian笔记库同步方案-Git | 杰森的效率工坊",
+      "published": "2025-08-04",
+      "article_url": "https://jasonai.me/blog/obsidian-git-sync/",
+      "md_url": "https://jasonai.me/download/Obsidian笔记库同步方案-Git.md",
+      "file": "Obsidian-Git-Sync.md",
+      "bytes": 7343,
+      "sha256": "3107480222cc19d866e7ff7ea1d63ce5b81536a778b564fa6fba74b0109b94af"
+    },
+    {
+      "path": "/blog/obsidian-habit-heatmap-tutorial/",
+      "title": "Obsidian 教程：3种方法实现习惯打卡热力图 (Tracker/Heatmap Calendar/DataviewJS) | 视觉化你的自律与进步 | 杰森的效率工坊",
+      "published": "2025-07-16",
+      "article_url": "https://jasonai.me/blog/obsidian-habit-heatmap-tutorial/",
+      "md_url": "https://jasonai.me/download/Obsidian-教程-3种方法实现习惯打卡热力图-Tracker-Heatmap-Calendar-DataviewJS-视觉化你的自律与进步.md",
+      "file": "Obsidian-Habit-Heatmap.md",
+      "bytes": 13136,
+      "sha256": "583e49a1683da2bd88404edfb067c4e1523a4e0617f350950a2578cde5dc3be3"
+    },
+    {
+      "path": "/blog/obsidian-mcp-ai-automation-tutorial/",
+      "title": "Obsidian MCP入门教程：颠覆你的Obsidian用法，开启AI自动化指令 | 杰森的效率工坊",
+      "published": "2025-09-29",
+      "article_url": "https://jasonai.me/blog/obsidian-mcp-ai-automation-tutorial/",
+      "md_url": "https://jasonai.me/download/Obsidian-MCP入门教程-颠覆你的Obsidian用法-开启AI自动化指令.md",
+      "file": "Obsidian-MCP-Beginner.md",
+      "bytes": 8055,
+      "sha256": "b882e35fb509c03190a6119d1ddcc0c0768287042e375a8f3fadb10355da2682"
+    },
+    {
+      "path": "/blog/obsidian-mcp-ai-automation/",
+      "title": "Obsidian+AI=让所有app听你指挥 | 用MCP，让AI在Obsidian中接管所有App | 杰森的效率工坊",
+      "published": "2025-10-24",
+      "article_url": "https://jasonai.me/blog/obsidian-mcp-ai-automation/",
+      "md_url": "https://jasonai.me/download/Obsidian-AI-让所有app听你指挥-用MCP-让AI在Obsidian中接管所有App.md",
+      "file": "Obsidian-MCP-Automation.md",
+      "bytes": 23973,
+      "sha256": "1220b4b6ef30dace67c4da69ad4f99c26a43d752ccf6b1398e0aa93c1d04abb1"
+    },
+    {
+      "path": "/blog/obsidian-rainbow-folder-border/",
+      "title": "Obsidian彩虹文件夹-边框版 | 杰森的效率工坊",
+      "published": "2025-07-11",
+      "article_url": "https://jasonai.me/blog/obsidian-rainbow-folder-border/",
+      "md_url": "https://jasonai.me/download/Obsidian彩虹文件夹-边框版.md",
+      "file": "Obsidian-Rainbow-Folder-Border.md",
+      "bytes": 7895,
+      "sha256": "a8e1d38a56f6899e1d3ff1bc5156f6dce3ac40e544f1f760a5e193a055684eee"
+    },
+    {
+      "path": "/blog/obsidian-rainbow-folders-css/",
+      "title": "Obsidian彩虹文件夹：无需插件！几行代码，让你的Obsidian文件夹“开出彩虹” | 杰森的效率工坊",
+      "published": "2025-07-09",
+      "article_url": "https://jasonai.me/blog/obsidian-rainbow-folders-css/",
+      "md_url": "https://jasonai.me/download/Obsidian彩虹文件夹-无需插件-几行代码-让你的Obsidian文件夹-开出彩虹.md",
+      "file": "Obsidian-Rainbow-Folders-CSS.md",
+      "bytes": 7321,
+      "sha256": "836dc4f159c4528bc0657d3b1aa2f6ae5764b451e01a7b8b6c1eeb28c3bdbcc6"
+    },
+    {
+      "path": "/blog/obsidian-widgets-time-battery-calendar/",
+      "title": "Obsidian美化：像Notion一样拥有动态小组件 (时间/电量/日历) | 插件+DataviewJS两种方法 | 杰森的效率工坊",
+      "published": "2025-07-13",
+      "article_url": "https://jasonai.me/blog/obsidian-widgets-time-battery-calendar/",
+      "md_url": "https://jasonai.me/download/Obsidian美化-像Notion一样拥有动态小组件-时间-电量-日历-插件-DataviewJS两种方法.md",
+      "file": "Obsidian-Widgets-Time-Battery-Calendar.md",
+      "bytes": 17060,
+      "sha256": "69aa673b1c65836945cd8f738c8c6f8d92d78854fa561d1ce8ce4d58d4a940a4"
+    },
+    {
+      "path": "/blog/obsidian-wordcloud-tutorial/",
+      "title": "Obsidian 教程：如何制作炫酷词云图表：一眼看穿知识库重点 | 杰森的效率工坊",
+      "published": "2025-08-10",
+      "article_url": "https://jasonai.me/blog/obsidian-wordcloud-tutorial/",
+      "md_url": "https://jasonai.me/download/Obsidian-教程-如何制作炫酷词云图表-一眼看穿知识库重点.md",
+      "file": "Obsidian-Wordcloud.md",
+      "bytes": 2921,
+      "sha256": "427681e4a30cbdbca435a83439c70b4a33f3c299c5e7454f9abe152c3917b11d"
+    },
+    {
+      "path": "/blog/opencode-openwork-ai-agent-guide/",
+      "title": "OpenCode &amp; OpenWork 快速上手教程，让AI Agent接管你所有工作。 | 杰森的效率工坊",
+      "published": "2026-02-03",
+      "article_url": "https://jasonai.me/blog/opencode-openwork-ai-agent-guide/",
+      "md_url": "https://jasonai.me/download/OpenCode-OpenWork-快速上手教程-让AI-Agent接管你所有工作.md",
+      "file": "OpenCode-OpenWork-Agent.md",
+      "bytes": 9852,
+      "sha256": "7aae880eeb42706100c71e55c07fe96271884a461f7a5c0006d870ab20375721"
+    },
+    {
+      "path": "/blog/ponder-ai-visual-thinking-canvas/",
+      "title": "你的AI只会一问一答？用Ponder AI做深度研究与思考，告别信息灾难。 | 杰森的效率工坊",
+      "published": "2025-10-16",
+      "article_url": "https://jasonai.me/blog/ponder-ai-visual-thinking-canvas/",
+      "md_url": "https://jasonai.me/download/你的AI只会一问一答-用Ponder-AI做深度研究与思考-告别信息灾难.md",
+      "file": "Ponder-Visual-Thinking.md",
+      "bytes": 15819,
+      "sha256": "42a4f82e7b2a648b4cf95779cc18f3e91c32a8be9544b3b2f996184f7bfad2bc"
+    },
+    {
+      "path": "/blog/yaml-frontmatter-ai-prompts-guide/",
+      "title": "YAML 新手入门教程：从Obsidian元数据，到OpenAI GPT5官方提示词，解锁你的必备技能 | 杰森的效率工坊",
+      "published": "2025-08-22",
+      "article_url": "https://jasonai.me/blog/yaml-frontmatter-ai-prompts-guide/",
+      "md_url": "https://jasonai.me/download/YAML-新手入门教程-从Obsidian元数据-到OpenAI-GPT5官方提示词-解锁你的必备技能.md",
+      "file": "YAML-Frontmatter-AI-Prompts.md",
+      "bytes": 12624,
+      "sha256": "3fb57314c96f718f6b03dfdbad7f327b451a8cd2c3c102b809470792ea8ab715"
+    }
+  ]
+}

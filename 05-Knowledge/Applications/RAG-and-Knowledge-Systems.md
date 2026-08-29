@@ -66,6 +66,18 @@ flowchart LR
 
 用 30–50 个真实问题建立 golden set，记录每题应命中的来源、不可回答条件与失败类型，再比较“无检索 / 简单检索 / hybrid + rerank”。
 
+## JasonAI 来源中的实操补充
+
+[[Google-Open-Knowledge-Format]] 把 Knowledge Bundle、`index.md`、Concept、来源追踪、Freshness 和生命周期放在同一个开放结构里；这与本仓库的“来源层 → 知识层 → MOC”分层相容，但 OKF 的格式建议不等于检索质量证明。
+
+[[Agent-Memory-Basic-Memory-Guide]] 补充了 Memory 与 RAG 的边界：Memory 保存会改变未来行为的事实/经验，RAG 在当前任务中召回外部证据。两者组合时仍需保留原始来源、更新时间、冲突处理和删除路径。
+
+[[Obsidian-Copilot-RAG]] 可作为插件级实验材料。配置模型、Embedding、检索、上下文和答案设置时，记录版本、数据范围、权限和评测结果；不要把插件默认参数写成稳定的 RAG 结论。
+
+## 读完来源后要留下的证据
+
+每次把外部文章转成内部知识，至少保留：原文 URL、抓取日期、被采纳的主张、未采纳或待核验的主张、一个可复现的小测试，以及与岗位技能/作品集的连接。没有这些字段的“AI 总结”只能放在来源层，不能作为 Job Evidence。
+
 ## 一手资料
 
 - Lewis et al., [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)

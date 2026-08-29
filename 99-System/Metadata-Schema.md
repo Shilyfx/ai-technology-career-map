@@ -16,7 +16,7 @@ related:
 
 `type`, `status`, `created`, `updated` are required on formal notes. Use `snapshot_date` for a represented snapshot, `retrieved` for capture time, and `review_after` for time-sensitive pages. `stability` is `stable | current | emerging`.
 
-Allowed `type`: `home`, `moc`, `path`, `concept`, `assessment`, `radar`, `role`, `matrix`, `source-index`, `snapshot`, `inbox`, `job-sample`, `skill`, `evidence`, `lab`, `project`, `review`, `system`, `term`.
+Allowed `type`: `home`, `moc`, `path`, `concept`, `assessment`, `radar`, `role`, `matrix`, `source-index`, `source`, `snapshot`, `inbox`, `job-sample`, `skill`, `evidence`, `lab`, `project`, `review`, `system`, `term`.
 
 ## Job Sample contract
 
@@ -44,6 +44,10 @@ Skills do not carry a global `depth`; depth is role-specific. A Skill must be a 
 - `page_kind: evidence-index` is `type: moc`, `domain: evidence`; it is not an Evidence record.
 - Technology and Term radars retain `snapshot_date`, `review_after` and their own body bands.
 - Evidence records link `skills`, `role_targets`, and optionally `job_samples`; they must include Problem, Action, Result, Failure and Judgment.
+
+## Imported source contract
+
+`type: source` with `page_kind: imported-source` is reserved for a preserved external Markdown artifact. Required provenance fields are `title`, `article_url`, `source_url`, `source_kind: external-markdown`, and `retrieved`; `created` and `updated` still describe when this vault captured the file. The body remains a read-only reference: do not promote product instructions into reusable Skills without testing them against official documentation and this vault's role/evidence rules.
 
 ## Link and privacy rules
 

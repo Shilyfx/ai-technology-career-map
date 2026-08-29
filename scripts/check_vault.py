@@ -34,6 +34,7 @@ TYPES = {
     "role",
     "matrix",
     "source-index",
+    "source",
     "snapshot",
     "inbox",
     "job-sample",
@@ -301,6 +302,12 @@ def main() -> int:
         elif page_kind == "role-skill-assessment":
             if kind != "assessment":
                 errors.append(f"role-skill-assessment must have type assessment: {rel}")
+        elif page_kind == "imported-source":
+            if kind != "source":
+                errors.append(f"imported-source must have type source: {rel}")
+            for key in ("title", "article_url", "source_url", "source_kind", "retrieved"):
+                if not meta.get(key):
+                    errors.append(f"imported-source missing {key}: {rel}")
 
         if kind == "job-sample" and not is_template:
             for key in ("company", "role_title", "role_family", "seniority", "location", "source_url", "source_kind", "source_status", "snapshot_date", "retrieved", "created", "updated", "review_after"):
@@ -350,7 +357,12 @@ def main() -> int:
     # Resolve wikilinks in both body and frontmatter metadata.
     incoming: defaultdict[Path, int] = defaultdict(int)
     for path, (meta, body, _) in records.items():
-        check_wikilinks(path, body, stem_map, incoming, errors)
+        # Imported external Markdown is preserved as a source artifact. Its
+        # body may contain the publisher's own wikilinks, which are not part
+        # of this vault's graph; only our controlled frontmatter links are
+        # validated below.
+        if not (meta.get("type") == "source" and meta.get("page_kind") == "imported-source"):
+            check_wikilinks(path, body, stem_map, incoming, errors)
         for field, value in meta.items():
             if "[[" in value:
                 check_wikilinks(path, value, stem_map, incoming, errors, f"frontmatter {field}")

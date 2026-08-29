@@ -65,6 +65,22 @@ AI Index 2026 显示 2025 年美国岗位中 Agentic AI、AI agents、Agentic sy
 
 实现一个只使用 2–3 个工具的任务系统，并准备：20 个任务、5 个对抗输入、最大步骤数、预算、错误注入、人工审批点与任务成功率。先证明单 Agent/Workflow 可控，再考虑多 Agent。
 
+## JasonAI 来源中的实操补充
+
+[[Agent-Hooks-Guide]] 提供了一个有用的控制面区分：Prompt/`AGENTS.md` 负责告诉 Agent 要求，Skill 负责可复用的方法，MCP/Tool 提供外部能力，Hook 在生命周期节点自动检查，而 Permission/Sandbox 才是不可越过的权限边界。Hook 触发比自然语言指令确定，但脚本仍可能超时或报错，不能替代沙箱。
+
+[[Obsidian-AI-Agent-Skills-Configuration]]、[[Obsidian-CLI-AI-Agent-Automation]]、[[Obsidian-MCP-Automation]] 和 [[Obsidian-MCP-Beginner]] 展示了把 Agent 接入笔记库、命令行和外部应用的路径。它们适合作为工具实例来练习 schema、权限、幂等、日志和人工审批，不应直接证明某个产品是岗位必需技能。
+
+[[n8n-Obsidian-RSS-Automation]] 与 [[Claude-Code-n8n-Workflow]] 可用来演练“触发 → 处理 → 写入 → 验收”的 Workflow；在自动写入知识库前，应增加去重、来源 URL、失败重试上限和人工抽查。
+
+## 一个可复用的 Agent 评审问题集
+
+- 目标能否拆成可观察的输入、工具调用和验收结果？
+- 每个工具的 schema、权限、超时、预算、幂等键和错误返回是否明确？
+- 哪些动作必须由 Hook/沙箱强制拦截，哪些只需要提示？
+- 如果上下文、记忆或检索结果错误，系统如何拒答、回滚和交给人？
+- 是否有一组固定任务、对抗输入和 trace，能区分模型问题与编排问题？
+
 ## 一手资料
 
 - Anthropic, [Building effective agents](https://www.anthropic.com/research/building-effective-agents)
