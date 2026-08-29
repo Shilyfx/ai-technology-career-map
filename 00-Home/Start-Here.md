@@ -10,6 +10,7 @@ related:
   - "[[Job-Sample-Index]]"
   - "[[Role-Map]]"
   - "[[Skill-Index]]"
+  - "[[Prerequisite-Foundation-Map]]"
   - "[[AI-Technology-MOC]]"
 ---
 
@@ -29,7 +30,7 @@ related:
 
 ### 3. 我只想补一个技能
 
-打开 [[Skill-Index]]，查看 Role Demand、前置 Skills、Practice 和 Pass Evidence。
+打开 [[Skill-Index]]，查看 Role Demand、前置 Skills、Practice 和 Pass Evidence；如果发现自己缺基础，先从 [[Prerequisite-Foundation-Map]] 选择对应前置链。
 
 ### 4. 我想理解全局技术
 

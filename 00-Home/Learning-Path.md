@@ -34,7 +34,7 @@ related:
 
 ## 5. 补 Prerequisite Skills
 
-沿 Skill 的前置关系学习 Python、Git、数据、系统或评测底座，直到能完成目标任务。
+先打开 [[Prerequisite-Foundation-Map]]，再沿 Skill 的前置关系学习 Python、Git、数据、系统或评测底座，直到能完成目标任务。它提供 Role-specific 顺序，但不是一张所有人都必须完成的通用课程表。
 
 Prerequisites are role-specific and come from the selected Role Skill Profile; there is no universal prerequisite list.
 

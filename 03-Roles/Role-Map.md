@@ -30,4 +30,4 @@ related:
 
 ## How to use
 
-Open a Role Profile, follow its Skill Profile to [[Skill-Index]], then choose Practice and record [[Evidence-Index]]. Counts overlap because one sample may inform adjacent Role views; they are not a sum of unique postings.
+Open a Role Profile, first follow its [[Learning-Path]] and [[Prerequisite-Foundation-Map]], then use the Role Skill Profile in [[Skill-Index]] to choose Practice and record [[Evidence-Index]]. Counts overlap because one sample may inform adjacent Role views; they are not a sum of unique postings.

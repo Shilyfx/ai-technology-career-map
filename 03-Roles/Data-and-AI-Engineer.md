@@ -81,3 +81,7 @@ Batch is light on entry-level and warehouse-specific postings; framework names a
 
 ## Refresh
 Refresh data-tool signals every 60–90 days and stable data fundamentals every 180–365 days。
+
+## Learning prerequisites
+
+数据方向先学 [[Data-Structures-and-Algorithms]]、[[Python]]、[[SQL]] 和 [[Databases-and-Data-Modeling]]，再进入 [[Data-Quality-and-Lineage]]、[[Testing]]、[[Distributed-Systems]]；涉及 RAG 或反馈数据时补 [[Security-Privacy-and-Access-Control]]。

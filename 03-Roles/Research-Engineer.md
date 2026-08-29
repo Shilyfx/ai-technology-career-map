@@ -86,3 +86,7 @@ Frontier lab and senior bias; some Anthropic pages were only partially visible d
 
 ## Refresh
 Refresh job evidence every 30–60 days and core research practices every 180–365 days。
+
+## Learning prerequisites
+
+建议按 [[Data-Structures-and-Algorithms]] → [[Python]] → [[Statistics-and-Experiment-Design]] → [[Software-Design-and-Architecture]] → [[Testing]] 学习，再进入 [[ML-Experimentation]]、[[Model-Evaluation]] 和专项训练/系统 Skill。

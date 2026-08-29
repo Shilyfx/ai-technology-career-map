@@ -62,4 +62,4 @@ PM/FDE implement；技术岗位 use；所有角色都要 explain 结果边界。
 尚无用户能力结论；请建立 [[Evidence-Card]]。
 
 ## Sources
-[[Huawei-AI-Solutions-Architect-Shanghai-2026-08]]、[[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]]。
+[[Huawei-AI-Solutions-Architect-Shanghai-2026-08]]、[[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]]、[[YAML-Frontmatter-AI-Prompts]]、[[Markdown-Cheat-Sheet]]、[[AI-Obsidian-Learning-Blueprint]]。

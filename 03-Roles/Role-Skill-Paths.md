@@ -17,24 +17,24 @@ related:
 
 ## Research / Research Engineer
 
-[[Python]] → [[ML-Experimentation]] → [[Model-Evaluation]] → [[PyTorch]] → [[Distributed-Training]] → one research specialization
+[[Data-Structures-and-Algorithms]] → [[Python]] → [[Statistics-and-Experiment-Design]] → [[ML-Experimentation]] → [[Model-Evaluation]] → [[PyTorch]] → [[Distributed-Training]] → one research specialization
 
 ## ML / AI Engineer
 
-[[Python]] → [[Data-Quality-and-Lineage]] → [[PyTorch]] → [[Model-Evaluation]] → [[Model-Serving]] → product metric loop
+[[Data-Structures-and-Algorithms]] → [[Python]] → [[Statistics-and-Experiment-Design]] → [[Databases-and-Data-Modeling]] → [[Data-Quality-and-Lineage]] → [[PyTorch]] → [[Model-Evaluation]] → [[Model-Serving]] → product metric loop
 
 ## AI Application Engineer
 
-[[Python]] → [[HTTP-API]] → [[RAG]] → [[Tool-Calling-Agent-Workflow]] → [[LLM-Evals]] → production workflow
+[[Data-Structures-and-Algorithms]] → [[Python]] → [[HTTP-API]] → [[Software-Design-and-Architecture]] → [[Prompt-and-Context-Engineering]] → [[RAG]] → [[Security-Privacy-and-Access-Control]] → [[Tool-Calling-Agent-Workflow]] → [[LLM-Evals]] → production workflow
 
 ## AI Infrastructure / Inference
 
-[[Linux]] → [[Testing]] → [[Distributed-Systems]] → [[CUDA-GPU-Basics]] → [[Model-Serving]] → [[Observability]]
+[[Data-Structures-and-Algorithms]] → [[Linux]] → [[Testing]] → [[Software-Design-and-Architecture]] → [[Distributed-Systems]] → [[CUDA-GPU-Basics]] → [[Model-Serving]] → [[Observability]] → [[Security-Privacy-and-Access-Control]]
 
 ## Data / AI Engineer
 
-[[Python]] + [[SQL]] → [[Data-Quality-and-Lineage]] → [[Testing]] → [[Distributed-Systems]] → dataset/eval products
+[[Data-Structures-and-Algorithms]] → [[Python]] + [[SQL]] → [[Databases-and-Data-Modeling]] → [[Data-Quality-and-Lineage]] → [[Testing]] → [[Distributed-Systems]] → dataset/eval products
 
 ## PM / Safety / Solutions
 
-[[Technical-Communication]] → [[Model-Evaluation]] → [[LLM-Evals]] → [[AI-Safety-Measurement]] or [[API-Product-Delivery]] according to Role Profile.
+[[Technical-Communication]] → [[Statistics-and-Experiment-Design]] → [[Model-Evaluation]] → [[LLM-Evals]] → [[Security-Privacy-and-Access-Control]] → [[AI-Safety-Measurement]] or [[API-Product-Delivery]] according to Role Profile.

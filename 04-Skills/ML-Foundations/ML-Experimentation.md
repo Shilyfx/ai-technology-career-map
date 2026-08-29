@@ -13,6 +13,7 @@ roles:
 prerequisites:
   - "[[Python]]"
   - "[[Data-Quality-and-Lineage]]"
+  - "[[Statistics-and-Experiment-Design]]"
 related_concepts:
   - "[[Training-Evaluation-and-Generalization]]"
 ---
@@ -36,7 +37,7 @@ Research/ML/Evals 为 Core；产品和应用以理解指标为边界。证据见
 研究岗位 implement/optimize；应用岗位 use；PM explain。
 
 ## 前置 Skills
-[[Python]]、[[Data-Quality-and-Lineage]]。
+[[Python]]、[[Data-Quality-and-Lineage]]、[[Statistics-and-Experiment-Design]]。
 
 ## 学习范围
 假设、对照、消融、置信区间、可重复性、误差分析和资源预算。

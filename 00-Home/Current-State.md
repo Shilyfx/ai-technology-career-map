@@ -5,13 +5,14 @@ status: reference
 created: 2026-08-24
 updated: 2026-08-24
 current: "从 [[Career-MOC]] / [[Job-Sample-Index]] 选择一个目标 Role"
-next: "打开目标 Role 的 Skill Profile，选择第一个 Core Skill"
+next: "打开目标 Role 的 Skill Profile 与 [[Prerequisite-Foundation-Map]]，选择第一个 Core/Prerequisite Skill"
 target_role: ""
 current_skill: ""
 next_skill: ""
 related:
   - "[[Career-MOC]]"
   - "[[Role-Skill-Assessment]]"
+  - "[[Prerequisite-Foundation-Map]]"
 ---
 
 # Current State

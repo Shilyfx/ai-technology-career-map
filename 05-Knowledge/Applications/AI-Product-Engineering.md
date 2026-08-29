@@ -11,6 +11,9 @@ related:
   - "[[AI-Product-Manager]]"
   - "[[AI-Application-Engineer]]"
   - "[[Evals-and-Observability]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 ---
 
 # AI Product Engineering

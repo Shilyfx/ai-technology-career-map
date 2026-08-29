@@ -80,4 +80,4 @@ related_concepts:
 
 ## Sources
 
-[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 以 inferred 记录版本协作信号；它不构成该岗位的明确必需项。
+[[Huawei-AI-Bottom-Software-Shanghai-2026-08]] 的 `Skill Extraction` 以 inferred 记录版本协作信号；它不构成该岗位的明确必需项。实操参考：[[Obsidian-Git-Sync]]、[[Obsidian-Git-Advanced]]、[[GitHub-Beginner-Guide]]。

@@ -9,6 +9,9 @@ updated: 2026-08-24
 related:
   - "[[Learning-Path]]"
   - "[[Role-Skill-Matrix]]"
+  - "[[Data-Structures-and-Algorithms]]"
+  - "[[Statistics-and-Experiment-Design]]"
+  - "[[Databases-and-Data-Modeling]]"
 ---
 
 # Math, Data and Software Foundations

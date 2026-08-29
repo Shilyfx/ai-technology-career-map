@@ -98,3 +98,7 @@ Samples overrepresent frontier labs and senior specialists; hardware stacks diff
 ## Refresh
 
 Review tools and hardware signals every 30–60 days; stable distributed concepts every 180–365 days.
+
+## Learning prerequisites
+
+先补 [[Data-Structures-and-Algorithms]]、[[Linux]]、[[Testing]] 和 [[Software-Design-and-Architecture]]，再进入 [[Distributed-Systems]]、[[CUDA-GPU-Basics]]、[[Model-Serving]] 与 [[Observability]]；生产环境同时练习 [[Security-Privacy-and-Access-Control]]。

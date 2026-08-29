@@ -45,3 +45,7 @@ related:
 ## Reading rule
 
 样本链接是追溯入口；具体职责、明确要求、推断标记和局限必须回到 Job Sample 的原文卡片和 `Evidence Trace`，不能只依据本表的计数。
+
+## Prerequisite layer
+
+[[Prerequisite-Foundation-Map]] 中的六个基础 Skill 是为学习顺序补齐的综合层。它们没有被当前 Job Sample 独立抽取，因此不在上表伪造 `explicit / inferred` 计数；完成后仍应通过 [[Evidence-Index]] 形成个人能力证据。

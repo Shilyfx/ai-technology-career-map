@@ -13,6 +13,11 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[AI-Agents-and-Tool-Use]]"
+  - "[[Tool-Calling-Agent-Workflow]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Security-Privacy-and-Access-Control]]"
+  - "[[AI-Solutions-Architect-and-FDE]]"
 ---
 
 # Obsidian 终极玩法：打造你的 AI 指挥中心 (Smart Composer + MCP)

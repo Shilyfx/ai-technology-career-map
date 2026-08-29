@@ -103,3 +103,7 @@ Sample is biased toward frontier-company, senior and US/Europe postings; validat
 ## Refresh
 
 Refresh Job Samples every 30–60 days; revisit this profile after new family coverage.
+
+## Learning prerequisites
+
+应用方向建议按 [[Data-Structures-and-Algorithms]] → [[Python]] → [[HTTP-API]] → [[Software-Design-and-Architecture]] → [[Prompt-and-Context-Engineering]] → [[RAG]] 学习，再进入 [[Security-Privacy-and-Access-Control]]、[[Tool-Calling-Agent-Workflow]] 和 [[LLM-Evals]]。

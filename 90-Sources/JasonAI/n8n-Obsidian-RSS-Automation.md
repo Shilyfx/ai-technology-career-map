@@ -13,6 +13,11 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[AI-Agents-and-Tool-Use]]"
+  - "[[Tool-Calling-Agent-Workflow]]"
+  - "[[Software-Design-and-Architecture]]"
+  - "[[Security-Privacy-and-Access-Control]]"
+  - "[[AI-Solutions-Architect-and-FDE]]"
 ---
 
 # n8n 与 Obsidian 集成指南

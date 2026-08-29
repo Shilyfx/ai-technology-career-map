@@ -12,6 +12,7 @@ roles:
   - "[[AI-Safety-Evals-and-Governance]]"
 prerequisites:
   - "[[ML-Experimentation]]"
+  - "[[Statistics-and-Experiment-Design]]"
 related_concepts:
   - "[[Evals-and-Observability]]"
 ---
@@ -35,7 +36,7 @@ Research、ML、Safety/Evals 为 Core；应用和 PM 需要解释评测结果。
 Evals/研究需要 implement；应用需要 use；PM 需要 explain 限制。
 
 ## 前置 Skills
-[[ML-Experimentation]]。
+[[ML-Experimentation]]、[[Statistics-and-Experiment-Design]]。
 
 ## 学习范围
 离线/在线评测、分类/生成指标、基准偏差、回归和人评协议。

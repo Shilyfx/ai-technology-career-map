@@ -13,6 +13,9 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Technical-Communication]]"
+  - "[[AI-Product-Engineering]]"
+  - "[[AI-Product-Manager]]"
 ---
 
 Mermaid 是一种基于 JavaScript 的图表和图表绘制工具，它使用类似 Markdown 的文本定义来动态生成图表和可视化内容。 由于其语法简单直观，用户可以轻松地将复杂的图表以文本形式嵌入到文档、网站和笔记中，便于维护和版本控制。

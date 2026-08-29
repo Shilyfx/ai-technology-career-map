@@ -13,6 +13,9 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Technical-Communication]]"
+  - "[[AI-Product-Manager]]"
 ---
 
 Markdown是一种轻量级标记语言，由约翰·格鲁伯（John Gruber）与亚伦·斯沃茨（Aaron Swartz）于2004年共同创造。其核心设计哲学是“易读易写”，即便是未被渲染的纯文本格式，也应具备极高的可读性。

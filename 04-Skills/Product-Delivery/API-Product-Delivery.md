@@ -13,6 +13,7 @@ roles:
 prerequisites:
   - "[[HTTP-API]]"
   - "[[Testing]]"
+  - "[[Software-Design-and-Architecture]]"
 related_concepts:
   - "[[AI-Product-Engineering]]"
 ---
@@ -36,7 +37,7 @@ Application/PM/FDE 为 Core；研究岗位是接口意识。证据见 [[OpenAI-S
 应用 implement；PM decide/prioritize；FDE use/implement。
 
 ## 前置 Skills
-[[HTTP-API]]、[[Testing]]。
+[[HTTP-API]]、[[Testing]]、[[Software-Design-and-Architecture]]。
 
 ## 学习范围
 契约、版本、认证、权限、可靠性、成本、文档和用户反馈。

@@ -89,3 +89,7 @@ Public job samples mix scientist, algorithm and research-engineering titles; do 
 
 ## Refresh
 Refresh current research signals every 60–90 days; stable research methods every 180–365 days。
+
+## Learning prerequisites
+
+开始正式研究 Skill 前，先补 [[Data-Structures-and-Algorithms]]、[[Python]]、[[Statistics-and-Experiment-Design]] 和 [[ML-Experimentation]]；需要读懂模型实现时再进入 [[Transformer-LLM-Fundamentals]] 与 [[PyTorch]]。这些是学习顺序，不是对所有研究岗位的统一门槛。

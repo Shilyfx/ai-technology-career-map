@@ -13,6 +13,7 @@ roles:
 prerequisites:
   - "[[Python]]"
   - "[[SQL]]"
+  - "[[Databases-and-Data-Modeling]]"
 related_concepts:
   - "[[Data-Engineering-and-Governance]]"
 ---
@@ -36,7 +37,7 @@ Data/ML 是 Core；应用岗位是 Common prerequisite。[[Apple-Machine-Learnin
 Data 需要 implement；ML 需要 use/implement；PM 只需 explain 质量风险。
 
 ## 前置 Skills
-[[Python]]、[[SQL]]。
+[[Python]]、[[SQL]]、[[Databases-and-Data-Modeling]]。
 
 ## 学习范围
 schema、缺失/重复/漂移、采样、标注、lineage、数据契约。

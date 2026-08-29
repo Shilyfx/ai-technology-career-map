@@ -13,6 +13,9 @@ updated: 2026-08-29
 review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
+  - "[[Prompt-and-Context-Engineering]]"
+  - "[[Technical-Communication]]"
+  - "[[AI-Product-Manager]]"
 ---
 
 YAML (YAML Ain't Markup Language) 是一种以数据为中心、对人类友好的数据序列化语言。它因其简洁和高可读性而备受青睐，尤其是在配置文件和知识管理领域。
