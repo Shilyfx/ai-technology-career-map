@@ -1,6 +1,6 @@
 # AI 技术与职业地图
 
-这是一个可在 Obsidian 中使用、也可直接在 GitHub 上阅读的 Job-first AI 知识库：从真实职位样本抽取 Role 和 Skill，再用 Practice/Evidence 形成可验证学习闭环。
+这是一个可在 Obsidian 中使用、也可直接在 GitHub 上阅读的 Job-first AI 知识库：覆盖 Model Builder 与 Applied AI Builder，从真实职位样本抽取 Role 和 Skill，再用 Practice/Evidence 形成可验证学习闭环；企业路径从 Application/Agent/Workflow/Integration/Evals/Delivery 开始。
 
 ## 从哪里开始
 

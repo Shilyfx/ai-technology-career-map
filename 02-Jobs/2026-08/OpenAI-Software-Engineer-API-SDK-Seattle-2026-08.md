@@ -45,7 +45,7 @@ review_after: 2026-09-24
 | --- | --- | --- |
 | [[HTTP-API]] | explicit | public API surface |
 | [[API-Product-Delivery]] | explicit | SDK product delivery |
-| [[Tool-Calling-Agent-Workflow]] | explicit | orchestration |
+| [[Tool-Calling-and-Action-Contracts]] | explicit | orchestration |
 | [[Testing]] | explicit | compatibility and reliability |
 | [[Technical-Communication]] | inferred | docs and developer experience |
 

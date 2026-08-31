@@ -1,15 +1,19 @@
 ---
 type: role
 role_family: field-deployment
-sample_count: 2
+sample_count: 12
 status: developing
-snapshot_date: 2026-08-24
+snapshot_date: 2026-08-31
 created: 2026-08-24
-updated: 2026-08-24
-review_after: 2026-11-24
+updated: 2026-08-31
+review_after: 2026-11-30
 aliases:
   - Forward Deployed Engineer
+  - Forward Deployed Architect
   - AI Solutions Architect
+  - AI Success Architect
+  - AI Solutions Engineer
+  - Agent Deployment Engineer
   - FDE
 ---
 
@@ -17,78 +21,66 @@ aliases:
 
 ## 主要使命
 
-在客户或行业现场，把模糊业务问题变成可上线 AI 系统，并推动 adoption 与结果。Solutions Architect 更常负责架构、技术方案与沟通；FDE 往往更直接写代码、集成和交付，但公司边界不同。
+在客户或行业现场，把模糊业务问题变成可上线 AI 系统，并推动 adoption 与结果。Architect 偏架构、方案和 enablement；FDE 偏代码、集成和交付；Success Architect 偏 adoption、治理和 outcome。
 
 ## 工作闭环
 
 ```text
-discovery
-→ workflow and constraints
-→ prototype
-→ architecture and eval
-→ integration / deployment
-→ adoption / outcome
-→ product feedback
+discovery → workflow/constraints → prototype → architecture/eval
+→ integration/deployment → adoption/outcome → product feedback
 ```
 
-## 技能重点
-
-- 后端/全栈、API、云、数据、RAG/Agent；
-- 快速原型与生产加固；
-- 安全、权限、合规、成本与可靠性；
-- 行业知识、需求澄清、方案表达、培训与 stakeholder 管理；
-- 能把客户反馈转成产品/模型需求。
-
-## Sample Observations
-
-本批 Huawei Solutions Architect/OTT Job Samples 同时出现 AI 应用、GPU/NPU、系统架构、编码、培训与客户沟通；仅能支持该批中国方案岗位的方向性判断，不能替代更多区域 FDE 样本。
-
-## 作品证据
-
-写一个匿名化交付案例：问题、约束、架构、原型、eval、权限、上线、 adoption、业务指标、失败和产品反馈。没有真实客户时，可选公开行业流程做完整模拟，但要标注假设。
-
-来源：[OpenAI for Singapore — FDE](https://openai.com/index/introducing-openai-for-singapore/)、[华为 AI 解决方案架构师](https://career.huawei.com/reccampportal/portal5/social-recruitment-detail.html?dataSource=1&jobId=28741)
-
 ## Sample Basis
-2 Huawei solution-architecture samples covering AI architecture, hardware and delivery.
 
-## Evidence Basis
-
-Based on 2 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
+12 个 FDE/Architect/Success 样本，覆盖 Atlassian、Notion、Salesforce、Ramp、Glean、Warp 与已有 Huawei 方案样本；企业批次细节见 [[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]。
 
 ## Main Deliverables
-Customer-ready architecture, prototype, integration, deployment and adoption outcome.
+
+客户 discovery、参考架构、原型、workflow/connector、权限与合规、eval/上线、培训 adoption 和可衡量业务结果。
 
 ## Responsibility Clusters
-Discovery; system design; API/model integration; evaluation/security; training and adoption.
+
+需求与流程建模；LLM/tool/workflow；企业集成；安全与治理；部署/运营；stakeholder 沟通；反馈转产品。
 
 ## Skill Profile
+
 | Skill | Required | Preferred | Responsibility | Sample N | Role Priority | Target Depth | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [[Model-Serving]] | yes |  | deployable AI system | 2 | Core | implement | high | Job Samples |
-| [[Distributed-Systems]] | yes |  | scale and reliability | 2 | Common | use | medium | Job Samples |
-| [[Technical-Communication]] | yes |  | customer delivery | 2 | Core | implement | high | Job Samples |
-| [[CUDA-GPU-Basics]] | yes |  | hardware architecture | 2 | Specialized | explain/use | high | Job Samples |
-| [[API-Product-Delivery]] |  | yes | integration contract | 2 | Common | implement | medium | Job Samples |
+| [[Technical-Communication]] | yes |  | discovery / stakeholder | 8+ | Core | implement | high | Batch A+B |
+| [[HTTP-API]] | yes |  | integration contract | 8+ | Core | implement | high | Batch A+B |
+| [[Workflow-Automation-and-Business-Process-Design]] | yes |  | process delivery | 12 | Core | implement | high | Batch B |
+| [[Enterprise-Integrations-and-Connectors]] | yes |  | systems/identity/data | 12 | Core | implement | high | Batch B |
+| [[LLM-API-and-Structured-Outputs]] | common |  | agent/API design | 9 | Common | use→implement | high | Batch B |
+| [[Tool-Calling-and-Action-Contracts]] | common |  | safe actions | 7 | Common | implement | medium-high | Batch B |
+| [[Agent-Evals-and-Trace-Debugging]] | common |  | validation/outcome | 8 | Common | implement | high | Batch B |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | common |  | privacy/risk/adoption | 9 | Common | implement | high | Batch B |
+| [[MCP-and-Agent-Interoperability]] | specialized |  | protocol adapter | 5 | Specialized | use→implement | medium | Batch B |
+| [[RAG]] |  | preferred | grounded domain context | use case | Common | implement | medium | Batch A+B |
 
 ## Non-skill Gates
-Requirement discovery, stakeholder trust, delivery ownership, teaching and local domain knowledge.
+
+需求发现、行业知识、客户信任、语言/地域、工作授权、交付 ownership 和变革管理。
 
 ## Seniority/Subtrack Differences
-Solutions Architect leans design and enablement; FDE leans code and integration. Company boundaries vary.
+
+FDE 以代码、集成和 0→1 交付为主；Architect 以 reference architecture、治理和 enablement 为主；Success Architect 以 adoption、价值指标和持续改进为主。MCP/多智能体不是所有 subtrack 的必需项。
 
 ## Portfolio Evidence
-Anonymous or simulated case with constraints, architecture, eval, permissions, deployment and outcome.
+
+匿名化或公开流程案例：问题与约束、流程图、架构、connector、权限/eval、部署、培训、结果指标、失败与产品反馈。
 
 ## Adjacent Roles
+
 [[AI-Application-Engineer]]、[[AI-Product-Manager]]、[[AI-Infrastructure-and-Inference-Engineer]]。
 
 ## Source Limitations
-Only China-based Huawei samples in this batch; add regional FDE samples before broad market claims.
+
+样本偏中高级、企业 SaaS、US/APAC；受限/过期页面已在 Job Sample 记录，不能代表全球 FDE 或中国本地市场。
 
 ## Refresh
-Refresh tools and customer patterns every 30–60 days; architecture fundamentals every 180–365 days。
+
+客户工具、协议和岗位样本 30–60 天复查；架构基础 180–365 天复查。
 
 ## Learning prerequisites
 
-解决方案/FDE 建议先学 [[Technical-Communication]]、[[HTTP-API]]、[[Software-Design-and-Architecture]] 和 [[Security-Privacy-and-Access-Control]]，再按项目进入 [[RAG]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]] 与 [[API-Product-Delivery]]。
+先学 [[Technical-Communication]]、[[HTTP-API]]、[[Software-Design-and-Architecture]] 和 [[Security-Privacy-and-Access-Control]]，再学 [[Workflow-Automation-and-Business-Process-Design]]、[[Enterprise-Integrations-and-Connectors]]、[[LLM-API-and-Structured-Outputs]]、[[Tool-Calling-and-Action-Contracts]]、[[Agent-Evals-and-Trace-Debugging]]；[[MCP-and-Agent-Interoperability]] 按客户环境进入，[[RAG]] 仅按任务需要。

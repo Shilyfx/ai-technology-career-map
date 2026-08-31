@@ -10,6 +10,7 @@ aliases: []
 roles: []
 prerequisites: []
 related_concepts: []
+evidence_mode: job-derived
 ---
 
 # {{title}}
@@ -24,6 +25,12 @@ related_concepts: []
 ## Job Evidence
 
 列出至少一个 Job Sample 的 `Skill Extraction` 链接，并说明 explicit/inferred。
+
+## Evidence Boundary
+
+- `explicit`：岗位页面直接出现的职责/要求；
+- `inferred`：从职责推断的学习前置或邻接能力，不计入岗位频次；
+- `prerequisite-synthesis`：只有通用前置页可用时才使用，并明确说明没有独立 Job Sample 证据。
 
 ## 在岗位中怎么使用
 
@@ -50,3 +57,9 @@ related_concepts: []
 尚无用户能力结论；复制 [[Evidence-Card]] 创建真实记录后再回链。
 
 ## Sources
+
+### Official / normative
+
+### Job evidence
+
+### Practice tutorial

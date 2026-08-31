@@ -5,7 +5,7 @@ status: developing
 stability: current
 depth: use
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-11-24
 related:
   - "[[AI-Product-Manager]]"
@@ -14,6 +14,8 @@ related:
   - "[[Software-Design-and-Architecture]]"
   - "[[Prompt-and-Context-Engineering]]"
   - "[[Security-Privacy-and-Access-Control]]"
+  - "[[Workflow-Automation-and-Business-Process-Design]]"
+  - "[[Agent-Evals-and-Trace-Debugging]]"
 ---
 
 # AI Product Engineering
@@ -51,6 +53,8 @@ user job
 - Workflow automation：固定步骤 + 局部模型判断；
 - Agent：在受控边界内动态选择行动；
 - Human review queue：高风险或低置信度升级。
+
+Applied AI 岗位把上述模式落到可交付的技能链：[[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Workflow-Automation-and-Business-Process-Design]] / [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]] → [[Enterprise-Integrations-and-Connectors]]。[[RAG]]、[[MCP-and-Agent-Interoperability]] 和 [[Human-in-the-Loop-and-Agent-Guardrails]] 按任务和风险进入。
 
 ## 产品指标
 

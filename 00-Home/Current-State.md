@@ -3,9 +3,9 @@ type: home
 page_kind: current-state
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
-current: "从 [[Career-MOC]] / [[Job-Sample-Index]] 选择一个目标 Role"
-next: "打开目标 Role 的 Skill Profile 与 [[Prerequisite-Foundation-Map]]，选择第一个 Core/Prerequisite Skill"
+updated: 2026-08-31
+current: "从 [[Job-Sample-Index]] 选择 Applied AI / FDE / Agent Platform 目标 Role"
+next: "按 [[Role-Skill-Paths]] 选择 [[Python]] 或 [[TypeScript-JavaScript]]，再进入 [[LLM-API-and-Structured-Outputs]]"
 target_role: ""
 current_skill: ""
 next_skill: ""

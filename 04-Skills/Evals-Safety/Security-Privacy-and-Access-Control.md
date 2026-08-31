@@ -74,7 +74,7 @@ Prompt 不是权限；Hook 不是沙箱；RAG 召回必须继承权限；日志�
 
 ## Related Knowledge
 
-[[AI-Safety-Measurement]]、[[LLM-Evals]]、[[Data-Quality-and-Lineage]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]]。
+[[AI-Safety-Measurement]]、[[LLM-Evals]]、[[Data-Quality-and-Lineage]]、[[Tool-Calling-and-Action-Contracts]]、[[Model-Serving]]。
 
 ## Actual Evidence
 

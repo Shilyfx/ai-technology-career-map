@@ -45,7 +45,7 @@ review_after: 2026-09-24
 | Skill | Evidence type | Why counted |
 | --- | --- | --- |
 | [[API-Product-Delivery]] | explicit | API/SDK product surface |
-| [[Tool-Calling-Agent-Workflow]] | explicit | agent builders |
+| [[Tool-Calling-and-Action-Contracts]] | explicit | agent builders |
 | [[LLM-Evals]] | explicit | reliability and outcomes |
 | [[Technical-Communication]] | explicit | cross-functional delivery |
 | [[AI-Safety-Measurement]] | inferred | safety and reliability criteria |

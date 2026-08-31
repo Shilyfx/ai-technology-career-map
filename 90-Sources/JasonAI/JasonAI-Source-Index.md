@@ -103,10 +103,14 @@ related:
 
 | 来源主题 | 可连接的岗位 | 优先复习的 Skill |
 | --- | --- | --- |
-| Agent、Tool、Hook、MCP、Workflow | [[AI-Application-Engineer]]、[[AI-Solutions-Architect-and-FDE]] | [[Tool-Calling-Agent-Workflow]]、[[HTTP-API]]、[[Testing]]、[[LLM-Evals]] |
-| Memory、OKF、RAG、NotebookLM | [[AI-Application-Engineer]]、[[Data-and-AI-Engineer]]、[[AI-Product-Manager]] | [[RAG]]、[[Data-Quality-and-Lineage]]、[[Technical-Communication]] |
+| Agent-Hooks-Guide / Tool / Hook | [[AI-Application-Engineer]]、[[AI-Solutions-Architect-and-FDE]] | [[Tool-Calling-and-Action-Contracts]]、[[Human-in-the-Loop-and-Agent-Guardrails]]、[[Workflow-Automation-and-Business-Process-Design]] |
+| Obsidian-MCP-Beginner / Obsidian-MCP-Automation / Notion-MCP-Beginner | [[AI-Application-Engineer]]、[[AI-Solutions-Architect-and-FDE]] | [[MCP-and-Agent-Interoperability]]、[[Enterprise-Integrations-and-Connectors]] |
+| Claude-Code-n8n-Workflow / n8n-Obsidian-RSS-Automation / n8n-Notion-AI-Production | [[AI-Application-Engineer]]、[[AI-Solutions-Architect-and-FDE]] | [[Workflow-Automation-and-Business-Process-Design]]、[[Enterprise-Integrations-and-Connectors]] |
+| Obsidian-CLI-AI-Agent-Automation | [[AI-Application-Engineer]] | [[Agent-Orchestration-and-State]]、[[Workflow-Automation-and-Business-Process-Design]] |
+| Obsidian-AI-Integration-Methods | [[AI-Application-Engineer]]、[[AI-Solutions-Architect-and-FDE]] | [[Enterprise-Integrations-and-Connectors]] |
+| Agent-Memory-Basic-Memory-Guide / Memory、OKF、RAG、NotebookLM | [[AI-Application-Engineer]]、[[Data-and-AI-Engineer]]、[[AI-Product-Manager]] | [[Agent-Memory-and-Knowledge-Operations]]、[[RAG]]、[[Data-Quality-and-Lineage]]、[[Technical-Communication]] |
 | CLI、Git、环境、自动化部署 | [[Data-and-AI-Engineer]]、[[AI-Infrastructure-and-Inference-Engineer]] | [[Python]]、[[Git]]、[[Linux]]、[[Docker-Containers]] |
-| 提示词、学习路径、知识可视化 | [[AI-Product-Manager]]、[[AI-Solutions-Architect-and-FDE]] | [[Technical-Communication]]、[[API-Product-Delivery]]、[[LLM-Evals]] |
+| Obsidian-AI-Agent-Skills-Configuration / Claude-Skill-Quick-Start、提示词、学习路径、知识可视化 | [[AI-Product-Manager]]、[[AI-Solutions-Architect-and-FDE]] | [[Prompt-and-Context-Engineering]]、[[Technical-Communication]]、[[API-Product-Delivery]]、[[Agent-Orchestration-and-State]] |
 
 **判断规则**：先用来源文章提出一个小练习，再把练习结果写成 `06-Evidence` 的 Problem/Action/Result/Failure/Judgment；只有被岗位样本支持、可复用且有通过证据的能力，才进入正式 Skill 追踪。
 

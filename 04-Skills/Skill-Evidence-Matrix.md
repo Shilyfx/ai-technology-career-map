@@ -4,7 +4,7 @@ domain: skills
 page_kind: skill-evidence-matrix
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-09-24
 related:
   - "[[Skill-Index]]"
@@ -32,7 +32,7 @@ related:
 | [[PyTorch]] | ML / Research | [[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]], [[Apple-Machine-Learning-Engineer-Video-Cupertino-2026-06]] | explicit + inferred | high |
 | [[Distributed-Training]] | Research / Infra | [[Apple-Machine-Learning-Engineer-SIML-Cupertino-2026-07]], [[Huawei-Algorithm-Expert-Multimodal-Beijing-2026-08]] | explicit + inferred | medium |
 | [[RAG]] | Application / FDE | [[Apple-Machine-Learning-Engineer-LLM-Cupertino-2026-02]], [[Apple-Machine-Learning-Engineer-NLU-Proactive-Santa-Clara-2026-07]] | explicit + inferred | medium |
-| [[Tool-Calling-Agent-Workflow]] | Application / PM | [[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]], [[Anthropic-Research-Engineer-Computer-Use-San-Francisco-2026-08]] | explicit | high |
+| [[Tool-Calling-and-Action-Contracts]] | Application / PM | [[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]], [[Anthropic-Research-Engineer-Computer-Use-San-Francisco-2026-08]] | explicit | high |
 | [[Model-Serving]] | Infra / FDE | [[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]], [[Huawei-AI-Architect-Training-Inference-Beijing-2026-08]] | explicit + inferred | high |
 | [[Distributed-Systems]] | Infra / Research | [[OpenAI-Software-Engineer-GPT-Infrastructure-San-Francisco-2026-08]], [[Anthropic-Performance-Engineer-Inference-Systems-San-Francisco-2026-08]] | explicit | high |
 | [[CUDA-GPU-Basics]] | Infra / Research | [[OpenAI-Software-Engineer-Inference-Performance-San-Francisco-2026-08]], [[Huawei-AI-Bottom-Software-Shanghai-2026-08]] | explicit + inferred | high |
@@ -41,6 +41,14 @@ related:
 | [[AI-Safety-Measurement]] | Safety / PM | [[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]], [[Anthropic-ML-Infrastructure-Engineer-Safeguards-San-Francisco-2026-08]] | explicit + inferred | high |
 | [[API-Product-Delivery]] | PM / Application | [[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]], [[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]] | explicit + inferred | high |
 | [[Technical-Communication]] | PM / FDE | [[Huawei-AI-Solutions-Architect-Shanghai-2026-08]], [[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]] | explicit + inferred | high |
+| [[TypeScript-JavaScript]] | Application / FDE / Platform | [[Notion-Software-Engineer-AI-Workflows-2026-08]], [[Ramp-Software-Engineer-Frontend-Revenue-2026-08]], [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]] | explicit + inferred | high |
+| [[LLM-API-and-Structured-Outputs]] | Application / FDE / PM | [[Notion-Software-Engineer-AI-Workflows-2026-08]], [[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]], [[Warp-Forward-Deployed-Engineer-2026-08]] | explicit + inferred | high |
+| [[Agent-Orchestration-and-State]] | Application / Platform / FDE | [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]], [[Notion-Software-Engineer-AI-Workflows-2026-08]], [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]], [[Glean-Software-Engineer-Agents-2026-08]] | explicit + inferred | high |
+| [[Workflow-Automation-and-Business-Process-Design]] | Application / FDE / PM | [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]], [[Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08]], [[Zapier-Engineer-Applied-AI-2026-08]], [[Warp-Forward-Deployed-Engineer-2026-08]] | explicit + inferred | high |
+| [[MCP-and-Agent-Interoperability]] | Platform / FDE / Application | [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]], [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]], [[Front-AI-Engineer-GTM-Operations-2026-08]], [[Warp-Forward-Deployed-Engineer-2026-08]] | explicit + inferred | medium-high |
+| [[Enterprise-Integrations-and-Connectors]] | FDE / Application / PM | [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]], [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]], [[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]], [[Front-AI-Engineer-GTM-Operations-2026-08]], [[Warp-Forward-Deployed-Engineer-2026-08]] | explicit + inferred | high |
+| [[Agent-Evals-and-Trace-Debugging]] | Application / Platform / Safety | [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]], [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]], [[Glean-Software-Engineer-Agents-2026-08]], [[Zapier-Engineer-Applied-AI-2026-08]], [[Warp-Forward-Deployed-Engineer-2026-08]] | explicit + inferred | high |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | Application / FDE / Safety / PM | [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]], [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]], [[Ramp-Software-Engineer-Frontend-Revenue-2026-08]], [[Glean-Software-Engineer-Agents-2026-08]] | explicit + inferred | high |
 
 ## Reading rule
 
@@ -48,4 +56,4 @@ related:
 
 ## Prerequisite layer
 
-[[Prerequisite-Foundation-Map]] 中的六个基础 Skill 是为学习顺序补齐的综合层。它们没有被当前 Job Sample 独立抽取，因此不在上表伪造 `explicit / inferred` 计数；完成后仍应通过 [[Evidence-Index]] 形成个人能力证据。
+[[Prerequisite-Foundation-Map]] 中的六个基础 Skill 是为学习顺序补齐的综合层。它们没有被当前 Job Sample 独立抽取，因此不在上表伪造 `explicit / inferred` 计数；Applied AI 新 Skill 则至少回链一张 Batch B Job Sample。完成后仍应通过 [[Evidence-Index]] 形成个人能力证据。

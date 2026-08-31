@@ -321,6 +321,14 @@ def main() -> int:
             for trace_field in ("Source Section:", "Evidence Type:", "Extraction Decision:", "Confidence:"):
                 if trace_field not in body:
                     errors.append(f"job-sample Evidence Trace missing {trace_field} in {rel}")
+            if meta.get("sample_batch") == "enterprise-applied-ai-2026-08":
+                for key in ("sample_batch", "company_segment", "role_subtrack"):
+                    if not meta.get(key):
+                        errors.append(f"applied job-sample missing {key}: {rel}")
+                if "market_frequency" in body or "market_frequency" in meta:
+                    errors.append(f"applied job-sample must not claim market_frequency: {rel}")
+                if re.search(r"(?<!\w)\d+(?:\.\d+)?\s*%", body):
+                    warnings.append(f"applied job-sample contains percentage; verify it is not a market-frequency claim: {rel}")
 
         if kind == "skill" and not is_template:
             for key in ("skill_category", "roles", "prerequisites"):
@@ -375,6 +383,19 @@ def main() -> int:
                     errors.append(f"broken README link: {target}")
                 else:
                     incoming[target_path] += 1
+
+        # Old monolithic Agent Skill links are allowed only on the migration
+        # bridge and index/navigation pages; new evidence should use the split
+        # Skills so the graph remains unambiguous.
+        if "[[Tool-Calling-Agent-Workflow]]" in body:
+            rel = path.relative_to(ROOT).as_posix()
+            allowed = {
+                "04-Skills/LLM-Applications/Tool-Calling-Agent-Workflow.md",
+                "04-Skills/Skill-Index.md",
+                "03-Roles/Role-Skill-Matrix.md",
+            }
+            if rel not in allowed:
+                warnings.append(f"legacy Tool-Calling-Agent-Workflow link outside bridge/index: {rel}")
 
     # Canvas nodes are content-bearing notes too; validate their wikilinks.
     for canvas in sorted(ROOT.rglob("*.canvas")):

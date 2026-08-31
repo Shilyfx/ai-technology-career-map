@@ -74,7 +74,7 @@ Prompt 不是魔法指令；上下文越多不一定越好；示例和约束必�
 
 ## Related Knowledge
 
-[[Transformer-LLM-Fundamentals]]、[[RAG]]、[[Tool-Calling-Agent-Workflow]]、[[LLM-Evals]]、[[Security-Privacy-and-Access-Control]]。
+[[Transformer-LLM-Fundamentals]]、[[RAG]]、[[Tool-Calling-and-Action-Contracts]]、[[LLM-Evals]]、[[Security-Privacy-and-Access-Control]]。
 
 ## Actual Evidence
 

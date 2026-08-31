@@ -1,14 +1,16 @@
 ---
 type: role
 role_family: product
-sample_count: 2
+sample_count: 3
 status: developing
 snapshot_date: 2026-08-24
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-11-24
 aliases:
   - AI PM
+  - Applied AI Product Manager
+  - Agent Platform Product Manager
 ---
 
 # AI Product Manager
@@ -31,6 +33,8 @@ aliases:
 ## Sample Observations
 
 本批两个 OpenAI PM Job Samples 分别显示 API/agent 产品路线图与安全测量/统计协作；它们支持产品责任簇的方向性判断，不代表所有 AI PM 的统一要求。
+
+Applied AI 批次新增 [[Salesforce-Product-Manager-Agent-Fabric-2026-08]]：产品责任扩展到 Discover/Govern/Orchestrate/Observe 控制面、API/MCP、policy、observability、治理和 enterprise outcomes。
 
 ## 作品证据
 
@@ -66,6 +70,12 @@ User/workflow discovery; technical product judgment; metrics/evals; safety; stak
 | [[LLM-Evals]] | yes |  | reliability outcomes | 2 | Core | explain | medium | Job Samples |
 | [[AI-Safety-Measurement]] |  | yes | safety criteria | 1 | Specialized | explain/use | high | Job Samples |
 | [[Technical-Communication]] | yes |  | alignment and decisions | 2 | Core | implement | high | Job Samples |
+| [[LLM-API-and-Structured-Outputs]] | common |  | capability/schema trade-offs | 1 | Common | explain/use | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| [[Workflow-Automation-and-Business-Process-Design]] | common |  | user workflow/outcomes | 2 | Common | use→implement | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| [[Agent-Orchestration-and-State]] | common |  | control-plane scope | 1 | Common | explain/use | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| [[Agent-Evals-and-Trace-Debugging]] | yes |  | quality/observability decisions | 2 | Core | use→implement | high | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | yes |  | policy/risk/approval | 2 | Core | use→implement | high | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| [[MCP-and-Agent-Interoperability]] |  | preferred | interoperability roadmap | 1 | Specialized | explain | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
 
 ## Non-skill Gates
 
@@ -73,7 +83,7 @@ Product judgment, prioritization, empathy, executive communication and accountab
 
 ## Seniority/Subtrack Differences
 
-API PM owns developer platform; safety PM owns measurement and risk. Both require technical fluency, not identical coding depth.
+API PM owns developer platform; Agent Platform PM owns registry, governance, orchestration and observation; safety PM owns measurement and risk. All require technical fluency, not identical coding depth.
 
 ## Portfolio Evidence
 
@@ -93,4 +103,4 @@ Refresh every 30–60 days while API and safety product scope changes quickly.
 
 ## Learning prerequisites
 
-PM 不必先成为生产工程师，但应先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]] 和 [[Prompt-and-Context-Engineering]] 的 explain/use 练习，再根据产品方向进入 [[LLM-Evals]]、[[API-Product-Delivery]] 或 [[AI-Safety-Measurement]]；涉及真实用户数据时补 [[Security-Privacy-and-Access-Control]]。
+PM 不必先成为生产工程师，但应先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]] 和 [[Prompt-and-Context-Engineering]] 的 explain/use 练习，再进入 [[LLM-API-and-Structured-Outputs]]、[[Workflow-Automation-and-Business-Process-Design]]、[[Agent-Evals-and-Trace-Debugging]] 与 [[Human-in-the-Loop-and-Agent-Guardrails]]；涉及平台互操作时理解 [[MCP-and-Agent-Interoperability]]，涉及真实用户数据时补 [[Security-Privacy-and-Access-Control]]。

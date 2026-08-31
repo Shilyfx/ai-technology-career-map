@@ -45,3 +45,7 @@ Job Samples 是需求证据；Role Profiles 是责任和优先级解释；Skills
 4. Skill 的技术背景放入 Knowledge 概念页；
 5. Practice 完成后建立 Evidence，并回链 Role/Skill；
 6. 到期按 [[Review-Rules]] 复核并运行 `scripts/check_vault.py`。
+
+## Applied AI evidence layer
+
+`enterprise-applied-ai-2026-08` 是独立的定向样本批次，使用 `sample_batch`、`company_segment`、`role_subtrack`、`source_status` 和 `source_access` 控制边界。岗位卡保留页面可见、预审历史线索和 inferred 学习连接的区别；Skill 页把官方规范、Job evidence、Practice tutorial 分栏。该层补足 Application、FDE、Agent Runtime、Integration、Evals 和 Delivery，不宣称开放市场频率，也不替代 frontier/model-builder 样本。

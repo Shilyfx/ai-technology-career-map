@@ -14,7 +14,8 @@ review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
   - "[[AI-Agents-and-Tool-Use]]"
-  - "[[Tool-Calling-Agent-Workflow]]"
+  - "[[MCP-and-Agent-Interoperability]]"
+  - "[[Tool-Calling-and-Action-Contracts]]"
   - "[[Software-Design-and-Architecture]]"
   - "[[Security-Privacy-and-Access-Control]]"
   - "[[AI-Solutions-Architect-and-FDE]]"

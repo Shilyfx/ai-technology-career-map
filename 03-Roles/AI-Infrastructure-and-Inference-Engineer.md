@@ -5,11 +5,13 @@ sample_count: 8
 status: developing
 snapshot_date: 2026-08-24
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-11-24
 aliases:
   - AI Infra Engineer
   - Inference Engineer
+  - Agent Runtime Engineer
+  - Agent Platform Engineer
 ---
 
 # AI Infrastructure and Inference Engineer
@@ -74,6 +76,10 @@ Runtime/kernels; distributed execution; serving/capacity; profiling; reliability
 | [[CUDA-GPU-Basics]] | yes |  | accelerator performance | 6 | Core | optimize | high | Job Samples |
 | [[Model-Serving]] | yes |  | production inference | 6 | Core | implement | high | Job Samples |
 | [[Observability]] | yes |  | SLO and profiling | 5 | Common | implement | medium | Job Samples |
+| [[Agent-Orchestration-and-State]] | specialized |  | runtime state/checkpoint | 1 | Specialized | implement→optimize | medium | [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] |
+| [[Tool-Calling-and-Action-Contracts]] | specialized |  | action execution boundary | 2 | Specialized | implement | medium | [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] |
+| [[Agent-Evals-and-Trace-Debugging]] | specialized |  | trajectory/eval platform | 2 | Specialized | implement→optimize | medium | [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] |
+| [[MCP-and-Agent-Interoperability]] | preferred |  | protocol adapters | 2 | Specialized | use→implement | medium | [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]] |
 
 ## Non-skill Gates
 
@@ -81,7 +87,7 @@ On-call ownership, numerical correctness, hardware trade-offs and incident commu
 
 ## Seniority/Subtrack Differences
 
-Serving roles emphasize SLO/capacity; kernel roles emphasize low-level optimization; architect roles add delivery.
+Serving roles emphasize SLO/capacity; kernel roles emphasize low-level optimization; **Agent Runtime / Agent Platform** roles add state machines, tool boundaries, async recovery, eval traces and protocol adapters. This is a specialized applied-AI branch, not a replacement for GPU/serving fundamentals.
 
 ## Portfolio Evidence
 
@@ -101,4 +107,4 @@ Review tools and hardware signals every 30–60 days; stable distributed concept
 
 ## Learning prerequisites
 
-先补 [[Data-Structures-and-Algorithms]]、[[Linux]]、[[Testing]] 和 [[Software-Design-and-Architecture]]，再进入 [[Distributed-Systems]]、[[CUDA-GPU-Basics]]、[[Model-Serving]] 与 [[Observability]]；生产环境同时练习 [[Security-Privacy-and-Access-Control]]。
+先补 [[Data-Structures-and-Algorithms]]、[[Linux]]、[[Testing]] 和 [[Software-Design-and-Architecture]]，再进入 [[Distributed-Systems]]、[[CUDA-GPU-Basics]]、[[Model-Serving]] 与 [[Observability]]。若目标是 Agent Runtime / Agent Platform，再进入 [[Agent-Orchestration-and-State]] → [[Tool-Calling-and-Action-Contracts]] → [[Agent-Evals-and-Trace-Debugging]] → [[MCP-and-Agent-Interoperability]]；生产环境同时练习 [[Security-Privacy-and-Access-Control]]。

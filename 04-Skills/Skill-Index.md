@@ -4,7 +4,7 @@ domain: skills
 page_kind: skill-index
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-09-24
 related:
   - "[[Role-Map]]"
@@ -22,15 +22,16 @@ related:
 
 | Category | Skill | Main Roles | Status | Stability |
 | --- | --- | --- | --- | --- |
-| Programming | [[Python]] / [[SQL]] / [[Git]] | Research, ML, Application, Data | validated | stable |
+| Programming | [[Python]] / [[TypeScript-JavaScript]] / [[SQL]] / [[Git]] | Research, ML, Application, Data, FDE | validated/developing | stable |
 | Software Engineering | [[Linux]] / [[Testing]] / [[HTTP-API]] / [[Docker-Containers]] | All technical roles | developing | stable |
 | Data | [[Data-Quality-and-Lineage]] | Data, ML, Application | developing | current |
 | ML Foundations | [[ML-Experimentation]] / [[Model-Evaluation]] / [[Transformer-LLM-Fundamentals]] | Research, ML, Evals | developing | stable |
 | Model Training | [[PyTorch]] / [[Distributed-Training]] | Research, ML, Infra | developing | current |
-| LLM Applications | [[RAG]] / [[Tool-Calling-Agent-Workflow]] | Application, FDE, PM | developing | current |
+| LLM Applications | [[Prompt-and-Context-Engineering]] / [[LLM-API-and-Structured-Outputs]] / [[Tool-Calling-and-Action-Contracts]] / [[Agent-Orchestration-and-State]] / [[Workflow-Automation-and-Business-Process-Design]] / [[MCP-and-Agent-Interoperability]] / [[RAG]] | Application, FDE, PM, Agent Platform | developing | current |
+| Legacy bridge | [[Tool-Calling-Agent-Workflow]] | 旧链接迁移入口 | reference | current |
 | Infra / Inference | [[Model-Serving]] / [[Distributed-Systems]] / [[CUDA-GPU-Basics]] / [[Observability]] | Infra, Research, ML | developing | current |
-| Evals / Safety | [[LLM-Evals]] / [[AI-Safety-Measurement]] | Evals, Safety, PM | developing | current |
-| Product / Delivery | [[API-Product-Delivery]] / [[Technical-Communication]] | Application, PM, FDE | developing | stable |
+| Evals / Safety | [[LLM-Evals]] / [[Agent-Evals-and-Trace-Debugging]] / [[Human-in-the-Loop-and-Agent-Guardrails]] / [[AI-Safety-Measurement]] | Evals, Safety, Application, FDE, PM | developing | current |
+| Product / Delivery | [[API-Product-Delivery]] / [[Enterprise-Integrations-and-Connectors]] / [[Technical-Communication]] | Application, PM, FDE | developing | current/stable |
 
 ## Learning prerequisite layer
 
@@ -38,12 +39,12 @@ related:
 
 | Foundation | Feeds into | Main roles | Suggested depth |
 | --- | --- | --- | --- |
-| [[Data-Structures-and-Algorithms]] | [[Python]]、[[SQL]]、[[Testing]]、[[Distributed-Systems]] | Research / ML / Application / Data / Infra | implement |
+| [[Data-Structures-and-Algorithms]] | [[Python]]、[[TypeScript-JavaScript]]、[[SQL]]、[[Testing]]、[[Distributed-Systems]] | Research / ML / Application / Data / Infra | implement |
 | [[Statistics-and-Experiment-Design]] | [[ML-Experimentation]]、[[Model-Evaluation]]、[[LLM-Evals]] | Research / ML / Evals / PM | use → implement |
 | [[Databases-and-Data-Modeling]] | [[SQL]]、[[Data-Quality-and-Lineage]]、[[RAG]] | Data / ML / Application / FDE | use → implement |
-| [[Software-Design-and-Architecture]] | [[HTTP-API]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]] | Application / Data / ML / Infra / FDE | use → implement |
-| [[Security-Privacy-and-Access-Control]] | [[Tool-Calling-Agent-Workflow]]、[[RAG]]、[[AI-Safety-Measurement]] | All technical roles + PM | explain → implement |
-| [[Prompt-and-Context-Engineering]] | [[RAG]]、[[Tool-Calling-Agent-Workflow]]、[[LLM-Evals]] | Application / PM / FDE / Safety | use → implement |
+| [[Software-Design-and-Architecture]] | [[HTTP-API]]、[[LLM-API-and-Structured-Outputs]]、[[Tool-Calling-and-Action-Contracts]]、[[Model-Serving]] | Application / Data / ML / Infra / FDE | use → implement |
+| [[Security-Privacy-and-Access-Control]] | [[Tool-Calling-and-Action-Contracts]]、[[MCP-and-Agent-Interoperability]]、[[RAG]]、[[AI-Safety-Measurement]] | All technical roles + PM | explain → implement |
+| [[Prompt-and-Context-Engineering]] | [[RAG]]、[[LLM-API-and-Structured-Outputs]]、[[Tool-Calling-and-Action-Contracts]]、[[LLM-Evals]] | Application / PM / FDE / Safety | use → implement |
 
 ## Promotion rule
 
@@ -52,8 +53,8 @@ related:
 ## Dependency examples
 
 ```text
-Data-Structures-and-Algorithms → Python → HTTP-API → Software-Design-and-Architecture
-Python + Transformer-LLM-Fundamentals + Prompt-and-Context-Engineering → RAG → Tool-Calling-Agent-Workflow → LLM-Evals
+Data-Structures-and-Algorithms → Python OR TypeScript-JavaScript → HTTP-API → Software-Design-and-Architecture
+Prompt-and-Context-Engineering + LLM-API-and-Structured-Outputs → Tool-Calling-and-Action-Contracts → Workflow-Automation-and-Business-Process-Design / Agent-Orchestration-and-State → Agent-Evals-and-Trace-Debugging
 Python → SQL → Databases-and-Data-Modeling → Data-Quality-and-Lineage → ML-Experimentation
 Linux → Docker-Containers → Distributed-Systems → Model-Serving
 HTTP-API → Security-Privacy-and-Access-Control

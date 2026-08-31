@@ -21,9 +21,13 @@ related:
 
 每个样本记录 company、title、location、region、seniority、source URL、posted/retrieved、source status 和 access limitation。只写结构化摘要与短引用，不复制完整 JD。
 
+Applied AI 批次额外记录 `sample_batch`、`company_segment`、`role_subtrack`；这些字段用于控制样本边界和偏差，不代表市场频率。
+
 ## Explicit vs inferred
 
 岗位明确写出的工具、职责和要求才计入 `required`、`preferred` 或 `responsibility`。学习上推断的 prerequisite 单独标为 `inferred prerequisite`，不进入 Job frequency。
+
+Skill 页的 `Sources` 必须分开列出 Official / normative、Job evidence、Practice tutorial；教程能说明如何练习，不能证明岗位需求。
 
 ## Normalization
 
@@ -40,3 +44,5 @@ related:
 ## Bias and refresh
 
 保留 region、seniority、employer、sample batch；N 小时写 `2 / 3 samples`，不伪装成市场百分比。active Job Sample 30–60 天复查，过期标 `source_status: expired`，不删除历史证据。
+
+Applied AI 批次是企业应用/Agentic Engineering 定向抽样，不替代 frontier/model-builder 批次；不得用产品名、框架名或多智能体热度自动生成 Skill。

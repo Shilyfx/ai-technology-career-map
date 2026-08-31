@@ -3,13 +3,14 @@ type: moc
 domain: ai
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 related:
   - "[[Start-Here]]"
   - "[[Learning-Path]]"
   - "[[Technology-Radar-2026-08]]"
   - "[[Career-MOC]]"
   - "[[Skill-Index]]"
+  - "[[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]"
 ---
 
 # AI Technology MOC
@@ -25,7 +26,7 @@ flowchart TB
 
 - Foundations：[[AI-ML-DL-and-Foundation-Models]]、[[Math-Data-and-Software-Foundations]]；
 - Models：[[Transformer-and-Foundation-Models]]、[[Pretraining-Posttraining-and-Fine-tuning]]；
-- Applications：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[Agent-Memory-and-Knowledge-Operations]]、[[AI-Product-Engineering]]；
+- Applications：[[RAG-and-Knowledge-Systems]]、[[AI-Agents-and-Tool-Use]]、[[Agent-Memory-and-Knowledge-Operations]]、[[AI-Product-Engineering]]；Agent 伞页下拆为 [[LLM-API-and-Structured-Outputs]]、[[Tool-Calling-and-Action-Contracts]]、[[Agent-Orchestration-and-State]]、[[Workflow-Automation-and-Business-Process-Design]]、[[MCP-and-Agent-Interoperability]]、[[Agent-Evals-and-Trace-Debugging]]、[[Human-in-the-Loop-and-Agent-Guardrails]]；
 - Systems：[[AI-Infrastructure-and-MLOps]]、[[Inference-Optimization]]、[[Data-Engineering-and-Governance]]；
 - Safety：[[Evals-and-Observability]]、[[AI-Safety-Security-and-Governance]]。
 

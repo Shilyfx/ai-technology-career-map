@@ -74,7 +74,7 @@ Application/FDE 需要 implement；Infra/Data/ML 需要 implement/use 规模与�
 
 ## Related Knowledge
 
-[[HTTP-API]]、[[Testing]]、[[Tool-Calling-Agent-Workflow]]、[[Model-Serving]]、[[Distributed-Systems]]、[[API-Product-Delivery]]。
+[[HTTP-API]]、[[Testing]]、[[Tool-Calling-and-Action-Contracts]]、[[Model-Serving]]、[[Distributed-Systems]]、[[API-Product-Delivery]]。
 
 ## Actual Evidence
 

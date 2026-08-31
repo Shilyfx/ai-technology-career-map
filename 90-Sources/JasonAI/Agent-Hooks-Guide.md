@@ -14,7 +14,9 @@ review_after: 2027-02-25
 related:
   - "[[JasonAI-Source-Index]]"
   - "[[AI-Agents-and-Tool-Use]]"
-  - "[[Tool-Calling-Agent-Workflow]]"
+  - "[[Workflow-Automation-and-Business-Process-Design]]"
+  - "[[Human-in-the-Loop-and-Agent-Guardrails]]"
+  - "[[Tool-Calling-and-Action-Contracts]]"
   - "[[Software-Design-and-Architecture]]"
   - "[[Security-Privacy-and-Access-Control]]"
   - "[[AI-Application-Engineer]]"

@@ -3,7 +3,7 @@ type: path
 page_kind: job-first-learning-path
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-09-24
 related:
   - "[[Job-Sample-Index]]"
@@ -37,6 +37,8 @@ related:
 先打开 [[Prerequisite-Foundation-Map]]，再沿 Skill 的前置关系学习 Python、Git、数据、系统或评测底座，直到能完成目标任务。它提供 Role-specific 顺序，但不是一张所有人都必须完成的通用课程表。
 
 Prerequisites are role-specific and come from the selected Role Skill Profile; there is no universal prerequisite list.
+
+Applied AI Application 的默认主线是：[[Python]] 或 [[TypeScript-JavaScript]] → [[HTTP-API]] → [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Workflow-Automation-and-Business-Process-Design]] / [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]] → [[Enterprise-Integrations-and-Connectors]]。[[RAG]]、[[MCP-and-Agent-Interoperability]]、[[Human-in-the-Loop-and-Agent-Guardrails]] 按任务和风险进入。
 
 ## 6. 完成 Skill Practice
 

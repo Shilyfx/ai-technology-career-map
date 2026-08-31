@@ -49,8 +49,21 @@ This is a navigation index by category, purpose and limitations. Detailed proven
 
 ## D. Agent、安全与治理
 
-- [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents)
+- [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
+- [MCP Architecture](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)
+- [MCP Tools Specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
+- [MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+- [A2A Specification v0.3.0](https://a2a-protocol.org/v0.3.0/specification/)
+- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
+- [OpenAI Agents](https://openai.github.io/openai-agents-python/agents/)
+- [OpenAI Agents running](https://openai.github.io/openai-agents-python/running_agents/)
+- [OpenAI Agents orchestration](https://openai.github.io/openai-agents-python/multi_agent/)
+- [OpenAI Agents handoffs](https://openai.github.io/openai-agents-python/handoffs/)
+- [OpenAI Agents testing](https://openai.github.io/openai-agents-python/testing/)
+- [OpenAI Agents tracing](https://openai.github.io/openai-agents-python/zh/tracing/)
+- [OpenAI Responses API](https://developers.openai.com/api/reference/cli/resources/responses/methods/create)
+- [OpenAI Structured Outputs guide](https://developers.openai.com/api/docs/guides/latest-model)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/)
 

@@ -13,9 +13,12 @@ aliases:
 related:
   - "[[Training-Evaluation-and-Generalization]]"
   - "[[AI-Agents-and-Tool-Use]]"
+  - "[[Agent-Evals-and-Trace-Debugging]]"
 ---
 
 # Evals and Observability
+
+> Applied AI 岗位把 Agent trajectory、tool success、human calibration、质量/延迟/信任/成本和 trace debugging 作为独立交付面；正式学习入口见 [[Agent-Evals-and-Trace-Debugging]]。RAG/Agent 的评测应服务具体任务，不把公开 benchmark 当成生产证据。
 
 ## Evals 回答“是否更好”
 

@@ -3,9 +3,9 @@ type: role
 role_family: safety-evals-governance
 sample_count: 5
 status: developing
-snapshot_date: 2026-08-24
+snapshot_date: 2026-08-31
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-11-24
 ---
 
@@ -71,6 +71,8 @@ Threat/risk modeling; eval data/scoring; production monitoring; policy/governanc
 | [[AI-Safety-Measurement]] | yes |  | risk thresholds | 3 | Core | implement | high | Job Samples |
 | [[Python]] | yes |  | data/eval tooling | 3 | Common | implement | medium | Job Samples |
 | [[Technical-Communication]] | yes |  | governance decisions | 4 | Core | implement | medium | Job Samples |
+| [[Agent-Evals-and-Trace-Debugging]] | common |  | trajectory/rubric diagnosis | 2 | Common | implement | medium | [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | common |  | calibration/approval controls | 2 | Common | implement | medium | [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] |
 
 ## Non-skill Gates
 
@@ -98,4 +100,4 @@ Refresh job evidence every 30–60 days and safety methods every 60–90 days.
 
 ## Learning prerequisites
 
-安全/Evals 方向先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]]、[[Model-Evaluation]] 和 [[LLM-Evals]]，再根据子方向进入 [[AI-Safety-Measurement]]；做 Agent、数据或上线评审时必须补 [[Security-Privacy-and-Access-Control]] 与 [[Prompt-and-Context-Engineering]]。
+安全/Evals 方向先完成 [[Technical-Communication]]、[[Statistics-and-Experiment-Design]]、[[Model-Evaluation]] 和 [[LLM-Evals]]，再根据子方向进入 [[Agent-Evals-and-Trace-Debugging]]、[[Human-in-the-Loop-and-Agent-Guardrails]] 或 [[AI-Safety-Measurement]]；做 Agent、数据或上线评审时必须补 [[Security-Privacy-and-Access-Control]] 与 [[Prompt-and-Context-Engineering]]。

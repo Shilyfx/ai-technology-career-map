@@ -44,7 +44,7 @@ Apple 官方职位页；覆盖 LLM、agents、fine-tuning、RAG 和生产平台�
 | Skill | Evidence type | Why counted |
 | --- | --- | --- |
 | [[Transformer-LLM-Fundamentals]] | explicit | LLM/LMM |
-| [[Tool-Calling-Agent-Workflow]] | explicit | agents |
+| [[Tool-Calling-and-Action-Contracts]] | explicit | agents |
 | [[RAG]] | explicit | retrieval applications |
 | [[Docker-Containers]] | explicit | production delivery |
 | [[Model-Evaluation]] | inferred | quality loop |

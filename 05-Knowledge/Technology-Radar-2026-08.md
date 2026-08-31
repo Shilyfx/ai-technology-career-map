@@ -4,13 +4,14 @@ page_kind: technology-radar
 status: reference
 snapshot_date: 2026-08-24
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-11-24
 stability: current
 related:
   - "[[AI-Technology-MOC]]"
   - "[[Term-Radar]]"
   - "[[2026-08-AI-Job-Market-Snapshot]]"
+  - "[[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]"
 ---
 
 # Technology Radar — 2026-08
@@ -26,6 +27,7 @@ related:
 - 建立 Core / Build / Deepen / Watch / Avoid 五档；
 - 把评测、数据质量、软件工程和系统边界放在 Core；
 - 增加 `review_after`，后续更新必须写出变化原因。
+- 增加 enterprise-applied-ai-2026-08 定向样本与 Agent/Workflow/Integration/Evals 学习分支。
 
 ### Promoted / Demoted / Removed
 
@@ -48,9 +50,9 @@ related:
 
 ## Build：适合做项目
 
-- RAG、检索质量、引用与知识库更新；
-- 工具调用、Agent 工作流、状态管理与人工兜底；
-- Evals、trace、成本/延迟监控与回归集；
+- Structured Outputs、Tool Calling、Workflow Automation、Agent Orchestration；
+- MCP / Enterprise Integration、Agent Evals / Trace、Human Approval；
+- RAG、检索质量、引用与知识库更新（按任务选择）；
 - 推理服务、缓存、批处理和基础 MLOps。
 
 ## Deepen：按岗位投入
@@ -59,6 +61,7 @@ related:
 - 分布式训练、CUDA / NCCL、kernel / compiler、量化内部机制与硬件适配；
 - serving 优化、KV cache、批处理与容量建模；
 - 机制可解释性、进阶多模态 / 机器人，以及安全评测、红队和治理落地。
+- Multi-Agent、A2A、Computer Use at scale、self-improvement 和 long-running autonomy 按具体岗位再投入。
 
 ## Topic × depth
 
@@ -69,6 +72,9 @@ related:
 - 快速变化的 Agent 框架与模型编排层；
 - 新型推理时扩展、世界模型和 VLA 产品化；
 - 职位名称与“Prompt Engineer”等岗位标签的变化。
+- 多智能体默认化、A2A 高级编排、Computer Use at scale 和自主改进闭环。
+
+> Hot ≠ must learn：雷达表达变化速度，学习顺序仍由 [[Role-Skill-Paths]] 和 Job Evidence 决定。
 
 ## Avoid：不作为独立能力目标
 

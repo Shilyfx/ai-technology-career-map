@@ -17,6 +17,34 @@ related:
 > 这里列出 2026-08 批的官方职位样本。每条记录只证明公司、地点、职级、时间和页面明确的要求，不代表市场普查。
 > 每张卡片的 `Evidence Trace` 说明来源段落、explicit/inferred 判断、抽取决策和置信度。
 
+## Batch B — enterprise-applied-ai-2026-08
+
+本批是定向 Applied AI / Agentic Engineering 证据层（22 个指定官方 URL），用于补足企业应用、Agent Runtime、FDE、集成、评测和交付技能；它不是对上一批 frontier jobs 的简单相加，也不是开放市场普查。完整边界与页面访问限制见 [[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]。
+
+### Atlassian
+
+[[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]] · [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]] · [[Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08]]
+
+### Notion
+
+[[Notion-Software-Engineer-AI-Workflows-2026-08]] · [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]] · [[Notion-Forward-Deployed-Architect-Japan-2026-08]]
+
+### Salesforce
+
+[[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]] · [[Salesforce-Success-Architect-Agentforce-2026-08]] · [[Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08]] · [[Salesforce-Product-Manager-Agent-Fabric-2026-08]]
+
+### ServiceNow / Moveworks
+
+[[ServiceNow-AI-Agent-Engineer-Moveworks-2026-08]] · [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] · [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] · [[ServiceNow-Senior-Staff-Agent-Development-2026-08]]
+
+### Ramp
+
+[[Ramp-Applied-AI-Engineer-2026-08]] · [[Ramp-Software-Engineer-Enterprise-Product-2026-08]] · [[Ramp-Software-Engineer-Frontend-Revenue-2026-08]]
+
+### Glean / Zapier / Front / Warp
+
+[[Glean-Software-Engineer-Agents-2026-08]] · [[Glean-Founding-Forward-Deployed-Engineer-2026-08]] · [[Zapier-Engineer-Applied-AI-2026-08]] · [[Front-AI-Engineer-GTM-Operations-2026-08]] · [[Warp-Forward-Deployed-Engineer-2026-08]]
+
 ## OpenAI
 
 [[OpenAI-Research-Engineer-Frontier-Evals-San-Francisco-2026-08]] · [[OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08]] · [[OpenAI-Software-Engineer-Model-Inference-San-Francisco-2026-08]] · [[OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08]] · [[OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08]] · [[OpenAI-Software-Engineer-Inference-Performance-San-Francisco-2026-08]] · [[OpenAI-Software-Engineer-GPT-Infrastructure-San-Francisco-2026-08]] · [[OpenAI-Software-Engineer-API-SDK-Seattle-2026-08]]

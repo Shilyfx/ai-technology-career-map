@@ -13,6 +13,16 @@
 9. `00-Home/Current-State.md` 是唯一动态状态页，目标是 Target Role / Current Skill / Next Skill；
 10. 新岗位先入 `01-Inbox/Job-Inbox.md`，新名词先入 `01-Inbox/Terms-Inbox.md`。
 
+## Applied AI / Agentic Engineering rules
+
+- 不把 RAG 视为所有 Agent 的通用前置；按任务决定是否进入 RAG 分支。
+- 不把产品名或框架名直接升级为 Skill；Skill 必须可复用、可练习、可验证。
+- 不把 multi-agent / A2A 当默认架构；先证明 deterministic workflow 或单 Agent 的收益。
+- 优先确定性 workflow，再把不确定决策局部交给 Agent；工具副作用必须有显式权限、幂等、恢复和人工接管思路。
+- MCP 是角色/环境相关能力，不是所有学习者的通用必修。
+- Job Sample 决定优先级，官方规范定义边界，教程只决定练习方式；三类证据分开记录。
+- Applied AI 企业样本用于补足 Application/FDE/Agent Platform，不用 frontier/model-builder 岗位替代它们。
+
 ## 目录与链接
 
 主模型为 `02-Jobs → 03-Roles → 04-Skills → 05-Knowledge → 06-Evidence`。七层模型只作 Knowledge taxonomy。README 使用标准 Markdown 链接；Obsidian 页面可用 wikilink。

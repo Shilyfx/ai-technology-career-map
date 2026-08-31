@@ -58,7 +58,7 @@ Application/PM/FDE 为 Core；研究岗位是接口意识。证据见 [[OpenAI-S
 PM 不必亲自实现 SDK，但要能审查契约与风险。
 
 ## Related Knowledge
-[[AI-Product-Engineering]]、[[Tool-Calling-Agent-Workflow]]。
+[[AI-Product-Engineering]]、[[Tool-Calling-and-Action-Contracts]]。
 
 ## Actual Evidence
 尚无用户能力结论；用 [[Evidence-Card]] 记录。

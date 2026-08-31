@@ -46,7 +46,7 @@ review_after: 2026-09-24
 | [[Python]] | explicit | backend implementation |
 | [[Distributed-Systems]] | explicit | scalable API platform |
 | [[HTTP-API]] | explicit | API and tool interface |
-| [[Tool-Calling-Agent-Workflow]] | explicit | agent harness and tools |
+| [[Tool-Calling-and-Action-Contracts]] | explicit | agent harness and tools |
 | [[Observability]] | explicit | production visibility |
 | [[LLM-Evals]] | explicit | reliability and eval loop |
 

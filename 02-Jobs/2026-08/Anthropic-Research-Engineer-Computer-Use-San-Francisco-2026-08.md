@@ -45,7 +45,7 @@ review_after: 2026-09-24
 | --- | --- | --- |
 | [[Python]] | explicit | research implementation |
 | [[PyTorch]] | inferred | training stack |
-| [[Tool-Calling-Agent-Workflow]] | explicit | agent actions |
+| [[Tool-Calling-and-Action-Contracts]] | explicit | agent actions |
 | [[LLM-Evals]] | explicit | agent evaluation |
 | [[ML-Experimentation]] | explicit | train/eval loop |
 
