@@ -41,8 +41,8 @@ evidence_audit_status: partial
 - Deep frontend expertise in TypeScript and React
 
 ## Preferred/Nice-to-have
-- Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery
-- Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery
+- Human-in-the-loop AI systems including evaluation
+- Human-in-the-loop AI systems including review, approvals, tool execution, and recovery
 
 ## Skill Extraction
 证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
@@ -53,8 +53,8 @@ evidence_audit_status: partial
 | Shape APIs, workflows, and data contracts behind product experiences | [[HTTP-API]] | responsibility | explicit | none | use | medium |
 | Design human-in-the-loop workflows with approvals and execution status | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | none | use | medium |
 | Interfaces for asynchronous systems with partial results, errors, retries, and user intervention | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
-| Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | medium |
-| Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery | [[Human-in-the-Loop-and-Agent-Guardrails]] | preferred | explicit | none | use | medium |
+| Human-in-the-loop AI systems including evaluation | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | medium |
+| Human-in-the-loop AI systems including review, approvals, tool execution, and recovery | [[Human-in-the-Loop-and-Agent-Guardrails]] | preferred | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -120,8 +120,8 @@ Notes: quoted or lightly normalized from official What You Need section; mapping
 
 ### Evidence 5
 Source Section: Nice to Haves
-Source Fidelity: direct
-Raw Evidence: Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery
+Source Fidelity: close-paraphrase
+Raw Evidence: Human-in-the-loop AI systems including evaluation
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -129,12 +129,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: Evaluation is explicitly preferred agent-quality experience.
-Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to Agent-Evals-and-Trace-Debugging only.
+Notes: paraphrased from official Nice to Haves section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 6
 Source Section: Nice to Haves
-Source Fidelity: direct
-Raw Evidence: Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery
+Source Fidelity: close-paraphrase
+Raw Evidence: Human-in-the-loop AI systems including review, approvals, tool execution, and recovery
 Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -142,4 +142,4 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: Review and approvals are explicitly preferred HITL experience.
-Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to Human-in-the-Loop-and-Agent-Guardrails only.
+Notes: paraphrased from official Nice to Haves section; mapping kept to Human-in-the-Loop-and-Agent-Guardrails only.

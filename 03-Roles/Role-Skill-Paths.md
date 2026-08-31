@@ -3,7 +3,7 @@ type: path
 page_kind: role-learning-paths
 status: reference
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 related:
   - "[[Learning-Path]]"
@@ -22,13 +22,14 @@ related:
 Python OR TypeScript/JavaScript
 → HTTP/JSON/API
 → Prompt/Context + LLM API/Structured Outputs
-→ Tool Calling
-→ Workflow Automation / Agent Orchestration
+→ Tool Calling (when actions are needed)
+↘ Workflow Automation (can start early/in parallel)
+→ Agent Orchestration
 → Agent Evals / Trace
-→ Production Integration
+→ Production Integration (branch)
 ```
 
-入口：[[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]] → [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Workflow-Automation-and-Business-Process-Design]] / [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]] → [[Enterprise-Integrations-and-Connectors]]。[[Data-Structures-and-Algorithms]] 为推荐基础；[[RAG]]、[[MCP-and-Agent-Interoperability]]、[[Human-in-the-Loop-and-Agent-Guardrails]] 按项目选修或加深。
+入口：[[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]] → [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]]。[[Workflow-Automation-and-Business-Process-Design]] 可并行；需要模型动作时再进入 [[Tool-Calling-and-Action-Contracts]] → [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]]。[[Enterprise-Integrations-and-Connectors]] 是生产集成分支，不是所有 Tool Calling 的硬前置；[[Data-Structures-and-Algorithms]] 与 [[Software-Design-and-Architecture]] 为推荐基础；[[RAG]]、[[MCP-and-Agent-Interoperability]]、[[Human-in-the-Loop-and-Agent-Guardrails]] 按项目选修或加深。
 
 ### Applied subtracks
 
@@ -39,7 +40,7 @@ Python OR TypeScript/JavaScript
 
 ## Solutions / FDE / Architect
 
-[[Technical-Communication]] + [[HTTP-API]] → [[Software-Design-and-Architecture]] → [[Workflow-Automation-and-Business-Process-Design]] → [[Enterprise-Integrations-and-Connectors]] → [[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Human-in-the-Loop-and-Agent-Guardrails]] → [[Agent-Evals-and-Trace-Debugging]]。需要跨客户端/工具生态时加入 [[MCP-and-Agent-Interoperability]]。
+[[Technical-Communication]] + [[HTTP-API]] → [[Software-Design-and-Architecture]]；[[Workflow-Automation-and-Business-Process-Design]] 可并行 → [[Enterprise-Integrations-and-Connectors]]（生产分支） + [[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Human-in-the-Loop-and-Agent-Guardrails]] → [[Agent-Evals-and-Trace-Debugging]]。需要跨客户端/工具生态时加入 [[MCP-and-Agent-Interoperability]]。
 
 ## Agent Runtime / Agent Platform（Infra specialized）
 

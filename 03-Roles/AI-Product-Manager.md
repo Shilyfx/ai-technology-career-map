@@ -77,7 +77,7 @@ User/workflow discovery; technical product judgment; metrics/evals; safety; stak
 | [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 | [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 
-Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.
 ## Non-skill Gates
 
 Product judgment, prioritization, empathy, executive communication and accountability.

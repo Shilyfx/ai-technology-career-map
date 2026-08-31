@@ -33,15 +33,15 @@ evidence_audit_status: partial
 本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
-- Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
-- Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
+- Design and deploy production-grade custom agents
+- Use MCP and Agent APIs in production-grade deployments
+- Design and deploy production-grade AI workflows
 
 ## Explicit Requirements
 - Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python
 - Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python
-- Hands-on experience with APIs and data integration
-- Hands-on experience with APIs and data integration
+- Hands-on experience with APIs
+- Hands-on experience with data integration
 - Lead technical discovery, assess feasibility, identify risks, and translate ambiguity into an executable plan
 
 ## Preferred/Nice-to-have
@@ -57,12 +57,12 @@ evidence_audit_status: partial
 | --- | --- | --- | --- | --- | --- | --- |
 | Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python | [[Python]] | required | explicit | language-1 | use | medium |
 | Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python | [[TypeScript-JavaScript]] | required | explicit | language-1 | use | medium |
-| Hands-on experience with APIs and data integration | [[HTTP-API]] | required | explicit | none | use | medium |
-| Hands-on experience with APIs and data integration | [[Enterprise-Integrations-and-Connectors]] | required | explicit | none | use | medium |
+| Hands-on experience with APIs | [[HTTP-API]] | required | explicit | none | use | medium |
+| Hands-on experience with data integration | [[Enterprise-Integrations-and-Connectors]] | required | explicit | none | use | medium |
 | Lead technical discovery, assess feasibility, identify risks, and translate ambiguity into an executable plan | [[Software-Design-and-Architecture]] | required | explicit | none | use | medium |
-| Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
-| Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
-| Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
+| Design and deploy production-grade custom agents | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
+| Use MCP and Agent APIs in production-grade deployments | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
+| Design and deploy production-grade AI workflows | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
 | AI-powered workflows including MCPs | [[MCP-and-Agent-Interoperability]] | preferred | explicit | none | use | medium |
 | AI-powered workflows including prompt engineering | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | medium |
 | AI-powered workflows including retrieval/RAG systems | [[RAG]] | preferred | explicit | none | use | medium |
@@ -107,7 +107,7 @@ Notes: quoted or lightly normalized from official Skills You'll Need to Bring se
 ### Evidence 3
 Source Section: Skills You'll Need to Bring
 Source Fidelity: direct
-Raw Evidence: Hands-on experience with APIs and data integration
+Raw Evidence: Hands-on experience with APIs
 Mapped Skill: [[HTTP-API]]
 Evidence Type: required
 Requirement Strength: explicit
@@ -120,7 +120,7 @@ Notes: quoted or lightly normalized from official Skills You'll Need to Bring se
 ### Evidence 4
 Source Section: Skills You'll Need to Bring
 Source Fidelity: direct
-Raw Evidence: Hands-on experience with APIs and data integration
+Raw Evidence: Hands-on experience with data integration
 Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
 Evidence Type: required
 Requirement Strength: explicit
@@ -146,20 +146,20 @@ Notes: paraphrased from official Skills You'll Need to Bring section; mapping ke
 ### Evidence 6
 Source Section: About The Role
 Source Fidelity: close-paraphrase
-Raw Evidence: Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
+Raw Evidence: Design and deploy production-grade custom agents
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Mapping Rationale: Custom agents and workflows are explicit delivery responsibility.
+Mapping Rationale: Custom agents are explicit delivery responsibility.
 Notes: paraphrased from official About The Role section; mapping kept to Agent-Orchestration-and-State only.
 
 ### Evidence 7
 Source Section: About The Role
-Source Fidelity: direct
-Raw Evidence: Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
+Source Fidelity: close-paraphrase
+Raw Evidence: Use MCP and Agent APIs in production-grade deployments
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -167,12 +167,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: MCP is explicitly named as the interoperability mechanism.
-Notes: quoted or lightly normalized from official About The Role section; mapping kept to MCP-and-Agent-Interoperability only.
+Notes: paraphrased from official About The Role section; mapping kept to MCP-and-Agent-Interoperability only.
 
 ### Evidence 8
 Source Section: About The Role
-Source Fidelity: direct
-Raw Evidence: Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs
+Source Fidelity: close-paraphrase
+Raw Evidence: Design and deploy production-grade AI workflows
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -180,7 +180,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: AI workflows are explicitly part of delivery scope.
-Notes: quoted or lightly normalized from official About The Role section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
+Notes: paraphrased from official About The Role section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
 ### Evidence 9
 Source Section: Nice to Haves

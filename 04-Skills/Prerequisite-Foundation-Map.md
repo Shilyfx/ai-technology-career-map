@@ -4,7 +4,7 @@ domain: skills
 page_kind: prerequisite-map
 status: reference
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-01
 review_after: 2027-02-28
 related:
   - "[[Skill-Index]]"
@@ -31,10 +31,10 @@ related:
 | 目标 | 先学 | 接着进入 |
 | --- | --- | --- |
 | Research / ML | [[Data-Structures-and-Algorithms]] → [[Python]] → [[Statistics-and-Experiment-Design]] | [[ML-Experimentation]] → [[Model-Evaluation]] → [[PyTorch]] |
-| AI Application | [[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]]（DSA 为推荐基础） | [[Software-Design-and-Architecture]] → [[Prompt-and-Context-Engineering]] → [[RAG]] |
+| AI Application | [[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]]（DSA 与 Software Design 为推荐基础） | [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]]；[[Workflow-Automation-and-Business-Process-Design]] 可并行 |
 | Data / AI | [[Data-Structures-and-Algorithms]] → [[Python]] + [[SQL]] | [[Databases-and-Data-Modeling]] → [[Data-Quality-and-Lineage]] |
 | Infra / Inference | [[Data-Structures-and-Algorithms]] → [[Linux]] → [[Testing]] | [[Software-Design-and-Architecture]] → [[Distributed-Systems]] → [[Model-Serving]] |
-| PM / Safety / FDE | [[Technical-Communication]] → [[Statistics-and-Experiment-Design]] | [[Model-Evaluation]] → [[LLM-Evals]] → [[AI-Safety-Measurement]] / [[API-Product-Delivery]] |
+| PM / Safety / FDE | [[Technical-Communication]] → [[Statistics-and-Experiment-Design]] | FDE：[[HTTP-API]] + [[Software-Design-and-Architecture]] → [[Workflow-Automation-and-Business-Process-Design]]；PM/Safety：[[Model-Evaluation]] → [[LLM-Evals]] |
 
 ## 每个前置 Skill 的通过门
 
@@ -42,4 +42,4 @@ related:
 
 ## 来源如何使用
 
-JasonAI 资料中的 Agent、Memory、RAG、MCP、Obsidian CLI、Git 和环境文章作为练习材料，入口见 [[JasonAI-Source-Index]]。工具教程只提供场景，不自动改变 Skill 的岗位优先级。
+语言 → API → LLM API → Tool Calling 是应用主干；Workflow Automation 可提前练习，Enterprise Integration 是生产分支，不是 Tool Calling 的通用硬前置。JasonAI 资料中的 Agent、Memory、RAG、MCP、Obsidian CLI、Git 和环境文章作为练习材料，入口见 [[JasonAI-Source-Index]]。工具教程只提供场景，不自动改变 Skill 的岗位优先级。

@@ -41,7 +41,7 @@ related:
 | [[Testing]] | 1 | 0 | 0 | 1 | 0 | 2 | 0 | 2 |
 | [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 1 | 1 | 0 | 2 | 0 | 2 |
 | [[TypeScript-JavaScript]] | 1 | 5 | 0 | 0 | 0 | 6 | 0 | 6 |
-| [[Workflow-Automation-and-Business-Process-Design]] | 1 | 1 | 2 | 9 | 1 | 11 | 1 | 12 |
+| [[Workflow-Automation-and-Business-Process-Design]] | 2 | 0 | 2 | 9 | 1 | 11 | 1 | 12 |
 
 `Alternative Group`（例如 `language-1`、`areas-3-of-6`）保留原始选择关系。`High/Medium Source N` 与 `Low/Historical N` 按职位去重，不能解释成市场频率；历史/不可用页面仅保留低置信学习线索。
 

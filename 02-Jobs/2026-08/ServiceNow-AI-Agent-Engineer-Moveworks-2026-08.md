@@ -35,13 +35,13 @@ evidence_audit_status: verified
 ## Responsibilities
 - Own the AI Agent delivery lifecycle: Vision-Lock, Solution Design/Architecture, Building, Tuning, and launch
 - Architect and design customer AI solutions
-- Integrate the platform with customer enterprise systems securely and performantly
-- Integrate the platform with customer enterprise systems securely and performantly
+- Integrate the platform with customer enterprise systems
+- Integrate the platform securely with customer systems
 - Strong grasp of API-based systems integration
 - LLM-based systems design including prompt engineering and context engineering
 
 ## Explicit Requirements
-- Build full-stack workflows and automations using REST APIs, iPaaS, or scripting
+- Build full-stack workflows and automations
 - Build full-stack workflows and automations using REST APIs, iPaaS, or scripting
 - Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting
 
@@ -56,11 +56,11 @@ evidence_audit_status: verified
 | --- | --- | --- | --- | --- | --- | --- |
 | Own the AI Agent delivery lifecycle: Vision-Lock, Solution Design/Architecture, Building, Tuning, and launch | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
 | Architect and design customer AI solutions | [[Software-Design-and-Architecture]] | responsibility | explicit | none | use | high |
-| Integrate the platform with customer enterprise systems securely and performantly | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | none | use | high |
-| Integrate the platform with customer enterprise systems securely and performantly | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
+| Integrate the platform with customer enterprise systems | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | none | use | high |
+| Integrate the platform securely with customer systems | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
 | Strong grasp of API-based systems integration | [[HTTP-API]] | responsibility | explicit | none | use | high |
 | LLM-based systems design including prompt engineering and context engineering | [[Prompt-and-Context-Engineering]] | responsibility | explicit | none | use | high |
-| Build full-stack workflows and automations using REST APIs, iPaaS, or scripting | [[Workflow-Automation-and-Business-Process-Design]] | required | explicit | implementation-1 | use | high |
+| Build full-stack workflows and automations | [[Workflow-Automation-and-Business-Process-Design]] | required | explicit | none | use | high |
 | Build full-stack workflows and automations using REST APIs, iPaaS, or scripting | [[HTTP-API]] | required | explicit | implementation-1 | use | high |
 | Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting | [[Python]] | required | explicit | implementation-1 | use | high |
 | Familiarity with enterprise platforms such as ServiceNow, Jira, Zendesk, Workday, or Okta | [[Enterprise-Integrations-and-Connectors]] | preferred | explicit | none | use | high |
@@ -104,8 +104,8 @@ Notes: paraphrased from official Core Responsibilities & Impact section; mapping
 
 ### Evidence 3
 Source Section: Core Responsibilities & Impact
-Source Fidelity: direct
-Raw Evidence: Integrate the platform with customer enterprise systems securely and performantly
+Source Fidelity: close-paraphrase
+Raw Evidence: Integrate the platform with customer enterprise systems
 Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -113,12 +113,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Enterprise-system integration is explicit.
-Notes: quoted or lightly normalized from official Core Responsibilities & Impact section; mapping kept to Enterprise-Integrations-and-Connectors only.
+Notes: paraphrased from official Core Responsibilities & Impact section; mapping kept to Enterprise-Integrations-and-Connectors only.
 
 ### Evidence 4
 Source Section: Core Responsibilities & Impact
 Source Fidelity: close-paraphrase
-Raw Evidence: Integrate the platform with customer enterprise systems securely and performantly
+Raw Evidence: Integrate the platform securely with customer systems
 Mapped Skill: [[Security-Privacy-and-Access-Control]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -156,16 +156,16 @@ Notes: quoted or lightly normalized from official About You section; mapping kep
 
 ### Evidence 7
 Source Section: Qualifications
-Source Fidelity: direct
-Raw Evidence: Build full-stack workflows and automations using REST APIs, iPaaS, or scripting
+Source Fidelity: close-paraphrase
+Raw Evidence: Build full-stack workflows and automations
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: required
 Requirement Strength: explicit
-Alternative Group: implementation-1
+Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Full-stack workflows and automations are an explicit qualification.
-Notes: quoted or lightly normalized from official Qualifications section; mapping kept to Workflow-Automation-and-Business-Process-Design only. Alternative group is not summed.
+Notes: paraphrased from official Qualifications section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
 ### Evidence 8
 Source Section: Qualifications

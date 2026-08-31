@@ -56,6 +56,9 @@ APPLIED_BATCH = "enterprise-applied-ai-2026-08"
 EVIDENCE_TYPES = {"required", "preferred", "responsibility", "inferred-prerequisite"}
 EVIDENCE_STRENGTHS = {"explicit", "inferred"}
 CONFIDENCE = {"high", "medium", "low"}
+SOURCE_FIDELITY = {"direct", "close-paraphrase", "inferred"}
+SOURCE_ACCESS = {"full", "partial", "dynamic-partial", "page-shell-only", "blocked"}
+AUDIT_STATUS = {"verified", "partial", "historical"}
 
 
 def scalar(value: str) -> str:
@@ -190,6 +193,27 @@ def parse_skill_extraction_table(body: str) -> tuple[list[dict[str, str]], str |
         row["raw"] = row.get("raw evidence", row.get("raw requirement / responsibility", ""))
         rows.append(row)
     return rows, None
+
+
+def parse_evidence_traces(body: str) -> dict[int, dict[str, str]]:
+    """Parse numbered Evidence Trace blocks for strict Batch B checks."""
+    section = section_body(body, "Evidence Trace")
+    blocks = re.split(r"(?m)^###\s+Evidence\s+(\d+)\s*$", section)
+    traces: dict[int, dict[str, str]] = {}
+    for i in range(1, len(blocks), 2):
+        try:
+            number = int(blocks[i])
+        except ValueError:
+            continue
+        block = blocks[i + 1]
+        fields: dict[str, str] = {}
+        for line in block.splitlines():
+            if ":" not in line:
+                continue
+            key, value = line.split(":", 1)
+            fields[key.strip().casefold()] = value.strip().strip("`")
+        traces[number] = fields
+    return traces
 
 
 def derive_skill_evidence_counts(applied_rows: dict[Path, list[dict[str, str]]]) -> dict[str, Counter]:
@@ -387,13 +411,19 @@ def main() -> int:
             for heading in ("Responsibilities", "Explicit Requirements", "Skill Extraction", "Limitations", "Evidence Trace"):
                 if not heading_present(body, heading):
                     errors.append(f"job-sample missing {heading}: {rel}")
-            for trace_field in ("Source Section:", "Evidence Type:", "Extraction Decision:", "Confidence:"):
+            for trace_field in ("Source Section:", "Evidence Type:", "Confidence:"):
                 if trace_field not in body:
                     errors.append(f"job-sample Evidence Trace missing {trace_field} in {rel}")
             if meta.get("sample_batch") == "enterprise-applied-ai-2026-08":
-                for key in ("sample_batch", "company_segment", "role_subtrack"):
+                for key in ("sample_batch", "company_segment", "role_subtrack", "evidence_audit_status", "source_access"):
                     if not meta.get(key):
                         errors.append(f"applied job-sample missing {key}: {rel}")
+                if meta.get("source_access") not in SOURCE_ACCESS:
+                    errors.append(f"invalid source_access in {rel}: {meta.get('source_access','')}")
+                if meta.get("evidence_audit_status") not in AUDIT_STATUS:
+                    errors.append(f"invalid evidence_audit_status in {rel}: {meta.get('evidence_audit_status','')}")
+                if meta.get("evidence_audit_status") == "historical" and meta.get("source_status") not in {"expired", "unavailable"}:
+                    warnings.append(f"historical audit without expired/unavailable status: {rel}")
                 if "market_frequency" in body or "market_frequency" in meta:
                     errors.append(f"applied job-sample must not claim market_frequency: {rel}")
                 if re.search(r"(?<!\w)\d+(?:\.\d+)?\s*%", body):
@@ -403,6 +433,7 @@ def main() -> int:
                     errors.append(f"applied job-sample {rel}: {parse_error}")
                 if not rows:
                     errors.append(f"applied job-sample has no evidence rows: {rel}")
+                traces = parse_evidence_traces(body)
                 for index, row in enumerate(rows, 1):
                     kind_value = row.get("evidence type", "").strip()
                     strength_value = row.get("requirement strength", "").strip()
@@ -421,30 +452,70 @@ def main() -> int:
                         errors.append(f"inferred-prerequisite must have inferred strength in {rel} row {index}")
                     if kind_value in {"required", "preferred", "responsibility"} and strength_value != "explicit":
                         errors.append(f"explicit evidence type must have explicit strength in {rel} row {index}")
+                    trace = traces.get(index, {})
+                    fidelity = trace.get("source fidelity", "")
+                    if fidelity not in SOURCE_FIDELITY:
+                        errors.append(f"invalid/missing Source Fidelity in {rel} row {index}: {fidelity}")
+                    if kind_value == "inferred-prerequisite" and fidelity == "direct":
+                        errors.append(f"inferred-prerequisite cannot use direct Source Fidelity in {rel} row {index}")
+                    if not trace.get("mapping rationale", "").strip():
+                        errors.append(f"missing semantic Mapping Rationale in {rel} row {index}")
+                    source_section = trace.get("source section", "").casefold()
+                    if kind_value in {"required", "preferred"} and "responsibil" in source_section:
+                        errors.append(f"{kind_value} evidence cannot come from Responsibilities in {rel} row {index}")
+                    if kind_value == "required" and any(token in source_section for token in ("historical", "page shell", "redirected", "unavailable")):
+                        errors.append(f"required evidence cannot come from historical/unavailable section in {rel} row {index}")
                     access = meta.get("source_access", "").casefold()
-                    if any(token in access for token in ("limited", "blocked", "403", "page-shell", "redirected-error")):
+                    if access in {"partial", "blocked", "page-shell-only"}:
                         if confidence_value == "high":
-                            warnings.append(f"limited/blocked source with high confidence in {rel} row {index}")
-                        if kind_value == "required":
-                            errors.append(f"limited/blocked source cannot support required evidence in {rel} row {index}")
+                            warnings.append(f"partial/blocked source with high confidence in {rel} row {index}")
+                        if kind_value in {"required", "preferred"}:
+                            errors.append(f"partial/blocked source cannot support required/preferred evidence in {rel} row {index}")
+                    if meta.get("evidence_audit_status") == "historical" and kind_value in {"required", "preferred"}:
+                        errors.append(f"historical audit cannot have required/preferred evidence in {rel} row {index}")
+                    if access == "dynamic-partial" and confidence_value == "high":
+                        warnings.append(f"dynamic source with high confidence in {rel} row {index}")
+                    raw_lower = row.get("raw", "").casefold()
+                    alt = row.get("alternative group", "").strip().casefold()
+                    if re.search(r"\b(or|one of|at least one)\b", raw_lower) and not alt:
+                        warnings.append(f"one-of wording without Alternative Group in {rel} row {index}")
+                    skill_lower = row.get("skill", "").casefold()
+                    eval_terms = re.search(r"\b(eval|evaluation|quality|trajectory|benchmark|judge|regression)\b", raw_lower)
+                    if re.search(r"\b(observability|monitoring|metrics|tracing|latency|reliability)\b", raw_lower) and "agent-evals-and-trace-debugging" in skill_lower and not eval_terms:
+                        warnings.append(f"observability signal mapped to Agent Evals without eval term in {rel} row {index}")
+                    if "debug" in raw_lower and "agent-evals-and-trace-debugging" in skill_lower and not eval_terms:
+                        warnings.append(f"debugging signal mapped to Agent Evals without eval term in {rel} row {index}")
+                    if re.search(r"\b(mcp|a2a)\b", raw_lower) and "tool-calling-and-action-contracts" in skill_lower and not re.search(r"\b(tool|action|execution)\b", raw_lower):
+                        warnings.append(f"MCP/A2A signal mapped to Tool Calling without action term in {rel} row {index}")
+                    if re.search(r"\b(rag|retrieval|grounding)\b", raw_lower) and kind_value == "inferred-prerequisite" and "preferred" in trace.get("source section", "").casefold():
+                        warnings.append(f"explicit preferred retrieval downgraded to inferred in {rel} row {index}")
                 groups = defaultdict(list)
                 for index, row in enumerate(rows, 1):
                     group = row.get("alternative group", "").strip()
                     if group and group not in {"—", "-", "none"}:
                         groups[group].append((index, row))
-                for group, entries in groups.items():
-                    if len(entries) < 2:
-                        warnings.append(f"alternative group {group} has fewer than two members in {rel}")
-                    # A non-empty group with multiple language rows is the
-                    # explicit one-of marker; counts are not summed as a
-                    # simultaneous requirement.
+                # A non-empty group preserves an explicit one-of or at-least-N
+                # relation. Some alternatives (for example Go) have no
+                # dedicated vault Skill, so one mapped member is valid when
+                # Raw Evidence and Notes retain the full set.
                 trace_count = len(re.findall(r"(?mi)^###\s+Evidence\s+\d+", body))
                 if trace_count != len(rows):
                     errors.append(f"Evidence Trace count {trace_count} != table rows {len(rows)} in {rel}")
-                trace_body = section_body(body, "Evidence Trace")
-                for trace_field in ("Source Section:", "Raw Evidence:", "Mapped Skill:", "Evidence Type:", "Requirement Strength:", "Depth Signal:", "Confidence:", "Notes:"):
-                    if trace_field not in trace_body:
-                        errors.append(f"applied Evidence Trace missing {trace_field} in {rel}")
+                for index in range(1, len(rows) + 1):
+                    trace = traces.get(index, {})
+                    for trace_field in ("source section", "source fidelity", "raw evidence", "mapped skill", "evidence type", "requirement strength", "alternative group", "depth signal", "confidence", "mapping rationale", "notes"):
+                        if not trace.get(trace_field, "").strip():
+                            errors.append(f"applied Evidence Trace missing {trace_field} in {rel} evidence {index}")
+                    if trace.get("evidence type", "").strip() != rows[index - 1].get("evidence type", "").strip():
+                        errors.append(f"Evidence Trace type mismatch in {rel} evidence {index}")
+                trace_notes = [t.get("notes", "") for t in traces.values() if t.get("notes")]
+                rationales = [t.get("mapping rationale", "") for t in traces.values() if t.get("mapping rationale")]
+                if len(trace_notes) >= 3 and len(set(trace_notes)) == 1:
+                    warnings.append(f"generic repeated Notes in {rel}")
+                if len(rationales) >= 3 and len(set(rationales)) == 1:
+                    warnings.append(f"generic repeated Mapping Rationale in {rel}")
+                if meta.get("evidence_audit_status") == "historical" and any(r.get("evidence type") in {"required", "preferred"} for r in rows):
+                    errors.append(f"historical sample contains current requirement evidence: {rel}")
                 resp = section_body(body, "Responsibilities")
                 req = section_body(body, "Explicit Requirements")
                 if similarity(resp, req) >= 0.86 and len(resp) > 40 and len(req) > 40:
@@ -490,28 +561,34 @@ def main() -> int:
     if matrix_path.exists():
         matrix_text = matrix_path.read_text(encoding="utf-8")
         matrix_lines = matrix_text.splitlines()
-        matrix_header = next((line for line in matrix_lines if line.startswith("| Skill | Role | Required | Preferred | Responsibility | Inferred | Sample N | Confidence |")), None)
+        matrix_header = next((line for line in matrix_lines if line.startswith("| Skill | Required Direct | Required One-of | Preferred | Responsibility | Inferred | High/Medium Source N | Low/Historical N | Sample N |")), None)
         if matrix_header:
             matrix_rows: dict[str, list[str]] = {}
             for line in matrix_lines:
                 if not line.startswith("| [["):
                     continue
                 cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-                if len(cells) >= 8:
+                if len(cells) >= 9:
                     skill_match = WIKILINK.search(cells[0])
                     if skill_match:
                         matrix_rows[skill_match.group(1).casefold()] = cells
-            kind_columns = {"required": 2, "preferred": 3, "responsibility": 4, "inferred-prerequisite": 5}
+            kind_columns = {"required": None, "preferred": 3, "responsibility": 4, "inferred-prerequisite": 5}
             for skill_key, counts in derived.items():
                 if skill_key not in matrix_rows:
                     errors.append(f"Skill Evidence Matrix missing derived skill row: {skill_key}")
                     continue
                 cells = matrix_rows[skill_key]
-                for kind_value, column in kind_columns.items():
+                direct = sum(1 for path, rows in applied_rows.items() for row in rows if row.get("skill", "").casefold().find(skill_key) >= 0 and row.get("evidence type") == "required" and row.get("alternative group", "").strip().casefold() in {"", "none", "—", "-"})
+                one_of = counts.get("required", 0) - direct
+                if cells[1] != str(direct):
+                    errors.append(f"Skill Evidence Matrix mismatch {skill_key} required direct: {cells[1]} != {direct}")
+                if cells[2] != str(one_of):
+                    errors.append(f"Skill Evidence Matrix mismatch {skill_key} required one-of: {cells[2]} != {one_of}")
+                for kind_value, column in {"preferred":3, "responsibility":4, "inferred-prerequisite":5}.items():
                     expected = str(counts.get(kind_value, 0))
                     if cells[column] != expected:
                         errors.append(f"Skill Evidence Matrix mismatch {skill_key} {kind_value}: {cells[column]} != {expected}")
-                sample_cell = cells[6]
+                sample_cell = cells[8]
                 if sample_cell.isdigit() and int(sample_cell) < 1:
                     errors.append(f"Skill Evidence Matrix Sample N is zero for {skill_key}")
 

@@ -4,7 +4,7 @@ skill_category: LLM-Applications
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
@@ -12,8 +12,8 @@ roles:
   - "[[AI-Product-Manager]]"
 prerequisites:
   - "[[HTTP-API]]"
-  - "[[Enterprise-Integrations-and-Connectors]]"
 recommended_foundations:
+  - "[[Enterprise-Integrations-and-Connectors]]"
   - "[[Agent-Orchestration-and-State]]"
 related_concepts:
   - "[[Human-in-the-Loop-and-Agent-Guardrails]]"
@@ -41,7 +41,7 @@ FDE 负责 discovery 和流程建模；应用工程负责连接与执行；PM �
 
 ## 前置 Skills
 
-硬前置：[[HTTP-API]] 与 [[Enterprise-Integrations-and-Connectors]]；推荐了解 [[Agent-Orchestration-and-State]]，不要求先学 MCP。
+硬前置：[[HTTP-API]]；[[Enterprise-Integrations-and-Connectors]] 与 [[Agent-Orchestration-and-State]] 是推荐基础，可并行进入；不要求先学 MCP。
 
 ## 学习范围
 

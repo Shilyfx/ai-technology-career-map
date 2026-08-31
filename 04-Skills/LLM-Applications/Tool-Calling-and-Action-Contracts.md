@@ -4,7 +4,7 @@ skill_category: LLM-Applications
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
@@ -12,8 +12,9 @@ roles:
   - "[[AI-Product-Manager]]"
 prerequisites:
   - "[[LLM-API-and-Structured-Outputs]]"
-  - "[[Enterprise-Integrations-and-Connectors]]"
 recommended_foundations:
+  - "[[HTTP-API]]"
+  - "[[Enterprise-Integrations-and-Connectors]]"
   - "[[Security-Privacy-and-Access-Control]]"
 related_concepts:
   - "[[Human-in-the-Loop-and-Agent-Guardrails]]"
@@ -41,7 +42,7 @@ Agentforce、Notion、Ramp、Warp 等岗位的价值在于把模型连接到真�
 
 ## 前置 Skills
 
-硬前置：[[LLM-API-and-Structured-Outputs]] 与 [[Enterprise-Integrations-and-Connectors]]；安全控制参考 [[Human-in-the-Loop-and-Agent-Guardrails]]。
+硬前置：[[LLM-API-and-Structured-Outputs]]；[[HTTP-API]]、[[Enterprise-Integrations-and-Connectors]] 和 [[Security-Privacy-and-Access-Control]] 是推荐基础，安全控制参考 [[Human-in-the-Loop-and-Agent-Guardrails]]。
 
 ## 学习范围
 

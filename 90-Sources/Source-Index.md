@@ -2,7 +2,7 @@
 type: source-index
 status: reference
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-24
 ---
 
@@ -33,6 +33,14 @@ This is a navigation index by category, purpose and limitations. Detailed proven
 - [Google DeepMind Careers](https://deepmind.google/careers/)
 - [Anthropic Jobs](https://www.anthropic.com/careers/jobs)
 - [华为 AI 社招专区](https://career.huawei.com/reccampportal/portal5/social-recruitment-ai.html)
+- [Atlassian Agentic AI Integrations](https://www.atlassian.com/company/careers/details/26357)
+- [Atlassian Senior Principal FDE](https://www.atlassian.com/company/careers/details/25798)
+- [ServiceNow AI Agent Engineer](https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/)
+- [ServiceNow Agentic Systems](https://careers.servicenow.com/jobs/744000145848949/senior-staff-software-engineer-agentic-systems-moveworks/)
+- [ServiceNow Agent Eval Platform](https://careers.servicenow.com/jobs/744000145843394/staff-software-engineer-agent-eval-platform/)
+- [Glean Software Engineer, Agents](https://job-boards.greenhouse.io/gleanwork/jobs/4712442005?gh_src=ai101x)
+- [Warp Forward Deployed Engineer](https://job-boards.greenhouse.io/warp/jobs/5749183004)
+- [Notion Forward Deployed Engineer](https://jobs.ashbyhq.com/notion/4bc0802c-b5e0-411c-be01-daaea2bc3ae0)
 
 ## C. 技术基础与实现
 
@@ -66,8 +74,22 @@ This is a navigation index by category, purpose and limitations. Detailed proven
 - [OpenAI Structured Outputs guide](https://developers.openai.com/api/docs/guides/latest-model)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/)
+- [OpenAI Agents SDK testing](https://openai.github.io/openai-agents-python/testing/)
+- [OpenAI Agents SDK tracing](https://openai.github.io/openai-agents-python/tracing/)
+- [OpenAI Agents SDK guardrails](https://openai.github.io/openai-agents-python/guardrails/)
+- [OpenAI Agents SDK human-in-the-loop](https://openai.github.io/openai-agents-python/human_in_the_loop/)
+- [OAuth 2.0 Authorization Framework (RFC 6749)](https://datatracker.ietf.org/doc/html/rfc6749)
+- [OAuth 2.0 Bearer Token Usage (RFC 6750)](https://datatracker.ietf.org/doc/html/rfc6750)
+- [OAuth PKCE (RFC 7636)](https://datatracker.ietf.org/doc/html/rfc7636)
+- [GitHub webhook signature validation](https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries)
 
-## E. 外部实操资料
+## E. Practice and implementation references
+
+- [OpenAI Agents SDK examples](https://openai.github.io/openai-agents-python/examples/)
+- [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+- [[JasonAI-Source-Index]]：面向 Obsidian/Agent/MCP/RAG 的实操文章与本地化练习材料。
+
+## F. 外部实操资料
 
 - [[JasonAI-Source-Index]]：JasonAI 资料库的 45 篇 Markdown 来源存档、5 篇未提供下载的入口，以及与本仓库 Knowledge 的接入规则。
 - [[Agent-Memory-and-Knowledge-Operations]]：从 JasonAI 的 Agent Memory、OKF、LLM Wiki 和 NotebookLM 材料中提炼出的可验证知识运作循环。

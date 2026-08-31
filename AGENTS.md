@@ -28,6 +28,10 @@
 - `source_access`、`source_status` 与 confidence 必须一致：limited/blocked/403/过期不能给高置信 required。
 - 每个 Skill 行必须回到具体 Raw Evidence/Source Section；不能把同一份摘要复制成每个 Skill 的假证据。
 - Job Evidence 变化后必须重新计算 Skill Evidence Matrix 和 Role priority，不能沿用旧的手写频次。
+- Source Fidelity 审计必须逐条打开官方 `source_url`，并写入 `source_status`、`source_access`、`retrieved`、`updated` 与 `evidence_audit_status`；不要把旧的 `limited-http-403` 留在已可读页面。
+- Batch B 的 Raw Evidence 要贴近官方 wording；禁止把不相关要求合并成 synthetic sentence。每条 Evidence Trace 都要有 Source Fidelity 与语义具体的 Mapping Rationale。
+- observability/debugging/metrics/tracing 不映射 Agent Evals，除非原文明确出现 quality/eval/trajectory/benchmark/judge/regression；MCP/A2A 不映射 Tool Calling，除非另有明确 tool/action/execution 信号。
+- Preferred 中明确的 RAG/retrieval/grounding 保持 preferred，不得降为 inferred；现有 taxonomy 不得强迫映射，允许使用已有非 Applied Skill 或留空不计。
 
 ## 目录与链接
 

@@ -41,8 +41,8 @@ evidence_audit_status: partial
 ## Preferred/Nice-to-have
 - Experience designing or deploying Agents, automations or AI-powered workflows with Customers
 - Experience with APIs
-- Experience with MCPs, Workers, coding agents or developer platform workflows
-- Experience with MCPs, Workers, coding agents or developer platform workflows
+- Experience with MCPs
+- Experience with coding agents and developer platform workflows
 
 ## Skill Extraction
 证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
@@ -52,8 +52,8 @@ evidence_audit_status: partial
 | Hands-on AI builder mindset: use AI tools to design, prototype, automate, or improve real business workflows | [[Workflow-Automation-and-Business-Process-Design]] | required | explicit | none | use | medium |
 | Experience designing or deploying Agents, automations or AI-powered workflows with Customers | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
 | Experience with APIs | [[HTTP-API]] | preferred | explicit | none | use | medium |
-| Experience with MCPs, Workers, coding agents or developer platform workflows | [[MCP-and-Agent-Interoperability]] | preferred | explicit | none | use | medium |
-| Experience with MCPs, Workers, coding agents or developer platform workflows | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
+| Experience with MCPs | [[MCP-and-Agent-Interoperability]] | preferred | explicit | none | use | medium |
+| Experience with coding agents and developer platform workflows | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -107,7 +107,7 @@ Notes: quoted or lightly normalized from official Nice to Haves section; mapping
 ### Evidence 4
 Source Section: Nice to Haves
 Source Fidelity: direct
-Raw Evidence: Experience with MCPs, Workers, coding agents or developer platform workflows
+Raw Evidence: Experience with MCPs
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -119,8 +119,8 @@ Notes: quoted or lightly normalized from official Nice to Haves section; mapping
 
 ### Evidence 5
 Source Section: Nice to Haves
-Source Fidelity: direct
-Raw Evidence: Experience with MCPs, Workers, coding agents or developer platform workflows
+Source Fidelity: close-paraphrase
+Raw Evidence: Experience with coding agents and developer platform workflows
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -128,4 +128,4 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: Coding agents and platform workflows are preferred orchestration exposure.
-Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to Agent-Orchestration-and-State only.
+Notes: paraphrased from official Nice to Haves section; mapping kept to Agent-Orchestration-and-State only.

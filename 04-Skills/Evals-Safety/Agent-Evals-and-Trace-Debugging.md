@@ -4,7 +4,7 @@ skill_category: Evals-Safety
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
@@ -37,7 +37,7 @@ Glean、Zapier、Atlassian 和 ServiceNow 证据把“构建评估/监控”作�
 
 ## Job Evidence
 
-[[Glean-Software-Engineer-Agents-2026-08]]、[[Zapier-Engineer-Applied-AI-2026-08]] 的 responsibilities 明确提到 eval feedback/monitoring；[[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] 因 403 只作低置信责任线索。
+[[Glean-Software-Engineer-Agents-2026-08]]、[[Zapier-Engineer-Applied-AI-2026-08]] 的 responsibilities 明确提到 eval feedback/monitoring；[[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] 现为完整可读来源，直接给出 judges、rubrics、trajectory 与 calibration 证据。
 
 ## 前置 Skills
 
@@ -83,8 +83,17 @@ Glean、Zapier、Atlassian 和 ServiceNow 证据把“构建评估/监控”作�
 
 ## Sources
 
+### Official / normative
+
+- [OpenAI Agents SDK testing](https://openai.github.io/openai-agents-python/testing/)
+- [OpenAI Agents SDK tracing](https://openai.github.io/openai-agents-python/tracing/)
+
 ### Job evidence
 
 - [[Glean-Software-Engineer-Agents-2026-08]]
 - [[Zapier-Engineer-Applied-AI-2026-08]]
 - [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]]
+
+### Practice
+
+- [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)

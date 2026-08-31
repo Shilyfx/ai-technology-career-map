@@ -4,17 +4,18 @@ skill_category: LLM-Applications
 status: developing
 stability: emerging
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-31
 roles:
   - "[[AI-Application-Engineer]]"
   - "[[AI-Infrastructure-and-Inference-Engineer]]"
   - "[[AI-Solutions-Architect-and-FDE]]"
 prerequisites:
-  - "[[Tool-Calling-and-Action-Contracts]]"
-  - "[[Enterprise-Integrations-and-Connectors]]"
-recommended_foundations:
   - "[[HTTP-API]]"
+  - "[[Tool-Calling-and-Action-Contracts]]"
+recommended_foundations:
+  - "[[Enterprise-Integrations-and-Connectors]]"
+  - "[[Security-Privacy-and-Access-Control]]"
 related_concepts:
   - "[[Agent-Orchestration-and-State]]"
 sample_batch: enterprise-applied-ai-2026-08
@@ -40,7 +41,7 @@ Atlassian、Notion、Front、Warp 的岗位将 MCP 作为企业连接和 agent i
 
 ## 前置 Skills
 
-硬前置：[[Tool-Calling-and-Action-Contracts]] 与 [[Enterprise-Integrations-and-Connectors]]；推荐 [[HTTP-API]]。不要求先会 Agent 或 RAG。
+硬前置：[[HTTP-API]] 与 [[Tool-Calling-and-Action-Contracts]]；[[Enterprise-Integrations-and-Connectors]] 与 [[Security-Privacy-and-Access-Control]] 是推荐基础。Local stdio 可先练协议，不要求先会 Agent 或 RAG。
 
 ## 学习范围
 

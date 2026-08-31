@@ -34,19 +34,19 @@ evidence_audit_status: verified
 
 ## Responsibilities
 - Architect agent workflows with triggers, webhooks, cron schedules, and API calls
-- Set up environments, secrets, MCP servers, and integrations
-- Set up environments, secrets, MCP servers, and integrations
+- Set up environments, secrets, and integrations
+- Set up MCP servers and integrations
 - Debug agent runs using session sharing and observability tools
 
 ## Explicit Requirements
-- Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
-- Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+- Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration
+- Strong infrastructure fundamentals: Linux
 
 ## Preferred/Nice-to-have
-- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
-- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
-- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
-- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+- Understand prompt engineering
+- Understand agent architectures
+- Understand tool use
+- Understand evaluating non-deterministic systems
 - Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation
 - Familiarity with enterprise security and compliance requirements
 
@@ -55,16 +55,16 @@ evidence_audit_status: verified
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux | [[Docker-Containers]] | required | explicit | none | use | high |
-| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux | [[Linux]] | required | explicit | none | use | high |
+| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration | [[Docker-Containers]] | required | explicit | none | use | high |
+| Strong infrastructure fundamentals: Linux | [[Linux]] | required | explicit | none | use | high |
 | Architect agent workflows with triggers, webhooks, cron schedules, and API calls | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
-| Set up environments, secrets, MCP servers, and integrations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
-| Set up environments, secrets, MCP servers, and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | high |
+| Set up environments, secrets, and integrations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
+| Set up MCP servers and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | high |
 | Debug agent runs using session sharing and observability tools | [[Observability]] | responsibility | explicit | none | use | high |
-| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | high |
-| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | high |
-| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Tool-Calling-and-Action-Contracts]] | preferred | explicit | none | use | high |
-| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | high |
+| Understand prompt engineering | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | high |
+| Understand agent architectures | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | high |
+| Understand tool use | [[Tool-Calling-and-Action-Contracts]] | preferred | explicit | none | use | high |
+| Understand evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | high |
 | Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation | [[HTTP-API]] | preferred | explicit | none | use | high |
 | Familiarity with enterprise security and compliance requirements | [[Security-Privacy-and-Access-Control]] | preferred | explicit | none | use | high |
 
@@ -80,8 +80,8 @@ evidence_audit_status: verified
 ## Evidence Trace
 ### Evidence 1
 Source Section: You may be a good fit if...
-Source Fidelity: direct
-Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+Source Fidelity: close-paraphrase
+Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration
 Mapped Skill: [[Docker-Containers]]
 Evidence Type: required
 Requirement Strength: explicit
@@ -89,12 +89,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Docker/containers are explicitly required fundamentals.
-Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Docker-Containers only.
+Notes: paraphrased from official You may be a good fit if... section; mapping kept to Docker-Containers only.
 
 ### Evidence 2
 Source Section: You may be a good fit if...
-Source Fidelity: direct
-Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+Source Fidelity: close-paraphrase
+Raw Evidence: Strong infrastructure fundamentals: Linux
 Mapped Skill: [[Linux]]
 Evidence Type: required
 Requirement Strength: explicit
@@ -102,7 +102,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Linux is explicitly named as an infrastructure fundamental.
-Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Linux only.
+Notes: paraphrased from official You may be a good fit if... section; mapping kept to Linux only.
 
 ### Evidence 3
 Source Section: As a Founding Forward Deployed Engineer, you will...
@@ -119,8 +119,8 @@ Notes: quoted or lightly normalized from official As a Founding Forward Deployed
 
 ### Evidence 4
 Source Section: As a Founding Forward Deployed Engineer, you will...
-Source Fidelity: direct
-Raw Evidence: Set up environments, secrets, MCP servers, and integrations
+Source Fidelity: close-paraphrase
+Raw Evidence: Set up environments, secrets, and integrations
 Mapped Skill: [[Security-Privacy-and-Access-Control]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -128,12 +128,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Secrets and environment boundaries are explicit security responsibilities.
-Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to Security-Privacy-and-Access-Control only.
+Notes: paraphrased from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to Security-Privacy-and-Access-Control only.
 
 ### Evidence 5
 Source Section: As a Founding Forward Deployed Engineer, you will...
-Source Fidelity: direct
-Raw Evidence: Set up environments, secrets, MCP servers, and integrations
+Source Fidelity: close-paraphrase
+Raw Evidence: Set up MCP servers and integrations
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -141,7 +141,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: MCP servers are explicit interoperability work.
-Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to MCP-and-Agent-Interoperability only.
+Notes: paraphrased from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to MCP-and-Agent-Interoperability only.
 
 ### Evidence 6
 Source Section: As a Founding Forward Deployed Engineer, you will...
@@ -159,7 +159,7 @@ Notes: quoted or lightly normalized from official As a Founding Forward Deployed
 ### Evidence 7
 Source Section: You may be a good fit if...
 Source Fidelity: direct
-Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Raw Evidence: Understand prompt engineering
 Mapped Skill: [[Prompt-and-Context-Engineering]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -172,7 +172,7 @@ Notes: quoted or lightly normalized from official You may be a good fit if... se
 ### Evidence 8
 Source Section: You may be a good fit if...
 Source Fidelity: direct
-Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Raw Evidence: Understand agent architectures
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -185,7 +185,7 @@ Notes: quoted or lightly normalized from official You may be a good fit if... se
 ### Evidence 9
 Source Section: You may be a good fit if...
 Source Fidelity: direct
-Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Raw Evidence: Understand tool use
 Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
 Evidence Type: preferred
 Requirement Strength: explicit
@@ -198,7 +198,7 @@ Notes: quoted or lightly normalized from official You may be a good fit if... se
 ### Evidence 10
 Source Section: You may be a good fit if...
 Source Fidelity: direct
-Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Raw Evidence: Understand evaluating non-deterministic systems
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: preferred
 Requirement Strength: explicit

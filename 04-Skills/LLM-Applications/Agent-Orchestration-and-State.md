@@ -4,7 +4,7 @@ skill_category: LLM-Applications
 status: developing
 stability: emerging
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-31
 roles:
   - "[[AI-Application-Engineer]]"
@@ -37,7 +37,7 @@ Notion、Glean、Salesforce 和 ServiceNow 的证据把代理从 demo 推到长�
 
 ## Job Evidence
 
-[[Notion-Software-Engineer-AI-Workflows-2026-08]]、[[Glean-Software-Engineer-Agents-2026-08]] 的职责提到 async/recurring agent；ServiceNow 403 样本只保留长会话/检查点等低置信责任线索，未标成 required。
+[[Notion-Software-Engineer-AI-Workflows-2026-08]]、[[Glean-Software-Engineer-Agents-2026-08]] 的职责提到 async/recurring agent；[[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] 现为完整来源，直接给出 state machine、checkpoint、resume、cancellation 与 tool invocation 证据。
 
 ## 前置 Skills
 

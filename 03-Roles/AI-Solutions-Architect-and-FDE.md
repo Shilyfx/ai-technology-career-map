@@ -57,7 +57,7 @@ discovery → workflow/constraints → prototype → architecture/eval
 | [[Agent-Evals-and-Trace-Debugging]] | 0 | 1 | 1 | 1 | 3 | Common | explain/use | low/medium |
 | [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
 
-Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.
 ## Non-skill Gates
 
 需求发现、行业知识、客户信任、语言/地域、工作授权、交付 ownership 和变革管理。

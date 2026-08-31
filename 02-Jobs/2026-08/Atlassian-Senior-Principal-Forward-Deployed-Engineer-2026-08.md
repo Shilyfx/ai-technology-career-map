@@ -35,8 +35,8 @@ evidence_audit_status: verified
 ## Responsibilities
 - Lead design, development, and deployment of AI/ML-powered solutions using Rovo
 - Champion AI-augmented workflow automation in customer environments
-- Ensure continuous evaluation, monitoring, and improvement
-- Ensure continuous evaluation, monitoring, and improvement
+- Ensure continuous evaluation and improvement
+- Ensure continuous monitoring and improvement
 - Navigate AI risk assessment, data privacy, and GDPR requirements
 
 ## Explicit Requirements
@@ -59,8 +59,8 @@ evidence_audit_status: verified
 | Application integrations with APIs and microservices | [[HTTP-API]] | required | explicit | none | use | high |
 | Application integrations with enterprise-scale systems | [[Enterprise-Integrations-and-Connectors]] | required | explicit | none | use | high |
 | Champion AI-augmented workflow automation in customer environments | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
-| Ensure continuous evaluation, monitoring, and improvement | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
-| Ensure continuous evaluation, monitoring, and improvement | [[Observability]] | responsibility | explicit | none | use | high |
+| Ensure continuous evaluation and improvement | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
+| Ensure continuous monitoring and improvement | [[Observability]] | responsibility | explicit | none | use | high |
 | Navigate AI risk assessment, data privacy, and GDPR requirements | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
 
 ## Non-skill Gates
@@ -153,8 +153,8 @@ Notes: quoted or lightly normalized from official What You'll Do section; mappin
 
 ### Evidence 7
 Source Section: What You'll Do
-Source Fidelity: direct
-Raw Evidence: Ensure continuous evaluation, monitoring, and improvement
+Source Fidelity: close-paraphrase
+Raw Evidence: Ensure continuous evaluation and improvement
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -162,12 +162,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Continuous evaluation is an explicit agent-quality signal.
-Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Agent-Evals-and-Trace-Debugging only.
+Notes: paraphrased from official What You'll Do section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 8
 Source Section: What You'll Do
-Source Fidelity: direct
-Raw Evidence: Ensure continuous evaluation, monitoring, and improvement
+Source Fidelity: close-paraphrase
+Raw Evidence: Ensure continuous monitoring and improvement
 Mapped Skill: [[Observability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -175,7 +175,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Monitoring is observability and is kept separate from evaluation.
-Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Observability only.
+Notes: paraphrased from official What You'll Do section; mapping kept to Observability only.
 
 ### Evidence 9
 Source Section: What You'll Do

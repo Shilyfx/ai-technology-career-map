@@ -4,7 +4,7 @@ skill_category: LLM-Applications
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
@@ -12,10 +12,10 @@ roles:
   - "[[AI-Product-Manager]]"
 prerequisites:
   - "[[HTTP-API]]"
-  - "[[Software-Design-and-Architecture]]"
 recommended_foundations:
   - "[[Python]]"
   - "[[TypeScript-JavaScript]]"
+  - "[[Software-Design-and-Architecture]]"
 related_concepts:
   - "[[Prompt-and-Context-Engineering]]"
   - "[[Tool-Calling-and-Action-Contracts]]"

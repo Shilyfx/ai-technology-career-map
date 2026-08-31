@@ -35,8 +35,8 @@ evidence_audit_status: verified
 ## Responsibilities
 - Build, evaluate, self-improve, deploy, and operate powerful agents
 - Design and ship workflows that help users evaluate agent quality and understand failure modes
-- Deploy and operate agents with the right guardrails, controls, and visibility
-- Deploy and operate agents with the right guardrails, controls, and visibility
+- Deploy and operate agents with guardrails and controls
+- Deploy and operate agents with visibility
 
 ## Explicit Requirements
 - Strong coding skills in Go, Python, Java, or TypeScript, with reliable, well-tested systems
@@ -56,8 +56,8 @@ evidence_audit_status: verified
 | Reliable, well-tested systems | [[Testing]] | required | explicit | none | use | high |
 | Build, evaluate, self-improve, deploy, and operate powerful agents | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | high |
 | Design and ship workflows that help users evaluate agent quality and understand failure modes | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
-| Deploy and operate agents with the right guardrails, controls, and visibility | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | none | use | high |
-| Deploy and operate agents with the right guardrails, controls, and visibility | [[Observability]] | responsibility | explicit | none | use | high |
+| Deploy and operate agents with guardrails and controls | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | none | use | high |
+| Deploy and operate agents with visibility | [[Observability]] | responsibility | explicit | none | use | high |
 | Experience building AI, agentic, workflow, automation, or developer-product experiences | [[Workflow-Automation-and-Business-Process-Design]] | preferred | explicit | none | use | high |
 
 ## Non-skill Gates
@@ -137,8 +137,8 @@ Notes: quoted or lightly normalized from official You will section; mapping kept
 
 ### Evidence 6
 Source Section: You will
-Source Fidelity: direct
-Raw Evidence: Deploy and operate agents with the right guardrails, controls, and visibility
+Source Fidelity: close-paraphrase
+Raw Evidence: Deploy and operate agents with guardrails and controls
 Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -146,12 +146,12 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Guardrails and controls are explicit safety concerns.
-Notes: quoted or lightly normalized from official You will section; mapping kept to Human-in-the-Loop-and-Agent-Guardrails only.
+Notes: paraphrased from official You will section; mapping kept to Human-in-the-Loop-and-Agent-Guardrails only.
 
 ### Evidence 7
 Source Section: You will
-Source Fidelity: direct
-Raw Evidence: Deploy and operate agents with the right guardrails, controls, and visibility
+Source Fidelity: close-paraphrase
+Raw Evidence: Deploy and operate agents with visibility
 Mapped Skill: [[Observability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -159,7 +159,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: high
 Mapping Rationale: Visibility is observability and is separate from evals.
-Notes: quoted or lightly normalized from official You will section; mapping kept to Observability only.
+Notes: paraphrased from official You will section; mapping kept to Observability only.
 
 ### Evidence 8
 Source Section: About you

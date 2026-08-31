@@ -4,7 +4,7 @@ skill_category: Product-Delivery
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Solutions-Architect-and-FDE]]"
@@ -12,9 +12,9 @@ roles:
   - "[[AI-Product-Manager]]"
 prerequisites:
   - "[[HTTP-API]]"
-  - "[[Software-Design-and-Architecture]]"
 recommended_foundations:
   - "[[Security-Privacy-and-Access-Control]]"
+  - "[[Software-Design-and-Architecture]]"
 related_concepts:
   - "[[Tool-Calling-and-Action-Contracts]]"
   - "[[Workflow-Automation-and-Business-Process-Design]]"
@@ -83,8 +83,19 @@ REST/GraphQL 识别与使用、分页/pagination、429、OAuth/OIDC、service ac
 
 ## Sources
 
+### Official / normative
+
+- [OAuth 2.0 Authorization Framework (RFC 6749)](https://datatracker.ietf.org/doc/html/rfc6749)
+- [OAuth 2.0 Bearer Token Usage (RFC 6750)](https://datatracker.ietf.org/doc/html/rfc6750)
+- [OAuth PKCE (RFC 7636)](https://datatracker.ietf.org/doc/html/rfc7636)
+- [GitHub webhook signature validation](https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries)
+
 ### Job evidence
 
 - [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]]
 - [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
 - [[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]]
+
+### Practice
+
+- [[JasonAI-Source-Index]]：连接器、API、Webhook 与 Obsidian 自动化实操入口。

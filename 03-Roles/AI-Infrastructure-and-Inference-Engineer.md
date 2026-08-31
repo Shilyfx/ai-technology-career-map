@@ -82,7 +82,7 @@ Runtime/kernels; distributed execution; serving/capacity; profiling; reliability
 | [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 2 | 0 | 1 | Specialized | use→implement | high/medium |
 | [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
 
-Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.
 ## Non-skill Gates
 
 On-call ownership, numerical correctness, hardware trade-offs and incident communication.

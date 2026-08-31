@@ -65,27 +65,27 @@ These are qualitative clusters from the selected sample set, not percentages or 
 | Company | Role | Access | Audit Status | Direct Evidence Rows | Paraphrase Rows | Inferred Rows | Main Limit |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
 | Atlassian | Senior Engineering Manager, Agentic AI Integrations | full | verified | 9 | 4 | 0 | none observed |
-| Atlassian | Senior Principal Forward Deployed Engineer | full | verified | 7 | 2 | 0 | none observed |
+| Atlassian | Senior Principal Forward Deployed Engineer | full | verified | 5 | 4 | 0 | none observed |
 | Atlassian | Principal Architecture, AI-native workflows | page-shell-only | historical | 0 | 0 | 2 | page shell or redirect error |
 | Notion | Software Engineer, AI Workflows | dynamic-partial | partial | 2 | 1 | 0 | dynamic ATS/JS shell |
-| Notion | Forward Deployed Engineer, GTM Japan | dynamic-partial | partial | 10 | 2 | 0 | dynamic ATS/JS shell |
-| Notion | Forward Deployed Architect, Japan | dynamic-partial | partial | 5 | 0 | 0 | dynamic ATS/JS shell |
-| Glean | Software Engineer, Agents | full | verified | 7 | 1 | 0 | none observed |
+| Notion | Forward Deployed Engineer, GTM Japan | dynamic-partial | partial | 8 | 4 | 0 | dynamic ATS/JS shell |
+| Notion | Forward Deployed Architect, Japan | dynamic-partial | partial | 4 | 1 | 0 | dynamic ATS/JS shell |
+| Glean | Software Engineer, Agents | full | verified | 5 | 3 | 0 | none observed |
 | Glean | Founding Forward Deployed Engineer | page-shell-only | historical | 0 | 0 | 2 | page shell or redirect error |
 | Salesforce | Forward Deployed Engineer | partial | partial | 0 | 4 | 0 | redirected official page |
 | Salesforce | Forward Deployed Engineer, Agentforce for Supply Chain | partial | partial | 0 | 3 | 0 | redirected official page |
 | Salesforce | Success Architect, Agentforce Data Cloud | partial | partial | 0 | 3 | 0 | redirected official page |
 | Salesforce | Product Manager, Agent Fabric | partial | partial | 0 | 4 | 0 | redirected official page |
-| ServiceNow / Moveworks | AI Agent Engineer | full | verified | 9 | 2 | 0 | none observed |
+| ServiceNow / Moveworks | AI Agent Engineer | full | verified | 7 | 4 | 0 | none observed |
 | ServiceNow / Moveworks | Senior Staff Software Engineer, Agent Development | blocked | historical | 0 | 0 | 2 | URL unavailable |
 | ServiceNow / Moveworks | Senior Staff Software Engineer, Agentic Systems | full | verified | 8 | 0 | 0 | none observed |
 | ServiceNow / Moveworks | Staff Software Engineer, Agent Eval Platform | full | verified | 6 | 3 | 0 | none observed |
 | Ramp | Applied AI Engineer | dynamic-partial | partial | 4 | 1 | 0 | dynamic ATS/JS shell |
 | Ramp | Software Engineer, Enterprise Product | dynamic-partial | partial | 2 | 1 | 0 | dynamic ATS/JS shell |
-| Ramp | Software Engineer, Frontend, Ramp Revenue | dynamic-partial | partial | 6 | 0 | 0 | dynamic ATS/JS shell |
+| Ramp | Software Engineer, Frontend, Ramp Revenue | dynamic-partial | partial | 4 | 2 | 0 | dynamic ATS/JS shell |
 | Zapier | Engineer, Applied AI | dynamic-partial | partial | 2 | 4 | 0 | dynamic ATS/JS shell |
-| Front | AI Engineer, GTM / Operations | dynamic-partial | partial | 2 | 2 | 1 | dynamic ATS/JS shell |
-| Warp | Forward Deployed Engineer | full | verified | 12 | 0 | 0 | none observed |
+| Front | AI Engineer, GTM / Operations | dynamic-partial | partial | 1 | 3 | 1 | dynamic ATS/JS shell |
+| Warp | Forward Deployed Engineer | full | verified | 8 | 4 | 0 | none observed |
 
 Required、Preferred、Responsibility、Inferred 的频数只描述本批证据行；它们不等同于市场比例或招聘概率。完整逐行计数见 [[Skill-Evidence-Matrix]]。
 

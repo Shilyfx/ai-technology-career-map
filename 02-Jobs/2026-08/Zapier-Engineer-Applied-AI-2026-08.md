@@ -33,8 +33,8 @@ evidence_audit_status: partial
 本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Build internal workflow and LLM proxy services
-- Build internal workflow and LLM proxy services
+- Build internal workflow services
+- Build internal LLM proxy services
 - Monitor latency, cost, and quality
 
 ## Explicit Requirements
@@ -51,8 +51,8 @@ evidence_audit_status: partial
 | --- | --- | --- | --- | --- | --- | --- |
 | Reusable TypeScript and/or Python tooling | [[TypeScript-JavaScript]] | required | explicit | language-1 | use | medium |
 | Reusable TypeScript and/or Python tooling | [[Python]] | required | explicit | language-1 | use | medium |
-| Build internal workflow and LLM proxy services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
-| Build internal workflow and LLM proxy services | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
+| Build internal workflow services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
+| Build internal LLM proxy services | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
 | Monitor latency, cost, and quality | [[Observability]] | responsibility | explicit | none | use | medium |
 | Safety, reliability, and evaluation experience | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | medium |
 
@@ -95,7 +95,7 @@ Notes: paraphrased from official Requirements section; mapping kept to Python on
 ### Evidence 3
 Source Section: Responsibilities
 Source Fidelity: close-paraphrase
-Raw Evidence: Build internal workflow and LLM proxy services
+Raw Evidence: Build internal workflow services
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -108,7 +108,7 @@ Notes: paraphrased from official Responsibilities section; mapping kept to Workf
 ### Evidence 4
 Source Section: Responsibilities
 Source Fidelity: close-paraphrase
-Raw Evidence: Build internal workflow and LLM proxy services
+Raw Evidence: Build internal LLM proxy services
 Mapped Skill: [[LLM-API-and-Structured-Outputs]]
 Evidence Type: responsibility
 Requirement Strength: explicit

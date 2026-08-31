@@ -4,7 +4,7 @@ skill_category: Evals-Safety
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
@@ -82,8 +82,18 @@ sample_batch: enterprise-applied-ai-2026-08
 
 ## Sources
 
+### Official / normative
+
+- [OpenAI Agents SDK guardrails](https://openai.github.io/openai-agents-python/guardrails/)
+- [OpenAI Agents SDK human-in-the-loop](https://openai.github.io/openai-agents-python/human_in_the_loop/)
+- [MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+
 ### Job evidence
 
 - [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]]
 - [[Salesforce-Product-Manager-Agent-Fabric-2026-08]]
 - [[Warp-Forward-Deployed-Engineer-2026-08]]
+
+### Practice
+
+- [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)

@@ -33,8 +33,8 @@ evidence_audit_status: partial
 本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
-- Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+- Own Orchestrate control-plane capabilities
+- Own Observe control-plane capabilities
 - Manage agent, API, and MCP interoperability
 - Policy governance for agent operations
 
@@ -49,8 +49,8 @@ evidence_audit_status: partial
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Own Discover, Govern, Orchestrate, and Observe control-plane capabilities | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
-| Own Discover, Govern, Orchestrate, and Observe control-plane capabilities | [[Observability]] | responsibility | explicit | none | use | medium |
+| Own Orchestrate control-plane capabilities | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
+| Own Observe control-plane capabilities | [[Observability]] | responsibility | explicit | none | use | medium |
 | Manage agent, API, and MCP interoperability | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
 | Policy governance for agent operations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | medium |
 
@@ -67,7 +67,7 @@ evidence_audit_status: partial
 ### Evidence 1
 Source Section: Redirected official role summary
 Source Fidelity: close-paraphrase
-Raw Evidence: Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+Raw Evidence: Own Orchestrate control-plane capabilities
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -80,7 +80,7 @@ Notes: paraphrased from official Redirected official role summary section; mappi
 ### Evidence 2
 Source Section: Redirected official role summary
 Source Fidelity: close-paraphrase
-Raw Evidence: Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+Raw Evidence: Own Observe control-plane capabilities
 Mapped Skill: [[Observability]]
 Evidence Type: responsibility
 Requirement Strength: explicit

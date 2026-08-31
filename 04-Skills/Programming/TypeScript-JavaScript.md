@@ -4,16 +4,16 @@ skill_category: Programming
 status: developing
 stability: current
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
   - "[[AI-Solutions-Architect-and-FDE]]"
   - "[[AI-Infrastructure-and-Inference-Engineer]]"
-prerequisites:
-  - "[[Software-Design-and-Architecture]]"
+prerequisites: []
 recommended_foundations:
   - "[[Data-Structures-and-Algorithms]]"
+  - "[[Software-Design-and-Architecture]]"
 related_concepts:
   - "[[HTTP-API]]"
   - "[[LLM-API-and-Structured-Outputs]]"
@@ -40,7 +40,7 @@ Notion、Ramp、Atlassian、Glean、Zapier 等样本把 TypeScript/JavaScript �
 
 ## 前置 Skills
 
-硬前置是 [[Software-Design-and-Architecture]]；[[Data-Structures-and-Algorithms]] 是推荐基础而非 Applied AI 语言学习的硬门槛。
+无硬前置；[[Data-Structures-and-Algorithms]] 与 [[Software-Design-and-Architecture]] 是推荐基础而非语言学习的硬门槛。
 
 ## 学习范围
 

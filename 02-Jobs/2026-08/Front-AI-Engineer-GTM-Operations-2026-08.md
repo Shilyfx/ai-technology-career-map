@@ -34,8 +34,8 @@ evidence_audit_status: partial
 
 ## Responsibilities
 - Automate GTM operations with Workato/Zapier
-- Expose model workflows through APIs and MCP
-- Expose model workflows through APIs and MCP
+- Expose model workflows through APIs
+- Expose model workflows through MCP
 
 ## Explicit Requirements
 - 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
@@ -49,8 +49,8 @@ evidence_audit_status: partial
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
 | Automate GTM operations with Workato/Zapier | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
-| Expose model workflows through APIs and MCP | [[HTTP-API]] | responsibility | explicit | none | use | medium |
-| Expose model workflows through APIs and MCP | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
+| Expose model workflows through APIs | [[HTTP-API]] | responsibility | explicit | none | use | medium |
+| Expose model workflows through MCP | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
 | Snowflake and RAG/structured data experience | [[RAG]] | preferred | explicit | none | use | medium |
 | Python async services and structured data | [[Python]] | inferred-prerequisite | inferred | none | use | medium |
 
@@ -80,7 +80,7 @@ Notes: paraphrased from official Responsibilities section; mapping kept to Workf
 ### Evidence 2
 Source Section: Responsibilities
 Source Fidelity: close-paraphrase
-Raw Evidence: Expose model workflows through APIs and MCP
+Raw Evidence: Expose model workflows through APIs
 Mapped Skill: [[HTTP-API]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -92,8 +92,8 @@ Notes: paraphrased from official Responsibilities section; mapping kept to HTTP-
 
 ### Evidence 3
 Source Section: Responsibilities
-Source Fidelity: direct
-Raw Evidence: Expose model workflows through APIs and MCP
+Source Fidelity: close-paraphrase
+Raw Evidence: Expose model workflows through MCP
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
@@ -101,7 +101,7 @@ Alternative Group: none
 Depth Signal: use
 Confidence: medium
 Mapping Rationale: MCP is an explicit interoperability signal.
-Notes: quoted or lightly normalized from official Responsibilities section; mapping kept to MCP-and-Agent-Interoperability only.
+Notes: paraphrased from official Responsibilities section; mapping kept to MCP-and-Agent-Interoperability only.
 
 ### Evidence 4
 Source Section: Preferred
