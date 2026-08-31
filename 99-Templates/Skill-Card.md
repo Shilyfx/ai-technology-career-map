@@ -15,6 +15,10 @@ evidence_mode: job-derived
 
 # {{title}}
 
+## Skill Boundary
+
+说明本 Skill 包含什么、明确不包含什么，以及与相邻 Skill 的边界。
+
 ## 为什么岗位需要它
 
 ## Role Demand
@@ -24,12 +28,12 @@ evidence_mode: job-derived
 
 ## Job Evidence
 
-列出至少一个 Job Sample 的 `Skill Extraction` 链接，并说明 explicit/inferred。
+列出至少一个 Job Sample 的 `Skill Extraction` 链接，并说明四类 Evidence Type 与来源访问置信度。
 
 ## Evidence Boundary
 
-- `explicit`：岗位页面直接出现的职责/要求；
-- `inferred`：从职责推断的学习前置或邻接能力，不计入岗位频次；
+- `required` / `preferred` / `responsibility`：分别来自官方 Requirements、Preferred、Responsibilities 段；
+- `inferred-prerequisite`：从明确职责推断的学习前置，不计入岗位频次；
 - `prerequisite-synthesis`：只有通用前置页可用时才使用，并明确说明没有独立 Job Sample 证据。
 
 ## 在岗位中怎么使用

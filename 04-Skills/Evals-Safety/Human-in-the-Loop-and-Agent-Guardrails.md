@@ -1,6 +1,6 @@
 ---
 type: skill
-skill_category: Evals Safety
+skill_category: Evals-Safety
 status: developing
 stability: current
 created: 2026-08-31
@@ -9,102 +9,81 @@ review_after: 2026-11-30
 roles:
   - "[[AI-Application-Engineer]]"
   - "[[AI-Solutions-Architect-and-FDE]]"
-  - "[[AI-Safety-Evals-and-Governance]]"
   - "[[AI-Product-Manager]]"
-  - "[[AI-Infrastructure-and-Inference-Engineer]]"
 prerequisites:
-  - "[[Security-Privacy-and-Access-Control]]"
   - "[[Tool-Calling-and-Action-Contracts]]"
+  - "[[Security-Privacy-and-Access-Control]]"
+recommended_foundations:
   - "[[Agent-Evals-and-Trace-Debugging]]"
 related_concepts:
-  - "[[Agent-Orchestration-and-State]]"
-  - "[[Enterprise-Integrations-and-Connectors]]"
+  - "[[Workflow-Automation-and-Business-Process-Design]]"
 sample_batch: enterprise-applied-ai-2026-08
 ---
 
-# Human-in-the-Loop and Agent Guardrails
+# Human-in-the-Loop 与 Agent Guardrails
+
+## Skill Boundary
+
+本卡处理风险分类和人机边界：approval、interrupt/resume、escalation、pre-tool guard、post-tool verification、rollback、audit、least privilege、policy vs prompt、sandbox。它不是“加一句安全 prompt”，也不是完整 eval 平台。
 
 ## 为什么岗位需要它
 
-在不确定性、权限和高风险副作用前提供拒绝、审批、降级和接管路径。
+企业 Agent 会修改工单、退款、删除数据或发送外部邮件；Atlassian、Salesforce、Warp 等样本把合规、审批和安全交付放在职责/要求中。
 
 ## Role Demand
 
-做动作分级、最小权限、sandbox、审批/二次确认、guardrail、预算、kill switch、审计和回滚。
+工程师实现策略执行点；FDE 与客户定义风险矩阵；PM 负责 policy、审计和人工运营，而不是把所有风险推给模型。
 
 ## Job Evidence
 
-- [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]]
-- [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
-- [[Ramp-Software-Engineer-Frontend-Revenue-2026-08]]
-- [[Glean-Software-Engineer-Agents-2026-08]]
-- [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]]
-
-链接回每张 Job Sample 的 `Skill Extraction`；`explicit` 与 `inferred` 分开，样本不代表市场频率。
-
-## 在岗位中怎么使用
-
-做动作分级、最小权限、sandbox、审批/二次确认、guardrail、预算、kill switch、审计和回滚。
-
-## Role-specific Target Depth
-
-- Application / FDE：implement；Agent Platform：implement→optimize；PM / Solutions：explain→use。
-- 目标深度随交付责任变化，不是全局门槛。
+[[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]] 将 AI risk/privacy/GDPR 作为 requirement；[[Salesforce-Product-Manager-Agent-Fabric-2026-08]]、[[Warp-Forward-Deployed-Engineer-2026-08]] 的 approvals/permissions 属于职责或前置推断。
 
 ## 前置 Skills
 
-[[Security-Privacy-and-Access-Control]], [[Tool-Calling-and-Action-Contracts]], [[Agent-Evals-and-Trace-Debugging]]
+硬前置：[[Tool-Calling-and-Action-Contracts]] 与 [[Security-Privacy-and-Access-Control]]；推荐 [[Agent-Evals-and-Trace-Debugging]]。
 
 ## 学习范围
 
-定义、边界、接口契约、失败模式、权限/成本/延迟和可观测性；优先覆盖一个可交付流程。
+风险等级、auto-allow/confirm/manual-only/deny、approval、interrupt/resume、escalation、pre-tool policy guard、post-tool verification、rollback、audit、least privilege、policy/prompt 分离、sandbox。
 
 ## 核心知识
 
-在不确定性、权限和高风险副作用前提供拒绝、审批、降级和接管路径。 重点掌握 schema、状态、重试、幂等、审计、回滚和业务结果之间的关系。
+- 用动作和影响分类风险，不用“模型自信度”替代权限；删除/退款/外发默认高风险。
+- policy 在工具执行前强制生效，prompt 只是行为提示；执行后仍要验证状态并记录 audit。
+- approval 必须可恢复、过期、绑定资源和参数；拒绝/超时要有安全 fallback。
 
 ## Practice
 
-为写入工具设计 HITL：高风险必须批准，低风险自动执行；测试越权、注入、超时和拒绝。
+为 refund、delete、external email、modify ticket 建风险矩阵，分别落到 auto allow、confirm、manual only、deny；实现 pre-tool guard、审批 interrupt/resume、post-tool verify、rollback、审计和 sandbox fixture。
 
 ## Pass Evidence
 
-完成 Practice 后，提交可重放的任务集、测试结果、trace、失败分类和一项修复前后对比。
+提交四类动作的决策表、policy test、权限 scope、审批/拒绝/超时/篡改参数 trace、回滚结果和审计记录；证明绕过 prompt 仍无法绕过 policy。
 
 ## 常见失败
 
-把 prompt 或单一框架当作系统边界；忽略权限、超时、幂等、回滚、失败切片和人工接管；只展示 happy path。
+所有动作都 auto-allow；把 prompt 当 policy；审批后参数被替换；没有 post-tool verify；rollback 不可用；审计缺 actor/resource/policy version。
 
 ## 不需要深挖到什么程度
 
-不必先研究模型训练内部、所有厂商 SDK 或复杂多智能体；先能在受控任务中完成实现、测试、trace 和复盘。
+不要求先完成企业合规认证；先把四类动作做成可执行、可审计的风险边界。
 
 ## Related Knowledge
 
-[[Agent-Orchestration-and-State]], [[Enterprise-Integrations-and-Connectors]]
+[[Tool-Calling-and-Action-Contracts]]、[[Agent-Evals-and-Trace-Debugging]]、[[Security-Privacy-and-Access-Control]]、[[Workflow-Automation-and-Business-Process-Design]]
+
+## Practice Boundary
+
+通过线是 policy-enforced action boundary；业务领域的法律解释仍需专业审查。
 
 ## Actual Evidence
 
-尚无用户能力结论；完成 Practice 后复制 [[Evidence-Card]]，记录问题、行动、结果、失败和判断，并回链本 Skill 与目标 Role。
+用 [[Evidence-Card]]记录一次被 guard 拦截的高风险动作和一次成功回滚。
 
 ## Sources
-
-### Official / normative
-
-- https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization
-- https://openai.github.io/openai-agents-python/agents/
-- https://openai.github.io/openai-agents-python/running_agents/
 
 ### Job evidence
 
 - [[Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08]]
-- [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
-- [[Ramp-Software-Engineer-Frontend-Revenue-2026-08]]
-- [[Glean-Software-Engineer-Agents-2026-08]]
-- [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]]
-
-### Practice tutorial
-
-- [[Agent-Hooks-Guide]]
-
-官方规范定义边界，岗位页决定优先级，教程只提供练习路径；三类证据不混写。
+- [[Salesforce-Product-Manager-Agent-Fabric-2026-08]]
+- [[Warp-Forward-Deployed-Engineer-2026-08]]

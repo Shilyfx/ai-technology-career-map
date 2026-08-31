@@ -1,6 +1,6 @@
 ---
 type: skill
-skill_category: LLM Applications
+skill_category: LLM-Applications
 status: developing
 stability: current
 created: 2026-08-31
@@ -10,97 +10,81 @@ roles:
   - "[[AI-Application-Engineer]]"
   - "[[AI-Solutions-Architect-and-FDE]]"
   - "[[AI-Product-Manager]]"
-  - "[[AI-Infrastructure-and-Inference-Engineer]]"
 prerequisites:
   - "[[HTTP-API]]"
-  - "[[Software-Design-and-Architecture]]"
-  - "[[Technical-Communication]]"
-related_concepts:
-  - "[[Agent-Orchestration-and-State]]"
   - "[[Enterprise-Integrations-and-Connectors]]"
+recommended_foundations:
+  - "[[Agent-Orchestration-and-State]]"
+related_concepts:
   - "[[Human-in-the-Loop-and-Agent-Guardrails]]"
+  - "[[Tool-Calling-and-Action-Contracts]]"
 sample_batch: enterprise-applied-ai-2026-08
 ---
 
-# Workflow Automation and Business Process Design
+# Workflow Automation 与 Business Process Design
+
+## Skill Boundary
+
+本卡将业务过程翻译成可交付 workflow：as-is/to-be、trigger、step、branch、owner、SLA、approval、exception、compensation、retry、webhook/cron/queue/event、automation boundary、agentic vs deterministic、manual fallback 和业务指标。n8n/Zapier/Make/Workato 只是示例。
 
 ## 为什么岗位需要它
 
-把业务目标、例外和审批点翻译成可观察、可重放、可交付的流程。
+Atlassian、Salesforce、Zapier、Warp、Ramp 样本的共同交付物是“把企业流程跑起来”，而不是单独一个模型调用。
 
 ## Role Demand
 
-做流程 discovery、触发器、步骤、数据契约、例外、SLA、人工节点和业务指标；只把不确定环节交给模型。
+FDE 负责 discovery 和流程建模；应用工程负责连接与执行；PM 负责 SLA、审批和 business metric。先确定 deterministic boundary，再放 agent。
 
 ## Job Evidence
 
-- [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
-- [[Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08]]
-- [[Zapier-Engineer-Applied-AI-2026-08]]
-- [[Warp-Forward-Deployed-Engineer-2026-08]]
-
-链接回每张 Job Sample 的 `Skill Extraction`；`explicit` 与 `inferred` 分开，样本不代表市场频率。
-
-## 在岗位中怎么使用
-
-做流程 discovery、触发器、步骤、数据契约、例外、SLA、人工节点和业务指标；只把不确定环节交给模型。
-
-## Role-specific Target Depth
-
-- Application / FDE：implement；Agent Platform：implement→optimize；PM / Solutions：explain→use。
-- 目标深度随交付责任变化，不是全局门槛。
+[[Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08]]、[[Zapier-Engineer-Applied-AI-2026-08]]、[[Warp-Forward-Deployed-Engineer-2026-08]] 将 workflow/automation 标为 responsibilities；这不等于所有候选人都必须熟悉某个编排产品。
 
 ## 前置 Skills
 
-[[HTTP-API]], [[Software-Design-and-Architecture]], [[Technical-Communication]]
+硬前置：[[HTTP-API]] 与 [[Enterprise-Integrations-and-Connectors]]；推荐了解 [[Agent-Orchestration-and-State]]，不要求先学 MCP。
 
 ## 学习范围
 
-定义、边界、接口契约、失败模式、权限/成本/延迟和可观测性；优先覆盖一个可交付流程。
+流程地图、触发器、步骤、分支、owner、SLA、审批、异常、补偿、retry/backoff、webhook/cron/queue/event、agent boundary、manual fallback、指标与回滚。
 
 ## 核心知识
 
-把业务目标、例外和审批点翻译成可观察、可重放、可交付的流程。 重点掌握 schema、状态、重试、幂等、审计、回滚和业务结果之间的关系。
+- 每个 step 要有输入/输出、owner、超时和失败去向；不可逆步骤前置审批。
+- 事件驱动适合解耦与重放；cron 适合轮询但要防重复；webhook 要校验签名。
+- 用业务指标（处理时长、自动化率、错误率、人工升级率）而非 agent 次数评价流程。
 
 ## Practice
 
-自动化 RSS/工单→分类→草稿→人工批准→写回，含去重、重试上限和审计。
+选一个“客户工单→分类→补充信息→更新系统→通知”的流程，画 as-is/to-be，分别实现 deterministic 与 agentic 分支；加入 approval、SLA、webhook、queue、retry、compensation、manual fallback 和业务指标。
 
 ## Pass Evidence
 
-完成 Practice 后，提交可重放的任务集、测试结果、trace、失败分类和一项修复前后对比。
+提交流程图、step contract、异常/补偿矩阵、重放 fixture、SLA/指标 dashboard 截图或 JSON、人工 fallback 演练；明确哪些步骤禁止 agent 自主决定。
 
 ## 常见失败
 
-把 prompt 或单一框架当作系统边界；忽略权限、超时、幂等、回滚、失败切片和人工接管；只展示 happy path。
+先选工具后理解流程；把所有 branch 交给模型；没有 owner/SLA；重试造成重复通知；没有补偿；只量 token 不量业务结果。
 
 ## 不需要深挖到什么程度
 
-不必先研究模型训练内部、所有厂商 SDK 或复杂多智能体；先能在受控任务中完成实现、测试、trace 和复盘。
+不要求掌握所有自动化平台；能用一个平台或自写 worker 证明边界和失败处理即可。
 
 ## Related Knowledge
 
-[[Agent-Orchestration-and-State]], [[Enterprise-Integrations-and-Connectors]], [[Human-in-the-Loop-and-Agent-Guardrails]]
+[[Enterprise-Integrations-and-Connectors]]、[[Agent-Orchestration-and-State]]、[[Human-in-the-Loop-and-Agent-Guardrails]]
+
+## Practice Boundary
+
+通过线是可解释的业务流程设计；模型编排和工具安全由相邻 Skills 负责。
 
 ## Actual Evidence
 
-尚无用户能力结论；完成 Practice 后复制 [[Evidence-Card]]，记录问题、行动、结果、失败和判断，并回链本 Skill 与目标 Role。
+用 [[Evidence-Card]]记录一条流程的 before/after 业务指标和一次补偿演练。
 
 ## Sources
 
-### Official / normative
-
-- https://www.anthropic.com/engineering/building-effective-agents
-
 ### Job evidence
 
-- [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
 - [[Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08]]
 - [[Zapier-Engineer-Applied-AI-2026-08]]
 - [[Warp-Forward-Deployed-Engineer-2026-08]]
-
-### Practice tutorial
-
-- [[Claude-Code-n8n-Workflow]]
-
-官方规范定义边界，岗位页决定优先级，教程只提供练习路径；三类证据不混写。

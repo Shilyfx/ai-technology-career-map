@@ -1,6 +1,6 @@
 ---
 type: skill
-skill_category: LLM Applications
+skill_category: LLM-Applications
 status: developing
 stability: current
 created: 2026-08-31
@@ -10,98 +10,85 @@ roles:
   - "[[AI-Application-Engineer]]"
   - "[[AI-Solutions-Architect-and-FDE]]"
   - "[[AI-Product-Manager]]"
-  - "[[AI-Infrastructure-and-Inference-Engineer]]"
 prerequisites:
   - "[[LLM-API-and-Structured-Outputs]]"
-  - "[[Software-Design-and-Architecture]]"
+  - "[[Enterprise-Integrations-and-Connectors]]"
+recommended_foundations:
   - "[[Security-Privacy-and-Access-Control]]"
 related_concepts:
-  - "[[Agent-Orchestration-and-State]]"
-  - "[[MCP-and-Agent-Interoperability]]"
   - "[[Human-in-the-Loop-and-Agent-Guardrails]]"
+  - "[[Agent-Orchestration-and-State]]"
 sample_batch: enterprise-applied-ai-2026-08
 ---
 
-# Tool Calling and Action Contracts
+# Tool Calling 与 Action Contracts
+
+## Skill Boundary
+
+本卡只解决“模型提出动作后，系统如何安全、可重放地执行”：tool/input/output schema、描述、读写与副作用、可逆性、超时/重试/幂等/重复执行、权限/审计、工具分类、结果归一化、不可用和 tool choice。它不负责代理循环本身。
 
 ## 为什么岗位需要它
 
-把模型意图变成有 schema、权限、幂等、结果语义和审计的动作。
+Agentforce、Notion、Ramp、Warp 等岗位的价值在于把模型连接到真实系统；没有 action contract，tool calling 只是不可审计的字符串生成。
 
 ## Role Demand
 
-注册工具、校验参数、执行授权、处理超时/重试/幂等、回传结构化结果并记录 trace。
+应用工程需要定义 adapter 和执行器；FDE/PM 需要把“读、写、发信、删除、收费”等风险暴露给审批与权限系统。
 
 ## Job Evidence
 
-- [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]]
-- [[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]]
-- [[ServiceNow-Senior-Staff-Agent-Development-2026-08]]
-- [[Warp-Forward-Deployed-Engineer-2026-08]]
-
-链接回每张 Job Sample 的 `Skill Extraction`；`explicit` 与 `inferred` 分开，样本不代表市场频率。
-
-## 在岗位中怎么使用
-
-注册工具、校验参数、执行授权、处理超时/重试/幂等、回传结构化结果并记录 trace。
-
-## Role-specific Target Depth
-
-- Application / FDE：implement；Agent Platform：implement→optimize；PM / Solutions：explain→use。
-- 目标深度随交付责任变化，不是全局门槛。
+[[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]、[[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]]、[[Warp-Forward-Deployed-Engineer-2026-08]] 的 responsibilities 明确提到 tool calls/actions；这些行没有被升级为 universally required。
 
 ## 前置 Skills
 
-[[LLM-API-and-Structured-Outputs]], [[Software-Design-and-Architecture]], [[Security-Privacy-and-Access-Control]]
+硬前置：[[LLM-API-and-Structured-Outputs]] 与 [[Enterprise-Integrations-and-Connectors]]；安全控制参考 [[Human-in-the-Loop-and-Agent-Guardrails]]。
 
 ## 学习范围
 
-定义、边界、接口契约、失败模式、权限/成本/延迟和可观测性；优先覆盖一个可交付流程。
+工具名称/描述、输入输出 schema、read/write taxonomy、side effect、reversible/irreversible、permission scope、audit event、timeout、retry、idempotency key、duplicate suppression、tool unavailable、tool choice 与错误归一化。
 
 ## 核心知识
 
-把模型意图变成有 schema、权限、幂等、结果语义和审计的动作。 重点掌握 schema、状态、重试、幂等、审计、回滚和业务结果之间的关系。
+- 描述要告诉模型何时不能用工具；执行器仍必须在服务端校验，不信任模型参数。
+- 每个写工具都有幂等键、权限检查、预览/确认和结果校验；删除/外发等不可逆动作默认升级。
+- 把 provider-specific tool result 归一化为 `success | retryable_error | permanent_error | needs_approval`。
 
 ## Practice
 
-实现查询→草稿两工具 workflow，把写入动作设为人工批准并注入重复/超时。
+实现 `read_ticket`、`update_ticket`、`send_external_email` 三个工具：schema、权限、审计、timeout、一次安全 retry、幂等和重复请求 fixture；模拟工具不可用、模型选错工具、参数缺失以及审批后 resume。
 
 ## Pass Evidence
 
-完成 Practice 后，提交可重放的任务集、测试结果、trace、失败分类和一项修复前后对比。
+审阅者检查每个工具的 read/write/side-effect 标签、权限 scope、audit id、幂等键、重复执行结果、timeout/retry、不可用分支、参数校验和审批前后 trace；不可逆工具没有 silent auto-run。
 
 ## 常见失败
 
-把 prompt 或单一框架当作系统边界；忽略权限、超时、幂等、回滚、失败切片和人工接管；只展示 happy path。
+把工具描述当权限；重试写操作造成双扣；没有 timeout；把 provider 错误原样泄露；把 tool unavailable 当空结果；缺少结果 schema 与审计。
 
 ## 不需要深挖到什么程度
 
-不必先研究模型训练内部、所有厂商 SDK 或复杂多智能体；先能在受控任务中完成实现、测试、trace 和复盘。
+不要求实现所有 MCP server 或多代理；先交付一个受限工具集和可重放 contract。
 
 ## Related Knowledge
 
-[[Agent-Orchestration-and-State]], [[MCP-and-Agent-Interoperability]], [[Human-in-the-Loop-and-Agent-Guardrails]]
+[[LLM-API-and-Structured-Outputs]]、[[Enterprise-Integrations-and-Connectors]]、[[Human-in-the-Loop-and-Agent-Guardrails]]
+
+## Practice Boundary
+
+通过线是动作契约与安全执行器；loop、checkpoint 和业务流程由其他 Skills 负责。
 
 ## Actual Evidence
 
-尚无用户能力结论；完成 Practice 后复制 [[Evidence-Card]]，记录问题、行动、结果、失败和判断，并回链本 Skill 与目标 Role。
+以 [[Evidence-Card]] 记录一次重复写操作被幂等键拦截的 trace。
 
 ## Sources
 
 ### Official / normative
 
-- https://modelcontextprotocol.io/specification/2026-07-28/server/tools
-- https://developers.openai.com/api/reference/cli/resources/responses/methods/create
+- https://platform.openai.com/docs/guides/function-calling
 
 ### Job evidence
 
-- [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]]
+- [[Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08]]
 - [[Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08]]
-- [[ServiceNow-Senior-Staff-Agent-Development-2026-08]]
 - [[Warp-Forward-Deployed-Engineer-2026-08]]
-
-### Practice tutorial
-
-- [[Agent-Hooks-Guide]]
-
-官方规范定义边界，岗位页决定优先级，教程只提供练习路径；三类证据不混写。

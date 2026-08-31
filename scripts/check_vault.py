@@ -6,7 +6,7 @@ from __future__ import annotations
 import datetime as dt
 import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 
@@ -52,6 +52,10 @@ MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 SECRET = re.compile(r"(?:sk-[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16})")
 SECRET_SUFFIXES = {".md", ".canvas", ".json", ".yaml", ".yml"}
 FORMAL_EXEMPT = {"README.md", "AGENTS.md"}
+APPLIED_BATCH = "enterprise-applied-ai-2026-08"
+EVIDENCE_TYPES = {"required", "preferred", "responsibility", "inferred-prerequisite"}
+EVIDENCE_STRENGTHS = {"explicit", "inferred"}
+CONFIDENCE = {"high", "medium", "low"}
 
 
 def scalar(value: str) -> str:
@@ -156,6 +160,56 @@ def heading_present(body: str, heading: str) -> bool:
     return bool(re.search(rf"(?mi)^#+\s+{re.escape(heading)}(?:\s|：|:|$)", body))
 
 
+def section_body(body: str, heading: str) -> str:
+    match = re.search(rf"(?ms)^##\s+{re.escape(heading)}\s*$\n(.*?)(?=^##\s+|\Z)", body)
+    return match.group(1).strip() if match else ""
+
+
+def parse_skill_extraction_table(body: str) -> tuple[list[dict[str, str]], str | None]:
+    """Parse only the explicit Skill Extraction table, never arbitrary wikilinks."""
+    section = section_body(body, "Skill Extraction")
+    lines = section.splitlines()
+    header_index = next((i for i, line in enumerate(lines) if line.lstrip().startswith("|") and ("Evidence Type" in line and ("Skill" in line or "Normalized Skill" in line))), None)
+    if header_index is None:
+        return [], "missing Skill Extraction evidence table"
+    headers = [cell.strip() for cell in lines[header_index].strip().strip("|").split("|")]
+    normalized = {h.casefold(): i for i, h in enumerate(headers)}
+    needed = ("evidence type", "requirement strength", "confidence")
+    if any(key not in normalized for key in needed):
+        return [], "Skill Extraction table missing Evidence Type/Requirement Strength/Confidence"
+    skill_key = "skill" if "skill" in normalized else "normalized skill"
+    rows: list[dict[str, str]] = []
+    for line in lines[header_index + 1:]:
+        if not line.lstrip().startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) != len(headers) or all(set(cell) <= {"-", ":", " "} for cell in cells):
+            continue
+        row = {h.casefold(): cells[i] for h, i in normalized.items()}
+        row["skill"] = row.get(skill_key, "")
+        row["raw"] = row.get("raw evidence", row.get("raw requirement / responsibility", ""))
+        rows.append(row)
+    return rows, None
+
+
+def derive_skill_evidence_counts(applied_rows: dict[Path, list[dict[str, str]]]) -> dict[str, Counter]:
+    counts: dict[str, Counter] = defaultdict(Counter)
+    for rows in applied_rows.values():
+        for row in rows:
+            skills = WIKILINK.findall(row.get("skill", ""))
+            for skill in skills:
+                counts[skill.casefold()][row.get("evidence type", "").strip()] += 1
+    return counts
+
+
+def similarity(a: str, b: str) -> float:
+    words_a = set(re.findall(r"[a-z0-9\u4e00-\u9fff]+", a.casefold()))
+    words_b = set(re.findall(r"[a-z0-9\u4e00-\u9fff]+", b.casefold()))
+    if not words_a or not words_b:
+        return 0.0
+    return len(words_a & words_b) / max(1, min(len(words_a), len(words_b)))
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -174,11 +228,26 @@ def main() -> int:
             errors.append("duplicate note name: " + ", ".join(str(p.relative_to(ROOT)) for p in paths))
 
     job_sample_skill_evidence: defaultdict[str, set[Path]] = defaultdict(set)
+    applied_rows: dict[Path, list[dict[str, str]]] = {}
     for path, (meta, body, _) in records.items():
         if meta.get("type") != "job-sample":
             continue
-        for raw_skill in re.findall(r"\[\[([^\]|#]+)\]\]", body):
-            job_sample_skill_evidence[raw_skill.casefold()].add(path)
+        if meta.get("sample_batch") == APPLIED_BATCH:
+            rows, parse_error = parse_skill_extraction_table(body)
+            if parse_error:
+                # The detailed error is emitted in the per-sample block below.
+                applied_rows[path] = []
+            else:
+                applied_rows[path] = rows
+            for row in rows:
+                for raw_skill in WIKILINK.findall(row.get("skill", "")):
+                    job_sample_skill_evidence[raw_skill.casefold()].add(path)
+        else:
+            # Legacy Batch A keeps its historical schema; only the controlled
+            # extraction section is used to establish Job Sample evidence.
+            section = section_body(body, "Skill Extraction")
+            for raw_skill in WIKILINK.findall(section):
+                job_sample_skill_evidence[raw_skill.casefold()].add(path)
 
     source_urls: defaultdict[str, list[Path]] = defaultdict(list)
     for path, (meta, _, _) in records.items():
@@ -329,6 +398,57 @@ def main() -> int:
                     errors.append(f"applied job-sample must not claim market_frequency: {rel}")
                 if re.search(r"(?<!\w)\d+(?:\.\d+)?\s*%", body):
                     warnings.append(f"applied job-sample contains percentage; verify it is not a market-frequency claim: {rel}")
+                rows, parse_error = parse_skill_extraction_table(body)
+                if parse_error:
+                    errors.append(f"applied job-sample {rel}: {parse_error}")
+                if not rows:
+                    errors.append(f"applied job-sample has no evidence rows: {rel}")
+                for index, row in enumerate(rows, 1):
+                    kind_value = row.get("evidence type", "").strip()
+                    strength_value = row.get("requirement strength", "").strip()
+                    confidence_value = row.get("confidence", "").strip()
+                    if kind_value not in EVIDENCE_TYPES:
+                        errors.append(f"invalid Evidence Type in {rel} row {index}: {kind_value}")
+                    if strength_value not in EVIDENCE_STRENGTHS:
+                        errors.append(f"invalid Requirement Strength in {rel} row {index}: {strength_value}")
+                    if confidence_value not in CONFIDENCE:
+                        errors.append(f"invalid Confidence in {rel} row {index}: {confidence_value}")
+                    if not WIKILINK.findall(row.get("skill", "")):
+                        errors.append(f"Skill Extraction row has no mapped wikilink in {rel} row {index}")
+                    if not row.get("raw", "").strip():
+                        errors.append(f"Skill Extraction row has no Raw Evidence in {rel} row {index}")
+                    if kind_value == "inferred-prerequisite" and strength_value != "inferred":
+                        errors.append(f"inferred-prerequisite must have inferred strength in {rel} row {index}")
+                    if kind_value in {"required", "preferred", "responsibility"} and strength_value != "explicit":
+                        errors.append(f"explicit evidence type must have explicit strength in {rel} row {index}")
+                    access = meta.get("source_access", "").casefold()
+                    if any(token in access for token in ("limited", "blocked", "403", "page-shell", "redirected-error")):
+                        if confidence_value == "high":
+                            warnings.append(f"limited/blocked source with high confidence in {rel} row {index}")
+                        if kind_value == "required":
+                            errors.append(f"limited/blocked source cannot support required evidence in {rel} row {index}")
+                groups = defaultdict(list)
+                for index, row in enumerate(rows, 1):
+                    group = row.get("alternative group", "").strip()
+                    if group and group not in {"—", "-", "none"}:
+                        groups[group].append((index, row))
+                for group, entries in groups.items():
+                    if len(entries) < 2:
+                        warnings.append(f"alternative group {group} has fewer than two members in {rel}")
+                    # A non-empty group with multiple language rows is the
+                    # explicit one-of marker; counts are not summed as a
+                    # simultaneous requirement.
+                trace_count = len(re.findall(r"(?mi)^###\s+Evidence\s+\d+", body))
+                if trace_count != len(rows):
+                    errors.append(f"Evidence Trace count {trace_count} != table rows {len(rows)} in {rel}")
+                trace_body = section_body(body, "Evidence Trace")
+                for trace_field in ("Source Section:", "Raw Evidence:", "Mapped Skill:", "Evidence Type:", "Requirement Strength:", "Depth Signal:", "Confidence:", "Notes:"):
+                    if trace_field not in trace_body:
+                        errors.append(f"applied Evidence Trace missing {trace_field} in {rel}")
+                resp = section_body(body, "Responsibilities")
+                req = section_body(body, "Explicit Requirements")
+                if similarity(resp, req) >= 0.86 and len(resp) > 40 and len(req) > 40:
+                    warnings.append(f"possible templated evidence extraction: {rel}")
 
         if kind == "skill" and not is_template:
             for key in ("skill_category", "roles", "prerequisites"):
@@ -361,6 +481,39 @@ def main() -> int:
             for section in ("Problem", "Action", "Result", "Failure", "Judgment"):
                 if not heading_present(body, section):
                     errors.append(f"{kind} page missing {section}: {rel}")
+
+    # The Applied AI matrix is a derived view, not a hand-written frequency
+    # claim.  Recompute counts from the Job Sample tables and cross-check the
+    # published rows when the matrix uses the v2 columns.
+    derived = derive_skill_evidence_counts(applied_rows)
+    matrix_path = ROOT / "04-Skills" / "Skill-Evidence-Matrix.md"
+    if matrix_path.exists():
+        matrix_text = matrix_path.read_text(encoding="utf-8")
+        matrix_lines = matrix_text.splitlines()
+        matrix_header = next((line for line in matrix_lines if line.startswith("| Skill | Role | Required | Preferred | Responsibility | Inferred | Sample N | Confidence |")), None)
+        if matrix_header:
+            matrix_rows: dict[str, list[str]] = {}
+            for line in matrix_lines:
+                if not line.startswith("| [["):
+                    continue
+                cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+                if len(cells) >= 8:
+                    skill_match = WIKILINK.search(cells[0])
+                    if skill_match:
+                        matrix_rows[skill_match.group(1).casefold()] = cells
+            kind_columns = {"required": 2, "preferred": 3, "responsibility": 4, "inferred-prerequisite": 5}
+            for skill_key, counts in derived.items():
+                if skill_key not in matrix_rows:
+                    errors.append(f"Skill Evidence Matrix missing derived skill row: {skill_key}")
+                    continue
+                cells = matrix_rows[skill_key]
+                for kind_value, column in kind_columns.items():
+                    expected = str(counts.get(kind_value, 0))
+                    if cells[column] != expected:
+                        errors.append(f"Skill Evidence Matrix mismatch {skill_key} {kind_value}: {cells[column]} != {expected}")
+                sample_cell = cells[6]
+                if sample_cell.isdigit() and int(sample_cell) < 1:
+                    errors.append(f"Skill Evidence Matrix Sample N is zero for {skill_key}")
 
     # Resolve wikilinks in both body and frontmatter metadata.
     incoming: defaultdict[Path, int] = defaultdict(int)
