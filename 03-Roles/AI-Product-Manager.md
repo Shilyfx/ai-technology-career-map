@@ -3,7 +3,7 @@ type: role
 role_family: product
 sample_count: 3
 status: developing
-snapshot_date: 2026-08-24
+snapshot_date: 2026-08-31
 created: 2026-08-24
 updated: 2026-08-31
 review_after: 2026-11-24
@@ -48,11 +48,11 @@ Applied AI 批次新增 [[Salesforce-Product-Manager-Agent-Fabric-2026-08]]：�
 
 ## Sample Basis
 
-2 OpenAI PM samples: API Agents and Safety Measurement.
+3 directional senior PM samples: Salesforce Agent Fabric (Batch B) plus OpenAI API Agents and Safety Measurement (Batch A). Employers/regions are Salesforce US/global and OpenAI San Francisco; subtracks are agent platform, API platform and safety measurement. This is not a census.
 
 ## Evidence Basis
 
-Based on 2 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
+Based on 3 Job Samples in [[Job-Sample-Index]]; employers, regions and seniority are summarized in this profile. Confidence is high for repeated explicit signals and medium for partial or inferred signals.
 
 ## Main Deliverables
 
@@ -64,19 +64,20 @@ User/workflow discovery; technical product judgment; metrics/evals; safety; stak
 
 ## Skill Profile
 
-| Skill | Required | Preferred | Responsibility | Sample N | Role Priority | Target Depth | Confidence | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [[API-Product-Delivery]] | yes |  | API/SDK roadmap | 1 | Core | explain/use | high | Job Samples |
-| [[LLM-Evals]] | yes |  | reliability outcomes | 2 | Core | explain | medium | Job Samples |
-| [[AI-Safety-Measurement]] |  | yes | safety criteria | 1 | Specialized | explain/use | high | Job Samples |
-| [[Technical-Communication]] | yes |  | alignment and decisions | 2 | Core | implement | high | Job Samples |
-| [[LLM-API-and-Structured-Outputs]] | common |  | capability/schema trade-offs | 1 | Common | explain/use | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
-| [[Workflow-Automation-and-Business-Process-Design]] | common |  | user workflow/outcomes | 2 | Common | use→implement | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
-| [[Agent-Orchestration-and-State]] | common |  | control-plane scope | 1 | Common | explain/use | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
-| [[Agent-Evals-and-Trace-Debugging]] | yes |  | quality/observability decisions | 2 | Core | use→implement | high | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | yes |  | policy/risk/approval | 2 | Core | use→implement | high | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
-| [[MCP-and-Agent-Interoperability]] |  | preferred | interoperability roadmap | 1 | Specialized | explain | medium | [[Salesforce-Product-Manager-Agent-Fabric-2026-08]] |
+| Skill | Required N | Preferred N | Responsibility N | Inferred N | Sample N | Priority | Target Depth | Confidence |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| [[TypeScript-JavaScript]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
+| [[Python]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
+| [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 1 | 1 | Common | explain/use | high/medium |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Agent-Orchestration-and-State]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[MCP-and-Agent-Interoperability]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | high/medium |
+| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 1 | 0 | 0 | 1 | Core | use→implement | high/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 1 | 0 | 0 | 0 | 1 | Core | use→implement | high/medium |
 
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
 
 Product judgment, prioritization, empathy, executive communication and accountability.

@@ -27,7 +27,7 @@ aliases:
 
 ## Sample Basis
 
-14 个应用/Agent 样本：Notion、Salesforce、ServiceNow/Moveworks、Ramp、Glean、Zapier、Front、Atlassian 与上一批 frontier samples。详见 [[Job-Sample-Index]] 和 [[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]。本计数用于本 Vault 的定向学习，不是市场普查。
+14 curated samples (11 Batch B application/agent-product cards + 3 Batch A API/application cards); employers span Atlassian, Notion, Glean, Salesforce, ServiceNow/Moveworks, Ramp, Zapier, Front and OpenAI. Batch B locations cover Global/US/APAC; seniority is mostly senior/staff, with product-application and agent-platform subtracks.
 
 ## Main Deliverables
 
@@ -39,21 +39,20 @@ aliases:
 
 ## Skill Profile
 
-| Skill | Required | Preferred | Responsibility | Sample N | Role Priority | Target Depth | Confidence | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [[Python]] **或** [[TypeScript-JavaScript]] | yes (choose one) |  | service/full-stack code | 10+ | Core | implement | high | Batch A+B |
-| [[HTTP-API]] | yes |  | API contract | 8+ | Core | implement | high | Batch A+B |
-| [[Prompt-and-Context-Engineering]] | yes |  | context/task design | 7+ | Core | use→implement | high | Batch A+B |
-| [[LLM-API-and-Structured-Outputs]] | yes |  | model I/O contract | 10 | Core | implement | high | Batch B |
-| [[Tool-Calling-and-Action-Contracts]] | yes |  | safe actions | 12 | Core | implement | high | Batch B |
-| [[Workflow-Automation-and-Business-Process-Design]] | yes |  | workflow delivery | 14 | Core | implement | high | Batch B |
-| [[Agent-Orchestration-and-State]] | common |  | state/recovery | 7 | Common | implement | medium-high | Batch B |
-| [[Agent-Evals-and-Trace-Debugging]] | yes |  | quality/ops loop | 10 | Core | implement | high | Batch B |
-| [[Enterprise-Integrations-and-Connectors]] | common |  | production integration | 9 | Common | implement | high | Batch B |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | common |  | approvals/risk | 8 | Common | implement | medium-high | Batch B |
-| [[MCP-and-Agent-Interoperability]] |  | preferred | protocol adapters | 5 | Specialized | use→implement | medium | Batch B |
-| [[RAG]] |  | preferred | grounded context | use case | Common | implement | medium | Batch A+B |
+| Skill | Required N | Preferred N | Responsibility N | Inferred N | Sample N | Priority | Target Depth | Confidence |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| [[TypeScript-JavaScript]] | 7 | 0 | 0 | 0 | 7 | Core | use→implement | high/medium |
+| [[Python]] | 3 | 0 | 0 | 2 | 5 | Core | use→implement | low/medium |
+| [[LLM-API-and-Structured-Outputs]] | 2 | 1 | 3 | 3 | 9 | Core | use→implement | low/medium |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 1 | 2 | 1 | 4 | Core | use→implement | low/medium |
+| [[Agent-Orchestration-and-State]] | 0 | 0 | 7 | 1 | 7 | Common | explain/use | low/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 6 | 1 | 7 | Common | explain/use | low/medium |
+| [[MCP-and-Agent-Interoperability]] | 0 | 0 | 3 | 0 | 3 | Specialized | use→implement | high/medium |
+| [[Enterprise-Integrations-and-Connectors]] | 4 | 0 | 3 | 5 | 11 | Core | use→implement | low/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 2 | 3 | 0 | 5 | Common | explain/use | low/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 1 | 1 | 2 | 2 | 6 | Common | explain/use | low/medium |
 
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
 
 产品判断、需求澄清、隐私/权限、用户沟通、领域知识、生产 ownership 和 incident response。

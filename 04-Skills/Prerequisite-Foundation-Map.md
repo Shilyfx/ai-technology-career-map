@@ -31,7 +31,7 @@ related:
 | 目标 | 先学 | 接着进入 |
 | --- | --- | --- |
 | Research / ML | [[Data-Structures-and-Algorithms]] → [[Python]] → [[Statistics-and-Experiment-Design]] | [[ML-Experimentation]] → [[Model-Evaluation]] → [[PyTorch]] |
-| AI Application | [[Data-Structures-and-Algorithms]] → [[Python]] → [[HTTP-API]] | [[Software-Design-and-Architecture]] → [[Prompt-and-Context-Engineering]] → [[RAG]] |
+| AI Application | [[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]]（DSA 为推荐基础） | [[Software-Design-and-Architecture]] → [[Prompt-and-Context-Engineering]] → [[RAG]] |
 | Data / AI | [[Data-Structures-and-Algorithms]] → [[Python]] + [[SQL]] | [[Databases-and-Data-Modeling]] → [[Data-Quality-and-Lineage]] |
 | Infra / Inference | [[Data-Structures-and-Algorithms]] → [[Linux]] → [[Testing]] | [[Software-Design-and-Architecture]] → [[Distributed-Systems]] → [[Model-Serving]] |
 | PM / Safety / FDE | [[Technical-Communication]] → [[Statistics-and-Experiment-Design]] | [[Model-Evaluation]] → [[LLM-Evals]] → [[AI-Safety-Measurement]] / [[API-Product-Delivery]] |
@@ -43,4 +43,3 @@ related:
 ## 来源如何使用
 
 JasonAI 资料中的 Agent、Memory、RAG、MCP、Obsidian CLI、Git 和环境文章作为练习材料，入口见 [[JasonAI-Source-Index]]。工具教程只提供场景，不自动改变 Skill 的岗位优先级。
-

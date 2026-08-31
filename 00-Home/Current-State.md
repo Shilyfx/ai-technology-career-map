@@ -4,8 +4,8 @@ page_kind: current-state
 status: reference
 created: 2026-08-24
 updated: 2026-08-31
-current: "从 [[Job-Sample-Index]] 选择 Applied AI / FDE / Agent Platform 目标 Role"
-next: "按 [[Role-Skill-Paths]] 选择 [[Python]] 或 [[TypeScript-JavaScript]]，再进入 [[LLM-API-and-Structured-Outputs]]"
+current: "选择 Target Role"
+next: "打开该 Role Profile，查看对应 Core Skill 和学习路径"
 target_role: ""
 current_skill: ""
 next_skill: ""
@@ -21,7 +21,7 @@ related:
 
 ## Target Role
 
-从一个真实 Job Sample 反推目标 Role；填写具体岗位族或公司方向。
+从一个真实 Job Sample 或兴趣方向选择 Target Role；填写具体岗位族或公司方向。
 
 ## Current Skill
 

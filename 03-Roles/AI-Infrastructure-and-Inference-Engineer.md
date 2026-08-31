@@ -1,9 +1,9 @@
 ---
 type: role
 role_family: ai-infrastructure
-sample_count: 8
+sample_count: 10
 status: developing
-snapshot_date: 2026-08-24
+snapshot_date: 2026-08-31
 created: 2026-08-24
 updated: 2026-08-31
 review_after: 2026-11-24
@@ -53,7 +53,7 @@ Linux / network / storage / distributed systems
 
 ## Sample Basis
 
-8 samples across OpenAI, Anthropic and Huawei inference/runtime/performance postings.
+10 curated platform/runtime samples (8 Batch A frontier/model/infra cards + 2 Batch B ServiceNow Agent Platform cards). Employers are OpenAI, Anthropic, Huawei and ServiceNow/Moveworks; regions are US, Switzerland/Europe and China. Seniority is senior/staff; subtracks are inference, GPU/runtime, safeguards and agent-platform.
 
 ## Evidence Basis
 
@@ -69,18 +69,20 @@ Runtime/kernels; distributed execution; serving/capacity; profiling; reliability
 
 ## Skill Profile
 
-| Skill | Required | Preferred | Responsibility | Sample N | Role Priority | Target Depth | Confidence | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [[Linux]] | yes |  | systems operation | 3 | Prerequisite | use | high | Job Samples |
-| [[Distributed-Systems]] | yes |  | cluster execution | 8 | Core | implement | high | Job Samples |
-| [[CUDA-GPU-Basics]] | yes |  | accelerator performance | 6 | Core | optimize | high | Job Samples |
-| [[Model-Serving]] | yes |  | production inference | 6 | Core | implement | high | Job Samples |
-| [[Observability]] | yes |  | SLO and profiling | 5 | Common | implement | medium | Job Samples |
-| [[Agent-Orchestration-and-State]] | specialized |  | runtime state/checkpoint | 1 | Specialized | implement→optimize | medium | [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] |
-| [[Tool-Calling-and-Action-Contracts]] | specialized |  | action execution boundary | 2 | Specialized | implement | medium | [[ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08]] |
-| [[Agent-Evals-and-Trace-Debugging]] | specialized |  | trajectory/eval platform | 2 | Specialized | implement→optimize | medium | [[ServiceNow-Staff-Agent-Eval-Platform-2026-08]] |
-| [[MCP-and-Agent-Interoperability]] | preferred |  | protocol adapters | 2 | Specialized | use→implement | medium | [[Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08]] |
+| Skill | Required N | Preferred N | Responsibility N | Inferred N | Sample N | Priority | Target Depth | Confidence |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| [[TypeScript-JavaScript]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
+| [[Python]] | 0 | 0 | 0 | 1 | 1 | Prerequisite | explain/use | low/medium |
+| [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 2 | 0 | 2 | Specialized | use→implement | low/medium |
+| [[Agent-Orchestration-and-State]] | 0 | 0 | 1 | 1 | 1 | Specialized | use→implement | low/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | low/medium |
+| [[MCP-and-Agent-Interoperability]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
+| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 0 | 2 | 2 | Common | explain/use | low/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 2 | 1 | 2 | Specialized | use→implement | low/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | low/medium |
 
+Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
 
 On-call ownership, numerical correctness, hardware trade-offs and incident communication.
