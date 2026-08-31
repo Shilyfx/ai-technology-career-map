@@ -9,51 +9,47 @@ region: Global
 source_url: https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba
 source_kind: official-job-posting
 source_status: active
-source_access: full
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: product-application
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Notion — Software Engineer, AI Workflows
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba](https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba](https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-构建带有 LLM、嵌入、关系数据的全栈与异步 AI 工作流。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: custom agents and recurring or asynchronous workflows
-- Responsibilities: schedule and resume long-running AI workflows
+- Custom Agents automate recurring workflows such as filing tasks, writing reports, and answering knowledge-base questions
 
 ## Explicit Requirements
-- Requirements: strong software engineering in TypeScript/JavaScript
-- Requirements: backend services, APIs and relational data
-- Requirements: production LLM applications and embeddings
+- Experience building AI products using LLMs, embeddings, and other ML technologies
+- Familiarity with relational databases such as Postgres or MySQL
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: strong software engineering in TypeScript/JavaScript | [[TypeScript-JavaScript]] | required | explicit | — | implement | high |
-| Requirements: backend services, APIs and relational data | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | high |
-| Requirements: production LLM applications and embeddings | [[LLM-API-and-Structured-Outputs]] | required | explicit | — | implement | high |
-| Responsibilities: custom agents and recurring or asynchronous workflows | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | high |
-| Responsibilities: schedule and resume long-running AI workflows | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Inferred prerequisite: validate tool inputs before mutating relational data | [[Tool-Calling-and-Action-Contracts]] | inferred-prerequisite | inferred | — | use | high |
+| Experience building AI products using LLMs, embeddings, and other ML technologies | [[LLM-API-and-Structured-Outputs]] | required | explicit | none | use | medium |
+| Familiarity with relational databases such as Postgres or MySQL | [[Databases-and-Data-Modeling]] | required | explicit | none | use | medium |
+| Custom Agents automate recurring workflows such as filing tasks, writing reports, and answering knowledge-base questions | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -62,77 +58,44 @@ related: []
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: strong software engineering in TypeScript/JavaScript
-Mapped Skill: [[TypeScript-JavaScript]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 2
-Source Section: Requirements
-Raw Evidence: Requirements: backend services, APIs and relational data
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 3
-Source Section: Requirements
-Raw Evidence: Requirements: production LLM applications and embeddings
+Source Section: Skills You'll Need to Bring
+Source Fidelity: direct
+Raw Evidence: Experience building AI products using LLMs, embeddings, and other ML technologies
 Mapped Skill: [[LLM-API-and-Structured-Outputs]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: LLMs are explicit; structured outputs are not asserted.
+Notes: quoted or lightly normalized from official Skills You'll Need to Bring section; mapping kept to LLM-API-and-Structured-Outputs only.
 
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: custom agents and recurring or asynchronous workflows
+### Evidence 2
+Source Section: Skills You'll Need to Bring
+Source Fidelity: direct
+Raw Evidence: Familiarity with relational databases such as Postgres or MySQL
+Mapped Skill: [[Databases-and-Data-Modeling]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Relational database experience is explicitly required.
+Notes: quoted or lightly normalized from official Skills You'll Need to Bring section; mapping kept to Databases-and-Data-Modeling only.
+
+### Evidence 3
+Source Section: About the Role
+Source Fidelity: close-paraphrase
+Raw Evidence: Custom Agents automate recurring workflows such as filing tasks, writing reports, and answering knowledge-base questions
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 5
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: schedule and resume long-running AI workflows
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 6
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: validate tool inputs before mutating relational data
-Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: derived from explicit data mutation duty
+Confidence: medium
+Mapping Rationale: The role context explicitly describes custom agents executing recurring workflows.
+Notes: paraphrased from official About the Role section; mapping kept to Agent-Orchestration-and-State only.

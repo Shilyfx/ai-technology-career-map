@@ -8,51 +8,51 @@ location: Not stated on page
 region: US/Global
 source_url: https://careers.salesforce.com/en/jobs/jr347705/product-managersr-product-manager-agent-fabric/
 source_kind: official-job-posting
-source_status: active
-source_access: redirected-official
+source_status: redirected
+source_access: partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: applied-ai-product
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Salesforce — Product Manager, Agent Fabric
 
 ## Source Scope
-官方职位 URL：[https://careers.salesforce.com/en/jobs/jr347705/product-managersr-product-manager-agent-fabric/](https://careers.salesforce.com/en/jobs/jr347705/product-managersr-product-manager-agent-fabric/)。2026-08-31 访问记录：`active` / `redirected-official`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://careers.salesforce.com/en/jobs/jr347705/product-managersr-product-manager-agent-fabric/](https://careers.salesforce.com/en/jobs/jr347705/product-managersr-product-manager-agent-fabric/)。审计日期：`2026-09-01`；状态：`redirected` / `source_access: partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-负责 Agent Fabric 的 Discover、Govern、Orchestrate、Observe 控制面。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: own Discover, Govern, Orchestrate and Observe
-- Responsibilities: manage agent/API/MCP interoperability
-- Responsibilities: define control-plane integrations and APIs
+- Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+- Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+- Manage agent, API, and MCP interoperability
+- Policy governance for agent operations
 
 ## Explicit Requirements
-- Requirements: product/platform strategy and policy governance
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- Preferred: evaluation metrics and trace-based quality reviews
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: product/platform strategy and policy governance | [[Human-in-the-Loop-and-Agent-Guardrails]] | required | explicit | — | use | medium |
-| Responsibilities: own Discover, Govern, Orchestrate and Observe | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | medium |
-| Responsibilities: manage agent/API/MCP interoperability | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | — | use | medium |
-| Responsibilities: define control-plane integrations and APIs | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | — | implement | medium |
-| Preferred: evaluation metrics and trace-based quality reviews | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | — | use | medium |
-| Inferred prerequisite: structured model outputs for policy decisions | [[LLM-API-and-Structured-Outputs]] | inferred-prerequisite | inferred | — | use | medium |
+| Own Discover, Govern, Orchestrate, and Observe control-plane capabilities | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
+| Own Discover, Govern, Orchestrate, and Observe control-plane capabilities | [[Observability]] | responsibility | explicit | none | use | medium |
+| Manage agent, API, and MCP interoperability | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
+| Policy governance for agent operations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -61,77 +61,57 @@ related: []
 - Primary [[AI-Product-Manager]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: product/platform strategy and policy governance
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 2
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: own Discover, Govern, Orchestrate and Observe
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Orchestrate is an explicit control-plane responsibility.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Agent-Orchestration-and-State only.
+
+### Evidence 2
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Own Discover, Govern, Orchestrate, and Observe control-plane capabilities
+Mapped Skill: [[Observability]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Observe is an explicit operational responsibility.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Observability only.
 
 ### Evidence 3
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: manage agent/API/MCP interoperability
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Manage agent, API, and MCP interoperability
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: MCP interoperability is mapped to MCP, not generic tool calling.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to MCP-and-Agent-Interoperability only.
 
 ### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: define control-plane integrations and APIs
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Policy governance for agent operations
+Mapped Skill: [[Security-Privacy-and-Access-Control]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 5
-Source Section: Preferred
-Raw Evidence: Preferred: evaluation metrics and trace-based quality reviews
-Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
-Evidence Type: preferred
-Requirement Strength: explicit
-Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 6
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: structured model outputs for policy decisions
-Mapped Skill: [[LLM-API-and-Structured-Outputs]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Policy governance is a security/access-control responsibility.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Security-Privacy-and-Access-Control only.

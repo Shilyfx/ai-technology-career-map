@@ -5,7 +5,7 @@ sample_count: 10
 status: developing
 snapshot_date: 2026-08-31
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-24
 aliases:
   - AI Infra Engineer
@@ -72,15 +72,15 @@ Runtime/kernels; distributed execution; serving/capacity; profiling; reliability
 | Skill | Required N | Preferred N | Responsibility N | Inferred N | Sample N | Priority | Target Depth | Confidence |
 | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
 | [[TypeScript-JavaScript]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
-| [[Python]] | 0 | 0 | 0 | 1 | 1 | Prerequisite | explain/use | low/medium |
+| [[Python]] | 2 | 0 | 1 | 0 | 2 | Prerequisite | explain/use | high/medium |
 | [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
-| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 2 | 0 | 2 | Specialized | use→implement | low/medium |
-| [[Agent-Orchestration-and-State]] | 0 | 0 | 1 | 1 | 1 | Specialized | use→implement | low/medium |
-| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | low/medium |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
+| [[Agent-Orchestration-and-State]] | 0 | 0 | 2 | 0 | 1 | Specialized | use→implement | high/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | high/medium |
 | [[MCP-and-Agent-Interoperability]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
-| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 0 | 2 | 2 | Common | explain/use | low/medium |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 2 | 1 | 2 | Specialized | use→implement | low/medium |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | low/medium |
+| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 2 | 0 | 1 | Specialized | use→implement | high/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
 
 Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
@@ -101,7 +101,7 @@ Profile trace, load test, capacity model, failure injection, rollback and measur
 
 ## Source Limitations
 
-Samples overrepresent frontier labs and senior specialists; hardware stacks differ by employer.
+Samples overrepresent frontier labs and senior specialists; the two Batch B Agent Platform pages are a narrow runtime subtrack, and hardware stacks differ by employer.
 
 ## Refresh
 

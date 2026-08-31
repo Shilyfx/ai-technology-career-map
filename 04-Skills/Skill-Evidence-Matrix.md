@@ -4,8 +4,8 @@ domain: skills
 page_kind: skill-evidence-matrix
 status: reference
 created: 2026-08-24
-updated: 2026-08-31
-review_after: 2026-09-24
+updated: 2026-09-01
+review_after: 2026-10-01
 related:
   - "[[Skill-Index]]"
   - "[[Role-Skill-Matrix]]"
@@ -14,34 +14,45 @@ related:
 
 # Skill Evidence Matrix
 
-> Batch B（Enterprise Applied AI / Agentic Delivery）计数直接由 22 张 Job Sample 的 `Skill Extraction` 表推导；同一岗位对同一 Skill 只计一次。`responsibility` 频率不等于候选人 `required` 频率，`preferred` 也不会升级为 required。
+> Batch B（Enterprise Applied AI / Agentic Delivery）计数由 22 张 Job Sample 的 `Skill Extraction` 表推导；每个单元格是证据行计数，`Sample N` 是去重后的职位数。`Required One-of` 单独列出，避免把 Python/TypeScript/Go 等替代项相加。
 
-## Batch B — derived counts
+## Batch B — source-quality derived counts
 
-| Skill | Role | Required | Preferred | Responsibility | Inferred | Sample N | Confidence |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| [[TypeScript-JavaScript]] | Application / FDE / Platform | 9 | 0 | 0 | 1 | 10 | high/medium |
-| [[Python]] | Application / Platform | 4 | 0 | 0 | 3 | 7 | high/low |
-| [[LLM-API-and-Structured-Outputs]] | Application / FDE / PM | 4 | 1 | 3 | 4 | 12 | high/medium/low |
-| [[Tool-Calling-and-Action-Contracts]] | Application / FDE / Platform | 0 | 2 | 6 | 1 | 9 | high/medium/low |
-| [[Agent-Orchestration-and-State]] | Application / Platform / FDE | 0 | 1 | 10 | 2 | 11 | high/medium/low |
-| [[Workflow-Automation-and-Business-Process-Design]] | Application / FDE / PM | 0 | 1 | 13 | 1 | 15 | high/medium/low |
-| [[MCP-and-Agent-Interoperability]] | Platform / FDE / Application | 0 | 1 | 6 | 0 | 6 | high/medium |
-| [[Enterprise-Integrations-and-Connectors]] | FDE / Application / PM | 11 | 0 | 5 | 8 | 21 | high/medium/low |
-| [[Agent-Evals-and-Trace-Debugging]] | Application / Platform / FDE | 1 | 3 | 9 | 2 | 14 | high/medium/low |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | Application / FDE / PM | 2 | 1 | 5 | 4 | 12 | high/medium/low |
-| [[RAG]] | Application / FDE | 0 | 1 | 0 | 2 | 3 | medium/low |
+| Skill | Required Direct | Required One-of | Preferred | Responsibility | Inferred | High/Medium Source N | Low/Historical N | Sample N |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 3 | 4 | 1 | 6 | 1 | 7 |
+| [[Agent-Orchestration-and-State]] | 1 | 0 | 4 | 11 | 0 | 12 | 0 | 12 |
+| [[Databases-and-Data-Modeling]] | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |
+| [[Distributed-Systems]] | 2 | 2 | 0 | 1 | 1 | 4 | 1 | 5 |
+| [[Docker-Containers]] | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
+| [[Enterprise-Integrations-and-Connectors]] | 2 | 0 | 2 | 4 | 1 | 7 | 1 | 8 |
+| [[HTTP-API]] | 2 | 1 | 2 | 3 | 0 | 7 | 0 | 7 |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 4 | 1 | 4 | 1 | 5 |
+| [[LLM-API-and-Structured-Outputs]] | 1 | 0 | 0 | 3 | 0 | 4 | 0 | 4 |
+| [[Linux]] | 1 | 0 | 1 | 0 | 0 | 2 | 0 | 2 |
+| [[MCP-and-Agent-Interoperability]] | 0 | 0 | 3 | 5 | 0 | 6 | 0 | 6 |
+| [[Model-Serving]] | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
+| [[Observability]] | 1 | 2 | 0 | 10 | 0 | 10 | 0 | 10 |
+| [[Prompt-and-Context-Engineering]] | 0 | 0 | 2 | 1 | 0 | 3 | 0 | 3 |
+| [[Python]] | 0 | 8 | 0 | 1 | 2 | 9 | 1 | 10 |
+| [[RAG]] | 0 | 0 | 2 | 1 | 0 | 3 | 0 | 3 |
+| [[Security-Privacy-and-Access-Control]] | 0 | 0 | 2 | 5 | 0 | 6 | 0 | 6 |
+| [[Software-Design-and-Architecture]] | 2 | 0 | 0 | 1 | 0 | 3 | 0 | 3 |
+| [[Testing]] | 1 | 0 | 0 | 1 | 0 | 2 | 0 | 2 |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 1 | 1 | 0 | 2 | 0 | 2 |
+| [[TypeScript-JavaScript]] | 1 | 5 | 0 | 0 | 0 | 6 | 0 | 6 |
+| [[Workflow-Automation-and-Business-Process-Design]] | 1 | 1 | 2 | 9 | 1 | 11 | 1 | 12 |
 
-`Alternative Group`（例如 `language-1`）表示 one-of；Python、TypeScript、Go 等选项不作为同时要求相加。由于当前 Skill 词表没有独立 Go 卡片，Go 保留在 Raw Evidence 与组说明中。
+`Alternative Group`（例如 `language-1`、`areas-3-of-6`）保留原始选择关系。`High/Medium Source N` 与 `Low/Historical N` 按职位去重，不能解释成市场频率；历史/不可用页面仅保留低置信学习线索。
 
 ## Batch A — legacy view
 
-Batch A（Frontier/Model/Infra）仍使用旧的 `explicit/inferred` 历史抽取格式，保留在各旧 Job Sample 中，不与 Batch B 的四类证据计数混算。Batch A 更偏模型、基础设施和研究岗位；Batch B 更偏企业 Applied AI、FDE 与 Agentic Delivery。两批都不是市场普查。
+Batch A（Frontier/Model/Infra）仍使用旧的 `explicit/inferred` 历史抽取格式，保留在各旧 Job Sample 中，不与 Batch B 的四类证据计数混算。两批都不是市场普查。
 
 ## Reading rule
 
-矩阵只提供可复算的分母和分类入口；具体 Raw Evidence、Source Section、来源访问状态和 Evidence Trace 必须回到对应 Job Sample。页面过期/403 的行只保留低置信历史线索。
+矩阵只提供可复算的分母和分类入口；具体 Raw Evidence、Source Section、Source Fidelity、来源访问状态和 Evidence Trace 必须回到对应 Job Sample。`responsibility`、`preferred` 不会升级为 `required`。
 
 ## Prerequisite layer
 
-[[Prerequisite-Foundation-Map]] 是学习顺序的综合层，不把 DSA、RAG 或某门语言误写成所有 Agent 岗位的硬前置。完成 Practice 后再用 [[Evidence-Index]] 形成个人能力证据。
+[[Prerequisite-Foundation-Map]] 是学习顺序综合层，不把 DSA、RAG 或某门语言误写成所有 Agent 岗位的硬前置。完成 Practice 后再用 [[Evidence-Index]] 形成个人能力证据。

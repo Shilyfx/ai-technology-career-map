@@ -9,53 +9,51 @@ region: US
 source_url: https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090
 source_kind: official-job-posting
 source_status: active
-source_access: full
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: fintech-platform
 role_subtrack: product-application
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Ramp — Applied AI Engineer
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090](https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090](https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-构建代理、RAG、结构化抽取与生产 LLM 后端。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: agents, RAG and internal tools in production
-- Responsibilities: connect backend services and product surfaces
-- Responsibilities: define safe tool calls and recoverable actions
+- Production use cases of LLMs including AI Agents
+- Retrieval-Augmented Generation
+- Structured Extraction
 
 ## Explicit Requirements
-- Requirements: production Python and/or TypeScript full-stack engineering
-- Requirements: production Python and/or TypeScript full-stack engineering
-- Requirements: build LLM-backed products with structured extraction
+- Proficiency in full-stack development across web frameworks, backend systems, and cloud infrastructure
+- Backend systems and infrastructure that support AI-driven products
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: production Python and/or TypeScript full-stack engineering | [[Python]] | required | explicit | language-1 | implement | high |
-| Requirements: production Python and/or TypeScript full-stack engineering | [[TypeScript-JavaScript]] | required | explicit | language-1 | implement | high |
-| Requirements: build LLM-backed products with structured extraction | [[LLM-API-and-Structured-Outputs]] | required | explicit | — | implement | high |
-| Responsibilities: agents, RAG and internal tools in production | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | high |
-| Responsibilities: connect backend services and product surfaces | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | — | implement | high |
-| Responsibilities: define safe tool calls and recoverable actions | [[Tool-Calling-and-Action-Contracts]] | responsibility | explicit | — | use | high |
-| Inferred prerequisite: grounded retrieval for domain data | [[RAG]] | inferred-prerequisite | inferred | — | explain | high |
+| Proficiency in full-stack development across web frameworks, backend systems, and cloud infrastructure | [[Software-Design-and-Architecture]] | required | explicit | none | use | medium |
+| Production use cases of LLMs including AI Agents | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
+| Retrieval-Augmented Generation | [[RAG]] | responsibility | explicit | none | use | medium |
+| Structured Extraction | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
+| Backend systems and infrastructure that support AI-driven products | [[Distributed-Systems]] | required | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -64,89 +62,70 @@ related: []
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: production Python and/or TypeScript full-stack engineering
-Mapped Skill: [[Python]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: language-1
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: one-of primary implementation language
-
-### Evidence 2
-Source Section: Requirements
-Raw Evidence: Requirements: production Python and/or TypeScript full-stack engineering
-Mapped Skill: [[TypeScript-JavaScript]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: language-1
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: one-of primary implementation language
-
-### Evidence 3
-Source Section: Requirements
-Raw Evidence: Requirements: build LLM-backed products with structured extraction
-Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Source Section: What You Need
+Source Fidelity: direct
+Raw Evidence: Proficiency in full-stack development across web frameworks, backend systems, and cloud infrastructure
+Mapped Skill: [[Software-Design-and-Architecture]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: The qualification asks for full-stack/system design breadth.
+Notes: quoted or lightly normalized from official What You Need section; mapping kept to Software-Design-and-Architecture only.
 
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: agents, RAG and internal tools in production
+### Evidence 2
+Source Section: About the Role
+Source Fidelity: direct
+Raw Evidence: Production use cases of LLMs including AI Agents
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: AI-agent production work is explicit role scope.
+Notes: quoted or lightly normalized from official About the Role section; mapping kept to Agent-Orchestration-and-State only.
 
-### Evidence 5
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: connect backend services and product surfaces
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 6
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: define safe tool calls and recoverable actions
-Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
+### Evidence 3
+Source Section: About the Role
+Source Fidelity: direct
+Raw Evidence: Retrieval-Augmented Generation
+Mapped Skill: [[RAG]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: RAG is explicitly named as a project area.
+Notes: quoted or lightly normalized from official About the Role section; mapping kept to RAG only.
 
-### Evidence 7
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: grounded retrieval for domain data
-Mapped Skill: [[RAG]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
+### Evidence 4
+Source Section: About the Role
+Source Fidelity: direct
+Raw Evidence: Structured Extraction
+Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Evidence Type: responsibility
+Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: explain
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Structured extraction is an explicit structured-output signal.
+Notes: quoted or lightly normalized from official About the Role section; mapping kept to LLM-API-and-Structured-Outputs only.
+
+### Evidence 5
+Source Section: What You Need
+Source Fidelity: close-paraphrase
+Raw Evidence: Backend systems and infrastructure that support AI-driven products
+Mapped Skill: [[Distributed-Systems]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Supporting AI products with backend/infrastructure systems is a runtime/scale requirement.
+Notes: paraphrased from official What You Need section; mapping kept to Distributed-Systems only.

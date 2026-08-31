@@ -9,49 +9,47 @@ region: US
 source_url: https://jobs.ashbyhq.com/ramp/deca582c-a1d0-4705-9975-60aed81ba89f
 source_kind: official-job-posting
 source_status: active
-source_access: full
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: fintech-platform
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Ramp — Software Engineer, Enterprise Product
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/ramp/deca582c-a1d0-4705-9975-60aed81ba89f](https://jobs.ashbyhq.com/ramp/deca582c-a1d0-4705-9975-60aed81ba89f)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/ramp/deca582c-a1d0-4705-9975-60aed81ba89f](https://jobs.ashbyhq.com/ramp/deca582c-a1d0-4705-9975-60aed81ba89f)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-面向企业产品交付端到端的 agentic workflow 与 API 集成。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: deliver end-to-end agentic product workflows
-- Responsibilities: coordinate agents with deterministic product logic
+- Build internal and external agents to solve customer blockers
+- Deliver solutions end to end for the largest and most complex companies
 
 ## Explicit Requirements
-- Requirements: software engineering for customer-facing enterprise product
-- Requirements: APIs and product integrations
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- Extensive experience building with and for agents
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: software engineering for customer-facing enterprise product | [[TypeScript-JavaScript]] | required | explicit | — | implement | high |
-| Requirements: APIs and product integrations | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | high |
-| Responsibilities: deliver end-to-end agentic product workflows | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Responsibilities: coordinate agents with deterministic product logic | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | high |
-| Inferred prerequisite: approval checkpoints for enterprise actions | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred-prerequisite | inferred | — | use | high |
+| Build internal and external agents to solve customer blockers | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
+| Deliver solutions end to end for the largest and most complex companies | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | none | use | medium |
+| Extensive experience building with and for agents | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -60,65 +58,44 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: software engineering for customer-facing enterprise product
-Mapped Skill: [[TypeScript-JavaScript]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 2
-Source Section: Requirements
-Raw Evidence: Requirements: APIs and product integrations
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 3
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: deliver end-to-end agentic product workflows
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: coordinate agents with deterministic product logic
+Source Section: About the Role
+Source Fidelity: direct
+Raw Evidence: Build internal and external agents to solve customer blockers
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Building agents is explicit role responsibility.
+Notes: quoted or lightly normalized from official About the Role section; mapping kept to Agent-Orchestration-and-State only.
 
-### Evidence 5
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: approval checkpoints for enterprise actions
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
+### Evidence 2
+Source Section: About the Role
+Source Fidelity: close-paraphrase
+Raw Evidence: Deliver solutions end to end for the largest and most complex companies
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: responsibility
+Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: Customer-facing end-to-end delivery implies integration context, but remains a responsibility.
+Notes: paraphrased from official About the Role section; mapping kept to Enterprise-Integrations-and-Connectors only.
+
+### Evidence 3
+Source Section: What You Need
+Source Fidelity: direct
+Raw Evidence: Extensive experience building with and for agents
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Agent-building experience is explicitly preferred.
+Notes: quoted or lightly normalized from official What You Need section; mapping kept to Agent-Orchestration-and-State only.

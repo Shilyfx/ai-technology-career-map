@@ -9,51 +9,51 @@ region: Japan/APAC
 source_url: https://jobs.ashbyhq.com/notion/9a849c30-11ad-44ad-86e5-ecb7cc4b7934
 source_kind: official-job-posting
 source_status: active
-source_access: full
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Notion — Forward Deployed Architect, Japan
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/notion/9a849c30-11ad-44ad-86e5-ecb7cc4b7934](https://jobs.ashbyhq.com/notion/9a849c30-11ad-44ad-86e5-ecb7cc4b7934)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/notion/9a849c30-11ad-44ad-86e5-ecb7cc4b7934](https://jobs.ashbyhq.com/notion/9a849c30-11ad-44ad-86e5-ecb7cc4b7934)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-设计 AI-native workflow、定制代理、Developer Platform 与治理采用方案。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: design custom agents, automations and AI-native workflows
-- Responsibilities: guide adoption through Developer Platform and MCP
-- Responsibilities: establish governance and outcome measurement
+- 当前来源未确认可复核职责。
 
 ## Explicit Requirements
-- Requirements: architecture, discovery and clear customer communication
-- Requirements: implement APIs and integrations for business teams
+- Hands-on AI builder mindset: use AI tools to design, prototype, automate, or improve real business workflows
 
 ## Preferred/Nice-to-have
-- Preferred: agent orchestration and state-modeling experience
+- Experience designing or deploying Agents, automations or AI-powered workflows with Customers
+- Experience with APIs
+- Experience with MCPs, Workers, coding agents or developer platform workflows
+- Experience with MCPs, Workers, coding agents or developer platform workflows
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: architecture, discovery and clear customer communication | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | use | high |
-| Requirements: implement APIs and integrations for business teams | [[LLM-API-and-Structured-Outputs]] | required | explicit | — | implement | high |
-| Responsibilities: design custom agents, automations and AI-native workflows | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Responsibilities: guide adoption through Developer Platform and MCP | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | — | use | high |
-| Responsibilities: establish governance and outcome measurement | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | — | use | high |
-| Preferred: agent orchestration and state-modeling experience | [[Agent-Orchestration-and-State]] | preferred | explicit | — | use | high |
+| Hands-on AI builder mindset: use AI tools to design, prototype, automate, or improve real business workflows | [[Workflow-Automation-and-Business-Process-Design]] | required | explicit | none | use | medium |
+| Experience designing or deploying Agents, automations or AI-powered workflows with Customers | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
+| Experience with APIs | [[HTTP-API]] | preferred | explicit | none | use | medium |
+| Experience with MCPs, Workers, coding agents or developer platform workflows | [[MCP-and-Agent-Interoperability]] | preferred | explicit | none | use | medium |
+| Experience with MCPs, Workers, coding agents or developer platform workflows | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -62,77 +62,70 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: architecture, discovery and clear customer communication
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Source Section: Skills You'll Need to Bring
+Source Fidelity: direct
+Raw Evidence: Hands-on AI builder mindset: use AI tools to design, prototype, automate, or improve real business workflows
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: The skills section explicitly requires AI workflow building experience.
+Notes: quoted or lightly normalized from official Skills You'll Need to Bring section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
 ### Evidence 2
-Source Section: Requirements
-Raw Evidence: Requirements: implement APIs and integrations for business teams
-Mapped Skill: [[LLM-API-and-Structured-Outputs]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 3
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: design custom agents, automations and AI-native workflows
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: guide adoption through Developer Platform and MCP
-Mapped Skill: [[MCP-and-Agent-Interoperability]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 5
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: establish governance and outcome measurement
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 6
-Source Section: Preferred
-Raw Evidence: Preferred: agent orchestration and state-modeling experience
+Source Section: Nice to Haves
+Source Fidelity: direct
+Raw Evidence: Experience designing or deploying Agents, automations or AI-powered workflows with Customers
 Mapped Skill: [[Agent-Orchestration-and-State]]
 Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: Agents and automations are explicitly preferred experience.
+Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to Agent-Orchestration-and-State only.
+
+### Evidence 3
+Source Section: Nice to Haves
+Source Fidelity: direct
+Raw Evidence: Experience with APIs
+Mapped Skill: [[HTTP-API]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: APIs are explicitly listed as a nice-to-have.
+Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to HTTP-API only.
+
+### Evidence 4
+Source Section: Nice to Haves
+Source Fidelity: direct
+Raw Evidence: Experience with MCPs, Workers, coding agents or developer platform workflows
+Mapped Skill: [[MCP-and-Agent-Interoperability]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: MCP is explicitly preferred and is an interoperability protocol.
+Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to MCP-and-Agent-Interoperability only.
+
+### Evidence 5
+Source Section: Nice to Haves
+Source Fidelity: direct
+Raw Evidence: Experience with MCPs, Workers, coding agents or developer platform workflows
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Coding agents and platform workflows are preferred orchestration exposure.
+Notes: quoted or lightly normalized from official Nice to Haves section; mapping kept to Agent-Orchestration-and-State only.

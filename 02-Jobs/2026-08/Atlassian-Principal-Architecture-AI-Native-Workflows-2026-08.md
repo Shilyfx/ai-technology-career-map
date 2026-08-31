@@ -14,40 +14,40 @@ sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: historical
 ---
 
 # Atlassian — Principal Architecture, AI-native workflows (URL expired)
 
 ## Source Scope
-官方职位 URL：[https://www.atlassian.com/company/careers/details/25246](https://www.atlassian.com/company/careers/details/25246)。2026-08-31 访问记录：`expired` / `page-shell-only`。当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://www.atlassian.com/company/careers/details/25246](https://www.atlassian.com/company/careers/details/25246)。审计日期：`2026-09-01`；状态：`expired` / `source_access: page-shell-only` / `evidence_audit_status: historical`。来源已失效、重定向错误或不可用；所有行仅作历史学习前置，不代表当前招聘要求。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-当前页面仅剩职业站外壳；保留 AI-native workflow 与治理线索作为历史参考。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- 来源未提供可复核的职责段；不做当前职责推断。
+- 当前来源未确认可复核职责。
 
 ## Explicit Requirements
-- 当前可复核要求有限；不要把职责或历史摘要当作 required。
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Historical pre-audit: AI-native workflow and Rovo architecture | [[Workflow-Automation-and-Business-Process-Design]] | inferred-prerequisite | inferred | — | recognize | low |
-| Historical pre-audit: governance and identity integration | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | recognize | low |
-| Historical pre-audit: approval and policy controls | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred-prerequisite | inferred | — | recognize | low |
+| Historical lead: AI-native workflow and Rovo architecture | [[Workflow-Automation-and-Business-Process-Design]] | inferred-prerequisite | inferred | none | use | low |
+| Historical lead: approval and policy controls | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred-prerequisite | inferred | none | use | low |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -56,41 +56,31 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
+来源已失效、重定向错误或不可用；所有行仅作历史学习前置，不代表当前招聘要求。
 
 ## Evidence Trace
 ### Evidence 1
 Source Section: Historical summary (page shell only)
-Raw Evidence: Historical pre-audit: AI-native workflow and Rovo architecture
+Source Fidelity: inferred
+Raw Evidence: Historical lead: AI-native workflow and Rovo architecture
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: inferred-prerequisite
 Requirement Strength: inferred
 Alternative Group: none
-Depth Signal: recognize
+Depth Signal: use
 Confidence: low
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: URL is a career shell; historical lead only
+Mapping Rationale: The page is a historical shell; this is a learning lead, not a current requirement.
+Notes: inferred learning lead from Historical summary (page shell only); not a current job requirement.
 
 ### Evidence 2
 Source Section: Historical summary (page shell only)
-Raw Evidence: Historical pre-audit: governance and identity integration
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
-Depth Signal: recognize
-Confidence: low
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: not a current requirement
-
-### Evidence 3
-Source Section: Historical summary (page shell only)
-Raw Evidence: Historical pre-audit: approval and policy controls
+Source Fidelity: inferred
+Raw Evidence: Historical lead: approval and policy controls
 Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
 Evidence Type: inferred-prerequisite
 Requirement Strength: inferred
 Alternative Group: none
-Depth Signal: recognize
+Depth Signal: use
 Confidence: low
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: not a current requirement
+Mapping Rationale: Approval and policy controls are a study lead, but the source no longer exposes a role body.
+Notes: inferred learning lead from Historical summary (page shell only); not a current job requirement.

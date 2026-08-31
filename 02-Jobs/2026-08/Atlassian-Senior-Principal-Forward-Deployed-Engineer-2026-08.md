@@ -14,49 +14,54 @@ sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: verified
 ---
 
 # Atlassian — Senior Principal Forward Deployed Engineer
 
 ## Source Scope
-官方职位 URL：[https://www.atlassian.com/company/careers/details/25798](https://www.atlassian.com/company/careers/details/25798)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://www.atlassian.com/company/careers/details/25798](https://www.atlassian.com/company/careers/details/25798)。审计日期：`2026-09-01`；状态：`active` / `source_access: full` / `evidence_audit_status: verified`。官方页面完整可读；证据按源段落逐事实记录。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-面向客户交付 Rovo 驱动的 AI/ML、API 集成和合规落地。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: design and deploy AI/ML solutions with Rovo
-- Responsibilities: continuous evaluation and monitoring
+- Lead design, development, and deployment of AI/ML-powered solutions using Rovo
+- Champion AI-augmented workflow automation in customer environments
+- Ensure continuous evaluation, monitoring, and improvement
+- Ensure continuous evaluation, monitoring, and improvement
+- Navigate AI risk assessment, data privacy, and GDPR requirements
 
 ## Explicit Requirements
-- Requirements: 15+ years and production AI/ML delivery
-- Requirements: Python, JavaScript, APIs and microservices
-- Requirements: Python, JavaScript, APIs and microservices
-- Requirements: Python, JavaScript, APIs and microservices
-- Requirements: AI risk, privacy and GDPR compliance
+- Proficiency in Python, JavaScript, or similar languages
+- Proficiency in Python, JavaScript, or similar languages
+- Application integrations with APIs and microservices
+- Application integrations with enterprise-scale systems
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: 15+ years and production AI/ML delivery | [[LLM-API-and-Structured-Outputs]] | required | explicit | — | implement | high |
-| Requirements: Python, JavaScript, APIs and microservices | [[Python]] | required | explicit | language-1 | implement | high |
-| Requirements: Python, JavaScript, APIs and microservices | [[TypeScript-JavaScript]] | required | explicit | language-1 | implement | high |
-| Requirements: Python, JavaScript, APIs and microservices | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | high |
-| Responsibilities: design and deploy AI/ML solutions with Rovo | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Responsibilities: continuous evaluation and monitoring | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | use | high |
-| Requirements: AI risk, privacy and GDPR compliance | [[Human-in-the-Loop-and-Agent-Guardrails]] | required | explicit | — | use | high |
+| Lead design, development, and deployment of AI/ML-powered solutions using Rovo | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | high |
+| Proficiency in Python, JavaScript, or similar languages | [[Python]] | required | explicit | language-1 | use | high |
+| Proficiency in Python, JavaScript, or similar languages | [[TypeScript-JavaScript]] | required | explicit | language-1 | use | high |
+| Application integrations with APIs and microservices | [[HTTP-API]] | required | explicit | none | use | high |
+| Application integrations with enterprise-scale systems | [[Enterprise-Integrations-and-Connectors]] | required | explicit | none | use | high |
+| Champion AI-augmented workflow automation in customer environments | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
+| Ensure continuous evaluation, monitoring, and improvement | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
+| Ensure continuous evaluation, monitoring, and improvement | [[Observability]] | responsibility | explicit | none | use | high |
+| Navigate AI risk assessment, data privacy, and GDPR requirements | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -65,89 +70,122 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+官方页面完整可读；证据按源段落逐事实记录。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: 15+ years and production AI/ML delivery
+Source Section: What You'll Do
+Source Fidelity: close-paraphrase
+Raw Evidence: Lead design, development, and deployment of AI/ML-powered solutions using Rovo
 Mapped Skill: [[LLM-API-and-Structured-Outputs]]
-Evidence Type: required
+Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Applied AI/ML delivery is explicit, but structured output is not asserted.
+Notes: paraphrased from official What You'll Do section; mapping kept to LLM-API-and-Structured-Outputs only.
 
 ### Evidence 2
-Source Section: Requirements
-Raw Evidence: Requirements: Python, JavaScript, APIs and microservices
+Source Section: On the first day, we'll expect you to have
+Source Fidelity: direct
+Raw Evidence: Proficiency in Python, JavaScript, or similar languages
 Mapped Skill: [[Python]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: language-1
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: language-1 is an alternative; choose one primary language
+Mapping Rationale: Python is one explicit language alternative.
+Notes: quoted or lightly normalized from official On the first day, we'll expect you to have section; mapping kept to Python only. Alternative group is not summed.
 
 ### Evidence 3
-Source Section: Requirements
-Raw Evidence: Requirements: Python, JavaScript, APIs and microservices
+Source Section: On the first day, we'll expect you to have
+Source Fidelity: direct
+Raw Evidence: Proficiency in Python, JavaScript, or similar languages
 Mapped Skill: [[TypeScript-JavaScript]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: language-1
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: language-1 is an alternative; JavaScript is the one-of signal
+Mapping Rationale: JavaScript is one explicit language alternative.
+Notes: quoted or lightly normalized from official On the first day, we'll expect you to have section; mapping kept to TypeScript-JavaScript only. Alternative group is not summed.
 
 ### Evidence 4
-Source Section: Requirements
-Raw Evidence: Requirements: Python, JavaScript, APIs and microservices
+Source Section: On the first day, we'll expect you to have
+Source Fidelity: close-paraphrase
+Raw Evidence: Application integrations with APIs and microservices
+Mapped Skill: [[HTTP-API]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: APIs and microservices are an explicit service-integration signal.
+Notes: paraphrased from official On the first day, we'll expect you to have section; mapping kept to HTTP-API only.
+
+### Evidence 5
+Source Section: On the first day, we'll expect you to have
+Source Fidelity: direct
+Raw Evidence: Application integrations with enterprise-scale systems
 Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Enterprise-scale integration is explicitly required.
+Notes: quoted or lightly normalized from official On the first day, we'll expect you to have section; mapping kept to Enterprise-Integrations-and-Connectors only.
 
-### Evidence 5
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: design and deploy AI/ML solutions with Rovo
+### Evidence 6
+Source Section: What You'll Do
+Source Fidelity: direct
+Raw Evidence: Champion AI-augmented workflow automation in customer environments
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: The source explicitly assigns workflow-automation adoption.
+Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
-### Evidence 6
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: continuous evaluation and monitoring
+### Evidence 7
+Source Section: What You'll Do
+Source Fidelity: direct
+Raw Evidence: Ensure continuous evaluation, monitoring, and improvement
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Continuous evaluation is an explicit agent-quality signal.
+Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
-### Evidence 7
-Source Section: Requirements
-Raw Evidence: Requirements: AI risk, privacy and GDPR compliance
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
-Evidence Type: required
+### Evidence 8
+Source Section: What You'll Do
+Source Fidelity: direct
+Raw Evidence: Ensure continuous evaluation, monitoring, and improvement
+Mapped Skill: [[Observability]]
+Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Monitoring is observability and is kept separate from evaluation.
+Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Observability only.
+
+### Evidence 9
+Source Section: What You'll Do
+Source Fidelity: direct
+Raw Evidence: Navigate AI risk assessment, data privacy, and GDPR requirements
+Mapped Skill: [[Security-Privacy-and-Access-Control]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Risk, privacy, and compliance are explicit security responsibilities.
+Notes: quoted or lightly normalized from official What You'll Do section; mapping kept to Security-Privacy-and-Access-Control only.

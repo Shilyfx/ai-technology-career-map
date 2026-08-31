@@ -5,7 +5,7 @@ sample_count: 3
 status: developing
 snapshot_date: 2026-08-31
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-24
 aliases:
   - AI PM
@@ -68,14 +68,14 @@ User/workflow discovery; technical product judgment; metrics/evals; safety; stak
 | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
 | [[TypeScript-JavaScript]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
 | [[Python]] | 0 | 0 | 0 | 0 | 0 | Prerequisite | explain/use | context |
-| [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 1 | 1 | Common | explain/use | high/medium |
+| [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 | [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 | [[Agent-Orchestration-and-State]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
 | [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 | [[MCP-and-Agent-Interoperability]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | high/medium |
-| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 1 | 0 | 0 | 1 | Core | use→implement | high/medium |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | 1 | 0 | 0 | 0 | 1 | Core | use→implement | high/medium |
+| [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 
 Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
@@ -96,7 +96,7 @@ PRD, metric tree, eval plan, risk register, launch/rollback criteria and post-la
 
 ## Source Limitations
 
-Two senior US postings are directional and do not represent all AI PM hiring.
+Two senior US postings plus one redirected Salesforce Agent Fabric sample are directional; the partial source does not represent all AI PM hiring.
 
 ## Refresh
 

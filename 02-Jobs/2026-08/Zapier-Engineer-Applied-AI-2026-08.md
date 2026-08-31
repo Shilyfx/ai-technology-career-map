@@ -9,51 +9,52 @@ region: US/Remote
 source_url: https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8
 source_kind: official-job-posting
 source_status: active
-source_access: full
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: automation-platform
 role_subtrack: product-application
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Zapier — Engineer, Applied AI
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-为内部工作流构建 LLM proxy、API、可观测性、评估和复用工具。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: build internal workflow and LLM proxy services
-- Responsibilities: integrate APIs and model providers
-- Responsibilities: monitor latency, cost and quality
+- Build internal workflow and LLM proxy services
+- Build internal workflow and LLM proxy services
+- Monitor latency, cost, and quality
 
 ## Explicit Requirements
-- Requirements: reusable TypeScript and/or Python tooling
-- Requirements: reusable TypeScript and/or Python tooling
+- Reusable TypeScript and/or Python tooling
+- Reusable TypeScript and/or Python tooling
 
 ## Preferred/Nice-to-have
-- Preferred: safety, reliability and evaluation experience
+- Safety, reliability, and evaluation experience
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: reusable TypeScript and/or Python tooling | [[TypeScript-JavaScript]] | required | explicit | language-1 | implement | high |
-| Requirements: reusable TypeScript and/or Python tooling | [[Python]] | required | explicit | language-1 | implement | high |
-| Responsibilities: build internal workflow and LLM proxy services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Responsibilities: integrate APIs and model providers | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | — | implement | high |
-| Responsibilities: monitor latency, cost and quality | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | use | high |
-| Preferred: safety, reliability and evaluation experience | [[Human-in-the-Loop-and-Agent-Guardrails]] | preferred | explicit | — | use | high |
+| Reusable TypeScript and/or Python tooling | [[TypeScript-JavaScript]] | required | explicit | language-1 | use | medium |
+| Reusable TypeScript and/or Python tooling | [[Python]] | required | explicit | language-1 | use | medium |
+| Build internal workflow and LLM proxy services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
+| Build internal workflow and LLM proxy services | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
+| Monitor latency, cost, and quality | [[Observability]] | responsibility | explicit | none | use | medium |
+| Safety, reliability, and evaluation experience | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -62,77 +63,83 @@ related: []
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
 Source Section: Requirements
-Raw Evidence: Requirements: reusable TypeScript and/or Python tooling
+Source Fidelity: close-paraphrase
+Raw Evidence: Reusable TypeScript and/or Python tooling
 Mapped Skill: [[TypeScript-JavaScript]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: language-1
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: one-of implementation language
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: TypeScript is one explicit implementation-language alternative.
+Notes: paraphrased from official Requirements section; mapping kept to TypeScript-JavaScript only. Alternative group is not summed.
 
 ### Evidence 2
 Source Section: Requirements
-Raw Evidence: Requirements: reusable TypeScript and/or Python tooling
+Source Fidelity: close-paraphrase
+Raw Evidence: Reusable TypeScript and/or Python tooling
 Mapped Skill: [[Python]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: language-1
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: one-of implementation language
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Python is one explicit implementation-language alternative.
+Notes: paraphrased from official Requirements section; mapping kept to Python only. Alternative group is not summed.
 
 ### Evidence 3
 Source Section: Responsibilities
-Raw Evidence: Responsibilities: build internal workflow and LLM proxy services
+Source Fidelity: close-paraphrase
+Raw Evidence: Build internal workflow and LLM proxy services
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: Internal workflows are explicit delivery work.
+Notes: paraphrased from official Responsibilities section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
 ### Evidence 4
 Source Section: Responsibilities
-Raw Evidence: Responsibilities: integrate APIs and model providers
+Source Fidelity: close-paraphrase
+Raw Evidence: Build internal workflow and LLM proxy services
 Mapped Skill: [[LLM-API-and-Structured-Outputs]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: LLM proxy services are API integration work; structured output is not asserted.
+Notes: paraphrased from official Responsibilities section; mapping kept to LLM-API-and-Structured-Outputs only.
 
 ### Evidence 5
 Source Section: Responsibilities
-Raw Evidence: Responsibilities: monitor latency, cost and quality
-Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Source Fidelity: direct
+Raw Evidence: Monitor latency, cost, and quality
+Mapped Skill: [[Observability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: Latency, cost, and monitoring are observability signals, not automatically Agent Evals.
+Notes: quoted or lightly normalized from official Responsibilities section; mapping kept to Observability only.
 
 ### Evidence 6
 Source Section: Preferred
-Raw Evidence: Preferred: safety, reliability and evaluation experience
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
+Source Fidelity: direct
+Raw Evidence: Safety, reliability, and evaluation experience
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Confidence: medium
+Mapping Rationale: Evaluation is explicitly preferred, not inferred.
+Notes: quoted or lightly normalized from official Preferred section; mapping kept to Agent-Evals-and-Trace-Debugging only.

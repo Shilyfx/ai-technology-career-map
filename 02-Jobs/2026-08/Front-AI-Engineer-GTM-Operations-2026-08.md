@@ -9,49 +9,50 @@ region: US/Remote
 source_url: https://jobs.ashbyhq.com/frontcareers/ac7d124f-97d9-42c7-bb2b-675c26cf743d
 source_kind: official-job-posting
 source_status: active
-source_access: limited-dynamic
+source_access: dynamic-partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: b2b-saas
 role_subtrack: product-application
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Front — AI Engineer, GTM / Operations
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/frontcareers/ac7d124f-97d9-42c7-bb2b-675c26cf743d](https://jobs.ashbyhq.com/frontcareers/ac7d124f-97d9-42c7-bb2b-675c26cf743d)。2026-08-31 访问记录：`active` / `limited-dynamic`。当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/frontcareers/ac7d124f-97d9-42c7-bb2b-675c26cf743d](https://jobs.ashbyhq.com/frontcareers/ac7d124f-97d9-42c7-bb2b-675c26cf743d)。审计日期：`2026-09-01`；状态：`active` / `source_access: dynamic-partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-动态 ATS 页面；历史可见信号是 Python async、自动化、API、MCP 与结构化数据。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: automate GTM operations with Workato/Zapier
-- Responsibilities: expose model workflows through APIs and MCP
+- Automate GTM operations with Workato/Zapier
+- Expose model workflows through APIs and MCP
+- Expose model workflows through APIs and MCP
 
 ## Explicit Requirements
-- 当前可复核要求有限；不要把职责或历史摘要当作 required。
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- Preferred: Snowflake and RAG/structured data experience
+- Snowflake and RAG/structured data experience
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Historical/limited signal: Python async services and structured data | [[Python]] | inferred-prerequisite | inferred | — | use | medium |
-| Historical/limited signal: production APIs and logging | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | use | medium |
-| Responsibilities: automate GTM operations with Workato/Zapier | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | medium |
-| Responsibilities: expose model workflows through APIs and MCP | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | — | use | medium |
-| Preferred: Snowflake and RAG/structured data experience | [[RAG]] | preferred | explicit | — | use | medium |
-| Inferred prerequisite: typed model responses for downstream automation | [[LLM-API-and-Structured-Outputs]] | inferred-prerequisite | inferred | — | use | medium |
+| Automate GTM operations with Workato/Zapier | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
+| Expose model workflows through APIs and MCP | [[HTTP-API]] | responsibility | explicit | none | use | medium |
+| Expose model workflows through APIs and MCP | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | medium |
+| Snowflake and RAG/structured data experience | [[RAG]] | preferred | explicit | none | use | medium |
+| Python async services and structured data | [[Python]] | inferred-prerequisite | inferred | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -60,77 +61,70 @@ related: []
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Historical summary (dynamic ATS)
-Raw Evidence: Historical/limited signal: Python async services and structured data
-Mapped Skill: [[Python]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: page is dynamic; treat as learning lead, not current required
-
-### Evidence 2
-Source Section: Historical summary (dynamic ATS)
-Raw Evidence: Historical/limited signal: production APIs and logging
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: page is dynamic; treat as learning lead, not current required
-
-### Evidence 3
 Source Section: Responsibilities
-Raw Evidence: Responsibilities: automate GTM operations with Workato/Zapier
+Source Fidelity: close-paraphrase
+Raw Evidence: Automate GTM operations with Workato/Zapier
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Automation is explicit role work.
+Notes: paraphrased from official Responsibilities section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
-### Evidence 4
+### Evidence 2
 Source Section: Responsibilities
-Raw Evidence: Responsibilities: expose model workflows through APIs and MCP
+Source Fidelity: close-paraphrase
+Raw Evidence: Expose model workflows through APIs and MCP
+Mapped Skill: [[HTTP-API]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Mapping Rationale: APIs are explicit integration work.
+Notes: paraphrased from official Responsibilities section; mapping kept to HTTP-API only.
+
+### Evidence 3
+Source Section: Responsibilities
+Source Fidelity: direct
+Raw Evidence: Expose model workflows through APIs and MCP
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: MCP is an explicit interoperability signal.
+Notes: quoted or lightly normalized from official Responsibilities section; mapping kept to MCP-and-Agent-Interoperability only.
 
-### Evidence 5
+### Evidence 4
 Source Section: Preferred
-Raw Evidence: Preferred: Snowflake and RAG/structured data experience
+Source Fidelity: direct
+Raw Evidence: Snowflake and RAG/structured data experience
 Mapped Skill: [[RAG]]
 Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: RAG is explicitly preferred.
+Notes: quoted or lightly normalized from official Preferred section; mapping kept to RAG only.
 
-### Evidence 6
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: typed model responses for downstream automation
-Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+### Evidence 5
+Source Section: Historical dynamic ATS signal
+Source Fidelity: inferred
+Raw Evidence: Python async services and structured data
+Mapped Skill: [[Python]]
 Evidence Type: inferred-prerequisite
 Requirement Strength: inferred
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: The dynamic page does not expose a stable requirements section; retain this as a study lead only.
+Notes: inferred learning lead from Historical dynamic ATS signal; not a current job requirement.

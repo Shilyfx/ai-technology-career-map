@@ -5,7 +5,7 @@ status: reference
 stability: current
 snapshot_date: 2026-08-31
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 sample_batch: enterprise-applied-ai-2026-08
 related:
@@ -26,7 +26,7 @@ related:
 
 ## Verification boundary
 
-2026-08-31 对指定 URL 做了可访问性核对：多数 Ashby/Greenhouse/Atlassian/Salesforce URL 可解析；ServiceNow/Moveworks 返回 HTTP 403，Front 是动态 ATS，Atlassian 25246 只返回招聘页壳，Glean 4659412005 重定向错误页。受限或过期样本保留 `source_access`、`source_status` 和低置信度，不把不可见正文写成当前明确要求。
+2026-09-01 对 22 个指定 URL 逐一重开并记录来源边界：Atlassian A1/A2、ServiceNow M1/M3/M4、Glean G1、Warp 为完整可读；Ashby（Notion/Ramp/Front/Zapier）为动态部分可读；Salesforce 已重定向至新官方域、只保留部分可复核摘要；A3、G2 已失效；M2 返回 404。受限或历史样本保留 `source_access`、`source_status` 和审计状态，不把不可见正文写成当前明确要求。
 
 ## Company mix and role families
 
@@ -53,12 +53,41 @@ These are qualitative clusters from the selected sample set, not percentages or 
 
 | Evidence Type | Rows | Interpretation |
 | --- | ---: | --- |
-| `required` | 31 | 仅来自 Requirements/Qualifications 类段落；语言 alternative group 不相加 |
-| `preferred` | 11 | Preferred/Nice-to-have；永不升级为 required |
-| `responsibility` | 57 | What you’ll do/Responsibilities；职责频率 ≠ 候选人必备技能频率 |
-| `inferred-prerequisite` | 28 | 从明确职责推导的学习前置；不代表招聘门槛 |
+| `required` | 38 | 仅来自 Requirements/Qualifications 类段落；`Required One-of` 另行计数，不相加 |
+| `preferred` | 25 | Preferred/Nice-to-have；永不升级为 required |
+| `responsibility` | 65 | What you’ll do/Responsibilities/Role context；职责频率 ≠ 候选人必备技能频率 |
+| `inferred-prerequisite` | 7 | 仅用于历史/动态来源的学习前置；不代表招聘门槛 |
 
-`Alternative Group`（如 `language-1`）是 one-of；Python、TypeScript、Go 等成员不能作为同时要求相加。`explicit`/`inferred` 现在只作为 Requirement Strength，Evidence Type 已严格收敛为上面四类。产品名（Rovo、Agentforce、Moveworks 等）保持在样本上下文，不升级为 Skill。
+`Alternative Group`（如 `language-1`、`areas-3-of-6`）是 one-of 或 at-least-N；Python、TypeScript、Go 等成员不能作为同时要求相加。`Source Fidelity` 只允许 `direct`、`close-paraphrase`、`inferred`；`inferred-prerequisite` 不得标为 direct。产品名（Rovo、Agentforce、Moveworks 等）保持在样本上下文，不升级为 Skill。
+
+## Source Fidelity Audit Table
+
+| Company | Role | Access | Audit Status | Direct Evidence Rows | Paraphrase Rows | Inferred Rows | Main Limit |
+| --- | --- | --- | --- | ---: | ---: | ---: | --- |
+| Atlassian | Senior Engineering Manager, Agentic AI Integrations | full | verified | 9 | 4 | 0 | none observed |
+| Atlassian | Senior Principal Forward Deployed Engineer | full | verified | 7 | 2 | 0 | none observed |
+| Atlassian | Principal Architecture, AI-native workflows | page-shell-only | historical | 0 | 0 | 2 | page shell or redirect error |
+| Notion | Software Engineer, AI Workflows | dynamic-partial | partial | 2 | 1 | 0 | dynamic ATS/JS shell |
+| Notion | Forward Deployed Engineer, GTM Japan | dynamic-partial | partial | 10 | 2 | 0 | dynamic ATS/JS shell |
+| Notion | Forward Deployed Architect, Japan | dynamic-partial | partial | 5 | 0 | 0 | dynamic ATS/JS shell |
+| Glean | Software Engineer, Agents | full | verified | 7 | 1 | 0 | none observed |
+| Glean | Founding Forward Deployed Engineer | page-shell-only | historical | 0 | 0 | 2 | page shell or redirect error |
+| Salesforce | Forward Deployed Engineer | partial | partial | 0 | 4 | 0 | redirected official page |
+| Salesforce | Forward Deployed Engineer, Agentforce for Supply Chain | partial | partial | 0 | 3 | 0 | redirected official page |
+| Salesforce | Success Architect, Agentforce Data Cloud | partial | partial | 0 | 3 | 0 | redirected official page |
+| Salesforce | Product Manager, Agent Fabric | partial | partial | 0 | 4 | 0 | redirected official page |
+| ServiceNow / Moveworks | AI Agent Engineer | full | verified | 9 | 2 | 0 | none observed |
+| ServiceNow / Moveworks | Senior Staff Software Engineer, Agent Development | blocked | historical | 0 | 0 | 2 | URL unavailable |
+| ServiceNow / Moveworks | Senior Staff Software Engineer, Agentic Systems | full | verified | 8 | 0 | 0 | none observed |
+| ServiceNow / Moveworks | Staff Software Engineer, Agent Eval Platform | full | verified | 6 | 3 | 0 | none observed |
+| Ramp | Applied AI Engineer | dynamic-partial | partial | 4 | 1 | 0 | dynamic ATS/JS shell |
+| Ramp | Software Engineer, Enterprise Product | dynamic-partial | partial | 2 | 1 | 0 | dynamic ATS/JS shell |
+| Ramp | Software Engineer, Frontend, Ramp Revenue | dynamic-partial | partial | 6 | 0 | 0 | dynamic ATS/JS shell |
+| Zapier | Engineer, Applied AI | dynamic-partial | partial | 2 | 4 | 0 | dynamic ATS/JS shell |
+| Front | AI Engineer, GTM / Operations | dynamic-partial | partial | 2 | 2 | 1 | dynamic ATS/JS shell |
+| Warp | Forward Deployed Engineer | full | verified | 12 | 0 | 0 | none observed |
+
+Required、Preferred、Responsibility、Inferred 的频数只描述本批证据行；它们不等同于市场比例或招聘概率。完整逐行计数见 [[Skill-Evidence-Matrix]]。
 
 ## Learning implications
 

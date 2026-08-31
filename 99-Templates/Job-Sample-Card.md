@@ -10,6 +10,7 @@ source_url:
 source_kind: official-job-posting
 source_status: active
 source_access: full
+evidence_audit_status: verified
 sample_batch:
 company_segment:
 role_subtrack:
@@ -44,7 +45,7 @@ related: []
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
 
-> Evidence Type 只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；Requirement Strength 为 `explicit` 或 `inferred`。`Alternative Group`（如 `language-1`）表示 one-of，不把成员当作同时要求。limited/blocked 来源不得写成高置信 required。
+> Evidence Type 只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；Requirement Strength 为 `explicit` 或 `inferred`。`Source Fidelity` 只允许 `direct`、`close-paraphrase`、`inferred`，且 `inferred-prerequisite` 不得为 direct。`Alternative Group`（如 `language-1`）表示 one-of，不把成员当作同时要求。partial/blocked/历史来源不得写成当前 required/preferred。
 
 ## Non-skill Gates
 
@@ -64,6 +65,7 @@ related: []
 ### Evidence 1
 
 Source Section:
+Source Fidelity: `direct | close-paraphrase | inferred`
 Raw Evidence:
 Mapped Skill:
 Evidence Type: `required | preferred | responsibility | inferred-prerequisite`
@@ -71,4 +73,5 @@ Requirement Strength: `explicit | inferred`
 Alternative Group: `none` 或 one-of 组名
 Depth Signal:
 Confidence: `high | medium | low`
+Mapping Rationale:
 Notes:

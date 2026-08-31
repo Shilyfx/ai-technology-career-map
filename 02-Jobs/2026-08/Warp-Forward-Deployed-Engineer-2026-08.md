@@ -14,46 +14,59 @@ sample_batch: enterprise-applied-ai-2026-08
 company_segment: automation-platform
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: verified
 ---
 
 # Warp — Forward Deployed Engineer
 
 ## Source Scope
-官方职位 URL：[https://job-boards.greenhouse.io/warp/jobs/5749183004](https://job-boards.greenhouse.io/warp/jobs/5749183004)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://job-boards.greenhouse.io/warp/jobs/5749183004](https://job-boards.greenhouse.io/warp/jobs/5749183004)。审计日期：`2026-09-01`；状态：`active` / `source_access: full` / `evidence_audit_status: verified`。官方页面完整可读；证据按源段落逐事实记录。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-端到端实施企业 workflow、trigger、sandbox、secret、MCP 和加固。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: configure workflows, triggers, sandbox and secrets
-- Responsibilities: implement prompts, skills, MCP and integrations
-- Responsibilities: harden deployments with observability
-- Responsibilities: invoke bounded tools with customer permissions
+- Architect agent workflows with triggers, webhooks, cron schedules, and API calls
+- Set up environments, secrets, MCP servers, and integrations
+- Set up environments, secrets, MCP servers, and integrations
+- Debug agent runs using session sharing and observability tools
 
 ## Explicit Requirements
-- Requirements: customer-facing implementation and systems integration
+- Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+- Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
 
 ## Preferred/Nice-to-have
-- 未从当前来源确认 preferred 项。
+- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+- Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+- Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation
+- Familiarity with enterprise security and compliance requirements
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: customer-facing implementation and systems integration | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | high |
-| Responsibilities: configure workflows, triggers, sandbox and secrets | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
-| Responsibilities: implement prompts, skills, MCP and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | — | use | high |
-| Responsibilities: harden deployments with observability | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | use | high |
-| Responsibilities: invoke bounded tools with customer permissions | [[Tool-Calling-and-Action-Contracts]] | responsibility | explicit | — | use | high |
-| Inferred prerequisite: typed LLM responses and failure handling | [[LLM-API-and-Structured-Outputs]] | inferred-prerequisite | inferred | — | use | high |
+| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux | [[Docker-Containers]] | required | explicit | none | use | high |
+| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux | [[Linux]] | required | explicit | none | use | high |
+| Architect agent workflows with triggers, webhooks, cron schedules, and API calls | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
+| Set up environments, secrets, MCP servers, and integrations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
+| Set up environments, secrets, MCP servers, and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | high |
+| Debug agent runs using session sharing and observability tools | [[Observability]] | responsibility | explicit | none | use | high |
+| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | high |
+| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | high |
+| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Tool-Calling-and-Action-Contracts]] | preferred | explicit | none | use | high |
+| Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | high |
+| Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation | [[HTTP-API]] | preferred | explicit | none | use | high |
+| Familiarity with enterprise security and compliance requirements | [[Security-Privacy-and-Access-Control]] | preferred | explicit | none | use | high |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -62,77 +75,161 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+官方页面完整可读；证据按源段落逐事实记录。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: customer-facing implementation and systems integration
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+Mapped Skill: [[Docker-Containers]]
 Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Docker/containers are explicitly required fundamentals.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Docker-Containers only.
 
 ### Evidence 2
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: configure workflows, triggers, sandbox and secrets
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux
+Mapped Skill: [[Linux]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Linux is explicitly named as an infrastructure fundamental.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Linux only.
+
+### Evidence 3
+Source Section: As a Founding Forward Deployed Engineer, you will...
+Source Fidelity: direct
+Raw Evidence: Architect agent workflows with triggers, webhooks, cron schedules, and API calls
 Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Triggers and multi-step workflows are explicit workflow-design responsibility.
+Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
 
-### Evidence 3
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: implement prompts, skills, MCP and integrations
+### Evidence 4
+Source Section: As a Founding Forward Deployed Engineer, you will...
+Source Fidelity: direct
+Raw Evidence: Set up environments, secrets, MCP servers, and integrations
+Mapped Skill: [[Security-Privacy-and-Access-Control]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Secrets and environment boundaries are explicit security responsibilities.
+Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to Security-Privacy-and-Access-Control only.
+
+### Evidence 5
+Source Section: As a Founding Forward Deployed Engineer, you will...
+Source Fidelity: direct
+Raw Evidence: Set up environments, secrets, MCP servers, and integrations
 Mapped Skill: [[MCP-and-Agent-Interoperability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: harden deployments with observability
-Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 5
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: invoke bounded tools with customer permissions
-Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
-Evidence Type: responsibility
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: MCP servers are explicit interoperability work.
+Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to MCP-and-Agent-Interoperability only.
 
 ### Evidence 6
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: typed LLM responses and failure handling
-Mapped Skill: [[LLM-API-and-Structured-Outputs]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
+Source Section: As a Founding Forward Deployed Engineer, you will...
+Source Fidelity: direct
+Raw Evidence: Debug agent runs using session sharing and observability tools
+Mapped Skill: [[Observability]]
+Evidence Type: responsibility
+Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Observability tools support operational debugging; no eval claim is added.
+Notes: quoted or lightly normalized from official As a Founding Forward Deployed Engineer, you will... section; mapping kept to Observability only.
+
+### Evidence 7
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Mapped Skill: [[Prompt-and-Context-Engineering]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Prompt engineering is explicit fit criteria, retained as preferred.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Prompt-and-Context-Engineering only.
+
+### Evidence 8
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Agent architectures are explicit fit criteria for orchestration.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Orchestration-and-State only.
+
+### Evidence 9
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Tool use is explicit fit criteria for action contracts.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Tool-Calling-and-Action-Contracts only.
+
+### Evidence 10
+Source Section: You may be a good fit if...
+Source Fidelity: direct
+Raw Evidence: Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Evaluating non-deterministic systems is explicit eval experience.
+Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Evals-and-Trace-Debugging only.
+
+### Evidence 11
+Source Section: Bonus...
+Source Fidelity: direct
+Raw Evidence: Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation
+Mapped Skill: [[HTTP-API]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: APIs and webhooks are explicit integration experience.
+Notes: quoted or lightly normalized from official Bonus... section; mapping kept to HTTP-API only.
+
+### Evidence 12
+Source Section: Bonus...
+Source Fidelity: direct
+Raw Evidence: Familiarity with enterprise security and compliance requirements
+Mapped Skill: [[Security-Privacy-and-Access-Control]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Mapping Rationale: Security/compliance is explicit bonus experience.
+Notes: quoted or lightly normalized from official Bonus... section; mapping kept to Security-Privacy-and-Access-Control only.

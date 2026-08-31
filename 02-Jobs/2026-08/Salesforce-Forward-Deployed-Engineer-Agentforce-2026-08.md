@@ -8,51 +8,51 @@ location: Not stated on page
 region: US/Global
 source_url: https://careers.salesforce.com/en/jobs/jr346377/forward-deployed-engineer/
 source_kind: official-job-posting
-source_status: active
-source_access: redirected-official
+source_status: redirected
+source_access: partial
 sample_batch: enterprise-applied-ai-2026-08
 company_segment: enterprise-saas
 role_subtrack: field-deployment
 snapshot_date: 2026-08-31
-retrieved: 2026-08-31
+retrieved: 2026-09-01
 status: developing
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-10-15
 related: []
+evidence_audit_status: partial
 ---
 
 # Salesforce — Forward Deployed Engineer
 
 ## Source Scope
-官方职位 URL：[https://careers.salesforce.com/en/jobs/jr346377/forward-deployed-engineer/](https://careers.salesforce.com/en/jobs/jr346377/forward-deployed-engineer/)。2026-08-31 访问记录：`active` / `redirected-official`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
-本卡只保留短证据与学习映射，不复制完整 JD。
+官方职位 URL：[https://careers.salesforce.com/en/jobs/jr346377/forward-deployed-engineer/](https://careers.salesforce.com/en/jobs/jr346377/forward-deployed-engineer/)。审计日期：`2026-09-01`；状态：`redirected` / `source_access: partial` / `evidence_audit_status: partial`。页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
+每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。
 
 ## Role Summary
-把 Agentforce action、prompt、reasoning 与客户系统连接并生产化。
+本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
-- Responsibilities: connect Agentforce actions, prompts and tool calls
-- Responsibilities: integrate customer systems and data pipelines
-- Responsibilities: instrument production observability
+- Connect Agentforce actions, prompts, reasoning, and tool calls
+- Integrate customer systems and data pipelines
+- Instrument production observability
+- Execute actions with customer permissions
 
 ## Explicit Requirements
-- Requirements: customer-facing engineering and production delivery
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- Preferred: workflow automation and approval-aware delivery
+- 当前来源未确认 preferred 项。
 
 ## Skill Extraction
-证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Requirements: customer-facing engineering and production delivery | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | medium |
-| Responsibilities: connect Agentforce actions, prompts and tool calls | [[Tool-Calling-and-Action-Contracts]] | responsibility | explicit | — | implement | medium |
-| Responsibilities: integrate customer systems and data pipelines | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | — | implement | medium |
-| Responsibilities: instrument production observability | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | use | medium |
-| Preferred: workflow automation and approval-aware delivery | [[Workflow-Automation-and-Business-Process-Design]] | preferred | explicit | — | use | medium |
-| Inferred prerequisite: safe action execution with customer permissions | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred-prerequisite | inferred | — | use | medium |
+| Connect Agentforce actions, prompts, reasoning, and tool calls | [[Tool-Calling-and-Action-Contracts]] | responsibility | explicit | none | use | medium |
+| Integrate customer systems and data pipelines | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | none | use | medium |
+| Instrument production observability | [[Observability]] | responsibility | explicit | none | use | medium |
+| Execute actions with customer permissions | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -61,77 +61,57 @@ related: []
 - Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
-Raw Evidence: Requirements: customer-facing engineering and production delivery
-Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: implement
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 2
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: connect Agentforce actions, prompts and tool calls
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Connect Agentforce actions, prompts, reasoning, and tool calls
 Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: The archived summary explicitly describes action/tool-call integration; the official URL redirects.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Tool-Calling-and-Action-Contracts only.
 
-### Evidence 3
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: integrate customer systems and data pipelines
+### Evidence 2
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Integrate customer systems and data pipelines
 Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
-Depth Signal: implement
+Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Customer-system and data-pipeline integration is connector responsibility.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Enterprise-Integrations-and-Connectors only.
 
-### Evidence 4
-Source Section: Responsibilities
-Raw Evidence: Responsibilities: instrument production observability
-Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+### Evidence 3
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Instrument production observability
+Mapped Skill: [[Observability]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Observability is operational, not an agent-evaluation claim.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Observability only.
 
-### Evidence 5
-Source Section: Preferred
-Raw Evidence: Preferred: workflow automation and approval-aware delivery
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
-Evidence Type: preferred
+### Evidence 4
+Source Section: Redirected official role summary
+Source Fidelity: close-paraphrase
+Raw Evidence: Execute actions with customer permissions
+Mapped Skill: [[Security-Privacy-and-Access-Control]]
+Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
-
-### Evidence 6
-Source Section: Learning prerequisite inference
-Raw Evidence: Inferred prerequisite: safe action execution with customer permissions
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
-Evidence Type: inferred-prerequisite
-Requirement Strength: inferred
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
-Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+Mapping Rationale: Permissions and safe action execution are access-control concerns.
+Notes: paraphrased from official Redirected official role summary section; mapping kept to Security-Privacy-and-Access-Control only.

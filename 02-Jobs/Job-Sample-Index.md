@@ -4,7 +4,7 @@ domain: jobs
 page_kind: job-sample-index
 status: reference
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-09-24
 related:
   - "[[Job-Inbox]]"
@@ -15,7 +15,7 @@ related:
 # Job Sample Index
 
 > 这里列出 2026-08 批的官方职位样本。每条记录只证明公司、地点、职级、时间和页面明确的要求，不代表市场普查。
-> 每张卡片的 `Evidence Trace` 说明来源段落、四类 Evidence Type、Requirement Strength、Alternative Group 和置信度。
+> 每张卡片的 `Evidence Trace` 说明来源段落、Source Fidelity、四类 Evidence Type、Requirement Strength、Alternative Group 和置信度。
 
 ## Batch B — enterprise-applied-ai-2026-08
 
@@ -68,4 +68,4 @@ related:
 - 一个具体 `source_url` 只计一次；同一岗位的别名或列表不重复计数；
 - `required`、`preferred`、`responsibility` 分开记录；同一 Job 中同一 Skill 只计一次；
 - 同一 Sample 可为相邻 Role 提供证据，Role 的 sample_count 是视图计数，不是唯一职位总和；
-- 本批偏向中高级、前沿实验室、平台和硬件生态；entry-level、更多区域和中小企业样本待下一批。
+- Batch A 偏向 frontier/model/infra；Batch B 偏向中高级 enterprise SaaS、Applied AI、Agentic Delivery 与 FDE。两批都不是市场普查；entry-level、更多区域和中小企业样本待下一批。

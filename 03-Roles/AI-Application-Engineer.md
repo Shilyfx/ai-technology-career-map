@@ -5,7 +5,7 @@ sample_count: 14
 status: developing
 snapshot_date: 2026-08-31
 created: 2026-08-24
-updated: 2026-08-31
+updated: 2026-09-01
 review_after: 2026-11-30
 aliases:
   - LLM Application Engineer
@@ -41,16 +41,16 @@ aliases:
 
 | Skill | Required N | Preferred N | Responsibility N | Inferred N | Sample N | Priority | Target Depth | Confidence |
 | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
-| [[TypeScript-JavaScript]] | 7 | 0 | 0 | 0 | 7 | Core | use→implement | high/medium |
-| [[Python]] | 3 | 0 | 0 | 2 | 5 | Core | use→implement | low/medium |
-| [[LLM-API-and-Structured-Outputs]] | 2 | 1 | 3 | 3 | 9 | Core | use→implement | low/medium |
-| [[Tool-Calling-and-Action-Contracts]] | 0 | 1 | 2 | 1 | 4 | Core | use→implement | low/medium |
-| [[Agent-Orchestration-and-State]] | 0 | 0 | 7 | 1 | 7 | Common | explain/use | low/medium |
-| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 6 | 1 | 7 | Common | explain/use | low/medium |
-| [[MCP-and-Agent-Interoperability]] | 0 | 0 | 3 | 0 | 3 | Specialized | use→implement | high/medium |
-| [[Enterprise-Integrations-and-Connectors]] | 4 | 0 | 3 | 5 | 11 | Core | use→implement | low/medium |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 2 | 3 | 0 | 5 | Common | explain/use | low/medium |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | 1 | 1 | 2 | 2 | 6 | Common | explain/use | low/medium |
+| [[TypeScript-JavaScript]] | 4 | 0 | 0 | 0 | 4 | Core | use→implement | high/medium |
+| [[Python]] | 4 | 0 | 0 | 2 | 6 | Core | use→implement | low/medium |
+| [[LLM-API-and-Structured-Outputs]] | 1 | 0 | 2 | 0 | 3 | Core | use→implement | high/medium |
+| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
+| [[Agent-Orchestration-and-State]] | 1 | 1 | 7 | 0 | 7 | Common | explain/use | high/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 1 | 1 | 3 | 1 | 5 | Common | explain/use | low/medium |
+| [[MCP-and-Agent-Interoperability]] | 0 | 1 | 3 | 0 | 3 | Specialized | use→implement | high/medium |
+| [[Enterprise-Integrations-and-Connectors]] | 0 | 2 | 2 | 0 | 3 | Common | explain/use | high/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 2 | 1 | 0 | 3 | Common | explain/use | high/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 1 | 2 | 1 | 3 | Common | explain/use | low/medium |
 
 Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required.
 ## Non-skill Gates
@@ -71,7 +71,7 @@ Evidence strength is based on Batch B row classifications; `responsibility` and 
 
 ## Source Limitations
 
-样本偏中高级、企业 SaaS、US/APAC 和动态 ATS；不代表 junior、中国本地或 SMB 市场。受限页面保留在 Job Sample 的 `source_access`，不扩写不可见正文。
+样本偏中高级、企业 SaaS、US/APAC 和动态 ATS；不代表 junior、中国本地或 SMB 市场。Source Fidelity 审计将完整、动态、重定向和历史来源分开，受限页面保留在 Job Sample 的 `source_access`，不扩写不可见正文。
 
 ## Refresh
 
@@ -79,4 +79,4 @@ Applied AI Job Samples 每 30–60 天复查；稳定的软件工程基础按 18
 
 ## Learning prerequisites
 
-推荐顺序：[[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]] → [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]] → [[Tool-Calling-and-Action-Contracts]] → [[Workflow-Automation-and-Business-Process-Design]] / [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]] → [[Enterprise-Integrations-and-Connectors]]。[[Data-Structures-and-Algorithms]] 是推荐基础而非硬门槛；[[RAG]]、[[MCP-and-Agent-Interoperability]] 和 [[Human-in-the-Loop-and-Agent-Guardrails]] 按项目进入。
+推荐顺序：[[Python]] **或** [[TypeScript-JavaScript]] → [[HTTP-API]] → [[Prompt-and-Context-Engineering]] + [[LLM-API-and-Structured-Outputs]]。[[Workflow-Automation-and-Business-Process-Design]] 可并行进入；明确需要模型动作时再学 [[Tool-Calling-and-Action-Contracts]] → [[Agent-Orchestration-and-State]] → [[Agent-Evals-and-Trace-Debugging]]。[[Enterprise-Integrations-and-Connectors]] 是生产分支，不是所有 Tool Calling 的硬前置；[[RAG]]、[[MCP-and-Agent-Interoperability]] 和 [[Human-in-the-Loop-and-Agent-Guardrails]] 按项目进入。[[Data-Structures-and-Algorithms]] 与 [[Software-Design-and-Architecture]] 是推荐基础而非硬门槛。

@@ -6,6 +6,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+UPDATED = "2026-09-01"
 sys.path.insert(0, str(ROOT / "scripts"))
 from rebuild_applied_evidence import DATA  # noqa: E402
 
@@ -16,7 +17,7 @@ ROLE_FILES = {
             "Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md", "Notion-Software-Engineer-AI-Workflows-2026-08.md", "Glean-Software-Engineer-Agents-2026-08.md", "Salesforce-Product-Manager-Agent-Fabric-2026-08.md", "ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md", "ServiceNow-Senior-Staff-Agent-Development-2026-08.md", "Ramp-Applied-AI-Engineer-2026-08.md", "Ramp-Software-Engineer-Enterprise-Product-2026-08.md", "Ramp-Software-Engineer-Frontend-Revenue-2026-08.md", "Zapier-Engineer-Applied-AI-2026-08.md", "Front-AI-Engineer-GTM-Operations-2026-08.md", "Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md", "OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08.md", "OpenAI-Software-Engineer-API-SDK-Seattle-2026-08.md"
         ],
         "basis": "14 curated samples (11 Batch B application/agent-product cards + 3 Batch A API/application cards); employers span Atlassian, Notion, Glean, Salesforce, ServiceNow/Moveworks, Ramp, Zapier, Front and OpenAI. Batch B locations cover Global/US/APAC; seniority is mostly senior/staff, with product-application and agent-platform subtracks.",
-        "priority": {"TypeScript-JavaScript":"Core", "Python":"Core", "LLM-API-and-Structured-Outputs":"Core", "Tool-Calling-and-Action-Contracts":"Core", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Core", "Agent-Evals-and-Trace-Debugging":"Common", "Human-in-the-Loop-and-Agent-Guardrails":"Common"},
+        "priority": {"TypeScript-JavaScript":"Core", "Python":"Core", "LLM-API-and-Structured-Outputs":"Core", "Tool-Calling-and-Action-Contracts":"Common", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Common", "Agent-Evals-and-Trace-Debugging":"Common", "Human-in-the-Loop-and-Agent-Guardrails":"Common"},
     },
     "03-Roles/AI-Solutions-Architect-and-FDE.md": {
         "count": 12,
@@ -30,7 +31,7 @@ ROLE_FILES = {
         "count": 3,
         "samples": ["Salesforce-Product-Manager-Agent-Fabric-2026-08.md", "OpenAI-Product-Manager-API-Agents-San-Francisco-2026-08.md", "OpenAI-Product-Manager-Safety-Measurement-San-Francisco-2026-08.md"],
         "basis": "3 directional senior PM samples: Salesforce Agent Fabric (Batch B) plus OpenAI API Agents and Safety Measurement (Batch A). Employers/regions are Salesforce US/global and OpenAI San Francisco; subtracks are agent platform, API platform and safety measurement. This is not a census.",
-        "priority": {"TypeScript-JavaScript":"Prerequisite", "Python":"Prerequisite", "LLM-API-and-Structured-Outputs":"Common", "Tool-Calling-and-Action-Contracts":"Common", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Common", "Agent-Evals-and-Trace-Debugging":"Core", "Human-in-the-Loop-and-Agent-Guardrails":"Core"},
+        "priority": {"TypeScript-JavaScript":"Prerequisite", "Python":"Prerequisite", "LLM-API-and-Structured-Outputs":"Common", "Tool-Calling-and-Action-Contracts":"Common", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Common", "Agent-Evals-and-Trace-Debugging":"Common", "Human-in-the-Loop-and-Agent-Guardrails":"Common"},
     },
     "03-Roles/AI-Infrastructure-and-Inference-Engineer.md": {
         "count": 10,
@@ -73,6 +74,7 @@ def main():
     for rel, spec in ROLE_FILES.items():
         path = ROOT / rel
         text = path.read_text(encoding="utf-8")
+        text = re.sub(r"(?m)^updated:\s*\d{4}-\d{2}-\d{2}", f"updated: {UPDATED}", text, count=1)
         text = re.sub(r"(?m)^sample_count:\s*\d+", f"sample_count: {spec['count']}", text, count=1)
         text = re.sub(r"(?ms)^## Sample Basis\n.*?(?=^## (?:Main Deliverables|Evidence Basis|作品证据|Responsibility Clusters))", f"## Sample Basis\n\n{spec['basis']}\n\n", text, count=1)
         start = text.find("## Skill Profile")

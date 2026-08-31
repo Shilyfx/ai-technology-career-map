@@ -1,314 +1,257 @@
 #!/usr/bin/env python3
-"""Rebuild the Batch B Applied AI job cards from section-bound evidence.
-
-The manifest is intentionally small: it records short, source-section-bound
-signals rather than copying job descriptions.  It also makes the evidence
-matrix reproducible from the cards themselves.
-"""
+"""Rebuild Batch B cards from source-bound, one-fact evidence rows."""
 from __future__ import annotations
-
 from collections import Counter, defaultdict
 from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
 JOB_DIR = ROOT / "02-Jobs" / "2026-08"
-UPDATED = "2026-08-31"
-ALLOWED = {"required", "preferred", "responsibility", "inferred-prerequisite"}
+UPDATED = "2026-09-01"
 
+# file | type | skill | source section | raw evidence | confidence | alt | fidelity | mapping rationale
+ROWS = r'''
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Python|Requirements|Proficiency in Python, TypeScript, or Go|high|language-1|direct|Python is one member of the explicit language alternative.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|TypeScript-JavaScript|Requirements|Proficiency in Python, TypeScript, or Go|high|language-1|direct|TypeScript is one member of the explicit language alternative.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Model-Serving|Requirements|Hands-on experience with AI/ML platform engineering and model serving|high|||close-paraphrase|Platform engineering and model serving are explicit serving-system signals.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Agent-Orchestration-and-State|Requirements|Hands-on experience with agent frameworks such as LangChain or Semantic Kernel|high|||close-paraphrase|Agent frameworks are an explicit implementation signal for orchestration and state.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Distributed-Systems|Requirements|Experience with high-scale distributed systems|high|||direct|The requirement explicitly names distributed systems.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Databases-and-Data-Modeling|Requirements|Experience with vector databases|high|||direct|Vector databases are database/data-model work; the source does not claim a RAG workflow.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|required|Observability|Requirements|Experience with observability pipelines|high|||direct|Observability pipelines are an explicit operational requirement.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|responsibility|Agent-Orchestration-and-State|Key Responsibilities|Deliver foundational components for multi-agent systems|high|||direct|The responsibility is directly about multi-agent runtime components.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|responsibility|MCP-and-Agent-Interoperability|Key Responsibilities|Lead adoption of protocols like MCP and A2A|high|||direct|MCP/A2A are interoperability protocols, not automatically tool-calling contracts.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|responsibility|Observability|Key Responsibilities|Maintain high-reliability services while optimizing cost and latency|high|||close-paraphrase|Reliability, cost, and latency are operational measurement concerns, not agent evaluation by themselves.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|preferred|MCP-and-Agent-Interoperability|Preferred Skills|Familiarity with MCP architecture and the A2A specification|high|||direct|The preferred item explicitly names MCP/A2A interoperability.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|preferred|Enterprise-Integrations-and-Connectors|Preferred Skills|Experience with enterprise integration patterns and API governance|high|||direct|Enterprise integration patterns and API governance match the connector skill.
+Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md|preferred|Security-Privacy-and-Access-Control|Preferred Skills|Experience with secure model-to-model communication|high|||close-paraphrase|Secure model communication is an explicit security signal.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|responsibility|LLM-API-and-Structured-Outputs|What You'll Do|Lead design, development, and deployment of AI/ML-powered solutions using Rovo|high|||close-paraphrase|Applied AI/ML delivery is explicit, but structured output is not asserted.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|required|Python|On the first day, we'll expect you to have|Proficiency in Python, JavaScript, or similar languages|high|language-1|direct|Python is one explicit language alternative.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|required|TypeScript-JavaScript|On the first day, we'll expect you to have|Proficiency in Python, JavaScript, or similar languages|high|language-1|direct|JavaScript is one explicit language alternative.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|required|HTTP-API|On the first day, we'll expect you to have|Application integrations with APIs and microservices|high|||close-paraphrase|APIs and microservices are an explicit service-integration signal.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|required|Enterprise-Integrations-and-Connectors|On the first day, we'll expect you to have|Application integrations with enterprise-scale systems|high|||direct|Enterprise-scale integration is explicitly required.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|What You'll Do|Champion AI-augmented workflow automation in customer environments|high|||direct|The source explicitly assigns workflow-automation adoption.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|What You'll Do|Ensure continuous evaluation, monitoring, and improvement|high|||direct|Continuous evaluation is an explicit agent-quality signal.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|responsibility|Observability|What You'll Do|Ensure continuous evaluation, monitoring, and improvement|high|||direct|Monitoring is observability and is kept separate from evaluation.
+Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md|responsibility|Security-Privacy-and-Access-Control|What You'll Do|Navigate AI risk assessment, data privacy, and GDPR requirements|high|||direct|Risk, privacy, and compliance are explicit security responsibilities.
+Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md|inferred-prerequisite|Workflow-Automation-and-Business-Process-Design|Historical summary (page shell only)|Historical lead: AI-native workflow and Rovo architecture|low||inferred|The page is a historical shell; this is a learning lead, not a current requirement.
+Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md|inferred-prerequisite|Human-in-the-Loop-and-Agent-Guardrails|Historical summary (page shell only)|Historical lead: approval and policy controls|low||inferred|Approval and policy controls are a study lead, but the source no longer exposes a role body.
+Notion-Software-Engineer-AI-Workflows-2026-08.md|required|LLM-API-and-Structured-Outputs|Skills You'll Need to Bring|Experience building AI products using LLMs, embeddings, and other ML technologies|medium|||direct|LLMs are explicit; structured outputs are not asserted.
+Notion-Software-Engineer-AI-Workflows-2026-08.md|required|Databases-and-Data-Modeling|Skills You'll Need to Bring|Familiarity with relational databases such as Postgres or MySQL|medium|||direct|Relational database experience is explicitly required.
+Notion-Software-Engineer-AI-Workflows-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Custom Agents automate recurring workflows such as filing tasks, writing reports, and answering knowledge-base questions|medium|||close-paraphrase|The role context explicitly describes custom agents executing recurring workflows.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|required|Python|Skills You'll Need to Bring|Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python|medium|language-1|direct|Python is one member of the explicit at-least-one language set.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|required|TypeScript-JavaScript|Skills You'll Need to Bring|Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python|medium|language-1|direct|JavaScript is represented by the existing TypeScript-JavaScript skill.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|required|HTTP-API|Skills You'll Need to Bring|Hands-on experience with APIs and data integration|medium|||direct|The source explicitly requires APIs.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|required|Enterprise-Integrations-and-Connectors|Skills You'll Need to Bring|Hands-on experience with APIs and data integration|medium|||direct|The source explicitly requires data integration.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|required|Software-Design-and-Architecture|Skills You'll Need to Bring|Lead technical discovery, assess feasibility, identify risks, and translate ambiguity into an executable plan|medium|||close-paraphrase|Discovery, feasibility, risk, and executable planning are architecture/design activities.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|responsibility|Agent-Orchestration-and-State|About The Role|Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs|medium|||close-paraphrase|Custom agents and workflows are explicit delivery responsibility.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|responsibility|MCP-and-Agent-Interoperability|About The Role|Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs|medium|||direct|MCP is explicitly named as the interoperability mechanism.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|About The Role|Design and deploy production-grade custom agents and AI workflows with MCP and Agent APIs|medium|||direct|AI workflows are explicitly part of delivery scope.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|preferred|MCP-and-Agent-Interoperability|Nice to Haves|AI-powered workflows including MCPs|medium|||direct|MCP is explicitly preferred, not inferred.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|preferred|Prompt-and-Context-Engineering|Nice to Haves|AI-powered workflows including prompt engineering|medium|||direct|Prompt engineering is explicitly preferred.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|preferred|RAG|Nice to Haves|AI-powered workflows including retrieval/RAG systems|medium|||direct|Retrieval/RAG is explicitly preferred, not an inferred prerequisite.
+Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md|preferred|Workflow-Automation-and-Business-Process-Design|Nice to Haves|AI-powered workflows including workflow orchestration|medium|||direct|Workflow orchestration is explicitly preferred.
+Notion-Forward-Deployed-Architect-Japan-2026-08.md|required|Workflow-Automation-and-Business-Process-Design|Skills You'll Need to Bring|Hands-on AI builder mindset: use AI tools to design, prototype, automate, or improve real business workflows|medium|||direct|The skills section explicitly requires AI workflow building experience.
+Notion-Forward-Deployed-Architect-Japan-2026-08.md|preferred|Agent-Orchestration-and-State|Nice to Haves|Experience designing or deploying Agents, automations or AI-powered workflows with Customers|medium|||direct|Agents and automations are explicitly preferred experience.
+Notion-Forward-Deployed-Architect-Japan-2026-08.md|preferred|HTTP-API|Nice to Haves|Experience with APIs|medium|||direct|APIs are explicitly listed as a nice-to-have.
+Notion-Forward-Deployed-Architect-Japan-2026-08.md|preferred|MCP-and-Agent-Interoperability|Nice to Haves|Experience with MCPs, Workers, coding agents or developer platform workflows|medium|||direct|MCP is explicitly preferred and is an interoperability protocol.
+Notion-Forward-Deployed-Architect-Japan-2026-08.md|preferred|Agent-Orchestration-and-State|Nice to Haves|Experience with MCPs, Workers, coding agents or developer platform workflows|medium|||direct|Coding agents and platform workflows are preferred orchestration exposure.
+Glean-Software-Engineer-Agents-2026-08.md|required|Python|About you|Strong coding skills in Go, Python, Java, or TypeScript, with reliable, well-tested systems|high|language-1|direct|Python is one explicit language alternative.
+Glean-Software-Engineer-Agents-2026-08.md|required|TypeScript-JavaScript|About you|Strong coding skills in Go, Python, Java, or TypeScript, with reliable, well-tested systems|high|language-1|direct|TypeScript is one explicit language alternative.
+Glean-Software-Engineer-Agents-2026-08.md|required|Testing|About you|Reliable, well-tested systems|high|||close-paraphrase|The phrase explicitly requires well-tested systems.
+Glean-Software-Engineer-Agents-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Build, evaluate, self-improve, deploy, and operate powerful agents|high|||direct|Agent lifecycle operation is explicit role responsibility.
+Glean-Software-Engineer-Agents-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|You will|Design and ship workflows that help users evaluate agent quality and understand failure modes|high|||direct|Agent quality evaluation and failure modes are explicit eval signals.
+Glean-Software-Engineer-Agents-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|You will|Deploy and operate agents with the right guardrails, controls, and visibility|high|||direct|Guardrails and controls are explicit safety concerns.
+Glean-Software-Engineer-Agents-2026-08.md|responsibility|Observability|You will|Deploy and operate agents with the right guardrails, controls, and visibility|high|||direct|Visibility is observability and is separate from evals.
+Glean-Software-Engineer-Agents-2026-08.md|preferred|Workflow-Automation-and-Business-Process-Design|About you|Experience building AI, agentic, workflow, automation, or developer-product experiences|high|||direct|Workflow and automation experience is explicitly a strong plus.
+Glean-Founding-Forward-Deployed-Engineer-2026-08.md|inferred-prerequisite|Enterprise-Integrations-and-Connectors|Historical summary (redirected error)|Historical lead: customer discovery and 0-to-1 production AI delivery|low||inferred|The job URL redirects to a job-board error; the old lead is for study only.
+Glean-Founding-Forward-Deployed-Engineer-2026-08.md|inferred-prerequisite|Agent-Evals-and-Trace-Debugging|Historical summary (redirected error)|Historical lead: prompt, agent, and eval iteration|low||inferred|The old summary suggested eval iteration, but the official page is no longer available.
+Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md|responsibility|Tool-Calling-and-Action-Contracts|Redirected official role summary|Connect Agentforce actions, prompts, reasoning, and tool calls|medium|||close-paraphrase|The archived summary explicitly describes action/tool-call integration; the official URL redirects.
+Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|Redirected official role summary|Integrate customer systems and data pipelines|medium|||close-paraphrase|Customer-system and data-pipeline integration is connector responsibility.
+Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md|responsibility|Observability|Redirected official role summary|Instrument production observability|medium|||close-paraphrase|Observability is operational, not an agent-evaluation claim.
+Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md|responsibility|Security-Privacy-and-Access-Control|Redirected official role summary|Execute actions with customer permissions|medium|||close-paraphrase|Permissions and safe action execution are access-control concerns.
+Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Redirected official role summary|Build supply-chain process automation Blueprints|medium|||close-paraphrase|Blueprint process automation is workflow-design responsibility.
+Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|Redirected official role summary|Connect enterprise systems and data|medium|||close-paraphrase|Enterprise-system/data connection is integration responsibility.
+Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md|responsibility|Observability|Redirected official role summary|Use feedback loops to measure business value|medium|||close-paraphrase|Measurement feedback is kept as operational observability because no agent-quality evaluation is stated.
+Salesforce-Success-Architect-Agentforce-2026-08.md|responsibility|Agent-Orchestration-and-State|Redirected official role summary|Design Agentforce/Data Cloud orchestration|medium|||close-paraphrase|The archived role summary explicitly assigns orchestration design.
+Salesforce-Success-Architect-Agentforce-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Redirected official role summary|Model automations around adoption outcomes|medium|||close-paraphrase|Adoption automations are workflow-design work.
+Salesforce-Success-Architect-Agentforce-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|Redirected official role summary|Manage permissions and human approvals|medium|||close-paraphrase|Permissions and approvals directly map to guardrails/HITL.
+Salesforce-Product-Manager-Agent-Fabric-2026-08.md|responsibility|Agent-Orchestration-and-State|Redirected official role summary|Own Discover, Govern, Orchestrate, and Observe control-plane capabilities|medium|||close-paraphrase|Orchestrate is an explicit control-plane responsibility.
+Salesforce-Product-Manager-Agent-Fabric-2026-08.md|responsibility|Observability|Redirected official role summary|Own Discover, Govern, Orchestrate, and Observe control-plane capabilities|medium|||close-paraphrase|Observe is an explicit operational responsibility.
+Salesforce-Product-Manager-Agent-Fabric-2026-08.md|responsibility|MCP-and-Agent-Interoperability|Redirected official role summary|Manage agent, API, and MCP interoperability|medium|||close-paraphrase|MCP interoperability is mapped to MCP, not generic tool calling.
+Salesforce-Product-Manager-Agent-Fabric-2026-08.md|responsibility|Security-Privacy-and-Access-Control|Redirected official role summary|Policy governance for agent operations|medium|||close-paraphrase|Policy governance is a security/access-control responsibility.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Core Responsibilities & Impact|Own the AI Agent delivery lifecycle: Vision-Lock, Solution Design/Architecture, Building, Tuning, and launch|high| |direct|The source explicitly assigns end-to-end workflow/agent delivery.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Software-Design-and-Architecture|Core Responsibilities & Impact|Architect and design customer AI solutions|high|||close-paraphrase|Custom solution architecture is an explicit design responsibility.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|Core Responsibilities & Impact|Integrate the platform with customer enterprise systems securely and performantly|high|||direct|Enterprise-system integration is explicit.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Security-Privacy-and-Access-Control|Core Responsibilities & Impact|Integrate the platform with customer enterprise systems securely and performantly|high|||close-paraphrase|Secure integration is an explicit security concern.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|HTTP-API|About You|Strong grasp of API-based systems integration|high|||direct|The source explicitly calls out API-based integration.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Prompt-and-Context-Engineering|About You|LLM-based systems design including prompt engineering and context engineering|high|||direct|Prompt and context engineering are explicit system-design duties.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|Workflow-Automation-and-Business-Process-Design|Qualifications|Build full-stack workflows and automations using REST APIs, iPaaS, or scripting|high|implementation-1|direct|Full-stack workflows and automations are an explicit qualification.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|HTTP-API|Qualifications|Build full-stack workflows and automations using REST APIs, iPaaS, or scripting|high|implementation-1|direct|REST APIs are one explicit implementation route.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|Python|Qualifications|Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting|high|implementation-1|direct|Python is one explicit scripting route.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|preferred|Enterprise-Integrations-and-Connectors|Preferred Qualifications|Familiarity with enterprise platforms such as ServiceNow, Jira, Zendesk, Workday, or Okta|high|||direct|Enterprise platforms are explicitly preferred integration context.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|preferred|Linux|Preferred Qualifications|Familiarity with Linux and Windows environments and the command line|high|||direct|Linux command-line familiarity is explicitly preferred.
+ServiceNow-Senior-Staff-Agent-Development-2026-08.md|inferred-prerequisite|Python|Historical summary (unavailable page)|Historical lead: Python or Go backend development|low||inferred|The official URL returns 404; the old summary is retained only as a study lead.
+ServiceNow-Senior-Staff-Agent-Development-2026-08.md|inferred-prerequisite|Distributed-Systems|Historical summary (unavailable page)|Historical lead: distributed systems and async/concurrency|low||inferred|The page is unavailable, so this cannot support a current requirement.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|responsibility|Agent-Orchestration-and-State|What you get to do in this role|A state machine manages long-running agent sessions across planning, execution, and user interaction|high|||direct|The source explicitly describes an agent orchestration state machine.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|responsibility|Agent-Orchestration-and-State|What you get to do in this role|Distributed session management uses DynamoDB leases, heartbeats, crash recovery, and checkpointing|high|||direct|Checkpointed session state is explicit orchestration responsibility.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|responsibility|Distributed-Systems|What you get to do in this role|Event-driven message pipelines use SQS, Kafka, and gRPC/Socket.IO|high|||direct|Queues and streaming are explicit distributed-systems work.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|responsibility|Python|What you get to do in this role|Structured concurrency uses Python asyncio TaskGroups and cancellation|high|||direct|Python asyncio is explicit implementation responsibility; the source also names Go.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|responsibility|Observability|What you get to do in this role|OpenTelemetry instrumentation and distributed trace context propagation|high|||direct|OpenTelemetry and tracing are explicit observability signals.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|required|Distributed-Systems|Qualifications|Deep experience in distributed systems, concurrency, event-driven architectures, databases, observability, or gRPC/protobuf|high|areas-3-of-6|direct|Distributed systems is one of six areas from which the source requires at least three.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|required|Observability|Qualifications|Deep experience in distributed systems, concurrency, event-driven architectures, databases, observability, or gRPC/protobuf|high|areas-3-of-6|direct|Observability is one of six explicit qualification areas.
+ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|required|Python|Required|Strong in Python or Go|high|language-2|direct|Python is one member of the explicit language alternative.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|The Role|Build the judgement layer: rubrics, judges, calibration against human labels, and trajectory scoring|high|||close-paraphrase|Judges, rubrics, calibration, and trajectory scoring are explicit agent-evaluation signals.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|Eval orchestration at scale|Execute scenarios, collect traces/final state, validate, score, and tear down|high|||close-paraphrase|The source explicitly describes an end-to-end evaluation harness.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Eval orchestration at scale|Scheduling, retries, high-concurrency execution, run isolation, and versioned reports|high|||close-paraphrase|Harness scheduling/retry runtime is workflow orchestration.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Observability|Agent observability and tracing|OpenTelemetry-native observability and a span data model for agent trajectories|high|||direct|OpenTelemetry, spans, and trajectory traces are explicit observability work.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|The Role|Rubrics, judges, and calibration against human labels|high|||direct|Human-label calibration is explicit human-in-the-loop activity.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Testing|Stateful simulation|Contract-testing mocks against real API schemas in CI|high|||direct|Contract testing is explicitly named.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|required|Distributed-Systems|Qualifications|Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf|high|areas-3-of-6|direct|Distributed systems is one of six explicit qualification areas.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|required|Observability|Qualifications|Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf|high|areas-3-of-6|direct|Observability is one of six explicit qualification areas.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|required|Python|Required|Strong in Python or Go|high|language-1|direct|Python is one member of the explicit language alternative.
+Ramp-Applied-AI-Engineer-2026-08.md|required|Software-Design-and-Architecture|What You Need|Proficiency in full-stack development across web frameworks, backend systems, and cloud infrastructure|medium|||direct|The qualification asks for full-stack/system design breadth.
+Ramp-Applied-AI-Engineer-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Production use cases of LLMs including AI Agents|medium|||direct|AI-agent production work is explicit role scope.
+Ramp-Applied-AI-Engineer-2026-08.md|responsibility|RAG|About the Role|Retrieval-Augmented Generation|medium|||direct|RAG is explicitly named as a project area.
+Ramp-Applied-AI-Engineer-2026-08.md|responsibility|LLM-API-and-Structured-Outputs|About the Role|Structured Extraction|medium|||direct|Structured extraction is an explicit structured-output signal.
+Ramp-Applied-AI-Engineer-2026-08.md|required|Distributed-Systems|What You Need|Backend systems and infrastructure that support AI-driven products|medium|||close-paraphrase|Supporting AI products with backend/infrastructure systems is a runtime/scale requirement.
+Ramp-Software-Engineer-Enterprise-Product-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Build internal and external agents to solve customer blockers|medium|||direct|Building agents is explicit role responsibility.
+Ramp-Software-Engineer-Enterprise-Product-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|About the Role|Deliver solutions end to end for the largest and most complex companies|medium|||close-paraphrase|Customer-facing end-to-end delivery implies integration context, but remains a responsibility.
+Ramp-Software-Engineer-Enterprise-Product-2026-08.md|preferred|Agent-Orchestration-and-State|What You Need|Extensive experience building with and for agents|medium|||direct|Agent-building experience is explicitly preferred.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|required|TypeScript-JavaScript|What You Need|Deep frontend expertise in TypeScript and React|medium|||direct|TypeScript is explicitly required.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|responsibility|HTTP-API|What You’ll Do|Shape APIs, workflows, and data contracts behind product experiences|medium|||direct|API/data-contract work is explicit responsibility.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|What You’ll Do|Design human-in-the-loop workflows with approvals and execution status|medium|||direct|Human review and approvals are explicit HITL work.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|responsibility|Agent-Orchestration-and-State|What You Need|Interfaces for asynchronous systems with partial results, errors, retries, and user intervention|medium|||direct|Long-running async state and recovery are orchestration concerns.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|Nice to Haves|Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery|medium|||direct|Evaluation is explicitly preferred agent-quality experience.
+Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|preferred|Human-in-the-Loop-and-Agent-Guardrails|Nice to Haves|Human-in-the-loop AI systems including review, approvals, tool execution, evaluation, and recovery|medium|||direct|Review and approvals are explicitly preferred HITL experience.
+Zapier-Engineer-Applied-AI-2026-08.md|required|TypeScript-JavaScript|Requirements|Reusable TypeScript and/or Python tooling|medium|language-1|close-paraphrase|TypeScript is one explicit implementation-language alternative.
+Zapier-Engineer-Applied-AI-2026-08.md|required|Python|Requirements|Reusable TypeScript and/or Python tooling|medium|language-1|close-paraphrase|Python is one explicit implementation-language alternative.
+Zapier-Engineer-Applied-AI-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Responsibilities|Build internal workflow and LLM proxy services|medium|||close-paraphrase|Internal workflows are explicit delivery work.
+Zapier-Engineer-Applied-AI-2026-08.md|responsibility|LLM-API-and-Structured-Outputs|Responsibilities|Build internal workflow and LLM proxy services|medium|||close-paraphrase|LLM proxy services are API integration work; structured output is not asserted.
+Zapier-Engineer-Applied-AI-2026-08.md|responsibility|Observability|Responsibilities|Monitor latency, cost, and quality|medium|||direct|Latency, cost, and monitoring are observability signals, not automatically Agent Evals.
+Zapier-Engineer-Applied-AI-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|Preferred|Safety, reliability, and evaluation experience|medium|||direct|Evaluation is explicitly preferred, not inferred.
+Front-AI-Engineer-GTM-Operations-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Responsibilities|Automate GTM operations with Workato/Zapier|medium|||close-paraphrase|Automation is explicit role work.
+Front-AI-Engineer-GTM-Operations-2026-08.md|responsibility|HTTP-API|Responsibilities|Expose model workflows through APIs and MCP|medium|||close-paraphrase|APIs are explicit integration work.
+Front-AI-Engineer-GTM-Operations-2026-08.md|responsibility|MCP-and-Agent-Interoperability|Responsibilities|Expose model workflows through APIs and MCP|medium|||direct|MCP is an explicit interoperability signal.
+Front-AI-Engineer-GTM-Operations-2026-08.md|preferred|RAG|Preferred|Snowflake and RAG/structured data experience|medium|||direct|RAG is explicitly preferred.
+Front-AI-Engineer-GTM-Operations-2026-08.md|inferred-prerequisite|Python|Historical dynamic ATS signal|Python async services and structured data|medium||inferred|The dynamic page does not expose a stable requirements section; retain this as a study lead only.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Docker-Containers|You may be a good fit if...|Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux|high|||direct|Docker/containers are explicitly required fundamentals.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Linux|You may be a good fit if...|Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, container orchestration, and Linux|high|||direct|Linux is explicitly named as an infrastructure fundamental.
+Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|As a Founding Forward Deployed Engineer, you will...|Architect agent workflows with triggers, webhooks, cron schedules, and API calls|high|||direct|Triggers and multi-step workflows are explicit workflow-design responsibility.
+Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Security-Privacy-and-Access-Control|As a Founding Forward Deployed Engineer, you will...|Set up environments, secrets, MCP servers, and integrations|high|||direct|Secrets and environment boundaries are explicit security responsibilities.
+Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|MCP-and-Agent-Interoperability|As a Founding Forward Deployed Engineer, you will...|Set up environments, secrets, MCP servers, and integrations|high|||direct|MCP servers are explicit interoperability work.
+Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Observability|As a Founding Forward Deployed Engineer, you will...|Debug agent runs using session sharing and observability tools|high|||direct|Observability tools support operational debugging; no eval claim is added.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Prompt-and-Context-Engineering|You may be a good fit if...|Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems|high|||direct|Prompt engineering is explicit fit criteria, retained as preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Orchestration-and-State|You may be a good fit if...|Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems|high|||direct|Agent architectures are explicit fit criteria for orchestration.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Tool-Calling-and-Action-Contracts|You may be a good fit if...|Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems|high|||direct|Tool use is explicit fit criteria for action contracts.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|You may be a good fit if...|Understand prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems|high|||direct|Evaluating non-deterministic systems is explicit eval experience.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|HTTP-API|Bonus...|Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation|high|||direct|APIs and webhooks are explicit integration experience.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Security-Privacy-and-Access-Control|Bonus...|Familiarity with enterprise security and compliance requirements|high|||direct|Security/compliance is explicit bonus experience.
+'''
 
-def E(raw: str, skill: str, kind: str, depth: str = "implement", confidence: str = "high", alt: str = "", section: str = "Responsibilities", note: str = ""):
-    assert kind in ALLOWED
-    return {"raw": raw, "skill": skill, "kind": kind, "strength": "explicit" if kind != "inferred-prerequisite" else "inferred", "alt": alt, "depth": depth, "confidence": confidence, "section": section, "note": note}
-
-
-J = "[["
-R = "]]"
-
-# Evidence is audited per job.  A responsibility is never promoted to a
-# candidate requirement merely because it is technically interesting.
-DATA = {
-"Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md": [
- E("Requirements: Python, TypeScript, or Go", "Python", "required", alt="language-1", section="Requirements", note="one-of language alternative; do not count all three"),
- E("Requirements: Python, TypeScript, or Go", "TypeScript-JavaScript", "required", alt="language-1", section="Requirements", note="one-of language alternative; do not count all three"),
- E("Responsibilities: foundational components for multi-agent systems", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Responsibilities: adopt MCP/A2A and connect enterprise agents", "MCP-and-Agent-Interoperability", "responsibility", section="Responsibilities"),
- E("Responsibilities: reliability, cost and latency for a 4-9s service", "Enterprise-Integrations-and-Connectors", "responsibility", section="Responsibilities"),
- E("Preferred: observability, vector databases and secure model communication", "Agent-Evals-and-Trace-Debugging", "preferred", depth="use", section="Preferred", note="preferred signal, not a hard gate"),
- E("Preferred: MCP architecture and A2A protocol familiarity", "Tool-Calling-and-Action-Contracts", "preferred", depth="use", section="Preferred", note="tool contracts are a related foundation"),
-],
-"Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md": [
- E("Requirements: 15+ years and production AI/ML delivery", "LLM-API-and-Structured-Outputs", "required", section="Requirements"),
- E("Requirements: Python, JavaScript, APIs and microservices", "Python", "required", alt="language-1", section="Requirements", note="language-1 is an alternative; choose one primary language"),
- E("Requirements: Python, JavaScript, APIs and microservices", "TypeScript-JavaScript", "required", alt="language-1", section="Requirements", note="language-1 is an alternative; JavaScript is the one-of signal"),
- E("Requirements: Python, JavaScript, APIs and microservices", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Responsibilities: design and deploy AI/ML solutions with Rovo", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: continuous evaluation and monitoring", "Agent-Evals-and-Trace-Debugging", "responsibility", depth="use", section="Responsibilities"),
- E("Requirements: AI risk, privacy and GDPR compliance", "Human-in-the-Loop-and-Agent-Guardrails", "required", depth="use", section="Requirements"),
-],
-"Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md": [
- E("Historical pre-audit: AI-native workflow and Rovo architecture", "Workflow-Automation-and-Business-Process-Design", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (page shell only)", note="URL is a career shell; historical lead only"),
- E("Historical pre-audit: governance and identity integration", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (page shell only)", note="not a current requirement"),
- E("Historical pre-audit: approval and policy controls", "Human-in-the-Loop-and-Agent-Guardrails", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (page shell only)", note="not a current requirement"),
-],
-"Notion-Software-Engineer-AI-Workflows-2026-08.md": [
- E("Requirements: strong software engineering in TypeScript/JavaScript", "TypeScript-JavaScript", "required", section="Requirements"),
- E("Requirements: backend services, APIs and relational data", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Requirements: production LLM applications and embeddings", "LLM-API-and-Structured-Outputs", "required", section="Requirements"),
- E("Responsibilities: custom agents and recurring or asynchronous workflows", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Responsibilities: schedule and resume long-running AI workflows", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Inferred prerequisite: validate tool inputs before mutating relational data", "Tool-Calling-and-Action-Contracts", "inferred-prerequisite", depth="use", section="Learning prerequisite inference", note="derived from explicit data mutation duty"),
-],
-"Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md": [
- E("Requirements: language/API/integration experience and customer discovery", "TypeScript-JavaScript", "required", section="Requirements"),
- E("Requirements: language/API/integration experience and customer discovery", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Requirements: debug production integrations with customers", "Agent-Evals-and-Trace-Debugging", "required", depth="use", section="Requirements"),
- E("Responsibilities: ship production agents and Agent APIs", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Responsibilities: configure automation and data pipelines", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: expose tools through MCP with permissions", "MCP-and-Agent-Interoperability", "responsibility", depth="use", section="Responsibilities"),
- E("Preferred: MCP or comparable agent interoperability", "MCP-and-Agent-Interoperability", "preferred", depth="use", section="Preferred", note="preferred/role exposure; not a universal gate"),
- E("Inferred prerequisite: retrieval and grounding for enterprise data", "RAG", "inferred-prerequisite", depth="explain", section="Learning prerequisite inference"),
-],
-"Notion-Forward-Deployed-Architect-Japan-2026-08.md": [
- E("Requirements: architecture, discovery and clear customer communication", "Enterprise-Integrations-and-Connectors", "required", depth="use", section="Requirements"),
- E("Requirements: implement APIs and integrations for business teams", "LLM-API-and-Structured-Outputs", "required", section="Requirements"),
- E("Responsibilities: design custom agents, automations and AI-native workflows", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: guide adoption through Developer Platform and MCP", "MCP-and-Agent-Interoperability", "responsibility", depth="use", section="Responsibilities"),
- E("Responsibilities: establish governance and outcome measurement", "Human-in-the-Loop-and-Agent-Guardrails", "responsibility", depth="use", section="Responsibilities"),
- E("Preferred: agent orchestration and state-modeling experience", "Agent-Orchestration-and-State", "preferred", depth="use", section="Preferred"),
-],
-"Glean-Software-Engineer-Agents-2026-08.md": [
- E("Requirements: production frontend/backend software engineering", "TypeScript-JavaScript", "required", section="Requirements"),
- E("Requirements: build and ship reliable software", "Enterprise-Integrations-and-Connectors", "required", depth="use", section="Requirements"),
- E("Responsibilities: build, evaluate, improve, deploy and operate agents", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Responsibilities: use eval feedback to improve agent quality", "Agent-Evals-and-Trace-Debugging", "responsibility", section="Responsibilities"),
- E("Responsibilities: provide guardrails, visibility and trust", "Human-in-the-Loop-and-Agent-Guardrails", "responsibility", section="Responsibilities"),
- E("Preferred: LLM prompting and structured output experience", "LLM-API-and-Structured-Outputs", "preferred", depth="use", section="Preferred"),
-],
-"Glean-Founding-Forward-Deployed-Engineer-2026-08.md": [
- E("Historical pre-audit: customer discovery and 0-to-1 production AI", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (redirected error)", note="URL now redirects to a job-board error"),
- E("Historical pre-audit: full-stack delivery for enterprise outcomes", "TypeScript-JavaScript", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (redirected error)"),
- E("Historical pre-audit: prompt, agent and eval iteration", "Agent-Evals-and-Trace-Debugging", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (redirected error)"),
-],
-"Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md": [
- E("Requirements: customer-facing engineering and production delivery", "Enterprise-Integrations-and-Connectors", "required", confidence="medium", section="Requirements"),
- E("Responsibilities: connect Agentforce actions, prompts and tool calls", "Tool-Calling-and-Action-Contracts", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: integrate customer systems and data pipelines", "Enterprise-Integrations-and-Connectors", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: instrument production observability", "Agent-Evals-and-Trace-Debugging", "responsibility", depth="use", confidence="medium", section="Responsibilities"),
- E("Preferred: workflow automation and approval-aware delivery", "Workflow-Automation-and-Business-Process-Design", "preferred", depth="use", confidence="medium", section="Preferred"),
- E("Inferred prerequisite: safe action execution with customer permissions", "Human-in-the-Loop-and-Agent-Guardrails", "inferred-prerequisite", depth="use", confidence="medium", section="Learning prerequisite inference"),
-],
-"Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md": [
- E("Requirements: supply-chain domain discovery and customer delivery", "Enterprise-Integrations-and-Connectors", "required", confidence="medium", section="Requirements"),
- E("Responsibilities: build supply-chain process automation Blueprints", "Workflow-Automation-and-Business-Process-Design", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: connect enterprise systems and data", "Enterprise-Integrations-and-Connectors", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: use feedback loops to measure business value", "Agent-Evals-and-Trace-Debugging", "responsibility", depth="use", confidence="medium", section="Responsibilities"),
- E("Preferred: action contracts for bounded automation", "Tool-Calling-and-Action-Contracts", "preferred", depth="use", confidence="medium", section="Preferred"),
- E("Inferred prerequisite: approvals and rollback for process changes", "Human-in-the-Loop-and-Agent-Guardrails", "inferred-prerequisite", depth="use", confidence="medium", section="Learning prerequisite inference"),
-],
-"Salesforce-Success-Architect-Agentforce-2026-08.md": [
- E("Requirements: enterprise architecture and customer success delivery", "Enterprise-Integrations-and-Connectors", "required", confidence="medium", section="Requirements"),
- E("Responsibilities: design Agentforce/Data Cloud orchestration", "Agent-Orchestration-and-State", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: model automations around adoption outcomes", "Workflow-Automation-and-Business-Process-Design", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: manage permissions and human approvals", "Human-in-the-Loop-and-Agent-Guardrails", "responsibility", depth="use", confidence="medium", section="Responsibilities"),
- E("Preferred: production eval and feedback loops", "Agent-Evals-and-Trace-Debugging", "preferred", depth="use", confidence="medium", section="Preferred"),
-],
-"Salesforce-Product-Manager-Agent-Fabric-2026-08.md": [
- E("Requirements: product/platform strategy and policy governance", "Human-in-the-Loop-and-Agent-Guardrails", "required", depth="use", confidence="medium", section="Requirements"),
- E("Responsibilities: own Discover, Govern, Orchestrate and Observe", "Agent-Orchestration-and-State", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: manage agent/API/MCP interoperability", "MCP-and-Agent-Interoperability", "responsibility", depth="use", confidence="medium", section="Responsibilities"),
- E("Responsibilities: define control-plane integrations and APIs", "Enterprise-Integrations-and-Connectors", "responsibility", confidence="medium", section="Responsibilities"),
- E("Preferred: evaluation metrics and trace-based quality reviews", "Agent-Evals-and-Trace-Debugging", "preferred", depth="use", confidence="medium", section="Preferred"),
- E("Inferred prerequisite: structured model outputs for policy decisions", "LLM-API-and-Structured-Outputs", "inferred-prerequisite", depth="use", confidence="medium", section="Learning prerequisite inference"),
-],
-"ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md": [
- E("Historical/limited signal: backend or infrastructure engineering context", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="recognize", confidence="low", section="Historical summary (403)"),
- E("Responsibilities: take process agents from solution to launch", "Workflow-Automation-and-Business-Process-Design", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: configure tools and tune agent behavior", "Tool-Calling-and-Action-Contracts", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: handle enterprise LLM/API integration", "LLM-API-and-Structured-Outputs", "responsibility", confidence="low", section="Responsibilities"),
- E("Inferred prerequisite: production backend and customer integration skills", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="use", confidence="low", section="Learning prerequisite inference"),
-],
-"ServiceNow-Senior-Staff-Agent-Development-2026-08.md": [
- E("Historical/limited signal: Python or Go backend development", "Python", "inferred-prerequisite", depth="use", confidence="low", section="Historical summary (403)"),
- E("Historical/limited signal: distributed systems and async/concurrency", "Agent-Orchestration-and-State", "inferred-prerequisite", depth="use", confidence="low", section="Historical summary (403)"),
- E("Responsibilities: multi-agent planning, tool calling, memory and recovery", "Agent-Orchestration-and-State", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: produce structured outputs in production agents", "LLM-API-and-Structured-Outputs", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: evaluate agent trajectories and failures", "Agent-Evals-and-Trace-Debugging", "responsibility", confidence="low", section="Responsibilities"),
- E("Inferred prerequisite: Redis/DynamoDB/gRPC-style service integration", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="use", confidence="low", section="Learning prerequisite inference"),
-],
-"ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md": [
- E("Historical/limited signal: state-machine and distributed backend design", "Agent-Orchestration-and-State", "inferred-prerequisite", depth="use", confidence="low", section="Historical summary (403)"),
- E("Historical/limited signal: Python/Go and async event systems", "Python", "inferred-prerequisite", depth="use", confidence="low", section="Historical summary (403)"),
- E("Responsibilities: long sessions, checkpoints, resume and cancellation", "Agent-Orchestration-and-State", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: invoke tools and wait for human input", "Tool-Calling-and-Action-Contracts", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: event-driven workflows and partial recovery", "Workflow-Automation-and-Business-Process-Design", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: observe orchestration traces", "Agent-Evals-and-Trace-Debugging", "responsibility", confidence="low", section="Responsibilities"),
- E("Inferred prerequisite: Redis/DynamoDB/gRPC integration", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="use", confidence="low", section="Learning prerequisite inference"),
-],
-"ServiceNow-Staff-Agent-Eval-Platform-2026-08.md": [
- E("Historical/limited signal: software, ML/evaluation or infrastructure background", "Agent-Evals-and-Trace-Debugging", "inferred-prerequisite", depth="use", confidence="low", section="Historical summary (403)", note="candidate background inference; not a current required label"),
- E("Responsibilities: build an evaluation platform around real state and trajectories", "Agent-Evals-and-Trace-Debugging", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: implement rubrics, judges and human calibration", "Human-in-the-Loop-and-Agent-Guardrails", "responsibility", confidence="low", section="Responsibilities"),
- E("Responsibilities: compare tool selection and state transitions", "Tool-Calling-and-Action-Contracts", "responsibility", confidence="low", section="Responsibilities"),
- E("Inferred prerequisite: instrument services and store reproducible traces", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="use", confidence="low", section="Learning prerequisite inference"),
-],
-"Ramp-Applied-AI-Engineer-2026-08.md": [
- E("Requirements: production Python and/or TypeScript full-stack engineering", "Python", "required", alt="language-1", section="Requirements", note="one-of primary implementation language"),
- E("Requirements: production Python and/or TypeScript full-stack engineering", "TypeScript-JavaScript", "required", alt="language-1", section="Requirements", note="one-of primary implementation language"),
- E("Requirements: build LLM-backed products with structured extraction", "LLM-API-and-Structured-Outputs", "required", section="Requirements"),
- E("Responsibilities: agents, RAG and internal tools in production", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Responsibilities: connect backend services and product surfaces", "Enterprise-Integrations-and-Connectors", "responsibility", section="Responsibilities"),
- E("Responsibilities: define safe tool calls and recoverable actions", "Tool-Calling-and-Action-Contracts", "responsibility", depth="use", section="Responsibilities"),
- E("Inferred prerequisite: grounded retrieval for domain data", "RAG", "inferred-prerequisite", depth="explain", section="Learning prerequisite inference"),
-],
-"Ramp-Software-Engineer-Enterprise-Product-2026-08.md": [
- E("Requirements: software engineering for customer-facing enterprise product", "TypeScript-JavaScript", "required", section="Requirements"),
- E("Requirements: APIs and product integrations", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Responsibilities: deliver end-to-end agentic product workflows", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: coordinate agents with deterministic product logic", "Agent-Orchestration-and-State", "responsibility", section="Responsibilities"),
- E("Inferred prerequisite: approval checkpoints for enterprise actions", "Human-in-the-Loop-and-Agent-Guardrails", "inferred-prerequisite", depth="use", section="Learning prerequisite inference"),
-],
-"Ramp-Software-Engineer-Frontend-Revenue-2026-08.md": [
- E("Requirements: TypeScript/React frontend engineering", "TypeScript-JavaScript", "required", section="Requirements"),
- E("Requirements: production UI and API integration", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Responsibilities: expose workflow and approval UX", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: safely invoke actions from product UI", "Human-in-the-Loop-and-Agent-Guardrails", "responsibility", depth="use", section="Responsibilities"),
- E("Inferred prerequisite: consume typed LLM responses in the UI", "LLM-API-and-Structured-Outputs", "inferred-prerequisite", depth="use", section="Learning prerequisite inference"),
-],
-"Zapier-Engineer-Applied-AI-2026-08.md": [
- E("Requirements: reusable TypeScript and/or Python tooling", "TypeScript-JavaScript", "required", alt="language-1", section="Requirements", note="one-of implementation language"),
- E("Requirements: reusable TypeScript and/or Python tooling", "Python", "required", alt="language-1", section="Requirements", note="one-of implementation language"),
- E("Responsibilities: build internal workflow and LLM proxy services", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: integrate APIs and model providers", "LLM-API-and-Structured-Outputs", "responsibility", section="Responsibilities"),
- E("Responsibilities: monitor latency, cost and quality", "Agent-Evals-and-Trace-Debugging", "responsibility", depth="use", section="Responsibilities"),
- E("Preferred: safety, reliability and evaluation experience", "Human-in-the-Loop-and-Agent-Guardrails", "preferred", depth="use", section="Preferred"),
-],
-"Front-AI-Engineer-GTM-Operations-2026-08.md": [
- E("Historical/limited signal: Python async services and structured data", "Python", "inferred-prerequisite", depth="use", confidence="medium", section="Historical summary (dynamic ATS)", note="page is dynamic; treat as learning lead, not current required"),
- E("Historical/limited signal: production APIs and logging", "Enterprise-Integrations-and-Connectors", "inferred-prerequisite", depth="use", confidence="medium", section="Historical summary (dynamic ATS)", note="page is dynamic; treat as learning lead, not current required"),
- E("Responsibilities: automate GTM operations with Workato/Zapier", "Workflow-Automation-and-Business-Process-Design", "responsibility", confidence="medium", section="Responsibilities"),
- E("Responsibilities: expose model workflows through APIs and MCP", "MCP-and-Agent-Interoperability", "responsibility", depth="use", confidence="medium", section="Responsibilities"),
- E("Preferred: Snowflake and RAG/structured data experience", "RAG", "preferred", depth="use", confidence="medium", section="Preferred"),
- E("Inferred prerequisite: typed model responses for downstream automation", "LLM-API-and-Structured-Outputs", "inferred-prerequisite", depth="use", confidence="medium", section="Learning prerequisite inference"),
-],
-"Warp-Forward-Deployed-Engineer-2026-08.md": [
- E("Requirements: customer-facing implementation and systems integration", "Enterprise-Integrations-and-Connectors", "required", section="Requirements"),
- E("Responsibilities: configure workflows, triggers, sandbox and secrets", "Workflow-Automation-and-Business-Process-Design", "responsibility", section="Responsibilities"),
- E("Responsibilities: implement prompts, skills, MCP and integrations", "MCP-and-Agent-Interoperability", "responsibility", depth="use", section="Responsibilities"),
- E("Responsibilities: harden deployments with observability", "Agent-Evals-and-Trace-Debugging", "responsibility", depth="use", section="Responsibilities"),
- E("Responsibilities: invoke bounded tools with customer permissions", "Tool-Calling-and-Action-Contracts", "responsibility", depth="use", section="Responsibilities"),
- E("Inferred prerequisite: typed LLM responses and failure handling", "LLM-API-and-Structured-Outputs", "inferred-prerequisite", depth="use", section="Learning prerequisite inference"),
-],
+STATUS = {
+    "Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md": ("expired", "page-shell-only"),
+    "Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md": ("active", "full"),
+    "Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md": ("active", "full"),
+    "Notion-Software-Engineer-AI-Workflows-2026-08.md": ("active", "dynamic-partial"),
+    "Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md": ("active", "dynamic-partial"),
+    "Notion-Forward-Deployed-Architect-Japan-2026-08.md": ("active", "dynamic-partial"),
+    "Glean-Software-Engineer-Agents-2026-08.md": ("active", "full"),
+    "Glean-Founding-Forward-Deployed-Engineer-2026-08.md": ("expired", "page-shell-only"),
+    "Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md": ("redirected", "partial"),
+    "Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md": ("redirected", "partial"),
+    "Salesforce-Success-Architect-Agentforce-2026-08.md": ("redirected", "partial"),
+    "Salesforce-Product-Manager-Agent-Fabric-2026-08.md": ("redirected", "partial"),
+    "ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md": ("active", "full"),
+    "ServiceNow-Senior-Staff-Agent-Development-2026-08.md": ("unavailable", "blocked"),
+    "ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md": ("active", "full"),
+    "ServiceNow-Staff-Agent-Eval-Platform-2026-08.md": ("active", "full"),
+    "Ramp-Applied-AI-Engineer-2026-08.md": ("active", "dynamic-partial"),
+    "Ramp-Software-Engineer-Enterprise-Product-2026-08.md": ("active", "dynamic-partial"),
+    "Ramp-Software-Engineer-Frontend-Revenue-2026-08.md": ("active", "dynamic-partial"),
+    "Zapier-Engineer-Applied-AI-2026-08.md": ("active", "dynamic-partial"),
+    "Front-AI-Engineer-GTM-Operations-2026-08.md": ("active", "dynamic-partial"),
+    "Warp-Forward-Deployed-Engineer-2026-08.md": ("active", "full"),
 }
 
+def parse_rows():
+    rows = defaultdict(list)
+    for line in ROWS.splitlines():
+        if not line.strip():
+            continue
+        f, kind, skill, section, raw, confidence, alt, fidelity, rationale = line.split("|", 8)
+        # Empty Alternative Group is written as `||`; tolerate the older
+        # three-separator spelling so all rows still parse deterministically.
+        if not fidelity and rationale.startswith(("direct|", "close-paraphrase|", "inferred|")):
+            fidelity, rationale = rationale.split("|", 1)
+        rows[f].append({"kind": kind, "skill": skill, "section": section, "raw": raw, "confidence": confidence, "alt": alt.strip(), "fidelity": fidelity, "rationale": rationale})
+    return rows
 
-def replace_frontmatter(text: str, status: str, access: str) -> str:
-    if not text.startswith("---\n"):
-        raise ValueError("missing frontmatter")
+DATA = parse_rows()
+
+def replace_frontmatter(text, status, access, audit):
     end = text.find("\n---", 4)
     raw = text[4:end]
-    lines = []
-    seen = set()
+    repl = {"updated": UPDATED, "retrieved": UPDATED, "source_status": status, "source_access": access, "evidence_audit_status": audit}
+    out, seen = [], set()
     for line in raw.splitlines():
-        if re.match(r"^(updated|source_status|source_access):", line):
-            key = line.split(":", 1)[0]
-            value = {"updated": UPDATED, "source_status": status, "source_access": access}[key]
-            lines.append(f"{key}: {value}")
-            seen.add(key)
+        key = line.split(":", 1)[0] if ":" in line else ""
+        if key in repl:
+            out.append(f"{key}: {repl[key]}"); seen.add(key)
         else:
-            lines.append(line)
-    for key, value in (("updated", UPDATED), ("source_status", status), ("source_access", access)):
-        if key not in seen and not any(line.startswith(key + ":") for line in lines):
-            lines.append(f"{key}: {value}")
-    return "---\n" + "\n".join(lines) + "\n---\n"
+            out.append(line)
+    for key, val in repl.items():
+        if key not in seen: out.append(f"{key}: {val}")
+    return "---\n" + "\n".join(out) + "\n---\n"
 
-
-def link(skill: str) -> str:
-    return f"[[{skill}]]"
-
-
-def render(path: Path, rows: list[dict]) -> str:
+def render(path, rows):
     old = path.read_text(encoding="utf-8")
     fm_end = old.find("\n---", 4)
-    fm = old[4:fm_end]
-    meta = dict(re.findall(r"^(\w+):\s*(.*)$", fm, re.M))
-    status = meta.get("source_status", "active")
-    access = meta.get("source_access", "full")
-    # Keep expired/redirected/403 labels as audited source-access facts.
-    head = replace_frontmatter(old, status, access)
+    meta = dict(re.findall(r"^(\w+):\s*(.*)$", old[4:fm_end], re.M))
+    status, access = STATUS[path.name]
+    audit = "verified" if access == "full" else ("historical" if status in {"expired", "unavailable"} else "partial")
+    head = replace_frontmatter(old, status, access, audit)
     title = meta.get("company", path.stem) + " — " + meta.get("role_title", path.stem)
-    summary = {
-        "Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md": "管理企业 Agentic AI 集成，重点是多代理基础组件、互操作协议与可观测可靠性。",
-        "Atlassian-Senior-Principal-Forward-Deployed-Engineer-2026-08.md": "面向客户交付 Rovo 驱动的 AI/ML、API 集成和合规落地。",
-        "Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md": "当前页面仅剩职业站外壳；保留 AI-native workflow 与治理线索作为历史参考。",
-        "Notion-Software-Engineer-AI-Workflows-2026-08.md": "构建带有 LLM、嵌入、关系数据的全栈与异步 AI 工作流。",
-        "Notion-Forward-Deployed-Engineer-GTM-Japan-2026-08.md": "把 Agent API、MCP、自动化和数据管道交付到日本企业场景。",
-        "Notion-Forward-Deployed-Architect-Japan-2026-08.md": "设计 AI-native workflow、定制代理、Developer Platform 与治理采用方案。",
-        "Glean-Software-Engineer-Agents-2026-08.md": "构建、评估、部署和运营面向质量、信任、延迟与成本的代理。",
-        "Glean-Founding-Forward-Deployed-Engineer-2026-08.md": "当前链接为 job-board error；历史线索指向 0-to-1 企业 AI 交付。",
-        "Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md": "把 Agentforce action、prompt、reasoning 与客户系统连接并生产化。",
-        "Salesforce-Forward-Deployed-Engineer-Supply-Chain-2026-08.md": "围绕供应链业务设计自动化 Blueprint，并用反馈衡量价值。",
-        "Salesforce-Success-Architect-Agentforce-2026-08.md": "设计 Agentforce/Data Cloud 编排、自动化和企业采用交付。",
-        "Salesforce-Product-Manager-Agent-Fabric-2026-08.md": "负责 Agent Fabric 的 Discover、Govern、Orchestrate、Observe 控制面。",
-        "ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md": "页面返回 403；历史信号是从方案、构建、调优到上线的流程代理生命周期。",
-        "ServiceNow-Senior-Staff-Agent-Development-2026-08.md": "页面返回 403；历史信号聚焦生产代理、多代理规划、记忆和恢复。",
-        "ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md": "页面返回 403；历史信号聚焦状态机、长会话、事件与检查点。",
-        "ServiceNow-Staff-Agent-Eval-Platform-2026-08.md": "页面返回 403；历史信号聚焦真实状态、轨迹、评审器与人工校准的平台。",
-        "Ramp-Applied-AI-Engineer-2026-08.md": "构建代理、RAG、结构化抽取与生产 LLM 后端。",
-        "Ramp-Software-Engineer-Enterprise-Product-2026-08.md": "面向企业产品交付端到端的 agentic workflow 与 API 集成。",
-        "Ramp-Software-Engineer-Frontend-Revenue-2026-08.md": "以前端 TypeScript/React 连接生产 UI、API、工作流和审批体验。",
-        "Zapier-Engineer-Applied-AI-2026-08.md": "为内部工作流构建 LLM proxy、API、可观测性、评估和复用工具。",
-        "Front-AI-Engineer-GTM-Operations-2026-08.md": "动态 ATS 页面；历史可见信号是 Python async、自动化、API、MCP 与结构化数据。",
-        "Warp-Forward-Deployed-Engineer-2026-08.md": "端到端实施企业 workflow、trigger、sandbox、secret、MCP 和加固。",
-    }.get(path.name, "结构化保留的岗位证据卡；请以来源页面为准。")
-    if status == "expired":
-        access_note = "当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。"
-    elif "403" in access or "limited" in access or "dynamic" in access:
-        access_note = "当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。"
-    else:
-        access_note = "当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。"
-    responsibilities = [r for r in rows if r["kind"] == "responsibility"]
-    required = [r for r in rows if r["kind"] == "required"]
-    preferred = [r for r in rows if r["kind"] == "preferred"]
-    inferred = [r for r in rows if r["kind"] == "inferred-prerequisite"]
-    def bullets(items, fallback):
-        return "\n".join(f"- {x['raw']}" for x in items) if items else f"- {fallback}"
-    family_map = {"ai-application-engineering": "AI-Application-Engineer", "field-deployment": "AI-Solutions-Architect-and-FDE", "product": "AI-Product-Manager", "ai-product-management": "AI-Product-Manager", "ai-infrastructure": "AI-Infrastructure-and-Inference-Engineer", "agent-platform": "AI-Infrastructure-and-Inference-Engineer"}
-    mapped_family = family_map.get(meta.get("role_family", ""), "AI-Application-Engineer")
-    out = [head, f"# {title}", "", "## Source Scope", f"官方职位 URL：[{meta.get('source_url','')}]({meta.get('source_url','')})。2026-08-31 访问记录：`{status}` / `{access}`。{access_note}", "本卡只保留短证据与学习映射，不复制完整 JD。", "", "## Role Summary", summary, "", "## Responsibilities", bullets(responsibilities, "来源未提供可复核的职责段；不做当前职责推断。"), "", "## Explicit Requirements", bullets(required, "当前可复核要求有限；不要把职责或历史摘要当作 required。"), "", "## Preferred/Nice-to-have", bullets(preferred, "未从当前来源确认 preferred 项。"), "", "## Skill Extraction", "证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。", "", "| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |", "| --- | --- | --- | --- | --- | --- | --- |"]
+    rs = [r for r in rows if r["kind"] == "responsibility"]
+    rq = [r for r in rows if r["kind"] == "required"]
+    pr = [r for r in rows if r["kind"] == "preferred"]
+    inf = [r for r in rows if r["kind"] == "inferred-prerequisite"]
+    def bullets(xs, fallback): return "\n".join(f"- {r['raw']}" for r in xs) if xs else f"- {fallback}"
+    fam = {"ai-application-engineering":"AI-Application-Engineer", "field-deployment":"AI-Solutions-Architect-and-FDE", "product":"AI-Product-Manager", "ai-product-management":"AI-Product-Manager", "ai-infrastructure":"AI-Infrastructure-and-Inference-Engineer", "agent-platform":"AI-Infrastructure-and-Inference-Engineer"}.get(meta.get("role_family", ""), "AI-Application-Engineer")
+    note = "官方页面完整可读；证据按源段落逐事实记录。" if access == "full" else "页面需动态渲染、重定向或部分可读；仅保留可复核的中/低置信事实。"
+    if audit == "historical": note = "来源已失效、重定向错误或不可用；所有行仅作历史学习前置，不代表当前招聘要求。"
+    out = [head, f"# {title}", "", "## Source Scope", f"官方职位 URL：[{meta.get('source_url','')}]({meta.get('source_url','')})。审计日期：`{UPDATED}`；状态：`{status}` / `source_access: {access}` / `evidence_audit_status: {audit}`。{note}", "每条证据只保留一个可回溯事实；未适配当前 Skill 的信号不强行归类。", "", "## Role Summary", "本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。", "", "## Responsibilities", bullets(rs, "当前来源未确认可复核职责。"), "", "## Explicit Requirements", bullets(rq, "当前来源未确认可复核要求；不要把职责或历史摘要当作 required。"), "", "## Preferred/Nice-to-have", bullets(pr, "当前来源未确认 preferred 项。"), "", "## Skill Extraction", "证据类型允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`。Alternative Group 表示 one-of 或 at-least-N 选择关系。", "", "| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |", "| --- | --- | --- | --- | --- | --- | --- |"]
     for r in rows:
-        alt = r["alt"] or "—"
-        note = r["note"] or "同一岗位只计一次；职责频率不等于候选人要求频率。"
-        out.append(f"| {r['raw']} | {link(r['skill'])} | {r['kind']} | {r['strength']} | {alt} | {r['depth']} | {r['confidence']} |")
-    out += ["", "## Non-skill Gates", "年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。", "", "## Role Mapping", f"- Primary [[{mapped_family}]]", "", "## Limitations", access_note, "", "## Evidence Trace"]
+        strength = "inferred" if r["kind"] == "inferred-prerequisite" else "explicit"
+        out.append(f"| {r['raw']} | [[{r['skill']}]] | {r['kind']} | {strength} | {r['alt'] or 'none'} | use | {r['confidence']} |")
+    out += ["", "## Non-skill Gates", "年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。", "", "## Role Mapping", f"- Primary [[{fam}]]", "", "## Limitations", note, "", "## Evidence Trace"]
     for i, r in enumerate(rows, 1):
-        out += [f"### Evidence {i}", f"Source Section: {r['section']}", f"Raw Evidence: {r['raw']}", f"Mapped Skill: {link(r['skill'])}", f"Evidence Type: {r['kind']}", f"Requirement Strength: {r['strength']}", f"Alternative Group: {r['alt'] or 'none'}", f"Depth Signal: {r['depth']}", f"Confidence: {r['confidence']}", f"Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction", f"Notes: {r['note'] or '短证据与映射保持一一对应；不把摘要复制成多条假证据。'}", ""]
+        strength = "inferred" if r["kind"] == "inferred-prerequisite" else "explicit"
+        if r["fidelity"] == "close-paraphrase":
+            note = f"paraphrased from official {r['section']} section; mapping kept to {r['skill']} only."
+        elif r["fidelity"] == "direct":
+            note = f"quoted or lightly normalized from official {r['section']} section; mapping kept to {r['skill']} only."
+        else:
+            note = f"inferred learning lead from {r['section']}; not a current job requirement."
+        if r["alt"]:
+            note += " Alternative group is not summed."
+        out += [f"### Evidence {i}", f"Source Section: {r['section']}", f"Source Fidelity: {r['fidelity']}", f"Raw Evidence: {r['raw']}", f"Mapped Skill: [[{r['skill']}]]", f"Evidence Type: {r['kind']}", f"Requirement Strength: {strength}", f"Alternative Group: {r['alt'] or 'none'}", "Depth Signal: use", f"Confidence: {r['confidence']}", f"Mapping Rationale: {r['rationale']}", f"Notes: {note}", ""]
     return "\n".join(out).rstrip() + "\n"
 
-
-def main() -> int:
-    missing = sorted(set(DATA) - {p.name for p in JOB_DIR.glob("*.md")})
-    if missing:
-        raise SystemExit("missing job files: " + ", ".join(missing))
-    for name, rows in DATA.items():
-        path = JOB_DIR / name
-        path.write_text(render(path, rows), encoding="utf-8")
-    counts = Counter()
+def main():
+    data = parse_rows()
+    expected = set(STATUS)
+    missing = sorted(expected - {p.name for p in JOB_DIR.glob("*.md")})
+    if missing: raise SystemExit("missing job files: " + ", ".join(missing))
+    missing_rows = sorted(expected - set(data))
+    if missing_rows: raise SystemExit("missing evidence rows: " + ", ".join(missing_rows))
+    for name, rows in data.items():
+        (JOB_DIR / name).write_text(render(JOB_DIR / name, rows), encoding="utf-8")
+    counts = Counter((r["skill"], r["kind"]) for rows in data.values() for r in rows)
     samples = defaultdict(set)
-    alternatives = set()
-    for name, rows in DATA.items():
-        for r in rows:
-            counts[(r["skill"], r["kind"])] += 1
-            samples[r["skill"]].add(name)
-            if r["alt"]:
-                alternatives.add((name, r["alt"]))
-    print(f"rewrote {len(DATA)} applied job cards")
+    for name, rows in data.items():
+        for r in rows: samples[r["skill"]].add(name)
+    print(f"rewrote {len(data)} applied job cards; rows={sum(map(len, data.values()))}")
     for skill in sorted(samples):
-        vals = ", ".join(f"{kind}={counts[(skill, kind)]}" for kind in sorted(ALLOWED))
-        print(f"{skill}: {vals}; samples={len(samples[skill])}")
-    print(f"alternative groups={len(alternatives)}")
-    return 0
+        print(skill + ": " + ", ".join(f"{k}={counts[(skill,k)]}" for k in ("required","preferred","responsibility","inferred-prerequisite")) + f"; samples={len(samples[skill])}")
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": main()
