@@ -25,41 +25,114 @@ related: []
 # Notion — Software Engineer, AI Workflows
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba](https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba)。2026-08-31 页面核验状态：`active` / `full`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba](https://jobs.ashbyhq.com/notion/17330e14-83db-49a4-ae31-411690d97dba)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-Builds custom agents and recurring or async AI workflows with LLMs, embeddings, relational data and full-stack software.
+构建带有 LLM、嵌入、关系数据的全栈与异步 AI 工作流。
 
 ## Responsibilities
-- Builds custom agents and recurring or async AI workflows with LLMs, embeddings, relational data and full-stack software.
+- Responsibilities: custom agents and recurring or asynchronous workflows
+- Responsibilities: schedule and resume long-running AI workflows
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- Requirements: strong software engineering in TypeScript/JavaScript
+- Requirements: backend services, APIs and relational data
+- Requirements: production LLM applications and embeddings
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- 未从当前来源确认 preferred 项。
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Builds custom agents and recurring or async AI workflows w | [[TypeScript-JavaScript]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Builds custom agents and recurring or async AI workflows w | [[LLM-API-and-Structured-Outputs]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Builds custom agents and recurring or async AI workflows w | [[Agent-Orchestration-and-State]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Builds custom agents and recurring or async AI workflows w | [[Workflow-Automation-and-Business-Process-Design]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Builds custom agents and recurring or async AI workflows w | [[Databases-and-Data-Modeling]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Builds custom agents and recurring or async AI workflows w | [[Tool-Calling-and-Action-Contracts]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Requirements: strong software engineering in TypeScript/JavaScript | [[TypeScript-JavaScript]] | required | explicit | — | implement | high |
+| Requirements: backend services, APIs and relational data | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | high |
+| Requirements: production LLM applications and embeddings | [[LLM-API-and-Structured-Outputs]] | required | explicit | — | implement | high |
+| Responsibilities: custom agents and recurring or asynchronous workflows | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | high |
+| Responsibilities: schedule and resume long-running AI workflows | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
+| Inferred prerequisite: validate tool inputs before mutating relational data | [[Tool-Calling-and-Action-Contracts]] | inferred-prerequisite | inferred | — | use | high |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-- ATS 页面可能动态渲染；地点、年限和完整段落以官方页面为准。
+当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: high; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Requirements
+Raw Evidence: Requirements: strong software engineering in TypeScript/JavaScript
+Mapped Skill: [[TypeScript-JavaScript]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 2
+Source Section: Requirements
+Raw Evidence: Requirements: backend services, APIs and relational data
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 3
+Source Section: Requirements
+Raw Evidence: Requirements: production LLM applications and embeddings
+Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 4
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: custom agents and recurring or asynchronous workflows
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 5
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: schedule and resume long-running AI workflows
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 6
+Source Section: Learning prerequisite inference
+Raw Evidence: Inferred prerequisite: validate tool inputs before mutating relational data
+Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: derived from explicit data mutation duty

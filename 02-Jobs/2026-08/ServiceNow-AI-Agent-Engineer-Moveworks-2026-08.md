@@ -25,40 +25,100 @@ related: []
 # ServiceNow / Moveworks — AI Agent Engineer
 
 ## Source Scope
-官方职位 URL：[https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/](https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/)。2026-08-31 页面核验状态：`active` / `limited-http-403`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/](https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/)。2026-08-31 访问记录：`active` / `limited-http-403`。当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-Enterprise process agent lifecycle from solution and architecture through build, tune and launch; official page returned 403.
+页面返回 403；历史信号是从方案、构建、调优到上线的流程代理生命周期。
 
 ## Responsibilities
-- Enterprise process agent lifecycle from solution and architecture through build, tune and launch; official page returned 403.
+- Responsibilities: take process agents from solution to launch
+- Responsibilities: configure tools and tune agent behavior
+- Responsibilities: handle enterprise LLM/API integration
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- 当前可复核要求有限；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- 未从当前来源确认 preferred 项。
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Enterprise process agent lifecycle from solution and archi | [[LLM-API-and-Structured-Outputs]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Enterprise process agent lifecycle from solution and archi | [[Tool-Calling-and-Action-Contracts]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Enterprise process agent lifecycle from solution and archi | [[Workflow-Automation-and-Business-Process-Design]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Enterprise process agent lifecycle from solution and archi | [[Enterprise-Integrations-and-Connectors]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Enterprise process agent lifecycle from solution and archi | [[Agent-Evals-and-Trace-Debugging]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Historical/limited signal: backend or infrastructure engineering context | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | recognize | low |
+| Responsibilities: take process agents from solution to launch | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | low |
+| Responsibilities: configure tools and tune agent behavior | [[Tool-Calling-and-Action-Contracts]] | responsibility | explicit | — | implement | low |
+| Responsibilities: handle enterprise LLM/API integration | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | — | implement | low |
+| Inferred prerequisite: production backend and customer integration skills | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | use | low |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
-- Primary [[AI-Application-Engineer]]; field adjacent [[AI-Solutions-Architect-and-FDE]]
+- Primary [[AI-Application-Engineer]]
 
 ## Limitations
-- ATS 页面可能动态渲染；地点、年限和完整段落以官方页面为准。
+当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: low; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Historical summary (403)
+Raw Evidence: Historical/limited signal: backend or infrastructure engineering context
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 2
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: take process agents from solution to launch
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 3
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: configure tools and tune agent behavior
+Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 4
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: handle enterprise LLM/API integration
+Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 5
+Source Section: Learning prerequisite inference
+Raw Evidence: Inferred prerequisite: production backend and customer integration skills
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: use
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。

@@ -49,9 +49,16 @@ These are qualitative clusters from the selected sample set, not percentages or 
 - **Rising / specialized**：MCP；multi-agent / A2A；
 - **Common by use case**：RAG、memory；不是所有 Agent 的统一前置。
 
-## Explicit vs inferred
+## Evidence rebuild totals
 
-`explicit` 只表示页面或附件预审中直接出现的责任/要求；`inferred` 是为了建立学习前置或邻接 Skill 的解释性连接，不加入 required 频次。产品名（Rovo、Agentforce、Moveworks 等）保持在样本上下文，不升级为 Skill。
+| Evidence Type | Rows | Interpretation |
+| --- | ---: | --- |
+| `required` | 31 | 仅来自 Requirements/Qualifications 类段落；语言 alternative group 不相加 |
+| `preferred` | 11 | Preferred/Nice-to-have；永不升级为 required |
+| `responsibility` | 57 | What you’ll do/Responsibilities；职责频率 ≠ 候选人必备技能频率 |
+| `inferred-prerequisite` | 28 | 从明确职责推导的学习前置；不代表招聘门槛 |
+
+`Alternative Group`（如 `language-1`）是 one-of；Python、TypeScript、Go 等成员不能作为同时要求相加。`explicit`/`inferred` 现在只作为 Requirement Strength，Evidence Type 已严格收敛为上面四类。产品名（Rovo、Agentforce、Moveworks 等）保持在样本上下文，不升级为 Skill。
 
 ## Learning implications
 

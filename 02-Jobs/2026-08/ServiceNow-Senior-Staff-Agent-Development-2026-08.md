@@ -25,41 +25,113 @@ related: []
 # ServiceNow / Moveworks — Senior Staff Software Engineer, Agent Development
 
 ## Source Scope
-官方职位 URL：[https://careers.servicenow.com/jobs/744000145302723/senior-staff-software-engineer-agent-development/](https://careers.servicenow.com/jobs/744000145302723/senior-staff-software-engineer-agent-development/)。2026-08-31 页面核验状态：`active` / `limited-http-403`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://careers.servicenow.com/jobs/744000145302723/senior-staff-software-engineer-agent-development/](https://careers.servicenow.com/jobs/744000145302723/senior-staff-software-engineer-agent-development/)。2026-08-31 访问记录：`active` / `limited-http-403`。当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-Production agentic systems with multi-agent, tool calling, planning loops, memory, recovery, structured outputs and Python; official page returned 403.
+页面返回 403；历史信号聚焦生产代理、多代理规划、记忆和恢复。
 
 ## Responsibilities
-- Production agentic systems with multi-agent, tool calling, planning loops, memory, recovery, structured outputs and Python; official page returned 403.
+- Responsibilities: multi-agent planning, tool calling, memory and recovery
+- Responsibilities: produce structured outputs in production agents
+- Responsibilities: evaluate agent trajectories and failures
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- 当前可复核要求有限；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- 未从当前来源确认 preferred 项。
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Production agentic systems with multi-agent, tool calling, | [[Python]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Production agentic systems with multi-agent, tool calling, | [[LLM-API-and-Structured-Outputs]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Production agentic systems with multi-agent, tool calling, | [[Tool-Calling-and-Action-Contracts]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Production agentic systems with multi-agent, tool calling, | [[Agent-Orchestration-and-State]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Production agentic systems with multi-agent, tool calling, | [[Agent-Evals-and-Trace-Debugging]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Production agentic systems with multi-agent, tool calling, | [[MCP-and-Agent-Interoperability]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Historical/limited signal: Python or Go backend development | [[Python]] | inferred-prerequisite | inferred | — | use | low |
+| Historical/limited signal: distributed systems and async/concurrency | [[Agent-Orchestration-and-State]] | inferred-prerequisite | inferred | — | use | low |
+| Responsibilities: multi-agent planning, tool calling, memory and recovery | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | low |
+| Responsibilities: produce structured outputs in production agents | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | — | implement | low |
+| Responsibilities: evaluate agent trajectories and failures | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | implement | low |
+| Inferred prerequisite: Redis/DynamoDB/gRPC-style service integration | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | use | low |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
-- Primary [[AI-Application-Engineer]]; adjacent [[AI-Infrastructure-and-Inference-Engineer]]
+- Primary [[AI-Application-Engineer]]
 
 ## Limitations
-- ATS 页面可能动态渲染；地点、年限和完整段落以官方页面为准。
+当前页面访问受限或动态渲染；低/中置信度线索不升级为高置信必需项。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: low; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Historical summary (403)
+Raw Evidence: Historical/limited signal: Python or Go backend development
+Mapped Skill: [[Python]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: use
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 2
+Source Section: Historical summary (403)
+Raw Evidence: Historical/limited signal: distributed systems and async/concurrency
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: use
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 3
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: multi-agent planning, tool calling, memory and recovery
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 4
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: produce structured outputs in production agents
+Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 5
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: evaluate agent trajectories and failures
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 6
+Source Section: Learning prerequisite inference
+Raw Evidence: Inferred prerequisite: Redis/DynamoDB/gRPC-style service integration
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: use
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。

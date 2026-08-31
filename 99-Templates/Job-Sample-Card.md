@@ -41,10 +41,10 @@ related: []
 
 ## Skill Extraction
 
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
 
-> 每条证据标注 `explicit` 或 `inferred`。inferred 只用于学习连接，不增加 required frequency。
+> Evidence Type 只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；Requirement Strength 为 `explicit` 或 `inferred`。`Alternative Group`（如 `language-1`）表示 one-of，不把成员当作同时要求。limited/blocked 来源不得写成高置信 required。
 
 ## Non-skill Gates
 
@@ -61,7 +61,14 @@ related: []
 
 ## Evidence Trace
 
-- Source Section:
-- Evidence Type: `explicit | inferred`
-- Extraction Decision:
-- Confidence: `high | medium | low`
+### Evidence 1
+
+Source Section:
+Raw Evidence:
+Mapped Skill:
+Evidence Type: `required | preferred | responsibility | inferred-prerequisite`
+Requirement Strength: `explicit | inferred`
+Alternative Group: `none` 或 one-of 组名
+Depth Signal:
+Confidence: `high | medium | low`
+Notes:

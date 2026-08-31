@@ -25,38 +25,72 @@ related: []
 # Glean — Founding Forward Deployed Engineer
 
 ## Source Scope
-官方职位 URL：[https://job-boards.greenhouse.io/gleanwork/jobs/4659412005?gh_src=salarypine.com](https://job-boards.greenhouse.io/gleanwork/jobs/4659412005?gh_src=salarypine.com)。2026-08-31 页面核验状态：`expired` / `redirected-error`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://job-boards.greenhouse.io/gleanwork/jobs/4659412005?gh_src=salarypine.com](https://job-boards.greenhouse.io/gleanwork/jobs/4659412005?gh_src=salarypine.com)。2026-08-31 访问记录：`expired` / `redirected-error`。当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-URL redirects to a Glean job-board error; retain pre-audited discovery, 0-to-1 production AI, prompt/agent/eval, full-stack enterprise outcomes as historical leads.
+当前链接为 job-board error；历史线索指向 0-to-1 企业 AI 交付。
 
 ## Responsibilities
-- URL redirects to a Glean job-board error; retain pre-audited discovery, 0-to-1 production AI, prompt/agent/eval, full-stack enterprise outcomes as historical leads.
+- 来源未提供可复核的职责段；不做当前职责推断。
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- 当前可复核要求有限；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- 未从当前来源确认 preferred 项。
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| URL redirects to a Glean job-board error; retain pre-audit | [[Enterprise-Integrations-and-Connectors]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| URL redirects to a Glean job-board error; retain pre-audit | [[Workflow-Automation-and-Business-Process-Design]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| URL redirects to a Glean job-board error; retain pre-audit | [[Agent-Evals-and-Trace-Debugging]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Historical pre-audit: customer discovery and 0-to-1 production AI | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | recognize | low |
+| Historical pre-audit: full-stack delivery for enterprise outcomes | [[TypeScript-JavaScript]] | inferred-prerequisite | inferred | — | recognize | low |
+| Historical pre-audit: prompt, agent and eval iteration | [[Agent-Evals-and-Trace-Debugging]] | inferred-prerequisite | inferred | — | recognize | low |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
-- Candidate [[AI-Solutions-Architect-and-FDE]]
+- Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-- 当前 URL 只返回招聘页壳/错误或 HTTP 403；历史预审摘要仅作方向线索，不计入强频次。
+当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: low; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Historical summary (redirected error)
+Raw Evidence: Historical pre-audit: customer discovery and 0-to-1 production AI
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: URL now redirects to a job-board error
+
+### Evidence 2
+Source Section: Historical summary (redirected error)
+Raw Evidence: Historical pre-audit: full-stack delivery for enterprise outcomes
+Mapped Skill: [[TypeScript-JavaScript]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 3
+Source Section: Historical summary (redirected error)
+Raw Evidence: Historical pre-audit: prompt, agent and eval iteration
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。

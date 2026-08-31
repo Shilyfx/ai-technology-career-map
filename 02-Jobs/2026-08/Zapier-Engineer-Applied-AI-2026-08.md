@@ -25,41 +25,114 @@ related: []
 # Zapier — Engineer, Applied AI
 
 ## Source Scope
-官方职位 URL：[https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)。2026-08-31 页面核验状态：`active` / `full`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)。2026-08-31 访问记录：`active` / `full`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-Applied AI for internal workflows, LLM proxy, APIs, observability, monitoring, evals and reusable TypeScript/Python tooling.
+为内部工作流构建 LLM proxy、API、可观测性、评估和复用工具。
 
 ## Responsibilities
-- Applied AI for internal workflows, LLM proxy, APIs, observability, monitoring, evals and reusable TypeScript/Python tooling.
+- Responsibilities: build internal workflow and LLM proxy services
+- Responsibilities: integrate APIs and model providers
+- Responsibilities: monitor latency, cost and quality
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- Requirements: reusable TypeScript and/or Python tooling
+- Requirements: reusable TypeScript and/or Python tooling
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- Preferred: safety, reliability and evaluation experience
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[TypeScript-JavaScript]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[Python]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[LLM-API-and-Structured-Outputs]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[Workflow-Automation-and-Business-Process-Design]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[Agent-Evals-and-Trace-Debugging]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Applied AI for internal workflows, LLM proxy, APIs, observ | [[Human-in-the-Loop-and-Agent-Guardrails]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Requirements: reusable TypeScript and/or Python tooling | [[TypeScript-JavaScript]] | required | explicit | language-1 | implement | high |
+| Requirements: reusable TypeScript and/or Python tooling | [[Python]] | required | explicit | language-1 | implement | high |
+| Responsibilities: build internal workflow and LLM proxy services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | high |
+| Responsibilities: integrate APIs and model providers | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | — | implement | high |
+| Responsibilities: monitor latency, cost and quality | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | — | use | high |
+| Preferred: safety, reliability and evaluation experience | [[Human-in-the-Loop-and-Agent-Guardrails]] | preferred | explicit | — | use | high |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
 - Primary [[AI-Application-Engineer]]
 
 ## Limitations
-- ATS 页面可能动态渲染；地点、年限和完整段落以官方页面为准。
+当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: high; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Requirements
+Raw Evidence: Requirements: reusable TypeScript and/or Python tooling
+Mapped Skill: [[TypeScript-JavaScript]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: language-1
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: one-of implementation language
+
+### Evidence 2
+Source Section: Requirements
+Raw Evidence: Requirements: reusable TypeScript and/or Python tooling
+Mapped Skill: [[Python]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: language-1
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: one-of implementation language
+
+### Evidence 3
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: build internal workflow and LLM proxy services
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 4
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: integrate APIs and model providers
+Mapped Skill: [[LLM-API-and-Structured-Outputs]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 5
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: monitor latency, cost and quality
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 6
+Source Section: Preferred
+Raw Evidence: Preferred: safety, reliability and evaluation experience
+Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: high
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。

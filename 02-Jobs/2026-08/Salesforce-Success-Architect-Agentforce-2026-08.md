@@ -25,40 +25,100 @@ related: []
 # Salesforce — Success Architect, Agentforce Data Cloud
 
 ## Source Scope
-官方职位 URL：[https://careers.salesforce.com/en/jobs/jr336652/success-architect-agentforce-data-cloud/](https://careers.salesforce.com/en/jobs/jr336652/success-architect-agentforce-data-cloud/)。2026-08-31 页面核验状态：`active` / `redirected-official`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://careers.salesforce.com/en/jobs/jr336652/success-architect-agentforce-data-cloud/](https://careers.salesforce.com/en/jobs/jr336652/success-architect-agentforce-data-cloud/)。2026-08-31 访问记录：`active` / `redirected-official`。当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-Designs Agentforce/Data Cloud orchestration, automation and enterprise delivery around adoption and outcomes.
+设计 Agentforce/Data Cloud 编排、自动化和企业采用交付。
 
 ## Responsibilities
-- Designs Agentforce/Data Cloud orchestration, automation and enterprise delivery around adoption and outcomes.
+- Responsibilities: design Agentforce/Data Cloud orchestration
+- Responsibilities: model automations around adoption outcomes
+- Responsibilities: manage permissions and human approvals
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- Requirements: enterprise architecture and customer success delivery
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- Preferred: production eval and feedback loops
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Designs Agentforce/Data Cloud orchestration, automation an | [[Agent-Orchestration-and-State]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Designs Agentforce/Data Cloud orchestration, automation an | [[Workflow-Automation-and-Business-Process-Design]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Designs Agentforce/Data Cloud orchestration, automation an | [[Enterprise-Integrations-and-Connectors]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Designs Agentforce/Data Cloud orchestration, automation an | [[Human-in-the-Loop-and-Agent-Guardrails]] | explicit | required | implement | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| Designs Agentforce/Data Cloud orchestration, automation an | [[Agent-Evals-and-Trace-Debugging]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Requirements: enterprise architecture and customer success delivery | [[Enterprise-Integrations-and-Connectors]] | required | explicit | — | implement | medium |
+| Responsibilities: design Agentforce/Data Cloud orchestration | [[Agent-Orchestration-and-State]] | responsibility | explicit | — | implement | medium |
+| Responsibilities: model automations around adoption outcomes | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | — | implement | medium |
+| Responsibilities: manage permissions and human approvals | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | — | use | medium |
+| Preferred: production eval and feedback loops | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | — | use | medium |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
-- Primary [[AI-Solutions-Architect-and-FDE]]; adjacent [[AI-Product-Manager]]
+- Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-- ATS 页面可能动态渲染；地点、年限和完整段落以官方页面为准。
+当前官方页面可访问；短证据按 Requirements/Preferred/Responsibilities 原段落分类。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: low; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Requirements
+Raw Evidence: Requirements: enterprise architecture and customer success delivery
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: required
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: medium
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 2
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: design Agentforce/Data Cloud orchestration
+Mapped Skill: [[Agent-Orchestration-and-State]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: medium
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 3
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: model automations around adoption outcomes
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: implement
+Confidence: medium
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 4
+Source Section: Responsibilities
+Raw Evidence: Responsibilities: manage permissions and human approvals
+Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
+Evidence Type: responsibility
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。
+
+### Evidence 5
+Source Section: Preferred
+Raw Evidence: Preferred: production eval and feedback loops
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
+Evidence Type: preferred
+Requirement Strength: explicit
+Alternative Group: none
+Depth Signal: use
+Confidence: medium
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: 短证据与映射保持一一对应；不把摘要复制成多条假证据。

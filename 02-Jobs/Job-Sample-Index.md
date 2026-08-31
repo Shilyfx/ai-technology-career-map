@@ -4,7 +4,7 @@ domain: jobs
 page_kind: job-sample-index
 status: reference
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-31
 review_after: 2026-09-24
 related:
   - "[[Job-Inbox]]"
@@ -15,11 +15,13 @@ related:
 # Job Sample Index
 
 > 这里列出 2026-08 批的官方职位样本。每条记录只证明公司、地点、职级、时间和页面明确的要求，不代表市场普查。
-> 每张卡片的 `Evidence Trace` 说明来源段落、explicit/inferred 判断、抽取决策和置信度。
+> 每张卡片的 `Evidence Trace` 说明来源段落、四类 Evidence Type、Requirement Strength、Alternative Group 和置信度。
 
 ## Batch B — enterprise-applied-ai-2026-08
 
 本批是定向 Applied AI / Agentic Engineering 证据层（22 个指定官方 URL），用于补足企业应用、Agent Runtime、FDE、集成、评测和交付技能；它不是对上一批 frontier jobs 的简单相加，也不是开放市场普查。完整边界与页面访问限制见 [[2026-08-31-Enterprise-Applied-AI-Job-Snapshot]]。
+
+**Batch A = Frontier/Model/Infra bias；Batch B = Enterprise Applied AI/Agentic Delivery bias。两批都不是 market census，不能把任一批的频率外推成市场份额。**
 
 ### Atlassian
 

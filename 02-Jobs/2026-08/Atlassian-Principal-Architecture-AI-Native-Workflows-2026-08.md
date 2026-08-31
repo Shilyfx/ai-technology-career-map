@@ -25,38 +25,72 @@ related: []
 # Atlassian — Principal Architecture, AI-native workflows (URL expired)
 
 ## Source Scope
-官方职位 URL：[https://www.atlassian.com/company/careers/details/25246](https://www.atlassian.com/company/careers/details/25246)。2026-08-31 页面核验状态：`expired` / `page-shell-only`。本卡只保留结构化摘要与短证据，不复制完整 JD。
+官方职位 URL：[https://www.atlassian.com/company/careers/details/25246](https://www.atlassian.com/company/careers/details/25246)。2026-08-31 访问记录：`expired` / `page-shell-only`。当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
+本卡只保留短证据与学习映射，不复制完整 JD。
 
 ## Role Summary
-URL resolves to a career shell without the role body; preserve the pre-audited AI-native workflow, Rovo, governance and identity-integration signals as historical leads.
+当前页面仅剩职业站外壳；保留 AI-native workflow 与治理线索作为历史参考。
 
 ## Responsibilities
-- URL resolves to a career shell without the role body; preserve the pre-audited AI-native workflow, Rovo, governance and identity-integration signals as historical leads.
+- 来源未提供可复核的职责段；不做当前职责推断。
 
 ## Explicit Requirements
-- 页面或附件预审中明确出现的职责/技术见 `Skill Extraction`；对受限/过期页面不把历史线索当作当前强门槛。
+- 当前可复核要求有限；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
-- 企业交付、跨团队沟通、业务流程建模、可靠性与治理经验（以原页面为准）。
+- 未从当前来源确认 preferred 项。
 
 ## Skill Extraction
-| Raw requirement / responsibility | Normalized Skill | Evidence Type | Requirement Strength | Depth Signal | Notes |
-| --- | --- | --- | --- | --- | --- |
-| URL resolves to a career shell without the role body; pres | [[Enterprise-Integrations-and-Connectors]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| URL resolves to a career shell without the role body; pres | [[Workflow-Automation-and-Business-Process-Design]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
-| URL resolves to a career shell without the role body; pres | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred | inferred context | use | 同一 Job 只计一次；inferred 不增加 required frequency。 |
+证据类型只允许 `required`、`preferred`、`responsibility`、`inferred-prerequisite`；`required`/`preferred` 来自官方资格段，`responsibility` 来自职责段，`inferred-prerequisite` 仅用于学习前置推断。Alternative Group 中的成员是 one-of，不同时计入要求。
+
+| Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Historical pre-audit: AI-native workflow and Rovo architecture | [[Workflow-Automation-and-Business-Process-Design]] | inferred-prerequisite | inferred | — | recognize | low |
+| Historical pre-audit: governance and identity integration | [[Enterprise-Integrations-and-Connectors]] | inferred-prerequisite | inferred | — | recognize | low |
+| Historical pre-audit: approval and policy controls | [[Human-in-the-Loop-and-Agent-Guardrails]] | inferred-prerequisite | inferred | — | recognize | low |
 
 ## Non-skill Gates
-- Discovery、领域知识、沟通、合规、工作授权、地点和年限属于非 Skill 门槛，需回到官方页面核对。
+年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
 
 ## Role Mapping
-- Candidate [[AI-Solutions-Architect-and-FDE]]
+- Primary [[AI-Solutions-Architect-and-FDE]]
 
 ## Limitations
-- 当前 URL 只返回招聘页壳/错误或 HTTP 403；历史预审摘要仅作方向线索，不计入强频次。
+当前来源已过期或重定向失败；所有历史线索仅作学习前置，不代表当前招聘要求。
 
 ## Evidence Trace
-- Source Section: 职位标题、职责、要求和偏好段；受限页面记录访问限制。
-- Evidence Type: `explicit` 为页面/预审明确线索，`inferred` 为学习连接；过期样本不代表当前招聘状态。
-- Extraction Decision: 归一化可复用 Skill，不把产品名/框架名独立升级；RAG 与 Agent 分支并行。
-- Confidence: low; source_status/access 保留在 frontmatter。
+### Evidence 1
+Source Section: Historical summary (page shell only)
+Raw Evidence: Historical pre-audit: AI-native workflow and Rovo architecture
+Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: URL is a career shell; historical lead only
+
+### Evidence 2
+Source Section: Historical summary (page shell only)
+Raw Evidence: Historical pre-audit: governance and identity integration
+Mapped Skill: [[Enterprise-Integrations-and-Connectors]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: not a current requirement
+
+### Evidence 3
+Source Section: Historical summary (page shell only)
+Raw Evidence: Historical pre-audit: approval and policy controls
+Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
+Evidence Type: inferred-prerequisite
+Requirement Strength: inferred
+Alternative Group: none
+Depth Signal: recognize
+Confidence: low
+Extraction Decision: map only this source-bound signal; preserve responsibility/requirement distinction
+Notes: not a current requirement

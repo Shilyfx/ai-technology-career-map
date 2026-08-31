@@ -22,6 +22,12 @@
 - MCP 是角色/环境相关能力，不是所有学习者的通用必修。
 - Job Sample 决定优先级，官方规范定义边界，教程只决定练习方式；三类证据分开记录。
 - Applied AI 企业样本用于补足 Application/FDE/Agent Platform，不用 frontier/model-builder 岗位替代它们。
+- `responsibility` 不等于候选人 `required`；职责频率不能直接当作技能必需频率。
+- `preferred`/Nice-to-have 永远不计入 required；`inferred-prerequisite` 只服务学习顺序。
+- Python、TypeScript、Go 等 `Alternative Group` 是 one-of，不得把替代项相加为同时要求。
+- `source_access`、`source_status` 与 confidence 必须一致：limited/blocked/403/过期不能给高置信 required。
+- 每个 Skill 行必须回到具体 Raw Evidence/Source Section；不能把同一份摘要复制成每个 Skill 的假证据。
+- Job Evidence 变化后必须重新计算 Skill Evidence Matrix 和 Role priority，不能沿用旧的手写频次。
 
 ## 目录与链接
 
