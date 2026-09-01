@@ -39,7 +39,6 @@ evidence_audit_status: verified
 
 ## Explicit Requirements
 - Proficiency in Python, TypeScript, or Go
-- Proficiency in Python, TypeScript, or Go
 - Hands-on experience with AI/ML platform engineering and model serving
 - Hands-on experience with agent frameworks such as LangChain or Semantic Kernel
 - Experience with high-scale distributed systems

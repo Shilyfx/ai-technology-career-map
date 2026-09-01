@@ -39,7 +39,6 @@ evidence_audit_status: partial
 
 ## Explicit Requirements
 - Proficiency in full-stack development across web frameworks, backend systems, and cloud infrastructure
-- Backend systems and infrastructure that support AI-driven products
 
 ## Preferred/Nice-to-have
 - 当前来源未确认 preferred 项。
@@ -53,7 +52,6 @@ evidence_audit_status: partial
 | Production use cases of LLMs including AI Agents | [[Agent-Orchestration-and-State]] | responsibility | explicit | none | use | medium |
 | Retrieval-Augmented Generation | [[RAG]] | responsibility | explicit | none | use | medium |
 | Structured Extraction | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
-| Backend systems and infrastructure that support AI-driven products | [[Distributed-Systems]] | required | explicit | none | use | medium |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -116,16 +114,3 @@ Depth Signal: use
 Confidence: medium
 Mapping Rationale: Structured extraction is an explicit structured-output signal.
 Notes: quoted or lightly normalized from official About the Role section; mapping kept to LLM-API-and-Structured-Outputs only.
-
-### Evidence 5
-Source Section: What You Need
-Source Fidelity: close-paraphrase
-Raw Evidence: Backend systems and infrastructure that support AI-driven products
-Mapped Skill: [[Distributed-Systems]]
-Evidence Type: required
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: medium
-Mapping Rationale: Supporting AI products with backend/infrastructure systems is a runtime/scale requirement.
-Notes: paraphrased from official What You Need section; mapping kept to Distributed-Systems only.

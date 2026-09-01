@@ -33,13 +33,14 @@ evidence_audit_status: partial
 本卡以官方职位页面为证据边界；请优先阅读下方来源段落与 Evidence Trace。
 
 ## Responsibilities
+- You will work mostly in TypeScript; experience isn't strictly required, but it is a big plus.
+- You will work mostly in Python; experience isn't strictly required, but it is a big plus.
 - Build internal workflow services
 - Build internal LLM proxy services
 - Monitor latency, cost, and quality
 
 ## Explicit Requirements
-- Reusable TypeScript and/or Python tooling
-- Reusable TypeScript and/or Python tooling
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
 
 ## Preferred/Nice-to-have
 - Safety, reliability, and evaluation experience
@@ -49,8 +50,8 @@ evidence_audit_status: partial
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Reusable TypeScript and/or Python tooling | [[TypeScript-JavaScript]] | required | explicit | language-1 | use | medium |
-| Reusable TypeScript and/or Python tooling | [[Python]] | required | explicit | language-1 | use | medium |
+| You will work mostly in TypeScript; experience isn't strictly required, but it is a big plus. | [[TypeScript-JavaScript]] | responsibility | explicit | none | use | medium |
+| You will work mostly in Python; experience isn't strictly required, but it is a big plus. | [[Python]] | responsibility | explicit | none | use | medium |
 | Build internal workflow services | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | medium |
 | Build internal LLM proxy services | [[LLM-API-and-Structured-Outputs]] | responsibility | explicit | none | use | medium |
 | Monitor latency, cost, and quality | [[Observability]] | responsibility | explicit | none | use | medium |
@@ -67,30 +68,30 @@ evidence_audit_status: partial
 
 ## Evidence Trace
 ### Evidence 1
-Source Section: Requirements
+Source Section: Things You'll Do
 Source Fidelity: close-paraphrase
-Raw Evidence: Reusable TypeScript and/or Python tooling
+Raw Evidence: You will work mostly in TypeScript; experience isn't strictly required, but it is a big plus.
 Mapped Skill: [[TypeScript-JavaScript]]
-Evidence Type: required
+Evidence Type: responsibility
 Requirement Strength: explicit
-Alternative Group: language-1
+Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Mapping Rationale: TypeScript is one explicit implementation-language alternative.
-Notes: paraphrased from official Requirements section; mapping kept to TypeScript-JavaScript only. Alternative group is not summed.
+Mapping Rationale: This is team implementation context in Things You'll Do; the source explicitly says experience is not strictly required.
+Notes: paraphrased from official Things You'll Do section; mapping kept to TypeScript-JavaScript only.
 
 ### Evidence 2
-Source Section: Requirements
+Source Section: Things You'll Do
 Source Fidelity: close-paraphrase
-Raw Evidence: Reusable TypeScript and/or Python tooling
+Raw Evidence: You will work mostly in Python; experience isn't strictly required, but it is a big plus.
 Mapped Skill: [[Python]]
-Evidence Type: required
+Evidence Type: responsibility
 Requirement Strength: explicit
-Alternative Group: language-1
+Alternative Group: none
 Depth Signal: use
 Confidence: medium
-Mapping Rationale: Python is one explicit implementation-language alternative.
-Notes: paraphrased from official Requirements section; mapping kept to Python only. Alternative group is not summed.
+Mapping Rationale: This is team implementation context in Things You'll Do; the source explicitly says experience is not strictly required.
+Notes: paraphrased from official Things You'll Do section; mapping kept to Python only.
 
 ### Evidence 3
 Source Section: Responsibilities

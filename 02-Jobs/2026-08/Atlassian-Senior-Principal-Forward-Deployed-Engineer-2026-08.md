@@ -41,7 +41,6 @@ evidence_audit_status: verified
 
 ## Explicit Requirements
 - Proficiency in Python, JavaScript, or similar languages
-- Proficiency in Python, JavaScript, or similar languages
 - Application integrations with APIs and microservices
 - Application integrations with enterprise-scale systems
 

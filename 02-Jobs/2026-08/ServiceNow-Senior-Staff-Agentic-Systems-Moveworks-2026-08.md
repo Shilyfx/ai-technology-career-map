@@ -41,7 +41,6 @@ evidence_audit_status: verified
 
 ## Explicit Requirements
 - Deep experience in distributed systems, concurrency, event-driven architectures, databases, observability, or gRPC/protobuf
-- Deep experience in distributed systems, concurrency, event-driven architectures, databases, observability, or gRPC/protobuf
 - Strong in Python or Go
 
 ## Preferred/Nice-to-have

@@ -41,12 +41,12 @@ evidence_audit_status: verified
 ## Explicit Requirements
 - Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration
 - Strong infrastructure fundamentals: Linux
-
-## Preferred/Nice-to-have
 - Understand prompt engineering
 - Understand agent architectures
 - Understand tool use
 - Understand evaluating non-deterministic systems
+
+## Preferred/Nice-to-have
 - Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation
 - Familiarity with enterprise security and compliance requirements
 
@@ -61,10 +61,10 @@ evidence_audit_status: verified
 | Set up environments, secrets, and integrations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
 | Set up MCP servers and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | high |
 | Debug agent runs using session sharing and observability tools | [[Observability]] | responsibility | explicit | none | use | high |
-| Understand prompt engineering | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | high |
-| Understand agent architectures | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | high |
-| Understand tool use | [[Tool-Calling-and-Action-Contracts]] | preferred | explicit | none | use | high |
-| Understand evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | high |
+| Understand prompt engineering | [[Prompt-and-Context-Engineering]] | required | explicit | none | use | high |
+| Understand agent architectures | [[Agent-Orchestration-and-State]] | required | explicit | none | use | high |
+| Understand tool use | [[Tool-Calling-and-Action-Contracts]] | required | explicit | none | use | high |
+| Understand evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | required | explicit | none | use | high |
 | Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation | [[HTTP-API]] | preferred | explicit | none | use | high |
 | Familiarity with enterprise security and compliance requirements | [[Security-Privacy-and-Access-Control]] | preferred | explicit | none | use | high |
 
@@ -161,12 +161,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand prompt engineering
 Mapped Skill: [[Prompt-and-Context-Engineering]]
-Evidence Type: preferred
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Prompt engineering is explicit fit criteria, retained as preferred.
+Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Prompt-and-Context-Engineering only.
 
 ### Evidence 8
@@ -174,12 +174,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand agent architectures
 Mapped Skill: [[Agent-Orchestration-and-State]]
-Evidence Type: preferred
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Agent architectures are explicit fit criteria for orchestration.
+Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Orchestration-and-State only.
 
 ### Evidence 9
@@ -187,12 +187,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand tool use
 Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
-Evidence Type: preferred
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Tool use is explicit fit criteria for action contracts.
+Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Tool-Calling-and-Action-Contracts only.
 
 ### Evidence 10
@@ -200,12 +200,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand evaluating non-deterministic systems
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
-Evidence Type: preferred
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Evaluating non-deterministic systems is explicit eval experience.
+Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 11

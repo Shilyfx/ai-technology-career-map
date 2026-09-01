@@ -39,7 +39,6 @@ evidence_audit_status: partial
 
 ## Explicit Requirements
 - Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python
-- Proficiency in at least one programming language such as Java, JavaScript, Node.js, SQL, or Python
 - Hands-on experience with APIs
 - Hands-on experience with data integration
 - Lead technical discovery, assess feasibility, identify risks, and translate ambiguity into an executable plan

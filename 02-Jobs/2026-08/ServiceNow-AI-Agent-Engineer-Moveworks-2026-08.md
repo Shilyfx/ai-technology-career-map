@@ -37,10 +37,10 @@ evidence_audit_status: verified
 - Architect and design customer AI solutions
 - Integrate the platform with customer enterprise systems
 - Integrate the platform securely with customer systems
-- Strong grasp of API-based systems integration
-- LLM-based systems design including prompt engineering and context engineering
 
 ## Explicit Requirements
+- Strong grasp of API-based systems integration
+- LLM-based systems design including prompt engineering and context engineering
 - Build full-stack workflows and automations
 - Build full-stack workflows and automations using REST APIs, iPaaS, or scripting
 - Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting
@@ -58,8 +58,8 @@ evidence_audit_status: verified
 | Architect and design customer AI solutions | [[Software-Design-and-Architecture]] | responsibility | explicit | none | use | high |
 | Integrate the platform with customer enterprise systems | [[Enterprise-Integrations-and-Connectors]] | responsibility | explicit | none | use | high |
 | Integrate the platform securely with customer systems | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
-| Strong grasp of API-based systems integration | [[HTTP-API]] | responsibility | explicit | none | use | high |
-| LLM-based systems design including prompt engineering and context engineering | [[Prompt-and-Context-Engineering]] | responsibility | explicit | none | use | high |
+| Strong grasp of API-based systems integration | [[HTTP-API]] | required | explicit | none | use | high |
+| LLM-based systems design including prompt engineering and context engineering | [[Prompt-and-Context-Engineering]] | required | explicit | none | use | high |
 | Build full-stack workflows and automations | [[Workflow-Automation-and-Business-Process-Design]] | required | explicit | none | use | high |
 | Build full-stack workflows and automations using REST APIs, iPaaS, or scripting | [[HTTP-API]] | required | explicit | implementation-1 | use | high |
 | Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting | [[Python]] | required | explicit | implementation-1 | use | high |
@@ -133,12 +133,12 @@ Source Section: About You
 Source Fidelity: direct
 Raw Evidence: Strong grasp of API-based systems integration
 Mapped Skill: [[HTTP-API]]
-Evidence Type: responsibility
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: The source explicitly calls out API-based integration.
+Mapping Rationale: About You is a candidate-capability block; API-based systems integration is stated as technical mastery.
 Notes: quoted or lightly normalized from official About You section; mapping kept to HTTP-API only.
 
 ### Evidence 6
@@ -146,12 +146,12 @@ Source Section: About You
 Source Fidelity: direct
 Raw Evidence: LLM-based systems design including prompt engineering and context engineering
 Mapped Skill: [[Prompt-and-Context-Engineering]]
-Evidence Type: responsibility
+Evidence Type: required
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Prompt and context engineering are explicit system-design duties.
+Mapping Rationale: About You is a candidate-capability block; prompt/context engineering is stated as technical mastery.
 Notes: quoted or lightly normalized from official About You section; mapping kept to Prompt-and-Context-Engineering only.
 
 ### Evidence 7

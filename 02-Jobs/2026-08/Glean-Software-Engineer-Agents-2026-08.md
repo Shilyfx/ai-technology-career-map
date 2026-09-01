@@ -4,8 +4,8 @@ company: Glean
 role_title: Software Engineer, Agents
 role_family: ai-application-engineering
 seniority: experienced
-location: Not stated on page
-region: US
+location: Bangalore, India
+region: India/APAC
 source_url: https://job-boards.greenhouse.io/gleanwork/jobs/4712442005?gh_src=ai101x
 source_kind: official-job-posting
 source_status: active
@@ -40,7 +40,6 @@ evidence_audit_status: verified
 
 ## Explicit Requirements
 - Strong coding skills in Go, Python, Java, or TypeScript, with reliable, well-tested systems
-- Strong coding skills in Go, Python, Java, or TypeScript, with reliable, well-tested systems
 - Reliable, well-tested systems
 
 ## Preferred/Nice-to-have
@@ -58,7 +57,6 @@ evidence_audit_status: verified
 | Design and ship workflows that help users evaluate agent quality and understand failure modes | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
 | Deploy and operate agents with guardrails and controls | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | none | use | high |
 | Deploy and operate agents with visibility | [[Observability]] | responsibility | explicit | none | use | high |
-| Experience building AI, agentic, workflow, automation, or developer-product experiences | [[Workflow-Automation-and-Business-Process-Design]] | preferred | explicit | none | use | high |
 
 ## Non-skill Gates
 年限、客户沟通、领域经验、地点、授权与合规语境保留在岗位判断中，不自动归一化为 Skill。
@@ -160,16 +158,3 @@ Depth Signal: use
 Confidence: high
 Mapping Rationale: Visibility is observability and is separate from evals.
 Notes: paraphrased from official You will section; mapping kept to Observability only.
-
-### Evidence 8
-Source Section: About you
-Source Fidelity: direct
-Raw Evidence: Experience building AI, agentic, workflow, automation, or developer-product experiences
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
-Evidence Type: preferred
-Requirement Strength: explicit
-Alternative Group: none
-Depth Signal: use
-Confidence: high
-Mapping Rationale: Workflow and automation experience is explicitly a strong plus.
-Notes: quoted or lightly normalized from official About you section; mapping kept to Workflow-Automation-and-Business-Process-Design only.

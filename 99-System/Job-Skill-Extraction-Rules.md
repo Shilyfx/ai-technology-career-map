@@ -35,6 +35,12 @@ Batch B 每一条 Skill Extraction 都必须是一条 source-bound fact：Raw Ev
 
 `required`/`preferred` 必须来自官方 Requirements/Qualifications/Preferred/Nice-to-have 段；Responsibilities 只能产生 responsibility。观察、监控、指标、tracing、latency、reliability 属于 [[Observability]]，只有出现 eval/quality/trajectory/benchmark/judge/regression 才映射 Agent Evals；debugging 单独不等于 Agent Evals。MCP/A2A 映射 [[MCP-and-Agent-Interoperability]]，除非同一事实明确包含 tool/action/execution，否则不映射 Tool Calling。Preferred 中明确出现 retrieval/RAG/grounding 时保持 preferred，不降级为 inferred。
 
+### Candidate qualification section semantics
+
+默认按候选人资格处理的标题包括 `Requirements`、`Qualifications`、`Minimum Qualifications`、`What You Need`、`Skills You'll Need to Bring`、`About You`、`Who You Are`、`What We're Looking For` 和 `On your first day...`；其中的技术能力默认可计为 `required`，除非原文明确使用 soft/bonus 语气。`Preferred Qualifications`、`Nice to Have`、`Bonus`、`Strong Plus`、`Big Plus` 等整段统一计为 `preferred`。
+
+`You may be a good fit if...` / `You’d be a great fit if...` 是 soft-qualification 段：同一段内必须统一为 `required` 或统一为 `preferred`，并在 Mapping Rationale 说明选择，禁止按词条混合两种证据类型。`Responsibilities`、`What You’ll Do`、`You Will`、`Core Responsibilities`、`About the Role` 只有在描述实际工作内容时才产生 `responsibility`；标题相似但描述候选人资格时，按上面的候选人资格规则处理。
+
 既有 taxonomy 不得强迫映射：可以映射已有的 Observability、Distributed-Systems、Security、RAG、HTTP-API、Software-Design 等 Skill，也可以在证据表中不记录不适配的信号。Raw Evidence、Source Section、Mapping Rationale 和 Notes 必须语义具体，不能重复模板化的 generic rationale。
 
 ## Normalization

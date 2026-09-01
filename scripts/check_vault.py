@@ -234,6 +234,23 @@ def similarity(a: str, b: str) -> float:
     return len(words_a & words_b) / max(1, min(len(words_a), len(words_b)))
 
 
+def candidate_fit_section(section: str) -> bool:
+    section = section.casefold()
+    return any(
+        token in section
+        for token in (
+            "requirements", "qualifications", "what you need", "skills you'll need",
+            "about you", "who you are", "what we're looking for", "on your first day",
+            "you may be a good fit", "you'd be a great fit",
+        )
+    )
+
+
+def soft_fit_section(section: str) -> bool:
+    section = section.casefold()
+    return "you may be a good fit" in section or "you'd be a great fit" in section
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -489,6 +506,29 @@ def main() -> int:
                         warnings.append(f"MCP/A2A signal mapped to Tool Calling without action term in {rel} row {index}")
                     if re.search(r"\b(rag|retrieval|grounding)\b", raw_lower) and kind_value == "inferred-prerequisite" and "preferred" in trace.get("source section", "").casefold():
                         warnings.append(f"explicit preferred retrieval downgraded to inferred in {rel} row {index}")
+                section_kinds: defaultdict[str, set[str]] = defaultdict(set)
+                section_labels: dict[str, str] = {}
+                for index, row in enumerate(rows, 1):
+                    trace = traces.get(index, {})
+                    section = trace.get("source section", "").strip()
+                    section_key = section.casefold()
+                    if not section_key:
+                        continue
+                    kind_value = row.get("evidence type", "").strip()
+                    section_kinds[section_key].add(kind_value)
+                    section_labels.setdefault(section_key, section)
+                    if "about you" in section_key and kind_value == "responsibility":
+                        warnings.append(f"About You mapped responsibility; verify candidate qualification semantics in {rel} row {index}")
+                    if "bonus" in section_key and kind_value != "preferred":
+                        warnings.append(f"Bonus evidence should be preferred in {rel} row {index}")
+                for section_key, kinds in section_kinds.items():
+                    if {"required", "preferred"}.issubset(kinds):
+                        label = section_labels[section_key]
+                        warnings.append(f"mixed evidence types in same candidate-fit section; verify section semantics in {rel}: {label}")
+                    if soft_fit_section(section_key) and {"required", "preferred"}.issubset(kinds):
+                        label = section_labels[section_key]
+                        warnings.append(f"soft-fit section mixes required/preferred; apply one consistent classification in {rel}: {label}")
+
                 groups = defaultdict(list)
                 for index, row in enumerate(rows, 1):
                     group = row.get("alternative group", "").strip()

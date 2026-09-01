@@ -37,11 +37,10 @@ evidence_audit_status: verified
 - Execute scenarios, collect traces/final state, validate, score, and tear down
 - Scheduling, retries, high-concurrency execution, run isolation, and versioned reports
 - OpenTelemetry-native observability and a span data model for agent trajectories
-- Rubrics, judges, and calibration against human labels
+- Calibration against human labels
 - Contract-testing mocks against real API schemas in CI
 
 ## Explicit Requirements
-- Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf
 - Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf
 - Strong in Python or Go
 
@@ -55,9 +54,9 @@ evidence_audit_status: verified
 | --- | --- | --- | --- | --- | --- | --- |
 | Build the judgement layer: rubrics, judges, calibration against human labels, and trajectory scoring | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
 | Execute scenarios, collect traces/final state, validate, score, and tear down | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
-| Scheduling, retries, high-concurrency execution, run isolation, and versioned reports | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
+| Scheduling, retries, high-concurrency execution, run isolation, and versioned reports | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
 | OpenTelemetry-native observability and a span data model for agent trajectories | [[Observability]] | responsibility | explicit | none | use | high |
-| Rubrics, judges, and calibration against human labels | [[Human-in-the-Loop-and-Agent-Guardrails]] | responsibility | explicit | none | use | high |
+| Calibration against human labels | [[Agent-Evals-and-Trace-Debugging]] | responsibility | explicit | none | use | high |
 | Contract-testing mocks against real API schemas in CI | [[Testing]] | responsibility | explicit | none | use | high |
 | Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf | [[Distributed-Systems]] | required | explicit | areas-3-of-6 | use | high |
 | Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf | [[Observability]] | required | explicit | areas-3-of-6 | use | high |
@@ -103,14 +102,14 @@ Notes: paraphrased from official Eval orchestration at scale section; mapping ke
 Source Section: Eval orchestration at scale
 Source Fidelity: close-paraphrase
 Raw Evidence: Scheduling, retries, high-concurrency execution, run isolation, and versioned reports
-Mapped Skill: [[Workflow-Automation-and-Business-Process-Design]]
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Harness scheduling/retry runtime is workflow orchestration.
-Notes: paraphrased from official Eval orchestration at scale section; mapping kept to Workflow-Automation-and-Business-Process-Design only.
+Mapping Rationale: These are evaluation-harness runtime concerns in the eval orchestration section, not business workflow automation.
+Notes: paraphrased from official Eval orchestration at scale section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 4
 Source Section: Agent observability and tracing
@@ -128,15 +127,15 @@ Notes: quoted or lightly normalized from official Agent observability and tracin
 ### Evidence 5
 Source Section: The Role
 Source Fidelity: direct
-Raw Evidence: Rubrics, judges, and calibration against human labels
-Mapped Skill: [[Human-in-the-Loop-and-Agent-Guardrails]]
+Raw Evidence: Calibration against human labels
+Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
 Evidence Type: responsibility
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Human-label calibration is explicit human-in-the-loop activity.
-Notes: quoted or lightly normalized from official The Role section; mapping kept to Human-in-the-Loop-and-Agent-Guardrails only.
+Mapping Rationale: Human labels calibrate evaluator ground truth; the source does not describe runtime approval or authorization.
+Notes: quoted or lightly normalized from official The Role section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 6
 Source Section: Stateful simulation

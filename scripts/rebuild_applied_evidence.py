@@ -66,7 +66,6 @@ Glean-Software-Engineer-Agents-2026-08.md|responsibility|Agent-Orchestration-and
 Glean-Software-Engineer-Agents-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|You will|Design and ship workflows that help users evaluate agent quality and understand failure modes|high|||direct|Agent quality evaluation and failure modes are explicit eval signals.
 Glean-Software-Engineer-Agents-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|You will|Deploy and operate agents with guardrails and controls|high|||close-paraphrase|Guardrails and controls are explicit safety concerns.
 Glean-Software-Engineer-Agents-2026-08.md|responsibility|Observability|You will|Deploy and operate agents with visibility|high|||close-paraphrase|Visibility is observability and is separate from evals.
-Glean-Software-Engineer-Agents-2026-08.md|preferred|Workflow-Automation-and-Business-Process-Design|About you|Experience building AI, agentic, workflow, automation, or developer-product experiences|high|||direct|Workflow and automation experience is explicitly a strong plus.
 Glean-Founding-Forward-Deployed-Engineer-2026-08.md|inferred-prerequisite|Enterprise-Integrations-and-Connectors|Historical summary (redirected error)|Historical lead: customer discovery and 0-to-1 production AI delivery|low||inferred|The job URL redirects to a job-board error; the old lead is for study only.
 Glean-Founding-Forward-Deployed-Engineer-2026-08.md|inferred-prerequisite|Agent-Evals-and-Trace-Debugging|Historical summary (redirected error)|Historical lead: prompt, agent, and eval iteration|low||inferred|The old summary suggested eval iteration, but the official page is no longer available.
 Salesforce-Forward-Deployed-Engineer-Agentforce-2026-08.md|responsibility|Tool-Calling-and-Action-Contracts|Redirected official role summary|Connect Agentforce actions, prompts, reasoning, and tool calls|medium|||close-paraphrase|The archived summary explicitly describes action/tool-call integration; the official URL redirects.
@@ -87,8 +86,8 @@ ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Workflow-Automa
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Software-Design-and-Architecture|Core Responsibilities & Impact|Architect and design customer AI solutions|high|||close-paraphrase|Custom solution architecture is an explicit design responsibility.
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|Core Responsibilities & Impact|Integrate the platform with customer enterprise systems|high|||close-paraphrase|Enterprise-system integration is explicit.
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Security-Privacy-and-Access-Control|Core Responsibilities & Impact|Integrate the platform securely with customer systems|high|||close-paraphrase|Secure integration is an explicit security concern.
-ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|HTTP-API|About You|Strong grasp of API-based systems integration|high|||direct|The source explicitly calls out API-based integration.
-ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|responsibility|Prompt-and-Context-Engineering|About You|LLM-based systems design including prompt engineering and context engineering|high|||direct|Prompt and context engineering are explicit system-design duties.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|HTTP-API|About You|Strong grasp of API-based systems integration|high|||direct|About You is a candidate-capability block; API-based systems integration is stated as technical mastery.
+ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|Prompt-and-Context-Engineering|About You|LLM-based systems design including prompt engineering and context engineering|high|||direct|About You is a candidate-capability block; prompt/context engineering is stated as technical mastery.
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|Workflow-Automation-and-Business-Process-Design|Qualifications|Build full-stack workflows and automations|high|||close-paraphrase|Full-stack workflows and automations are an explicit qualification.
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|HTTP-API|Qualifications|Build full-stack workflows and automations using REST APIs, iPaaS, or scripting|high|implementation-1|direct|REST APIs are one explicit implementation route.
 ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md|required|Python|Qualifications|Build full-stack workflows and automations using REST APIs, iPaaS, or Python/JavaScript/Golang scripting|high|implementation-1|direct|Python is one explicit scripting route.
@@ -106,9 +105,9 @@ ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|required|Observabil
 ServiceNow-Senior-Staff-Agentic-Systems-Moveworks-2026-08.md|required|Python|Required|Strong in Python or Go|high|language-2|direct|Python is one member of the explicit language alternative.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|The Role|Build the judgement layer: rubrics, judges, calibration against human labels, and trajectory scoring|high|||close-paraphrase|Judges, rubrics, calibration, and trajectory scoring are explicit agent-evaluation signals.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|Eval orchestration at scale|Execute scenarios, collect traces/final state, validate, score, and tear down|high|||close-paraphrase|The source explicitly describes an end-to-end evaluation harness.
-ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Eval orchestration at scale|Scheduling, retries, high-concurrency execution, run isolation, and versioned reports|high|||close-paraphrase|Harness scheduling/retry runtime is workflow orchestration.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|Eval orchestration at scale|Scheduling, retries, high-concurrency execution, run isolation, and versioned reports|high|||close-paraphrase|These are evaluation-harness runtime concerns in the eval orchestration section, not business workflow automation.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Observability|Agent observability and tracing|OpenTelemetry-native observability and a span data model for agent trajectories|high|||direct|OpenTelemetry, spans, and trajectory traces are explicit observability work.
-ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Human-in-the-Loop-and-Agent-Guardrails|The Role|Rubrics, judges, and calibration against human labels|high|||direct|Human-label calibration is explicit human-in-the-loop activity.
+ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Agent-Evals-and-Trace-Debugging|The Role|Calibration against human labels|high|||direct|Human labels calibrate evaluator ground truth; the source does not describe runtime approval or authorization.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|responsibility|Testing|Stateful simulation|Contract-testing mocks against real API schemas in CI|high|||direct|Contract testing is explicitly named.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|required|Distributed-Systems|Qualifications|Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf|high|areas-3-of-6|direct|Distributed systems is one of six explicit qualification areas.
 ServiceNow-Staff-Agent-Eval-Platform-2026-08.md|required|Observability|Qualifications|Deep experience in distributed systems, orchestration, observability, concurrency, data pipelines, or gRPC/protobuf|high|areas-3-of-6|direct|Observability is one of six explicit qualification areas.
@@ -117,7 +116,6 @@ Ramp-Applied-AI-Engineer-2026-08.md|required|Software-Design-and-Architecture|Wh
 Ramp-Applied-AI-Engineer-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Production use cases of LLMs including AI Agents|medium|||direct|AI-agent production work is explicit role scope.
 Ramp-Applied-AI-Engineer-2026-08.md|responsibility|RAG|About the Role|Retrieval-Augmented Generation|medium|||direct|RAG is explicitly named as a project area.
 Ramp-Applied-AI-Engineer-2026-08.md|responsibility|LLM-API-and-Structured-Outputs|About the Role|Structured Extraction|medium|||direct|Structured extraction is an explicit structured-output signal.
-Ramp-Applied-AI-Engineer-2026-08.md|required|Distributed-Systems|What You Need|Backend systems and infrastructure that support AI-driven products|medium|||close-paraphrase|Supporting AI products with backend/infrastructure systems is a runtime/scale requirement.
 Ramp-Software-Engineer-Enterprise-Product-2026-08.md|responsibility|Agent-Orchestration-and-State|About the Role|Build internal and external agents to solve customer blockers|medium|||direct|Building agents is explicit role responsibility.
 Ramp-Software-Engineer-Enterprise-Product-2026-08.md|responsibility|Enterprise-Integrations-and-Connectors|About the Role|Deliver solutions end to end for the largest and most complex companies|medium|||close-paraphrase|Customer-facing end-to-end delivery implies integration context, but remains a responsibility.
 Ramp-Software-Engineer-Enterprise-Product-2026-08.md|preferred|Agent-Orchestration-and-State|What You Need|Extensive experience building with and for agents|medium|||direct|Agent-building experience is explicitly preferred.
@@ -127,8 +125,8 @@ Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|responsibility|Human-in-the-L
 Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|responsibility|Agent-Orchestration-and-State|What You Need|Interfaces for asynchronous systems with partial results, errors, retries, and user intervention|medium|||direct|Long-running async state and recovery are orchestration concerns.
 Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|Nice to Haves|Human-in-the-loop AI systems including evaluation|medium|||close-paraphrase|Evaluation is explicitly preferred agent-quality experience.
 Ramp-Software-Engineer-Frontend-Revenue-2026-08.md|preferred|Human-in-the-Loop-and-Agent-Guardrails|Nice to Haves|Human-in-the-loop AI systems including review, approvals, tool execution, and recovery|medium|||close-paraphrase|Review and approvals are explicitly preferred HITL experience.
-Zapier-Engineer-Applied-AI-2026-08.md|required|TypeScript-JavaScript|Requirements|Reusable TypeScript and/or Python tooling|medium|language-1|close-paraphrase|TypeScript is one explicit implementation-language alternative.
-Zapier-Engineer-Applied-AI-2026-08.md|required|Python|Requirements|Reusable TypeScript and/or Python tooling|medium|language-1|close-paraphrase|Python is one explicit implementation-language alternative.
+Zapier-Engineer-Applied-AI-2026-08.md|responsibility|TypeScript-JavaScript|Things You'll Do|You will work mostly in TypeScript; experience isn't strictly required, but it is a big plus.|medium|||close-paraphrase|This is team implementation context in Things You'll Do; the source explicitly says experience is not strictly required.
+Zapier-Engineer-Applied-AI-2026-08.md|responsibility|Python|Things You'll Do|You will work mostly in Python; experience isn't strictly required, but it is a big plus.|medium|||close-paraphrase|This is team implementation context in Things You'll Do; the source explicitly says experience is not strictly required.
 Zapier-Engineer-Applied-AI-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|Responsibilities|Build internal workflow services|medium|||close-paraphrase|Internal workflows are explicit delivery work.
 Zapier-Engineer-Applied-AI-2026-08.md|responsibility|LLM-API-and-Structured-Outputs|Responsibilities|Build internal LLM proxy services|medium|||close-paraphrase|LLM proxy services are API integration work; structured output is not asserted.
 Zapier-Engineer-Applied-AI-2026-08.md|responsibility|Observability|Responsibilities|Monitor latency, cost, and quality|medium|||direct|Latency, cost, and monitoring are observability signals, not automatically Agent Evals.
@@ -144,13 +142,21 @@ Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Workflow-Automation-and
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Security-Privacy-and-Access-Control|As a Founding Forward Deployed Engineer, you will...|Set up environments, secrets, and integrations|high|||close-paraphrase|Secrets and environment boundaries are explicit security responsibilities.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|MCP-and-Agent-Interoperability|As a Founding Forward Deployed Engineer, you will...|Set up MCP servers and integrations|high|||close-paraphrase|MCP servers are explicit interoperability work.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Observability|As a Founding Forward Deployed Engineer, you will...|Debug agent runs using session sharing and observability tools|high|||direct|Observability tools support operational debugging; no eval claim is added.
-Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Prompt-and-Context-Engineering|You may be a good fit if...|Understand prompt engineering|high|||direct|Prompt engineering is explicit fit criteria, retained as preferred.
-Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Orchestration-and-State|You may be a good fit if...|Understand agent architectures|high|||direct|Agent architectures are explicit fit criteria for orchestration.
-Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Tool-Calling-and-Action-Contracts|You may be a good fit if...|Understand tool use|high|||direct|Tool use is explicit fit criteria for action contracts.
-Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|You may be a good fit if...|Understand evaluating non-deterministic systems|high|||direct|Evaluating non-deterministic systems is explicit eval experience.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Prompt-and-Context-Engineering|You may be a good fit if...|Understand prompt engineering|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Agent-Orchestration-and-State|You may be a good fit if...|Understand agent architectures|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Tool-Calling-and-Action-Contracts|You may be a good fit if...|Understand tool use|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|required|Agent-Evals-and-Trace-Debugging|You may be a good fit if...|Understand evaluating non-deterministic systems|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
 Warp-Forward-Deployed-Engineer-2026-08.md|preferred|HTTP-API|Bonus...|Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation|high|||direct|APIs and webhooks are explicit integration experience.
 Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Security-Privacy-and-Access-Control|Bonus...|Familiarity with enterprise security and compliance requirements|high|||direct|Security/compliance is explicit bonus experience.
 '''
+
+# Strong-plus OR-set text is retained in the card's Preferred/Nice-to-have
+# section, but intentionally has no normalized Skill row.
+EXTRA_PREFERRED = {
+    "Glean-Software-Engineer-Agents-2026-08.md": [
+        "Experience building AI, agentic, workflow, automation, or developer-product experiences"
+    ]
+}
 
 STATUS = {
     "Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md": ("expired", "page-shell-only"),
@@ -218,6 +224,7 @@ def render(path, rows):
     rs = [r for r in rows if r["kind"] == "responsibility"]
     rq = [r for r in rows if r["kind"] == "required"]
     pr = [r for r in rows if r["kind"] == "preferred"]
+    pr += [{"raw": raw} for raw in EXTRA_PREFERRED.get(path.name, [])]
     inf = [r for r in rows if r["kind"] == "inferred-prerequisite"]
     def bullets(xs, fallback):
         seen = set()
