@@ -20,28 +20,28 @@ related:
 
 | Skill | Required Direct | Required One-of | Preferred | Responsibility | Inferred | High/Medium Source N | Low/Historical N | Sample N |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 3 | 4 | 1 | 6 | 1 | 7 |
-| [[Agent-Orchestration-and-State]] | 1 | 0 | 4 | 11 | 0 | 12 | 0 | 12 |
+| [[Agent-Evals-and-Trace-Debugging]] | 1 | 0 | 2 | 6 | 1 | 6 | 1 | 7 |
+| [[Agent-Orchestration-and-State]] | 2 | 0 | 3 | 11 | 0 | 12 | 0 | 12 |
 | [[Databases-and-Data-Modeling]] | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |
-| [[Distributed-Systems]] | 2 | 2 | 0 | 1 | 1 | 4 | 1 | 5 |
+| [[Distributed-Systems]] | 1 | 2 | 0 | 1 | 1 | 3 | 1 | 4 |
 | [[Docker-Containers]] | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
 | [[Enterprise-Integrations-and-Connectors]] | 2 | 0 | 2 | 4 | 1 | 7 | 1 | 8 |
-| [[HTTP-API]] | 2 | 1 | 2 | 3 | 0 | 7 | 0 | 7 |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 4 | 1 | 4 | 1 | 5 |
+| [[HTTP-API]] | 3 | 1 | 2 | 2 | 0 | 7 | 0 | 7 |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 3 | 1 | 3 | 1 | 4 |
 | [[LLM-API-and-Structured-Outputs]] | 1 | 0 | 0 | 3 | 0 | 4 | 0 | 4 |
 | [[Linux]] | 1 | 0 | 1 | 0 | 0 | 2 | 0 | 2 |
 | [[MCP-and-Agent-Interoperability]] | 0 | 0 | 3 | 5 | 0 | 6 | 0 | 6 |
 | [[Model-Serving]] | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
 | [[Observability]] | 1 | 2 | 0 | 10 | 0 | 10 | 0 | 10 |
-| [[Prompt-and-Context-Engineering]] | 0 | 0 | 2 | 1 | 0 | 3 | 0 | 3 |
-| [[Python]] | 0 | 8 | 0 | 1 | 2 | 9 | 1 | 10 |
+| [[Prompt-and-Context-Engineering]] | 2 | 0 | 1 | 0 | 0 | 3 | 0 | 3 |
+| [[Python]] | 0 | 7 | 0 | 2 | 2 | 9 | 1 | 10 |
 | [[RAG]] | 0 | 0 | 2 | 1 | 0 | 3 | 0 | 3 |
 | [[Security-Privacy-and-Access-Control]] | 0 | 0 | 2 | 5 | 0 | 6 | 0 | 6 |
 | [[Software-Design-and-Architecture]] | 2 | 0 | 0 | 1 | 0 | 3 | 0 | 3 |
 | [[Testing]] | 1 | 0 | 0 | 1 | 0 | 2 | 0 | 2 |
-| [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 1 | 1 | 0 | 2 | 0 | 2 |
-| [[TypeScript-JavaScript]] | 1 | 5 | 0 | 0 | 0 | 6 | 0 | 6 |
-| [[Workflow-Automation-and-Business-Process-Design]] | 2 | 0 | 2 | 9 | 1 | 11 | 1 | 12 |
+| [[Tool-Calling-and-Action-Contracts]] | 1 | 0 | 0 | 1 | 0 | 2 | 0 | 2 |
+| [[TypeScript-JavaScript]] | 1 | 4 | 0 | 1 | 0 | 6 | 0 | 6 |
+| [[Workflow-Automation-and-Business-Process-Design]] | 2 | 0 | 1 | 8 | 1 | 9 | 1 | 10 |
 
 `Alternative Group`（例如 `language-1`、`areas-3-of-6`）保留原始选择关系。`High/Medium Source N` 与 `Low/Historical N` 按职位去重，不能解释成市场频率；历史/不可用页面仅保留低置信学习线索。
 

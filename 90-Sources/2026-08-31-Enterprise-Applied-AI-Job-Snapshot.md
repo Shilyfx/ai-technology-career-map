@@ -36,7 +36,7 @@ related:
 | Fintech platform | Ramp | 3 | applied AI, enterprise product, frontend/HITL |
 | Automation / developer platform | Zapier, Front, Warp | 4 | internal automation, GTM AI, FDE/integration |
 
-Regions are intentionally mixed: Global/legal-entity dependent, APAC/Japan, US/Global and US/Remote. Seniority is weighted to experienced, senior, staff and principal; junior and China-local coverage remain open gaps.
+Regions are intentionally mixed: Global/legal-entity dependent, Japan/APAC, Bangalore India/APAC, US/Global and US/Remote. Seniority is weighted to experienced, senior, staff and principal; junior and China-local coverage remain open gaps.
 
 ## Directional skill clusters
 
@@ -53,8 +53,8 @@ These are qualitative clusters from the selected sample set, not percentages or 
 
 | Evidence Type | Rows | Interpretation |
 | --- | ---: | --- |
-| `required` | 38 | 仅来自 Requirements/Qualifications 类段落；`Required One-of` 另行计数，不相加 |
-| `preferred` | 25 | Preferred/Nice-to-have；永不升级为 required |
+| `required` | 41 | 仅来自 Requirements/Qualifications 类段落；`Required One-of` 另行计数，不相加 |
+| `preferred` | 20 | Preferred/Nice-to-have；永不升级为 required |
 | `responsibility` | 65 | What you’ll do/Responsibilities/Role context；职责频率 ≠ 候选人必备技能频率 |
 | `inferred-prerequisite` | 7 | 仅用于历史/动态来源的学习前置；不代表招聘门槛 |
 
@@ -70,7 +70,7 @@ These are qualitative clusters from the selected sample set, not percentages or 
 | Notion | Software Engineer, AI Workflows | dynamic-partial | partial | 2 | 1 | 0 | dynamic ATS/JS shell |
 | Notion | Forward Deployed Engineer, GTM Japan | dynamic-partial | partial | 8 | 4 | 0 | dynamic ATS/JS shell |
 | Notion | Forward Deployed Architect, Japan | dynamic-partial | partial | 4 | 1 | 0 | dynamic ATS/JS shell |
-| Glean | Software Engineer, Agents | full | verified | 5 | 3 | 0 | none observed |
+| Glean | Software Engineer, Agents | full | verified | 4 | 3 | 0 | none observed |
 | Glean | Founding Forward Deployed Engineer | page-shell-only | historical | 0 | 0 | 2 | page shell or redirect error |
 | Salesforce | Forward Deployed Engineer | partial | partial | 0 | 4 | 0 | redirected official page |
 | Salesforce | Forward Deployed Engineer, Agentforce for Supply Chain | partial | partial | 0 | 3 | 0 | redirected official page |
@@ -88,6 +88,8 @@ These are qualitative clusters from the selected sample set, not percentages or 
 | Warp | Forward Deployed Engineer | full | verified | 8 | 4 | 0 | none observed |
 
 Required、Preferred、Responsibility、Inferred 的频数只描述本批证据行；它们不等同于市场比例或招聘概率。完整逐行计数见 [[Skill-Evidence-Matrix]]。
+
+最终证据修正与矩阵冻结记录见 [[2026-09-01-Final-Evidence-Corrections-Matrix-Freeze-Report]]。
 
 ## Learning implications
 

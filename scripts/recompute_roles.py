@@ -17,7 +17,8 @@ ROLE_FILES = {
             "Atlassian-Senior-Engineering-Manager-Agentic-AI-Integrations-2026-08.md", "Notion-Software-Engineer-AI-Workflows-2026-08.md", "Glean-Software-Engineer-Agents-2026-08.md", "Salesforce-Product-Manager-Agent-Fabric-2026-08.md", "ServiceNow-AI-Agent-Engineer-Moveworks-2026-08.md", "ServiceNow-Senior-Staff-Agent-Development-2026-08.md", "Ramp-Applied-AI-Engineer-2026-08.md", "Ramp-Software-Engineer-Enterprise-Product-2026-08.md", "Ramp-Software-Engineer-Frontend-Revenue-2026-08.md", "Zapier-Engineer-Applied-AI-2026-08.md", "Front-AI-Engineer-GTM-Operations-2026-08.md", "Atlassian-Principal-Architecture-AI-Native-Workflows-2026-08.md", "OpenAI-Software-Engineer-API-Agents-San-Francisco-2026-08.md", "OpenAI-Software-Engineer-API-SDK-Seattle-2026-08.md"
         ],
         "basis": "14 curated samples (11 Batch B application/agent-product cards + 3 Batch A API/application cards); employers span Atlassian, Notion, Glean, Salesforce, ServiceNow/Moveworks, Ramp, Zapier, Front and OpenAI. Batch B locations cover Global/US/APAC; seniority is mostly senior/staff, with product-application and agent-platform subtracks.",
-        "priority": {"TypeScript-JavaScript":"Common", "Python":"Common", "LLM-API-and-Structured-Outputs":"Core", "Tool-Calling-and-Action-Contracts":"Common", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Common", "Agent-Evals-and-Trace-Debugging":"Common", "Human-in-the-Loop-and-Agent-Guardrails":"Common"},
+        "priority": {"TypeScript-JavaScript":"Common", "Python":"Common", "LLM-API-and-Structured-Outputs":"Core", "Tool-Calling-and-Action-Contracts":"Prerequisite", "Agent-Orchestration-and-State":"Common", "Workflow-Automation-and-Business-Process-Design":"Common", "MCP-and-Agent-Interoperability":"Specialized", "Enterprise-Integrations-and-Connectors":"Common", "Agent-Evals-and-Trace-Debugging":"Common", "Human-in-the-Loop-and-Agent-Guardrails":"Common"},
+        "note": "Tool Calling is retained as a learning/architecture prerequisite even with zero audited Batch B rows; this is not a current hiring-frequency claim.",
     },
     "03-Roles/AI-Solutions-Architect-and-FDE.md": {
         "count": 12,
@@ -84,7 +85,11 @@ def main():
         if end < 0:
             raise SystemExit(f"missing section after Skill Profile in {rel}")
         table = table_for(spec["samples"], spec["priority"])
-        replacement = "## Skill Profile\n\n" + table + "\n\nEvidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.\n"
+        note = spec.get("note", "")
+        replacement = "## Skill Profile\n\n" + table + "\n\nEvidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming."
+        if note:
+            replacement += " " + note
+        replacement += "\n"
         text = text[:start] + replacement + text[end + 1:]
         path.write_text(text, encoding="utf-8")
     print(f"recomputed {len(ROLE_FILES)} role profiles")

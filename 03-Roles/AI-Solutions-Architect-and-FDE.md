@@ -49,12 +49,12 @@ discovery → workflow/constraints → prototype → architecture/eval
 | [[TypeScript-JavaScript]] | 2 | 0 | 0 | 0 | 2 | Common | explain/use | high/medium |
 | [[Python]] | 2 | 0 | 0 | 1 | 3 | Common | explain/use | high/medium |
 | [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
-| [[Tool-Calling-and-Action-Contracts]] | 0 | 1 | 1 | 0 | 2 | Common | explain/use | high/medium |
-| [[Agent-Orchestration-and-State]] | 0 | 4 | 3 | 0 | 5 | Common | explain/use | high/medium |
+| [[Tool-Calling-and-Action-Contracts]] | 1 | 0 | 1 | 0 | 2 | Common | explain/use | high/medium |
+| [[Agent-Orchestration-and-State]] | 1 | 3 | 3 | 0 | 5 | Common | explain/use | high/medium |
 | [[Workflow-Automation-and-Business-Process-Design]] | 1 | 1 | 6 | 0 | 7 | Core | use→implement | high/medium |
 | [[MCP-and-Agent-Interoperability]] | 0 | 2 | 3 | 0 | 4 | Specialized | use→implement | high/medium |
 | [[Enterprise-Integrations-and-Connectors]] | 2 | 0 | 3 | 1 | 6 | Core | use→implement | low/medium |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 1 | 1 | 1 | 3 | Common | explain/use | low/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 1 | 0 | 1 | 1 | 3 | Common | explain/use | low/medium |
 | [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
 
 Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.

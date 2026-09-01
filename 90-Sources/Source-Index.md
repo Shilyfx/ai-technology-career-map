@@ -68,8 +68,6 @@ This is a navigation index by category, purpose and limitations. Detailed proven
 - [OpenAI Agents running](https://openai.github.io/openai-agents-python/running_agents/)
 - [OpenAI Agents orchestration](https://openai.github.io/openai-agents-python/multi_agent/)
 - [OpenAI Agents handoffs](https://openai.github.io/openai-agents-python/handoffs/)
-- [OpenAI Agents testing](https://openai.github.io/openai-agents-python/testing/)
-- [OpenAI Agents tracing](https://openai.github.io/openai-agents-python/zh/tracing/)
 - [OpenAI Responses API](https://developers.openai.com/api/reference/cli/resources/responses/methods/create)
 - [OpenAI Structured Outputs guide](https://developers.openai.com/api/docs/guides/latest-model)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)

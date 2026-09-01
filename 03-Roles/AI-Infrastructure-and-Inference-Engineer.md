@@ -76,11 +76,11 @@ Runtime/kernels; distributed execution; serving/capacity; profiling; reliability
 | [[LLM-API-and-Structured-Outputs]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 | [[Tool-Calling-and-Action-Contracts]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
 | [[Agent-Orchestration-and-State]] | 0 | 0 | 2 | 0 | 1 | Specialized | use→implement | high/medium |
-| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 1 | 0 | 1 | Specialized | use→implement | high/medium |
+| [[Workflow-Automation-and-Business-Process-Design]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
 | [[MCP-and-Agent-Interoperability]] | 0 | 0 | 0 | 0 | 0 | Specialized | use→implement | context |
 | [[Enterprise-Integrations-and-Connectors]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
-| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 2 | 0 | 1 | Specialized | use→implement | high/medium |
-| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 1 | 0 | 1 | Common | explain/use | high/medium |
+| [[Agent-Evals-and-Trace-Debugging]] | 0 | 0 | 4 | 0 | 1 | Specialized | use→implement | high/medium |
+| [[Human-in-the-Loop-and-Agent-Guardrails]] | 0 | 0 | 0 | 0 | 0 | Common | explain/use | context |
 
 Evidence strength is based on Batch B row classifications; `responsibility` and `preferred` are not counted as required. Language rows with an `Alternative Group` are one-of options, not simultaneous requirements; the core capability is production programming.
 ## Non-skill Gates
