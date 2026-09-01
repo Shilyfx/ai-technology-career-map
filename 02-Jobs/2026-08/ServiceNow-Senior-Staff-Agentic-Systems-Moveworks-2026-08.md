@@ -4,8 +4,8 @@ company: ServiceNow / Moveworks
 role_title: Senior Staff Software Engineer, Agentic Systems
 role_family: ai-infrastructure
 seniority: staff
-location: Not stated on page
-region: US/Global
+location: Mountain View, California
+region: US
 source_url: https://careers.servicenow.com/jobs/744000145848949/senior-staff-software-engineer-agentic-systems-moveworks/
 source_kind: official-job-posting
 source_status: active

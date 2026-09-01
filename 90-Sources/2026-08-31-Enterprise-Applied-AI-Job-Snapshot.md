@@ -26,7 +26,7 @@ related:
 
 ## Verification boundary
 
-2026-09-01 对 22 个指定 URL 逐一重开并记录来源边界：Atlassian A1/A2、ServiceNow M1/M3/M4、Glean G1、Warp 为完整可读；Ashby（Notion/Ramp/Front/Zapier）为动态部分可读；Salesforce 已重定向至新官方域、只保留部分可复核摘要；A3、G2 已失效；M2 返回 404。受限或历史样本保留 `source_access`、`source_status` 和审计状态，不把不可见正文写成当前明确要求。
+2026-09-01 对 22 个指定 URL 逐一重开并记录来源边界：Atlassian A1/A2、ServiceNow M1/M3/M4、Glean G1、Warp 为完整可读；Ashby（Notion/Ramp/Front/Zapier）为动态部分可读；Salesforce 已重定向至新官方域、只保留部分可复核摘要；A3、G2 已失效；M2 返回 404。2026-09-01 追加 metadata sweep：Warp=New York、Zapier=NAMER/EMEA Remote、ServiceNow M1=Bangalore、M4/M3=Mountain View。受限或历史样本保留 `source_access`、`source_status` 和审计状态，不把不可见正文写成当前明确要求。
 
 ## Company mix and role families
 
@@ -36,7 +36,7 @@ related:
 | Fintech platform | Ramp | 3 | applied AI, enterprise product, frontend/HITL |
 | Automation / developer platform | Zapier, Front, Warp | 4 | internal automation, GTM AI, FDE/integration |
 
-Regions are intentionally mixed: Global/legal-entity dependent, Japan/APAC, Bangalore India/APAC, US/Global and US/Remote. Seniority is weighted to experienced, senior, staff and principal; junior and China-local coverage remain open gaps.
+Regions are intentionally mixed: Global/legal-entity dependent, Japan/APAC, Bangalore India/APAC, NAMER/EMEA Remote, New York/Mountain View US and US/Remote. Seniority is weighted to experienced, senior, staff and principal; junior and China-local coverage remain open gaps.
 
 ## Directional skill clusters
 
@@ -53,8 +53,8 @@ These are qualitative clusters from the selected sample set, not percentages or 
 
 | Evidence Type | Rows | Interpretation |
 | --- | ---: | --- |
-| `required` | 41 | 仅来自 Requirements/Qualifications 类段落；`Required One-of` 另行计数，不相加 |
-| `preferred` | 20 | Preferred/Nice-to-have；永不升级为 required |
+| `required` | 35 | 仅来自 Requirements/Qualifications 类段落；`Required One-of` 另行计数，不相加 |
+| `preferred` | 26 | Preferred/Nice-to-have；永不升级为 required |
 | `responsibility` | 65 | What you’ll do/Responsibilities/Role context；职责频率 ≠ 候选人必备技能频率 |
 | `inferred-prerequisite` | 7 | 仅用于历史/动态来源的学习前置；不代表招聘门槛 |
 

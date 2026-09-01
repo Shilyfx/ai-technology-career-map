@@ -4,8 +4,8 @@ company: ServiceNow / Moveworks
 role_title: Staff Software Engineer, Agent Eval Platform
 role_family: ai-infrastructure
 seniority: staff
-location: Not stated on page
-region: US/Global
+location: Mountain View, California
+region: US
 source_url: https://careers.servicenow.com/jobs/744000145843394/staff-software-engineer-agent-eval-platform/
 source_kind: official-job-posting
 source_status: active

@@ -4,8 +4,8 @@ company: ServiceNow / Moveworks
 role_title: AI Agent Engineer
 role_family: ai-application-engineering
 seniority: experienced
-location: Not stated on page
-region: US/Global
+location: Bangalore, India
+region: India/APAC
 source_url: https://careers.servicenow.com/jobs/744000143976690/ai-agent-engineer-moveworks/
 source_kind: official-job-posting
 source_status: active

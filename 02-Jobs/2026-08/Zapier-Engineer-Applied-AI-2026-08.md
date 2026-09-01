@@ -4,8 +4,8 @@ company: Zapier
 role_title: Engineer, Applied AI
 role_family: ai-application-engineering
 seniority: experienced
-location: Not stated on page
-region: US/Remote
+location: NAMER; EMEA (Remote)
+region: NAMER/EMEA
 source_url: https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8
 source_kind: official-job-posting
 source_status: active
@@ -40,7 +40,11 @@ evidence_audit_status: partial
 - Monitor latency, cost, and quality
 
 ## Explicit Requirements
-- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
+- 4+ years of software engineering experience, including building and operating production AI/ML systems
+- At least 1 year of experience in LLM Ops, ML Ops, or adjacent platform/infrastructure work
+- Experience contributing to backend systems, developer tooling, internal platforms, or infrastructure that supports other engineers
+- Experience across the full lifecycle of building, testing, deploying, and scaling ML/LLM architectures
+- Understanding of production trade-offs among reliability, latency, cost, quality, and maintainability
 
 ## Preferred/Nice-to-have
 - Safety, reliability, and evaluation experience

@@ -19,17 +19,18 @@ related:
 - Final branch: `finalize/evidence-matrix-freeze`
 - Commit 1: `fix: correct final applied ai evidence semantics` (pushed)
 - Commit 2: `refactor: freeze applied ai matrix and role priorities` (pushed SHA `902550d6d6bb8086256957d24888a0af5adb9aee`)
+- Final patch commit: `fix: finalize applied ai evidence and job metadata`
 - Main was not merged; the existing review branch was not rebased or force-pushed.
 
 ## 2. Corrected Evidence
 
 ### Zapier
 
-The official Ashby posting says the team works mostly in TypeScript and Python, while experience is “not strictly required” and is a “big plus” ([official posting](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)). The two language rows are therefore `responsibility` implementation context, not `required` candidate gates; the old required rows and `language-1` group were removed.
+The official Ashby posting exposes an `About You` block with 4+ years of software engineering including production AI/ML, LLM/ML Ops or adjacent platform work, backend/developer tooling, and full ML/LLM lifecycle experience. Those candidate requirements are retained as text-only requirements. Its `Things You'll Do` section says the team works mostly in TypeScript and Python, while experience is “not strictly required” and is a “big plus” ([official posting](https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8)); the two language rows remain `responsibility` implementation context, not `required` gates.
 
 ### Warp
 
-The official posting places Docker/Linux, prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems under one `You may be a good fit if...` block ([official posting](https://job-boards.greenhouse.io/warp/jobs/5749183004)). The whole block is now consistently classified as `required`; only the separate `Bonus...` block remains `preferred`.
+The official posting places Docker/Linux, prompt engineering, agent architectures, tool use, and evaluating non-deterministic systems under one `You may be a good fit if...` block ([official posting](https://job-boards.greenhouse.io/warp/jobs/5749183004)). Because this is soft qualification wording, the whole block is now consistently classified as `preferred`; only the separate `Bonus...` block is also preferred.
 
 ### ServiceNow AI Agent Engineer
 
@@ -62,24 +63,32 @@ The current official posting is for `Bangalore, India` and is in-person ([offici
 | Python | 0 / 8 / 0 / 1 | 0 / 7 / 0 / 2 | Zapier language rows leave required and become implementation context |
 | TypeScript-JavaScript | 1 / 5 / 0 / 0 | 1 / 4 / 0 / 1 | Zapier language rows leave required and become implementation context |
 | HTTP-API | 2 / 1 / 2 / 3 | 3 / 1 / 2 / 2 | ServiceNow About You becomes required |
-| Prompt-and-Context-Engineering | 0 / 0 / 2 / 1 | 2 / 0 / 1 / 0 | ServiceNow About You required; Warp fit block required |
+| Prompt-and-Context-Engineering | 0 / 0 / 2 / 1 | 1 / 0 / 2 / 0 | ServiceNow About You required; Warp soft-fit block preferred |
 | Workflow-Automation-and-Business-Process-Design | 2 / 0 / 2 / 9 | 2 / 0 / 1 / 8 | Glean OR-set unmapped; ServiceNow eval runtime leaves Workflow |
-| Agent-Evals-and-Trace-Debugging | 0 / 0 / 3 / 4 | 1 / 0 / 2 / 6 | Warp required; ServiceNow calibration/orchestration moved to evals |
+| Docker-Containers | 1 / 0 / 0 / 0 | 0 / 0 / 1 / 0 | Warp soft-fit block is preferred |
+| Linux | 1 / 0 / 1 / 0 | 0 / 0 / 2 / 0 | Warp soft-fit block is preferred |
+| Agent-Orchestration-and-State | 2 / 0 / 3 / 11 | 1 / 0 / 4 / 11 | Warp soft-fit block is preferred |
+| Agent-Evals-and-Trace-Debugging | 0 / 0 / 3 / 4 | 0 / 0 / 3 / 6 | Warp soft-fit block preferred; ServiceNow calibration/orchestration moved to evals |
 | Human-in-the-Loop-and-Agent-Guardrails | 0 / 0 / 1 / 4 | 0 / 0 / 1 / 3 | ServiceNow human-label calibration is not runtime HITL |
 | Distributed-Systems | 2 / 2 / 0 / 1 | 1 / 2 / 0 / 1 | Generic Ramp backend/infrastructure signal removed |
+| Tool-Calling-and-Action-Contracts | 1 / 0 / 0 / 1 | 0 / 0 / 1 / 1 | Warp soft-fit block is preferred |
 
-Final totals are `required 41`, `preferred 20`, `responsibility 65`, `inferred-prerequisite 7` across 133 source-bound rows.
+Final totals are `required 35`, `preferred 26`, `responsibility 65`, `inferred-prerequisite 7` across 133 source-bound rows.
 
 ## 5. Role Priority Changes
 
 - AI Application Engineer: Tool Calling `Common → Prerequisite`, with zero audited Batch B rows explicitly documented as an architecture/learning prerequisite rather than a hiring-frequency claim.
 - AI Application Engineer language counts now reflect Zapier implementation context (`Python` and `TypeScript-JavaScript` responsibility rows, not required rows).
-- AI Solutions Architect/FDE and AI Infrastructure/Inference profiles now reflect the Warp and ServiceNow Eval semantic corrections; the profiles remain evidence summaries, not market percentages.
+- AI Solutions Architect/FDE now treats Warp's soft-fit block as preferred; AI Infrastructure/Inference continues to reflect ServiceNow Eval semantics. Profiles remain evidence summaries, not market percentages.
 
 ## 6. Metadata Corrections
 
+- Warp FDE: `location: New York, New York`; `region: US`.
+- Zapier Applied AI: `location: NAMER; EMEA (Remote)`; `region: NAMER/EMEA`.
+- ServiceNow AI Agent Engineer: `location: Bangalore, India`; `region: India/APAC`.
+- ServiceNow Agent Eval Platform and Agentic Systems: `location: Mountain View, California`; `region: US`.
 - Glean Software Engineer, Agents: `location: Bangalore, India`; `region: India/APAC`.
-- Snapshot region summary now names Bangalore India/APAC explicitly.
+- Snapshot region summary now names NAMER/EMEA Remote, Bangalore, New York, and Mountain View.
 - Canonical Notion FDE Japan source URL is `https://jobs.ashbyhq.com/notion/4bc0802c-b5e0-411c-be01-daaea2bc3ae0`.
 - Duplicate OpenAI Agents testing/tracing entries were removed from `90-Sources/Source-Index.md`; one canonical SDK testing link and one canonical SDK tracing link remain.
 
@@ -90,7 +99,7 @@ Final totals are `required 41`, `preferred 20`, `responsibility 65`, `inferred-p
 - `git diff --check`: passed.
 - `python3 -m py_compile scripts/check_vault.py`: passed.
 - Rebuild/recompute reproducibility: rerun produces no semantic diff beyond the two preserved user-local files (`.obsidian/graph.json`, `01-Inbox/Term-Radar.md`).
-- GitHub Actions validation for the pushed final tree: run ID `33466420718`, head SHA `902550d6d6bb8086256957d24888a0af5adb9aee`, status `completed`, conclusion `success`.
+- Previous freeze validation: run ID `33466420718`, head SHA `902550d6d6bb8086256957d24888a0af5adb9aee`, status `completed`, conclusion `success`; this patch reruns the workflow after its final commit.
 
 ## 8. Source-bound Spot Checks
 
@@ -98,7 +107,7 @@ Final totals are `required 41`, `preferred 20`, `responsibility 65`, `inferred-p
 | --- | --- | --- | --- | --- | --- |
 | Zapier | Things You'll Do | You will work mostly in TypeScript; experience isn't strictly required, but it is a big plus. | required | responsibility | Official wording explicitly rejects a strict experience gate. |
 | Zapier | Things You'll Do | You will work mostly in Python; experience isn't strictly required, but it is a big plus. | required | responsibility | Team implementation context, not a candidate qualification. |
-| Warp | You may be a good fit if... | Understand evaluating non-deterministic systems | preferred | required | Entire soft-fit section is kept semantically consistent. |
+| Warp | You may be a good fit if... | Understand evaluating non-deterministic systems | required | preferred | Soft qualification remains soft; the entire block is consistent. |
 | ServiceNow AI Agent Engineer | About You | Strong grasp of API-based systems integration | responsibility | required | `About You` is a candidate capability block. |
 | ServiceNow AI Agent Engineer | About You | LLM-based systems design including prompt engineering and context engineering | responsibility | required | Technical Mastery is a candidate qualification. |
 | ServiceNow Agent Eval Platform | The Role | Calibration against human labels | responsibility / HITL | responsibility / Agent Evals | Labels calibrate evaluators; no approval/authorization is stated. |

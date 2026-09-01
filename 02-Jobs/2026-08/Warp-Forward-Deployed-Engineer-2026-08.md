@@ -4,7 +4,7 @@ company: Warp
 role_title: Forward Deployed Engineer
 role_family: field-deployment
 seniority: experienced
-location: Not stated on page
+location: New York, New York
 region: US
 source_url: https://job-boards.greenhouse.io/warp/jobs/5749183004
 source_kind: official-job-posting
@@ -39,14 +39,15 @@ evidence_audit_status: verified
 - Debug agent runs using session sharing and observability tools
 
 ## Explicit Requirements
+- 当前来源未确认可复核要求；不要把职责或历史摘要当作 required。
+
+## Preferred/Nice-to-have
 - Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration
 - Strong infrastructure fundamentals: Linux
 - Understand prompt engineering
 - Understand agent architectures
 - Understand tool use
 - Understand evaluating non-deterministic systems
-
-## Preferred/Nice-to-have
 - Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation
 - Familiarity with enterprise security and compliance requirements
 
@@ -55,16 +56,16 @@ evidence_audit_status: verified
 
 | Raw Evidence | Skill | Evidence Type | Requirement Strength | Alternative Group | Depth Signal | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration | [[Docker-Containers]] | required | explicit | none | use | high |
-| Strong infrastructure fundamentals: Linux | [[Linux]] | required | explicit | none | use | high |
+| Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration | [[Docker-Containers]] | preferred | explicit | none | use | high |
+| Strong infrastructure fundamentals: Linux | [[Linux]] | preferred | explicit | none | use | high |
 | Architect agent workflows with triggers, webhooks, cron schedules, and API calls | [[Workflow-Automation-and-Business-Process-Design]] | responsibility | explicit | none | use | high |
 | Set up environments, secrets, and integrations | [[Security-Privacy-and-Access-Control]] | responsibility | explicit | none | use | high |
 | Set up MCP servers and integrations | [[MCP-and-Agent-Interoperability]] | responsibility | explicit | none | use | high |
 | Debug agent runs using session sharing and observability tools | [[Observability]] | responsibility | explicit | none | use | high |
-| Understand prompt engineering | [[Prompt-and-Context-Engineering]] | required | explicit | none | use | high |
-| Understand agent architectures | [[Agent-Orchestration-and-State]] | required | explicit | none | use | high |
-| Understand tool use | [[Tool-Calling-and-Action-Contracts]] | required | explicit | none | use | high |
-| Understand evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | required | explicit | none | use | high |
+| Understand prompt engineering | [[Prompt-and-Context-Engineering]] | preferred | explicit | none | use | high |
+| Understand agent architectures | [[Agent-Orchestration-and-State]] | preferred | explicit | none | use | high |
+| Understand tool use | [[Tool-Calling-and-Action-Contracts]] | preferred | explicit | none | use | high |
+| Understand evaluating non-deterministic systems | [[Agent-Evals-and-Trace-Debugging]] | preferred | explicit | none | use | high |
 | Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation | [[HTTP-API]] | preferred | explicit | none | use | high |
 | Familiarity with enterprise security and compliance requirements | [[Security-Privacy-and-Access-Control]] | preferred | explicit | none | use | high |
 
@@ -83,12 +84,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: close-paraphrase
 Raw Evidence: Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration
 Mapped Skill: [[Docker-Containers]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Docker/containers are explicitly required fundamentals.
+Mapping Rationale: This soft-fit section is uniformly preferred; Docker/containers are a plus signal, not a strict gate.
 Notes: paraphrased from official You may be a good fit if... section; mapping kept to Docker-Containers only.
 
 ### Evidence 2
@@ -96,12 +97,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: close-paraphrase
 Raw Evidence: Strong infrastructure fundamentals: Linux
 Mapped Skill: [[Linux]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: Linux is explicitly named as an infrastructure fundamental.
+Mapping Rationale: This soft-fit section is uniformly preferred; Linux is a plus signal, not a strict gate.
 Notes: paraphrased from official You may be a good fit if... section; mapping kept to Linux only.
 
 ### Evidence 3
@@ -161,12 +162,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand prompt engineering
 Mapped Skill: [[Prompt-and-Context-Engineering]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Mapping Rationale: The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Prompt-and-Context-Engineering only.
 
 ### Evidence 8
@@ -174,12 +175,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand agent architectures
 Mapped Skill: [[Agent-Orchestration-and-State]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Mapping Rationale: The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Orchestration-and-State only.
 
 ### Evidence 9
@@ -187,12 +188,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand tool use
 Mapped Skill: [[Tool-Calling-and-Action-Contracts]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Mapping Rationale: The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Tool-Calling-and-Action-Contracts only.
 
 ### Evidence 10
@@ -200,12 +201,12 @@ Source Section: You may be a good fit if...
 Source Fidelity: direct
 Raw Evidence: Understand evaluating non-deterministic systems
 Mapped Skill: [[Agent-Evals-and-Trace-Debugging]]
-Evidence Type: required
+Evidence Type: preferred
 Requirement Strength: explicit
 Alternative Group: none
 Depth Signal: use
 Confidence: high
-Mapping Rationale: The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Mapping Rationale: The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
 Notes: quoted or lightly normalized from official You may be a good fit if... section; mapping kept to Agent-Evals-and-Trace-Debugging only.
 
 ### Evidence 11

@@ -136,16 +136,16 @@ Front-AI-Engineer-GTM-Operations-2026-08.md|responsibility|HTTP-API|Responsibili
 Front-AI-Engineer-GTM-Operations-2026-08.md|responsibility|MCP-and-Agent-Interoperability|Responsibilities|Expose model workflows through MCP|medium|||close-paraphrase|MCP is an explicit interoperability signal.
 Front-AI-Engineer-GTM-Operations-2026-08.md|preferred|RAG|Preferred|Snowflake and RAG/structured data experience|medium|||direct|RAG is explicitly preferred.
 Front-AI-Engineer-GTM-Operations-2026-08.md|inferred-prerequisite|Python|Historical dynamic ATS signal|Python async services and structured data|medium||inferred|The dynamic page does not expose a stable requirements section; retain this as a study lead only.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Docker-Containers|You may be a good fit if...|Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration|high|||close-paraphrase|Docker/containers are explicitly required fundamentals.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Linux|You may be a good fit if...|Strong infrastructure fundamentals: Linux|high|||close-paraphrase|Linux is explicitly named as an infrastructure fundamental.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Docker-Containers|You may be a good fit if...|Strong infrastructure fundamentals: Docker, CI/CD, cloud infrastructure, and container orchestration|high|||close-paraphrase|This soft-fit section is uniformly preferred; Docker/containers are a plus signal, not a strict gate.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Linux|You may be a good fit if...|Strong infrastructure fundamentals: Linux|high|||close-paraphrase|This soft-fit section is uniformly preferred; Linux is a plus signal, not a strict gate.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Workflow-Automation-and-Business-Process-Design|As a Founding Forward Deployed Engineer, you will...|Architect agent workflows with triggers, webhooks, cron schedules, and API calls|high|||direct|Triggers and multi-step workflows are explicit workflow-design responsibility.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Security-Privacy-and-Access-Control|As a Founding Forward Deployed Engineer, you will...|Set up environments, secrets, and integrations|high|||close-paraphrase|Secrets and environment boundaries are explicit security responsibilities.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|MCP-and-Agent-Interoperability|As a Founding Forward Deployed Engineer, you will...|Set up MCP servers and integrations|high|||close-paraphrase|MCP servers are explicit interoperability work.
 Warp-Forward-Deployed-Engineer-2026-08.md|responsibility|Observability|As a Founding Forward Deployed Engineer, you will...|Debug agent runs using session sharing and observability tools|high|||direct|Observability tools support operational debugging; no eval claim is added.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Prompt-and-Context-Engineering|You may be a good fit if...|Understand prompt engineering|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Agent-Orchestration-and-State|You may be a good fit if...|Understand agent architectures|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Tool-Calling-and-Action-Contracts|You may be a good fit if...|Understand tool use|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
-Warp-Forward-Deployed-Engineer-2026-08.md|required|Agent-Evals-and-Trace-Debugging|You may be a good fit if...|Understand evaluating non-deterministic systems|high|||direct|The entire “You may be a good fit if...” block is treated consistently as candidate qualification; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Prompt-and-Context-Engineering|You may be a good fit if...|Understand prompt engineering|high|||direct|The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Orchestration-and-State|You may be a good fit if...|Understand agent architectures|high|||direct|The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Tool-Calling-and-Action-Contracts|You may be a good fit if...|Understand tool use|high|||direct|The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
+Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Agent-Evals-and-Trace-Debugging|You may be a good fit if...|Understand evaluating non-deterministic systems|high|||direct|The entire “You may be a good fit if...” block is soft qualification and is uniformly preferred; Bonus remains preferred.
 Warp-Forward-Deployed-Engineer-2026-08.md|preferred|HTTP-API|Bonus...|Experience with APIs/SDKs, GitHub Actions, webhooks, and event-driven automation|high|||direct|APIs and webhooks are explicit integration experience.
 Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Security-Privacy-and-Access-Control|Bonus...|Familiarity with enterprise security and compliance requirements|high|||direct|Security/compliance is explicit bonus experience.
 '''
@@ -155,6 +155,18 @@ Warp-Forward-Deployed-Engineer-2026-08.md|preferred|Security-Privacy-and-Access-
 EXTRA_PREFERRED = {
     "Glean-Software-Engineer-Agents-2026-08.md": [
         "Experience building AI, agentic, workflow, automation, or developer-product experiences"
+    ]
+}
+
+# Current candidate requirements are retained verbatim/close-paraphrased in
+# the card, but intentionally have no normalized Skill mapping.
+EXTRA_REQUIREMENTS = {
+    "Zapier-Engineer-Applied-AI-2026-08.md": [
+        "4+ years of software engineering experience, including building and operating production AI/ML systems",
+        "At least 1 year of experience in LLM Ops, ML Ops, or adjacent platform/infrastructure work",
+        "Experience contributing to backend systems, developer tooling, internal platforms, or infrastructure that supports other engineers",
+        "Experience across the full lifecycle of building, testing, deploying, and scaling ML/LLM architectures",
+        "Understanding of production trade-offs among reliability, latency, cost, quality, and maintainability",
     ]
 }
 
@@ -223,6 +235,7 @@ def render(path, rows):
     title = meta.get("company", path.stem) + " — " + meta.get("role_title", path.stem)
     rs = [r for r in rows if r["kind"] == "responsibility"]
     rq = [r for r in rows if r["kind"] == "required"]
+    rq += [{"raw": raw} for raw in EXTRA_REQUIREMENTS.get(path.name, [])]
     pr = [r for r in rows if r["kind"] == "preferred"]
     pr += [{"raw": raw} for raw in EXTRA_PREFERRED.get(path.name, [])]
     inf = [r for r in rows if r["kind"] == "inferred-prerequisite"]
